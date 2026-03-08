@@ -1,0 +1,31 @@
+running egg_info
+writing ../../build/unit1/unit1.egg-info/PKG-INFO
+writing dependency_links to ../../build/unit1/unit1.egg-info/dependency_links.txt
+writing entry points to ../../build/unit1/unit1.egg-info/entry_points.txt
+writing requirements to ../../build/unit1/unit1.egg-info/requires.txt
+writing top-level names to ../../build/unit1/unit1.egg-info/top_level.txt
+reading manifest file '../../build/unit1/unit1.egg-info/SOURCES.txt'
+writing manifest file '../../build/unit1/unit1.egg-info/SOURCES.txt'
+running build
+running build_py
+copying unit1/forward.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1
+copying unit1/publisher_member_function.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1
+copying unit1/subscriber_member_function.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1
+running install
+running install_lib
+copying /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1/forward.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1
+copying /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1/publisher_member_function.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1
+copying /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1/subscriber_member_function.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1
+byte-compiling /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1/forward.py to forward.cpython-310.pyc
+byte-compiling /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1/publisher_member_function.py to publisher_member_function.cpython-310.pyc
+byte-compiling /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc
+running install_data
+copying package.xml -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/share/unit1
+running install_egg_info
+removing '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/unit1/unit1.egg-info to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1-0.0.0-py3.10.egg-info
+running install_scripts
+Installing forward script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+Installing listener script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+Installing talker script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+writing list of installed files to '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/install.log'

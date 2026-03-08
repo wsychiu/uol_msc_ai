@@ -1,0 +1,5 @@
+[console_scripts]
+forward = unit1.forward:main
+listener = unit1.subscriber_member_function:main
+talker = unit1.publisher_member_function:main
+

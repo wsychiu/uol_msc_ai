@@ -1,0 +1,29 @@
+[1.211s] Invoking command in '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/src/unit1': PYTHONPATH=/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/prefix_override:/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/unit1 build --build-base /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build install --record /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/install.log --single-version-externally-managed install_data
+[1.726s] running egg_info
+[1.728s] writing ../../build/unit1/unit1.egg-info/PKG-INFO
+[1.731s] writing dependency_links to ../../build/unit1/unit1.egg-info/dependency_links.txt
+[1.735s] writing entry points to ../../build/unit1/unit1.egg-info/entry_points.txt
+[1.737s] writing requirements to ../../build/unit1/unit1.egg-info/requires.txt
+[1.738s] writing top-level names to ../../build/unit1/unit1.egg-info/top_level.txt
+[1.755s] reading manifest file '../../build/unit1/unit1.egg-info/SOURCES.txt'
+[1.787s] writing manifest file '../../build/unit1/unit1.egg-info/SOURCES.txt'
+[1.789s] running build
+[1.789s] running build_py
+[1.800s] copying unit1/forward.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1
+[1.810s] copying unit1/forward_default.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1
+[1.837s] running install
+[1.838s] running install_lib
+[1.855s] copying /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1/forward.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1
+[1.873s] copying /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build/lib/unit1/forward_default.py -> /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1
+[1.918s] byte-compiling /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1/forward.py to forward.cpython-310.pyc
+[1.940s] byte-compiling /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1/forward_default.py to forward_default.cpython-310.pyc
+[1.973s] running install_data
+[1.984s] running install_egg_info
+[1.990s] removing '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1-0.0.0-py3.10.egg-info' (and everything under it)
+[2.015s] Copying ../../build/unit1/unit1.egg-info to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages/unit1-0.0.0-py3.10.egg-info
+[2.120s] running install_scripts
+[2.166s] Installing forward script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+[2.172s] Installing listener script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+[2.177s] Installing talker script to /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/unit1
+[2.183s] writing list of installed files to '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/install.log'
+[2.197s] Invoked command in '/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/src/unit1' returned '0': PYTHONPATH=/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/prefix_override:/mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/install/unit1/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/unit1 build --build-base /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/build install --record /mnt/c/Users/Wes/OneDrive - University of Leeds/OCOM5205M Robotics/ros2_ws/build/unit1/install.log --single-version-externally-managed install_data

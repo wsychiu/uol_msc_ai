@@ -1,0 +1,4730 @@
+WEBVTT
+
+00:00:00.230 --> 00:00:02.190
+Um I don't think we can hear you. I can't hear you anyway,
+
+00:00:05.469 --> 00:00:10.079
+a flight. Uh Welcome to this uh
+
+00:00:10.090 --> 00:00:14.739
+webinar. This is our uh final webinar
+
+00:00:15.659 --> 00:00:20.059
+and it is the extended one, although we extended
+
+00:00:20.069 --> 00:00:24.870
+several ones before. But uh this is an official extended webinar
+
+00:00:25.510 --> 00:00:30.030
+uh where we have to, you know, we are going to uh go through the
+
+00:00:30.530 --> 00:00:34.159
+uh you know, different material
+
+00:00:34.810 --> 00:00:39.290
+and certainly the uh project or
+
+00:00:39.299 --> 00:00:43.900
+assessment to. So, uh as
+
+00:00:43.919 --> 00:00:48.340
+usual, I'm going to open it a little bit for uh discussions,
+
+00:00:48.349 --> 00:00:52.939
+although I'm keen to get on with the
+
+00:00:52.950 --> 00:00:56.009
+material that I prepared to use so that we can,
+
+00:00:56.509 --> 00:01:01.259
+you know, uh explain it, explain it thoroughly
+
+00:01:01.270 --> 00:01:06.269
+and go through uh the various bits and pieces that he
+
+00:01:06.279 --> 00:01:11.269
+wanted to uh to cover. So uh if you
+
+00:01:11.279 --> 00:01:15.279
+have an urgent question, uh go ahead please.
+
+00:01:15.290 --> 00:01:17.800
+Um I'm happy to hear,
+
+00:01:20.010 --> 00:01:24.519
+is it, is it a good moment for questions regarding assessment or uh
+
+00:01:25.750 --> 00:01:30.739
+like technical question about assessment implementation or it's better to do after work?
+
+00:01:31.680 --> 00:01:36.250
+Uh Sorry, I can't understand what you're
+
+00:01:36.260 --> 00:01:38.819
+asking. Kil. Uh Could you repeat, please?
+
+00:01:39.050 --> 00:01:42.559
+No, I mean, I have a lot of questions regarding assessment uh
+
+00:01:42.569 --> 00:01:47.540
+specific implementation questions. I just want to know if it's a good time
+
+00:01:47.550 --> 00:01:51.699
+to ask it. Um I mean, I would uh
+
+00:01:51.709 --> 00:01:56.319
+prefer if we uh go through first
+
+00:01:56.330 --> 00:02:01.309
+the uh the material that I prepared. I think a lot of
+
+00:02:01.319 --> 00:02:05.419
+your question, questions are going to be hopefully answered by this.
+
+00:02:06.290 --> 00:02:11.169
+But if it's not, then by all means, feel free to
+
+00:02:11.179 --> 00:02:15.279
+ask now or, or, or later. OK, I'll wait.
+
+00:02:15.839 --> 00:02:18.850
+Thank you. Yeah, no problem at all. Um
+
+00:02:22.550 --> 00:02:26.529
+Right. Uh But given that, you know, you,
+
+00:02:26.539 --> 00:02:31.190
+you just uh um uh spoken curl. Do you want to
+
+00:02:31.199 --> 00:02:36.029
+ask uh one or two questions that you found really important and
+
+00:02:36.039 --> 00:02:39.690
+then we move forward. But, you know, I think as I said,
+
+00:02:39.699 --> 00:02:43.164
+is this argument be hopefully address. Go ahead.
+
+00:02:43.285 --> 00:02:47.615
+Yeah. OK. Uh First of all, this is about the state
+
+00:02:47.625 --> 00:02:52.365
+representation. You suggested me in our email exchange
+
+00:02:52.375 --> 00:02:57.335
+that it should be lidar scans, but uh it doesn't fit well with the fact that
+
+00:02:57.345 --> 00:03:01.649
+we should uh uh set the MF
+
+00:03:01.660 --> 00:03:04.309
+variable, which is the number of states.
+
+00:03:04.320 --> 00:03:08.940
+Uh So, if you use like purely, uh it's quite impossible
+
+00:03:08.949 --> 00:03:13.830
+because each number is a real number and uh it's then
+
+00:03:13.839 --> 00:03:18.550
+state space become infinite like OK. Uh How many
+
+00:03:18.559 --> 00:03:23.470
+combinations of real numbers in a range of 60 do we have infinity?
+
+00:03:23.619 --> 00:03:27.070
+OK. Uh Or close to infinity in case of computer.
+
+00:03:27.339 --> 00:03:31.669
+Uh So first state representation, let's put it this way.
+
+00:03:31.699 --> 00:03:35.660
+I just want to put titles there. So state representation,
+
+00:03:35.669 --> 00:03:40.669
+this is your one of your questions, any other ones who
+
+00:03:40.679 --> 00:03:45.580
+have other questions? So this is going to be hopefully uh addressed today,
+
+00:03:47.330 --> 00:03:51.009
+collision and rolling detection using vars collision.
+
+00:03:51.029 --> 00:03:55.220
+Yeah. OK. Also be addressed today. Yeah,
+
+00:03:58.139 --> 00:04:03.110
+Nicholas, but I have one regarding how do you build intuition
+
+00:04:03.860 --> 00:04:08.309
+when you work through. So you know you start your algorithm and you see the
+
+00:04:08.320 --> 00:04:10.330
+robot walk in and out and blah, blah blah.
+
+00:04:10.339 --> 00:04:13.539
+How do you build intuition when you want to debug something do you look at?
+
+00:04:13.550 --> 00:04:18.269
+OK. Maybe maybe my work function is wrong or is it how we evaluate the distance is
+
+00:04:18.420 --> 00:04:23.269
+wrong? Like how do you go about building intuition to know where you need to
+
+00:04:23.279 --> 00:04:28.010
+look to debug? Right? OK. Yes. Good question.
+
+00:04:28.019 --> 00:04:32.880
+Also, this will be addressed today. Yeah.
+
+00:04:33.140 --> 00:04:38.079
+Uh Hello, sorry. This is a bit selfish question,
+
+00:04:38.089 --> 00:04:42.170
+but it's just about virtual machine time and I've run out of time on my virtual machine.
+
+00:04:42.179 --> 00:04:46.989
+I think I emailed you about it and I'm just wondering when it's gonna be added as
+
+00:04:47.019 --> 00:04:49.329
+I'm just waiting for that. Yeah. Yeah. Yeah.
+
+00:04:49.339 --> 00:04:52.540
+OK. Um Hopefully. Yes, yes, I will add to,
+
+00:04:52.899 --> 00:04:57.450
+you know, uh I said this before. Any one of you who run out of my
+
+00:04:57.459 --> 00:05:02.369
+time. Don't worry. Just let me know. Um
+
+00:05:03.070 --> 00:05:07.640
+and I will add time to you. OK? Um
+
+00:05:08.220 --> 00:05:13.100
+No worries. Right. OK. So um let
+
+00:05:13.109 --> 00:05:15.559
+me share my screen with you. Uh
+
+00:05:17.630 --> 00:05:19.149
+And
+
+00:05:31.519 --> 00:05:34.380
+hopefully you can see my screen,
+
+00:05:38.739 --> 00:05:43.709
+right? Ok. Um So this is a VM
+
+00:05:43.730 --> 00:05:48.660
+uh it's a local VM uh that I am using.
+
+00:05:50.010 --> 00:05:54.910
+This is the um quote updated
+
+00:05:54.920 --> 00:05:59.309
+um lesson 16 where we just have a um
+
+00:06:03.890 --> 00:06:07.809
+an idea how to address the uh the assessment.
+
+00:06:09.269 --> 00:06:13.899
+So, um as usual,
+
+00:06:14.089 --> 00:06:16.570
+this is like a bunch of um
+
+00:06:18.779 --> 00:06:22.950
+libraries that we are going to utilize and uh
+
+00:06:25.859 --> 00:06:30.160
+it's a bit slow because it is running. You can see the robot here is
+
+00:06:30.170 --> 00:06:35.149
+uh being trained. It's um it's a bit um
+
+00:06:35.399 --> 00:06:38.470
+still in the early stages and I'm not running it a lot.
+
+00:06:38.480 --> 00:06:40.720
+I just, I just run it just before, you know,
+
+00:06:40.730 --> 00:06:45.720
+we started it um uh
+
+00:06:45.730 --> 00:06:50.320
+this session, uh as you can see, uh
+
+00:06:52.820 --> 00:06:57.130
+it's uh it starts as usual in the middle and whenever it's run,
+
+00:06:57.140 --> 00:07:01.839
+it run into a wall, it will automatically uh reus
+
+00:07:02.209 --> 00:07:07.170
+restart or reset into this position and then
+
+00:07:07.480 --> 00:07:12.329
+uh try again and again and again, each time when it
+
+00:07:12.339 --> 00:07:16.709
+is running into a wall, this is not an episode.
+
+00:07:16.899 --> 00:07:20.130
+OK. Let's be clear about that. This is not an episode.
+
+00:07:20.140 --> 00:07:25.109
+This is like when we dealt with the cliff walk with the
+
+00:07:25.119 --> 00:07:28.649
+cliff walk. Whenever the robots fall over the cliff,
+
+00:07:29.359 --> 00:07:34.359
+we reset. But we don't assume that this is a new
+
+00:07:34.369 --> 00:07:38.600
+episode. This is just a continuation and that will help the robot to,
+
+00:07:38.609 --> 00:07:41.600
+to learn also not to hit walls, hopefully,
+
+00:07:43.600 --> 00:07:48.380
+right, the state presentation here. What I'm running it
+
+00:07:48.390 --> 00:07:50.779
+can be done, of course, in several ways.
+
+00:07:52.820 --> 00:07:56.820
+Um What I'm running here is a grid
+
+00:07:56.829 --> 00:08:00.970
+world where we, where I'm disc criticizing the world,
+
+00:08:01.329 --> 00:08:05.190
+but this is not what you should be doing because it's a,
+
+00:08:05.200 --> 00:08:09.989
+it's a bit crude and uh inaccurate.
+
+00:08:10.429 --> 00:08:11.010
+Um
+
+00:08:15.690 --> 00:08:18.179
+However, it's a good starting point. It's a good,
+
+00:08:18.190 --> 00:08:21.790
+you know, just to gain this intuition that one of you
+
+00:08:22.510 --> 00:08:27.109
+asked me about. Maybe it was ne I can't remember the who asked me?
+
+00:08:27.630 --> 00:08:31.899
+Um So
+
+00:08:33.489 --> 00:08:37.658
+the other state representation that we can utilize is when we
+
+00:08:38.028 --> 00:08:40.708
+uh have the,
+
+00:08:43.229 --> 00:08:48.059
+the state represented as the set of scans beams that we
+
+00:08:48.489 --> 00:08:53.229
+in for the robot. At the moment. I uh this is
+
+00:08:53.239 --> 00:08:56.929
+own preference. I've hidden these beams,
+
+00:08:57.299 --> 00:09:01.818
+I'm using about 60 but you can use whatever how many you want.
+
+00:09:01.828 --> 00:09:06.229
+Just don't, don't use 360 because this will make your
+
+00:09:06.239 --> 00:09:11.229
+training slow, right? Um So, but
+
+00:09:11.239 --> 00:09:15.270
+don't use multiple different state representation in the same environment.
+
+00:09:15.650 --> 00:09:20.159
+Uh Do what we've done already in our
+
+00:09:21.750 --> 00:09:26.440
+um material where I just did the grid first and then I
+
+00:09:26.450 --> 00:09:30.840
+inherited the grid with all the functionality and I only changed the
+
+00:09:30.969 --> 00:09:35.909
+state presentation that way it is much more efficient and you'll
+
+00:09:35.919 --> 00:09:40.700
+be able to relate more to, to, to, to what's going
+
+00:09:40.919 --> 00:09:44.450
+on. Um Professor I have a quick question.
+
+00:09:44.539 --> 00:09:49.039
+If I may go on when we select 60 lasers,
+
+00:09:49.049 --> 00:09:53.820
+are they 60 lasers around the robot or in a 60 degree cone in front of the robot.
+
+00:09:54.590 --> 00:09:59.039
+No, that's a good question is around. Um
+
+00:09:59.479 --> 00:10:04.190
+That's why because here there are, this is where it becomes different.
+
+00:10:04.200 --> 00:10:08.969
+You know, the uh a great world, the simplified one,
+
+00:10:08.979 --> 00:10:13.549
+we go north, south, you know, east and west
+
+00:10:13.630 --> 00:10:18.440
+from the an actual physical robot where each turn it is turning in
+
+00:10:18.450 --> 00:10:22.049
+place rather than moving sideways or up and down.
+
+00:10:22.549 --> 00:10:26.080
+So, um yeah, I mean, this is
+
+00:10:27.380 --> 00:10:32.080
+uh the, the, the uh best
+
+00:10:33.359 --> 00:10:38.169
+the state presentation with, with, with the
+
+00:10:38.179 --> 00:10:42.830
+beams. It makes more sense to
+
+00:10:42.840 --> 00:10:46.109
+take into account the frontal one with the,
+
+00:10:46.119 --> 00:10:50.390
+with one pile. But it's up to you, you can take all over,
+
+00:10:50.400 --> 00:10:54.299
+you know, all around the, the uh you know,
+
+00:10:54.309 --> 00:10:59.270
+the robot or you can, you, you might elect it up to you to choose only the,
+
+00:10:59.330 --> 00:11:04.200
+the frontal one. OK. Um uh It's,
+
+00:11:04.210 --> 00:11:06.710
+it's a matter of choice. This is where you want to,
+
+00:11:07.169 --> 00:11:12.099
+you know, uh experiment with things and try to
+
+00:11:12.109 --> 00:11:16.650
+do it your own way. Uh I must admit I might have
+
+00:11:16.830 --> 00:11:19.760
+overdone it here because I was, you know,
+
+00:11:19.770 --> 00:11:24.380
+I wanted to uh uh to give you a little bit of a boost and uh you know,
+
+00:11:24.750 --> 00:11:29.679
+uh in addressing the, the assessment and uh
+
+00:11:29.690 --> 00:11:34.059
+I'm going to explain now what, what we have done uh in
+
+00:11:34.070 --> 00:11:39.020
+this uh uh in this environment.
+
+00:11:40.429 --> 00:11:41.150
+So,
+
+00:11:45.190 --> 00:11:50.010
+as usual, uh I put here,
+
+00:11:50.020 --> 00:11:54.940
+by the way, what I'm going to explain here is I put everything in one
+
+00:11:55.309 --> 00:12:00.229
+class so that it's easier maybe or not, you might argue
+
+00:12:00.320 --> 00:12:03.000
+uh to just to see everything in front of you.
+
+00:12:03.219 --> 00:12:07.900
+But uh later on, I will divide this and put uh you know,
+
+00:12:07.909 --> 00:12:12.419
+and uh put them in stages if you prefer
+
+00:12:12.520 --> 00:12:17.299
+um to receive it as is in one block, then let me
+
+00:12:17.309 --> 00:12:20.929
+know. Um OK. So
+
+00:12:24.070 --> 00:12:28.520
+the speed is the speed um uh the linear speed of the
+
+00:12:28.530 --> 00:12:32.440
+robot fit the speed is the angular speed of the robot.
+
+00:12:32.969 --> 00:12:37.809
+Uh OK. Um Robot here
+
+00:12:37.820 --> 00:12:42.780
+is the twist. As we, you know, you might have uh realized that I'm
+
+00:12:42.789 --> 00:12:47.609
+calling the twist instance. Uh you know,
+
+00:12:47.619 --> 00:12:52.570
+this instance, I'm calling it a robot because this is how we are going to control and
+
+00:12:52.580 --> 00:12:55.770
+it's useful for us because this is how we are,
+
+00:12:55.799 --> 00:12:58.599
+you know, we treated previously. Um
+
+00:13:01.729 --> 00:13:06.669
+uh our code. Uh the frequency is how many time uh
+
+00:13:06.679 --> 00:13:10.989
+you know, with a timer will publish
+
+00:13:11.369 --> 00:13:16.190
+uh you know uh to the publisher. Uh the
+
+00:13:16.200 --> 00:13:20.950
+publisher here is the uh created
+
+00:13:21.200 --> 00:13:25.349
+and passing twist not an instant as a like a class name.
+
+00:13:25.359 --> 00:13:30.309
+What is the class that will be used? And this is the topic that we are publishing to,
+
+00:13:30.320 --> 00:13:34.369
+which is the velocity you already when you run this.
+
+00:13:35.580 --> 00:13:39.890
+Um I run the code.
+
+00:13:40.229 --> 00:13:45.080
+Uh Let me show you what I right.
+
+00:13:46.200 --> 00:13:51.169
+It's a bit slow. Um I just, you know, you can
+
+00:13:51.179 --> 00:13:55.710
+check the topics after I just launched. I hope you
+
+00:13:55.770 --> 00:14:00.429
+no one is finding it difficult to launch the environment.
+
+00:14:01.010 --> 00:14:05.469
+Um uh Is it OK with everyone can, everyone can
+
+00:14:05.479 --> 00:14:08.520
+launch the assessment environment?
+
+00:14:10.650 --> 00:14:15.599
+Yes. Yes. Yes. It's a bit, it's a bit inconsistent with
+
+00:14:15.609 --> 00:14:18.109
+me that sometimes the environment is empty.
+
+00:14:18.320 --> 00:14:21.530
+So everything will launch because it will be empty.
+
+00:14:21.539 --> 00:14:25.090
+Is that, is that the file being in the right place or no?
+
+00:14:25.150 --> 00:14:30.020
+Uh Check out the answer uh the post from
+
+00:14:30.030 --> 00:14:34.010
+seed that he wrote like a few week ago.
+
+00:14:35.070 --> 00:14:40.049
+Yeah. Yeah. Yeah, it is, you know, there is if you're
+
+00:14:40.059 --> 00:14:43.250
+facing a problem, check what I answered,
+
+00:14:43.270 --> 00:14:47.890
+you know, there is a uh you just need to re
+
+00:14:48.059 --> 00:14:52.900
+uh rename one of the folders. OK. I
+
+00:14:52.909 --> 00:14:57.030
+see. I see. Thank you so much, Professor in
+
+00:14:57.760 --> 00:15:02.349
+James. Hello. Um I'm wondering about the frequency
+
+00:15:02.719 --> 00:15:05.229
+on the control of the, not the control or the timer.
+
+00:15:06.940 --> 00:15:11.849
+So if you reduce that is that is that will speed up the training or that's a good question.
+
+00:15:11.859 --> 00:15:14.719
+I'm coming to that. Just give me a few minutes.
+
+00:15:15.359 --> 00:15:20.150
+Um Yeah. Uh oh so
+
+00:15:20.159 --> 00:15:24.469
+sorry, I want to uh clarify that. Uh So the
+
+00:15:24.960 --> 00:15:29.830
+the the the assessment to so the uh so it is not an empty
+
+00:15:29.840 --> 00:15:32.140
+environment. So it should be have some, for example,
+
+00:15:32.150 --> 00:15:35.820
+like obstacles or goals which is set in the environment.
+
+00:15:35.830 --> 00:15:39.710
+Is that correct? Because I also, when I load the environment,
+
+00:15:39.719 --> 00:15:44.440
+I found that it is empty. So I want to check if I am on the right track.
+
+00:15:45.570 --> 00:15:49.539
+Thank you. Yeah, no worries. OK. So we answered this already.
+
+00:15:49.909 --> 00:15:52.469
+So it is, you know, you should see the same this one.
+
+00:15:55.770 --> 00:15:59.909
+So one last thing. So where can I find the
+
+00:15:59.919 --> 00:16:04.320
+correct one? I I just heard maybe some
+
+00:16:04.330 --> 00:16:09.030
+source from the uh if you do you mind if you
+
+00:16:09.039 --> 00:16:13.859
+can copy the name so I can find it or where can
+
+00:16:13.869 --> 00:16:18.789
+I find? Uh the environment is provided in there is a
+
+00:16:18.799 --> 00:16:21.609
+link to the environment. The only thing if you are using a,
+
+00:16:21.840 --> 00:16:24.960
+the Azure VM that we provided, you don't need to do anything.
+
+00:16:24.969 --> 00:16:26.820
+It's already there. You just need to launch it,
+
+00:16:27.700 --> 00:16:31.280
+right? Only what you need to do is to launch.
+
+00:16:31.289 --> 00:16:35.469
+So you do uh you know ro to
+
+00:16:35.500 --> 00:16:38.739
+launch whatever you know, something like that.
+
+00:16:38.760 --> 00:16:43.650
+OK. Oh yeah. Yeah. And also it needs to change
+
+00:16:43.659 --> 00:16:48.599
+the name from QDN to the assess T for free
+
+00:16:48.630 --> 00:16:53.229
+assessment. That one. Yeah. Yeah, I mean it,
+
+00:16:54.659 --> 00:16:59.619
+oh, that's really strange for me. I think I may be off night I chat with
+
+00:16:59.630 --> 00:17:04.380
+you about this because I tried to correct the name and I found this
+
+00:17:05.729 --> 00:17:09.079
+and the robot. I may I check with you?
+
+00:17:10.510 --> 00:17:15.459
+Yeah. OK. Uh Listen, I, I appreciate that each one of you might have a
+
+00:17:15.469 --> 00:17:20.290
+like a very individual question. Let's try to keep um uh
+
+00:17:20.300 --> 00:17:24.250
+you know, our questions to the where all of us can,
+
+00:17:24.260 --> 00:17:28.969
+can, you know, can, can benefit from this if you have particular,
+
+00:17:28.979 --> 00:17:33.630
+uh, you know, needs or just check the, the discussion is very
+
+00:17:33.640 --> 00:17:37.199
+live. You can, yeah, I'm sure one of your,
+
+00:17:37.209 --> 00:17:40.630
+your question. If it's not, it, it should be answered.
+
+00:17:40.770 --> 00:17:45.050
+If it's not, then let, let, uh. Right.
+
+00:17:45.349 --> 00:17:46.979
+Ok. Um,
+
+00:17:52.089 --> 00:17:56.359
+ok, so if we want to, uh, to check the topics,
+
+00:17:56.619 --> 00:17:59.469
+uh, we can check the topics here, for example,
+
+00:17:59.760 --> 00:18:04.760
+um, I can check the topic
+
+00:18:04.770 --> 00:18:09.250
+list as usual and then,
+
+00:18:09.609 --> 00:18:14.329
+um you'll be able to see what is there. And of
+
+00:18:14.339 --> 00:18:17.900
+course, you know, this is the C MD velocity is one of them.
+
+00:18:17.910 --> 00:18:22.869
+And that's why we are uh uh subscribing
+
+00:18:22.880 --> 00:18:27.189
+to um or actually publishing to uh
+
+00:18:27.199 --> 00:18:30.989
+we are subscribing to the odometer and to the scan mainly.
+
+00:18:31.000 --> 00:18:34.349
+And these are the only topics that we are going to utilize.
+
+00:18:34.979 --> 00:18:38.599
+If you want to check the frequency of the topic,
+
+00:18:38.609 --> 00:18:41.020
+all, what you need to do is to add these herds.
+
+00:18:41.310 --> 00:18:44.599
+And then the topic, for example, the scan at the moment,
+
+00:18:44.609 --> 00:18:48.859
+if I run this ro two topic herds, the scan,
+
+00:18:48.869 --> 00:18:53.579
+it will give me, you know, how many times this is
+
+00:18:53.589 --> 00:18:58.239
+being. The rate here is actually quite low because of the
+
+00:18:58.250 --> 00:19:03.079
+training that we are providing, it should be around five.
+
+00:19:03.239 --> 00:19:08.099
+This is the default one for the uh you know,
+
+00:19:08.109 --> 00:19:12.280
+for the scan, right? So uh it depends on the,
+
+00:19:13.030 --> 00:19:14.709
+you know what you're doing in your room,
+
+00:19:16.719 --> 00:19:21.290
+in your machine. Usually it should be consistent with the odometer is actually faster.
+
+00:19:21.500 --> 00:19:26.030
+However, um I mean, to make things easier also,
+
+00:19:26.040 --> 00:19:29.869
+um this is not strictly necessarily
+
+00:19:31.119 --> 00:19:36.060
+necessary, but what I have done is to also to make the
+
+00:19:36.859 --> 00:19:40.199
+frequency of the dormitory, which is 30 per second,
+
+00:19:40.939 --> 00:19:44.199
+not uh I converted it to five per second.
+
+00:19:44.709 --> 00:19:48.880
+Uh All what you need to do is to go to
+
+00:19:49.130 --> 00:19:53.680
+um to where the gazebo
+
+00:19:53.689 --> 00:19:58.010
+is total about three gazebo and look at the
+
+00:19:58.020 --> 00:20:02.780
+ones, look at the burger, the model SDF
+
+00:20:05.400 --> 00:20:09.709
+and uh you can change this in.
+
+00:20:11.469 --> 00:20:15.800
+Yeah. OK. With this TD
+
+00:20:16.030 --> 00:20:19.540
+drive which is, you know, it will give us the dormitory,
+
+00:20:19.579 --> 00:20:23.790
+this is, you know, I reduced it to five just so that
+
+00:20:23.810 --> 00:20:28.800
+when I um checking, you know, the scans and
+
+00:20:28.810 --> 00:20:31.189
+uh and whether my robot is running well,
+
+00:20:31.209 --> 00:20:34.790
+I, I don't see a lot of the those uh you know,
+
+00:20:35.160 --> 00:20:40.069
+uh odometer but it's, yeah, and that will help also to sync these two
+
+00:20:40.079 --> 00:20:44.890
+together the scan and the odometer. OK. Mhm.
+
+00:20:46.270 --> 00:20:51.180
+So uh let's go back here. Uh OK.
+
+00:20:51.189 --> 00:20:54.609
+So let me interrupt this. Um
+
+00:21:00.530 --> 00:21:04.430
+OK. Um So let's go back here.
+
+00:21:05.810 --> 00:21:08.380
+So that's what we are having um
+
+00:21:13.160 --> 00:21:14.280
+right. Um
+
+00:21:19.469 --> 00:21:24.449
+The tolerance that is put is 0.6 you can put it 0.5.
+
+00:21:24.569 --> 00:21:27.810
+I think the the requirement is 0.6 isn't it?
+
+00:21:28.270 --> 00:21:32.410
+Or, or 0.5? I think it was 0.5
+
+00:21:39.609 --> 00:21:44.489
+right? OK. And this is the goals, these
+
+00:21:44.500 --> 00:21:49.250
+are not, you know, uh set already. So the pillar
+
+00:21:49.260 --> 00:21:54.079
+here is 22, the coordinate for it. And the pillar here is minus two
+
+00:21:54.089 --> 00:21:57.550
+minus two. Uh So these should not be changed.
+
+00:21:58.119 --> 00:22:03.030
+Um OK. And then you know, I have these few the usual
+
+00:22:03.150 --> 00:22:07.709
+uh a publisher to publish our commands ie to control the
+
+00:22:07.719 --> 00:22:12.530
+robot and subscribers to read the scan and the O I hope
+
+00:22:12.540 --> 00:22:17.349
+these are already clear. Uh I said the range now this is
+
+00:22:17.359 --> 00:22:20.790
+might be also useful. Uh The range is set,
+
+00:22:20.800 --> 00:22:25.640
+the max one is 3.5 m. So after this, the scanner
+
+00:22:25.650 --> 00:22:30.550
+is going to be infinite uh
+
+00:22:30.560 --> 00:22:35.380
+right? Um less than uh range, the minimum range,
+
+00:22:35.390 --> 00:22:40.319
+which is, you know, you can play around with this if you want uh should be
+
+00:22:40.329 --> 00:22:45.280
+around 0.3 or 0.25. It
+
+00:22:45.290 --> 00:22:50.170
+depends. Um So, uh so
+
+00:22:50.180 --> 00:22:55.010
+this is uh 3.5. OK. So anything beyond this is
+
+00:22:55.020 --> 00:22:59.650
+going to be to be treated uh uh um
+
+00:23:00.020 --> 00:23:04.390
+as infinite. And yeah, I think I provided it
+
+00:23:04.400 --> 00:23:08.560
+with the, with the feet haven't died because this is what we use here.
+
+00:23:09.380 --> 00:23:13.760
+Um OK. Um And then
+
+00:23:19.349 --> 00:23:23.369
+this is where we want to uh create a client
+
+00:23:24.319 --> 00:23:28.939
+to reset the world. I saw some of you were asking about this as well.
+
+00:23:28.949 --> 00:23:33.949
+So um I mean, strictly speaking, you should be able to
+
+00:23:33.959 --> 00:23:38.569
+find this, but I just improved it. It, I thought I
+
+00:23:42.079 --> 00:23:45.819
+uh rather than you trying to do it.
+
+00:23:48.209 --> 00:23:53.069
+OK. It's simply not some standard uh gazebo feature as far as I
+
+00:23:53.079 --> 00:23:57.969
+understood from Googling and uh that's why we had a problem with it.
+
+00:23:58.699 --> 00:24:02.250
+Yeah. Yeah. Yeah, you have to do it. Uh You mean
+
+00:24:02.329 --> 00:24:07.060
+programmatically it's not here. You can go and put
+
+00:24:07.069 --> 00:24:12.030
+control, I think shift r it will reset the environment but you are
+
+00:24:12.040 --> 00:24:16.900
+resetting the clock here as well. And this is not necessarily
+
+00:24:16.910 --> 00:24:20.189
+good. But if you want to do it uh problematically,
+
+00:24:20.260 --> 00:24:25.250
+you need to create an instance of this uh client called reset
+
+00:24:25.260 --> 00:24:30.130
+the world. And it's one of those uh clients that are available
+
+00:24:30.140 --> 00:24:35.050
+for you and then you uh I'll show you now how
+
+00:24:35.060 --> 00:24:40.030
+to reset the word. OK. But we need to initialize it first uh
+
+00:24:40.040 --> 00:24:44.959
+and wait for the um to acquire
+
+00:24:44.969 --> 00:24:49.949
+this uh service. Um
+
+00:24:50.640 --> 00:24:55.140
+I might, I might stop my uh you know, this
+
+00:24:56.119 --> 00:25:00.829
+robot because it's not uh it's, it's very slow um
+
+00:25:01.589 --> 00:25:03.339
+Because I'm running it in my local machine,
+
+00:25:03.349 --> 00:25:07.069
+but you should run it in, in a zoo uh If you want,
+
+00:25:08.229 --> 00:25:12.569
+right? Uh It's now responding again. Um
+
+00:25:13.689 --> 00:25:18.359
+uh OK. Um
+
+00:25:19.359 --> 00:25:22.939
+So this is to divide the world into a grid.
+
+00:25:23.640 --> 00:25:28.579
+Uh Again, this is useful for the said uh
+
+00:25:28.829 --> 00:25:33.599
+The uh there is a resolution that I'm
+
+00:25:33.609 --> 00:25:38.510
+using which is uh 0.3 but you can play around with this,
+
+00:25:38.520 --> 00:25:42.250
+make it 0.5 for example, meter ie the grid,
+
+00:25:42.339 --> 00:25:46.930
+the cell size will be 0.5 by 0.5 or 0.3 by
+
+00:25:46.939 --> 00:25:51.849
+0.3. Um I'm dividing also the space in terms
+
+00:25:51.859 --> 00:25:56.380
+of the angular direction of the robot. Uh because you have to bear in
+
+00:25:56.390 --> 00:26:00.880
+mind. Uh If you want to disc criticize this world,
+
+00:26:01.430 --> 00:26:04.609
+you don't only need the 0.5 by 0.5. For example,
+
+00:26:04.689 --> 00:26:09.510
+cells, also the robot direction is going to
+
+00:26:09.520 --> 00:26:13.979
+to play an important role. And this is a state that you need to
+
+00:26:13.989 --> 00:26:18.910
+recognize. So uh I'm dividing here as usual with
+
+00:26:18.920 --> 00:26:22.900
+the, you know, the integer division uh the,
+
+00:26:22.910 --> 00:26:26.420
+the cell, the dimension which is 24 by four.
+
+00:26:26.770 --> 00:26:29.810
+This is what we have here. Four by four because you know,
+
+00:26:29.819 --> 00:26:33.280
+roughly it is it is a little bit more but because this is two by,
+
+00:26:33.290 --> 00:26:35.750
+this is 22 and this is minus two minus two,
+
+00:26:37.089 --> 00:26:40.189
+That's OK, you know, I assume it's a four by four.
+
+00:26:40.609 --> 00:26:45.550
+And uh um here, I'm getting how
+
+00:26:45.560 --> 00:26:50.469
+many columns do we have by dividing this DXD by the resolution?
+
+00:26:50.479 --> 00:26:55.290
+And one, how many rows same, how many orientations it
+
+00:26:55.300 --> 00:26:58.329
+is the two pi because this is the full circle of the robot,
+
+00:26:58.339 --> 00:27:03.150
+which direction of the robot and then dividing it by this resolution,
+
+00:27:03.160 --> 00:27:05.910
+this is the resolution I'm dividing, you know,
+
+00:27:05.920 --> 00:27:09.400
+effectively have eight different um
+
+00:27:11.000 --> 00:27:14.369
+disc criticized angles that the robot can take.
+
+00:27:14.390 --> 00:27:16.589
+This is what I'm assuming here. As we said,
+
+00:27:16.599 --> 00:27:20.750
+it's just for, you know, consider it for testing.
+
+00:27:21.550 --> 00:27:24.930
+Now the number of cells, this is the columns by the,
+
+00:27:24.939 --> 00:27:28.209
+by the rows or columns. This is the grid size.
+
+00:27:28.420 --> 00:27:33.250
+However, we said, you know, the number of states that we have the total is you need to
+
+00:27:33.260 --> 00:27:38.229
+multiply this and see by the number of orientation.
+
+00:27:38.239 --> 00:27:43.180
+So as as if I have eight grids on top of each other,
+
+00:27:43.189 --> 00:27:46.489
+each time the robot will take a certain direction,
+
+00:27:46.500 --> 00:27:50.359
+it will jump to this particular grid. This this will help us to
+
+00:27:51.520 --> 00:27:56.270
+uh you know, uh conceptualize this uh the
+
+00:27:56.280 --> 00:28:00.630
+world here. It's not only as we said, the position is
+
+00:28:00.640 --> 00:28:05.180
+also the orientation and the number of actions I have
+
+00:28:05.189 --> 00:28:09.859
+three. But as we said, you know, you can have more if you
+
+00:28:09.869 --> 00:28:14.469
+want uh uh where you just jump, for
+
+00:28:14.479 --> 00:28:18.420
+example, you turn um if if you have eight
+
+00:28:19.479 --> 00:28:24.459
+orientation, you might uh consider turning abruptly 90
+
+00:28:24.469 --> 00:28:27.819
+degrees or even taking smaller like, you know,
+
+00:28:27.829 --> 00:28:31.819
+instead of doing a 60 degrees, you do 30 degrees,
+
+00:28:31.829 --> 00:28:34.430
+it's up to you. Cur
+
+00:28:36.630 --> 00:28:41.339
+yeah, just a quick question. Just to make clear all this deli stuff that you are
+
+00:28:41.349 --> 00:28:45.880
+doing. It's only because you are trying to create model uh
+
+00:28:45.890 --> 00:28:50.890
+like tabular model for this robot or its recommended way to do even
+
+00:28:50.900 --> 00:28:55.719
+if we do it uh with approximation. No, I
+
+00:28:55.729 --> 00:28:59.520
+would recommend that you do the vectorized one linear model,
+
+00:28:59.530 --> 00:29:04.180
+not the grid. Uh That's what is required also in
+
+00:29:04.189 --> 00:29:08.209
+your uh so in this case, we don't need all this descript
+
+00:29:10.439 --> 00:29:14.599
+etcetera. But as I said, you know, we're building everything here,
+
+00:29:14.609 --> 00:29:18.020
+almost the only thing that will change. I'll show you later.
+
+00:29:18.030 --> 00:29:22.569
+It's just one uh function you see. Um
+
+00:29:23.060 --> 00:29:27.790
+OK. Yeah, thank you. OK.
+
+00:29:28.020 --> 00:29:33.020
+Um So then, um then the question is why
+
+00:29:33.030 --> 00:29:36.579
+do we need this vat? This is for compatibility,
+
+00:29:36.589 --> 00:29:41.280
+same for this NF And then every time we spin
+
+00:29:41.540 --> 00:29:46.459
+or it makes sense to reset, but the reset is going to be done.
+
+00:29:46.469 --> 00:29:50.939
+Anyway, any environment we need this particular function called reset.
+
+00:29:51.415 --> 00:29:56.055
+Because our, all of our algorithms use this reset function to
+
+00:29:56.064 --> 00:29:59.125
+reset the environment. So any environment that you want to create,
+
+00:29:59.135 --> 00:30:01.984
+you must have this, if you want to change names,
+
+00:30:01.994 --> 00:30:06.405
+change few things that you can't change the name for one of them is this
+
+00:30:06.415 --> 00:30:10.775
+reset. The other one is the step. And um
+
+00:30:12.020 --> 00:30:16.719
+I think there was uh one more. OK.
+
+00:30:16.729 --> 00:30:20.319
+Um And the s of course, the S underscore
+
+00:30:21.729 --> 00:30:26.109
+um right. So what do we have there now? Um in the
+
+00:30:26.119 --> 00:30:30.920
+scan, let me start by the scan in this scan function here.
+
+00:30:31.239 --> 00:30:34.959
+Uh I'm taking the, this is a subscriber.
+
+00:30:35.380 --> 00:30:40.239
+This is the function that I passed up for the subscriber uh
+
+00:30:40.250 --> 00:30:44.579
+underscore the S small letter. Uh
+
+00:30:46.099 --> 00:30:49.359
+I think uh yeah. Um
+
+00:30:50.680 --> 00:30:55.400
+So we pass this scan function to the subscriber
+
+00:30:55.619 --> 00:31:00.099
+and we have this is the data that is being passed to it
+
+00:31:00.339 --> 00:31:04.280
+by the subscriber uh by the publisher. You know,
+
+00:31:04.290 --> 00:31:06.800
+when we publish the subscriber will, will,
+
+00:31:06.810 --> 00:31:10.900
+will catch these scans and uh it will have them here.
+
+00:31:12.069 --> 00:31:15.650
+Um This is done for us. We don't need to do this part.
+
+00:31:15.660 --> 00:31:18.089
+This is the, you know, the good thing about publish,
+
+00:31:18.099 --> 00:31:22.880
+subscribe and now I'm converting them into an N pr A,
+
+00:31:23.130 --> 00:31:27.250
+then if it is infinite, this is when the,
+
+00:31:27.939 --> 00:31:32.719
+the range becomes like, you know, above 3.5 I'm curbing them
+
+00:31:32.729 --> 00:31:37.280
+all to 3.5 right? Because I don't want to deal with infinite
+
+00:31:37.550 --> 00:31:42.359
+scans. This is a hustle for us. So I set
+
+00:31:42.369 --> 00:31:47.010
+them to um the maximum range range, which is 3.5.
+
+00:31:47.020 --> 00:31:50.459
+Anything beyond that? The scanner doesn't recognize the,
+
+00:31:50.469 --> 00:31:55.050
+you know whether it is four or 5 m, everything is infinite for it
+
+00:31:55.060 --> 00:31:56.449
+after the 3.5.
+
+00:31:59.729 --> 00:32:04.619
+OK? And this the both is just for us to read and see
+
+00:32:04.630 --> 00:32:09.439
+what's going on. Uh You can turn this off.
+
+00:32:09.449 --> 00:32:13.260
+I mean, it is by default, it's false up in the uh
+
+00:32:14.310 --> 00:32:19.260
+in our function. Uh The the dormitory
+
+00:32:19.270 --> 00:32:23.640
+is another subscriber. This will uh I'm
+
+00:32:23.650 --> 00:32:28.020
+reading into my class here. The X would be the position,
+
+00:32:28.030 --> 00:32:31.729
+the X position Y will be the right position of the robot.
+
+00:32:32.260 --> 00:32:36.839
+Uh It's given by the dormitory and theta is the
+
+00:32:36.849 --> 00:32:41.839
+orientation. However, I have a function which
+
+00:32:41.849 --> 00:32:46.699
+will give me uh this is in because this orientation is in
+
+00:32:47.359 --> 00:32:49.780
+and it's really hard for you to, you know,
+
+00:32:49.790 --> 00:32:54.530
+to understand what's going on there. Um It's far easier for us to
+
+00:32:54.540 --> 00:32:58.550
+deal with oiler um um
+
+00:33:00.680 --> 00:33:05.310
+uh angles. So uh hence I'm con
+
+00:33:05.640 --> 00:33:10.329
+I'm providing you with this as well. I know that this is one of the things that you
+
+00:33:10.339 --> 00:33:15.119
+might want to know. And so I provided you with this
+
+00:33:15.130 --> 00:33:20.040
+utility, the, your uh basically we're taking the arc tangent
+
+00:33:20.050 --> 00:33:24.199
+of the uh readings of the orientation. And you know,
+
+00:33:24.209 --> 00:33:27.459
+to get the, the, the Y is the, because, you know,
+
+00:33:27.469 --> 00:33:32.449
+we are, we are having our robot on, on a to these
+
+00:33:32.459 --> 00:33:37.290
+flat surface, there is no uh changes in
+
+00:33:37.300 --> 00:33:40.239
+the, you know, in the other angle. So, you know,
+
+00:33:40.250 --> 00:33:43.339
+when we turn the robot in place, we are changing the role,
+
+00:33:43.349 --> 00:33:47.540
+the other ones, the role and other angles are not being changed.
+
+00:33:48.819 --> 00:33:53.560
+And OK. Uh the
+
+00:33:53.569 --> 00:33:57.670
+beach and the road. Um I think that's it,
+
+00:33:57.680 --> 00:34:02.349
+you know, I'm just now converting it into this array just for
+
+00:34:02.359 --> 00:34:07.280
+reading. To be honest, you can place this inside the verbose because we don't utilize
+
+00:34:07.290 --> 00:34:10.250
+this. I'm already always utilizing the X directly,
+
+00:34:10.260 --> 00:34:14.500
+the Y and the theta. So there are few things which you can change yourself,
+
+00:34:14.510 --> 00:34:18.800
+don't feel like, you know, this has to be in this way.
+
+00:34:18.929 --> 00:34:21.520
+However, there are things which are very subtle.
+
+00:34:22.040 --> 00:34:25.620
+Uh you know, if you change them, you know,
+
+00:34:25.629 --> 00:34:29.810
+the, the, the, the the robot might not work well.
+
+00:34:31.270 --> 00:34:32.719
+OK. Um
+
+00:34:42.729 --> 00:34:47.729
+The goal is the angular distance between the uh the robot
+
+00:34:47.739 --> 00:34:51.010
+and one of the goals, usually I use the,
+
+00:34:51.020 --> 00:34:55.770
+of course, we, you know, the nearest goal And this concept is important
+
+00:34:55.780 --> 00:35:00.360
+to understand it. Um What we're doing
+
+00:35:00.370 --> 00:35:04.840
+here is to obtain the coordinates of the goal
+
+00:35:05.320 --> 00:35:09.389
+that I'm passing here through. And then uh
+
+00:35:10.729 --> 00:35:15.219
+and then these coordinates and the XY are the coordinates of the
+
+00:35:15.229 --> 00:35:20.149
+robot. So X go, Y go are the coordinates of the goal
+
+00:35:20.280 --> 00:35:24.290
+Xyx and Y are the coordinates of the robot.
+
+00:35:24.360 --> 00:35:29.149
+And then we again, we doing the arc tangent because that will give us
+
+00:35:29.159 --> 00:35:33.850
+the angle in radiant and then you can
+
+00:35:33.860 --> 00:35:38.780
+convert it. And usually, you know, I'm adding two P so that
+
+00:35:38.790 --> 00:35:42.530
+we don't have pi plus pi it's your choice.
+
+00:35:42.540 --> 00:35:47.489
+You can do either. And I'm rounding it, which is,
+
+00:35:47.949 --> 00:35:52.120
+I know that it's not, but we should round
+
+00:35:52.129 --> 00:35:55.489
+only towards the end where we do the differences.
+
+00:35:55.500 --> 00:36:00.469
+But uh in order to make it easier for me to test
+
+00:36:00.479 --> 00:36:03.479
+and so on, I rounding here returning around one,
+
+00:36:03.489 --> 00:36:06.860
+but you again, you can, you can choose elect not to.
+
+00:36:08.370 --> 00:36:13.189
+This is the Euclidean distance. Um This goal
+
+00:36:13.199 --> 00:36:18.000
+is the, is the distance between the robot and the nearest goal.
+
+00:36:18.010 --> 00:36:21.649
+For example, this one here, uh when it's in this,
+
+00:36:21.659 --> 00:36:26.250
+in this upper uh uh half, if it's in the lower
+
+00:36:26.260 --> 00:36:30.590
+half, uh it depends, of course, it depends on the quarter
+
+00:36:30.850 --> 00:36:34.669
+anyway, if it's here, for example, this will be the goal.
+
+00:36:34.679 --> 00:36:39.500
+If it's up, this one will be the goal. Um So the
+
+00:36:39.510 --> 00:36:43.629
+distances I'm try, I'm starting them as infinite and then um
+
+00:36:45.389 --> 00:36:50.179
+calculating the distance as usual, the X and the Y subtract them and
+
+00:36:50.189 --> 00:36:55.120
+then square the differences and
+
+00:36:55.129 --> 00:37:00.080
+add them up is the US clon and then taking the minimum one and then
+
+00:37:00.090 --> 00:37:03.500
+obtaining the goal of the minimum distance,
+
+00:37:03.510 --> 00:37:06.419
+which is the nearest goal. This is what we have here.
+
+00:37:06.560 --> 00:37:11.139
+And then uh I'm returning the distance to this
+
+00:37:11.209 --> 00:37:14.320
+after this is to take the square root of it.
+
+00:37:14.959 --> 00:37:19.689
+Uh part of 0.5 will square root the distance because it's already
+
+00:37:19.699 --> 00:37:24.139
+squared and then returning all near score.
+
+00:37:26.360 --> 00:37:31.179
+The at goal is another uh utility function that
+
+00:37:31.189 --> 00:37:36.060
+is also useful. Uh It will tell you or tell us uh
+
+00:37:36.810 --> 00:37:41.770
+which, whether the robot is actually reached the goal within this tolerance,
+
+00:37:41.780 --> 00:37:46.620
+the 0.6 tolerance. So uh again,
+
+00:37:46.629 --> 00:37:51.610
+going through the different goals and then checking if the
+
+00:37:51.620 --> 00:37:56.260
+X is less or equal this, the gold plus minus
+
+00:37:56.270 --> 00:38:01.250
+tolerance and the Y is the same, then uh
+
+00:38:01.260 --> 00:38:04.489
+you know, it is, it is considered uh you know,
+
+00:38:04.500 --> 00:38:09.300
+we are reaching the, we reach the goal, this is to terminate our episode.
+
+00:38:09.310 --> 00:38:14.179
+Otherwise, you know, we don't know uh you must have the
+
+00:38:14.189 --> 00:38:18.120
+end obviously because if you do the all that means that if the robot reached here,
+
+00:38:18.129 --> 00:38:20.590
+for example, it will terminate because it is,
+
+00:38:21.070 --> 00:38:25.629
+you know, it has almost the same. Uh I
+
+00:38:25.639 --> 00:38:28.949
+think it's the x axis is here, by the way,
+
+00:38:28.959 --> 00:38:33.479
+it's vertical, you can see it and the Y axis is,
+
+00:38:33.489 --> 00:38:37.750
+is is horizontal in this case, in the environment.
+
+00:38:38.729 --> 00:38:43.389
+OK. Um And if we are at goal, we just indicate this always,
+
+00:38:43.399 --> 00:38:47.709
+regardless whether it is variable is set to true or not because we
+
+00:38:47.719 --> 00:38:51.870
+want to know whether we reach the goal, OK?
+
+00:38:51.979 --> 00:38:56.620
+At all. Uh It's, it will tell us if we have hit a wall or the
+
+00:38:56.629 --> 00:39:01.310
+robot hits a wall and that by checking, taking the
+
+00:39:01.320 --> 00:39:04.860
+minimum of the range on the left and the right,
+
+00:39:05.080 --> 00:39:08.570
+uh I think it was a who asked me about the,
+
+00:39:09.060 --> 00:39:13.820
+you know, uh the scans. Um this term
+
+00:39:13.830 --> 00:39:17.469
+here, it will check the scan on the left and on the right.
+
+00:39:17.840 --> 00:39:22.719
+Uh but not necessarily the front and you can
+
+00:39:22.820 --> 00:39:25.330
+change here. The range, the range here is four,
+
+00:39:25.340 --> 00:39:30.209
+but really, you can take 10, you can take uh whatever you find
+
+00:39:30.219 --> 00:39:35.120
+suitable um for you. Uh If you add more,
+
+00:39:35.129 --> 00:39:39.760
+it's going to be more sensitive and that can be useful or not.
+
+00:39:39.770 --> 00:39:43.879
+Depends, for example, if you know, if you have the robot,
+
+00:39:44.409 --> 00:39:48.429
+you know, a world behind the robot is not that problematic,
+
+00:39:48.439 --> 00:39:50.750
+but if it is in front, then it is, you know,
+
+00:39:50.760 --> 00:39:55.479
+it needs to check it earlier anyway. So
+
+00:39:55.489 --> 00:39:58.050
+this will tell us if it's at all and hence,
+
+00:39:58.060 --> 00:40:00.439
+it will allow us to reset the environment.
+
+00:40:01.389 --> 00:40:06.340
+No, the reward function is uh
+
+00:40:06.909 --> 00:40:11.389
+it will take, take the distance to go to the uh so
+
+00:40:11.449 --> 00:40:14.300
+Euclidean distance and the angular distance.
+
+00:40:14.770 --> 00:40:19.419
+And then uh we'll check if, if the robot is at goal
+
+00:40:19.719 --> 00:40:23.979
+or at wall or the action is straightforward or
+
+00:40:23.989 --> 00:40:28.250
+otherwise. OK. And then it will tell us the type,
+
+00:40:28.399 --> 00:40:32.530
+this is similar to what we've done for the uh do you remember which,
+
+00:40:32.540 --> 00:40:33.909
+which environment
+
+00:40:37.689 --> 00:40:38.919
+anyone can tell me?
+
+00:40:47.020 --> 00:40:52.000
+Come on with
+
+00:40:52.070 --> 00:40:55.629
+the mountain car that, sorry,
+
+00:40:59.070 --> 00:41:03.080
+the mountain car environment, a mountain car.
+
+00:41:03.090 --> 00:41:07.219
+Um This is similar
+
+00:41:07.229 --> 00:41:12.179
+to uh the cliff edge. If you look
+
+00:41:12.189 --> 00:41:16.439
+at the cliff edge in the MD P uh lesson,
+
+00:41:16.449 --> 00:41:19.820
+we've done something similar to this one anyway.
+
+00:41:19.830 --> 00:41:24.629
+So uh the, the the wall is like the one the falling off
+
+00:41:24.639 --> 00:41:29.050
+the edge of the cliff. And that goal will tell us,
+
+00:41:29.060 --> 00:41:33.530
+you know, to, to terminate obviously. And uh you know,
+
+00:41:33.540 --> 00:41:36.889
+taking the distance between the two angles,
+
+00:41:37.760 --> 00:41:42.280
+robot angle and the uh and the robot
+
+00:41:42.320 --> 00:41:47.120
+goal angle, you know, these are two different
+
+00:41:47.129 --> 00:41:51.820
+angles and this difference will tell us this angle of
+
+00:41:51.830 --> 00:41:56.449
+distance. Uh I was referring to X to the goal as the angle of
+
+00:41:56.459 --> 00:42:00.620
+distance. I think I said this is the goal uh
+
+00:42:00.629 --> 00:42:03.419
+orientation, robot goal orientation, right?
+
+00:42:05.000 --> 00:42:09.959
+So it's like drawing a line, direct line between the robot and the
+
+00:42:09.969 --> 00:42:14.959
+goal. And uh what would be the angle of this with respect
+
+00:42:14.969 --> 00:42:18.500
+to the uh you know, to a fixed reference.
+
+00:42:19.000 --> 00:42:22.739
+So this is the theta goal when we take the difference between them,
+
+00:42:22.750 --> 00:42:27.699
+that will be the angular distance between the orientation of the robot and the one where is
+
+00:42:27.709 --> 00:42:32.540
+the goal and the orientation of the or where the goal the robot
+
+00:42:32.550 --> 00:42:36.770
+needs to head towards the goal. OK. So the difference,
+
+00:42:36.780 --> 00:42:40.800
+if the goal, for example, you can see the robot going up here,
+
+00:42:40.810 --> 00:42:45.649
+which is so the angular distance now between the the direction of the
+
+00:42:45.659 --> 00:42:50.260
+robot is going up and this goal would be about maybe 60 degrees,
+
+00:42:50.620 --> 00:42:55.600
+right? And we want to obtain this here. So uh the maybe
+
+00:42:55.610 --> 00:42:58.379
+the theta here of the robot when it's heading up,
+
+00:42:58.389 --> 00:43:02.860
+it will be zero because this is the difference is a vertical.
+
+00:43:03.179 --> 00:43:07.610
+Uh So this is now zero, the theta of the robot is zero and
+
+00:43:07.620 --> 00:43:12.560
+the the the the of the goal relative to the position of
+
+00:43:12.570 --> 00:43:17.260
+the robot about here, it's about 60 degrees and the difference would be
+
+00:43:17.270 --> 00:43:19.820
+60 if the robot is heading, for example,
+
+00:43:19.830 --> 00:43:24.159
+this way it is here for here, for example,
+
+00:43:24.370 --> 00:43:28.939
+then it will be 90 degrees and so on. Uh OK,
+
+00:43:28.949 --> 00:43:32.350
+if it's going horizontally like that
+
+00:43:33.489 --> 00:43:36.810
+anyway, this will tell us, tell us the distance,
+
+00:43:36.820 --> 00:43:41.360
+the angular distance, it's a well known concept check it.
+
+00:43:41.370 --> 00:43:45.080
+Um what is an an distance if you're not familiar with it?
+
+00:43:46.489 --> 00:43:49.169
+And if it is, if the goal is this lowered one,
+
+00:43:49.179 --> 00:43:51.790
+the this is goal zero and this is gold one.
+
+00:43:52.110 --> 00:43:56.899
+If it's one, then I'm subtracting pi because you know of the orientation of the goal
+
+00:43:56.909 --> 00:44:01.149
+is um is the uh is mainly in the negative here.
+
+00:44:01.370 --> 00:44:06.110
+And so uh I needed to subtract pi and then I'm rounding
+
+00:44:06.120 --> 00:44:11.110
+the this and taking the absolute also again um
+
+00:44:11.500 --> 00:44:16.419
+of this uh the distance. OK. So why are
+
+00:44:16.429 --> 00:44:18.459
+we doing that? Because we want, you know,
+
+00:44:18.469 --> 00:44:23.010
+the orientation and the distance to the goal to participate in rewarding
+
+00:44:23.020 --> 00:44:27.659
+the robot to incent it to reach the goal.
+
+00:44:28.030 --> 00:44:32.530
+Um This is, this is a,
+
+00:44:33.830 --> 00:44:38.159
+a kind of relaxation of the requirement of,
+
+00:44:38.169 --> 00:44:42.370
+you know, having to reach the goal without only from a minimal
+
+00:44:43.489 --> 00:44:48.149
+signal, which is for example, to provide always minus one as a signal that can
+
+00:44:48.159 --> 00:44:52.489
+work, it will take longer, much longer to uh uh
+
+00:44:52.500 --> 00:44:57.360
+to uh to train. And hence, I, you know, I want you
+
+00:44:57.370 --> 00:45:01.179
+to uh have a good time training your robots.
+
+00:45:01.429 --> 00:45:03.889
+And then uh that will, that should help
+
+00:45:06.159 --> 00:45:11.040
+here is just printing and this is where we want to check if the type
+
+00:45:11.050 --> 00:45:14.419
+is one, meaning that the robot hit a wall,
+
+00:45:14.429 --> 00:45:17.810
+then we are resetting, right? We set the environment,
+
+00:45:17.820 --> 00:45:22.810
+we already uh know from this, what would be the reward
+
+00:45:22.820 --> 00:45:27.189
+because I obtained it here, right?
+
+00:45:27.610 --> 00:45:31.350
+And uh that we usually we penalize, for example,
+
+00:45:31.360 --> 00:45:36.250
+the uh the the robot when it hits the goal by minus
+
+00:45:36.280 --> 00:45:41.149
+100 or something like that. And we reward the robot if it is at the goal
+
+00:45:41.159 --> 00:45:44.399
+by plus 100 or plus 10, whatever, you know,
+
+00:45:44.409 --> 00:45:46.750
+you should experiment with these things.
+
+00:45:48.159 --> 00:45:51.330
+OK? And then we're returning the reward the final,
+
+00:45:51.340 --> 00:45:56.050
+which is the total sum including the distance and whether the
+
+00:45:56.060 --> 00:46:00.139
+reward, whether the robot, the robot hit a wall or
+
+00:46:00.149 --> 00:46:03.939
+reached a goal plus the distance, right?
+
+00:46:04.760 --> 00:46:09.600
+Uh Here, I'm saying if, if the type is nonzero,
+
+00:46:09.610 --> 00:46:13.850
+it means it, it didn't hit a wall then penalize otherwise.
+
+00:46:13.860 --> 00:46:18.770
+Uh sorry. Uh I'm saying here, if the, if
+
+00:46:18.780 --> 00:46:23.360
+the type is nonzero, ie if the robot didn't reach the goal,
+
+00:46:23.370 --> 00:46:26.189
+then penalize it. Otherwise, there is no need to penalize.
+
+00:46:26.199 --> 00:46:30.909
+And you know, even if the this way, even if the robot hits the wall
+
+00:46:30.919 --> 00:46:33.860
+near the goal, then that's OK. It doesn't,
+
+00:46:33.870 --> 00:46:38.479
+you know it will, it will help also to speed up your uh your train
+
+00:46:40.729 --> 00:46:43.989
+and returning these two, these three things,
+
+00:46:44.000 --> 00:46:46.669
+the reward, the type, if it's zero or not,
+
+00:46:46.679 --> 00:46:49.790
+you reach the goal or not, this is like done.
+
+00:46:50.120 --> 00:46:54.620
+OK? This is, it means it, we're done if type is zero,
+
+00:46:54.919 --> 00:46:58.419
+if the S type is one means we hit the robot hit,
+
+00:46:58.429 --> 00:47:03.169
+hit a goal, a wall. OK? And
+
+00:47:03.179 --> 00:47:06.669
+this is now the state representation that we talked about.
+
+00:47:07.449 --> 00:47:11.409
+Uh you need later to change this into something vectorized.
+
+00:47:11.419 --> 00:47:16.340
+This one is returning just a, an index of the current grid with
+
+00:47:16.350 --> 00:47:21.070
+and with the orientation, the the space is quite big
+
+00:47:21.080 --> 00:47:25.860
+because we have, you know, divided the grid four by four into
+
+00:47:26.159 --> 00:47:30.850
+those 0.3 by 0.3 cells uh plus
+
+00:47:30.870 --> 00:47:35.379
+stand by eight orientations. But uh you can,
+
+00:47:35.389 --> 00:47:39.290
+you know, you can see that it's, it's quite big space.
+
+00:47:39.300 --> 00:47:43.790
+But uh you know, the robot can, can learn to an extent you have to bear in mind
+
+00:47:43.800 --> 00:47:48.639
+that uh also the uh the
+
+00:47:48.649 --> 00:47:53.459
+X and the Y can be not uh accurate of the
+
+00:47:53.469 --> 00:47:57.820
+robot. Um OK. Now, for the
+
+00:47:57.830 --> 00:48:02.300
+control to stabilize, you know, our robot,
+
+00:48:02.969 --> 00:48:07.840
+um I'm using a loop for the spin. Uh
+
+00:48:07.850 --> 00:48:12.270
+I'm not using the spin, I'm using the spin one because this is this is will
+
+00:48:12.280 --> 00:48:17.070
+be uh better. It will provide us with the more
+
+00:48:17.080 --> 00:48:21.550
+control and allow us just allow the um uh the
+
+00:48:21.560 --> 00:48:26.219
+publisher to publish spin one ie execute the current
+
+00:48:26.229 --> 00:48:30.560
+um you know, whatever is in the publish in the publisher
+
+00:48:30.979 --> 00:48:35.909
+and then return, I'm doing it several times because that will provide the
+
+00:48:35.919 --> 00:48:40.770
+stability and will flush our if there is anything
+
+00:48:40.780 --> 00:48:45.610
+not executed yet and will help to uh obtain those also
+
+00:48:45.620 --> 00:48:50.620
+lots of readings, not just uh have one point of
+
+00:48:50.629 --> 00:48:54.500
+failure. You know this concept in engineering one point of failure if,
+
+00:48:54.510 --> 00:48:58.780
+if I have just once and one, I spin once and I,
+
+00:48:58.790 --> 00:49:03.659
+I don't, I didn't get the uh the
+
+00:49:03.669 --> 00:49:07.300
+dormitory for some reason for due to the delay or the,
+
+00:49:07.489 --> 00:49:12.419
+you know, the hardware is having problem to cope with this many uh
+
+00:49:12.429 --> 00:49:17.360
+cycles as well as when same with
+
+00:49:17.370 --> 00:49:20.889
+the scan. Then that would be problematic.
+
+00:49:20.899 --> 00:49:25.719
+I want a more reliable signal that will come from the sensors and
+
+00:49:25.729 --> 00:49:29.820
+this spinning more than once will provide this stability.
+
+00:49:31.800 --> 00:49:36.750
+OK. So the step um you know, this is not strictly necessary to have a
+
+00:49:36.760 --> 00:49:41.020
+as 11 is this forward moving forward
+
+00:49:41.510 --> 00:49:44.620
+and you can have whatever you want as the default,
+
+00:49:44.949 --> 00:49:47.370
+it makes sense to have the forward as the default.
+
+00:49:47.879 --> 00:49:52.620
+Uh I'm also providing this backwards. But as you might have noticed,
+
+00:49:52.629 --> 00:49:57.389
+I'm assuming that we have only three actions because really,
+
+00:49:57.399 --> 00:50:00.860
+you know, if you remember with the uh with the,
+
+00:50:01.770 --> 00:50:06.310
+with the number of uh choosing an action will be always
+
+00:50:06.320 --> 00:50:09.790
+positive, the index of an action. So it's either 01 or two.
+
+00:50:09.909 --> 00:50:13.250
+This minus one is for us to check things.
+
+00:50:13.260 --> 00:50:17.370
+For example, when we were, if you want to test for the angles,
+
+00:50:17.379 --> 00:50:22.000
+if you want just not to turn, you just move forward or backward and see the
+
+00:50:22.010 --> 00:50:24.090
+effect of that, you can, you can do that,
+
+00:50:24.520 --> 00:50:28.959
+that uh that utility is here for you, but it will not be
+
+00:50:28.969 --> 00:50:33.770
+utilized the A minus one. It will not be utilized by any of our
+
+00:50:33.780 --> 00:50:38.489
+algorithms RL algorithms. All of them, they utilize 01 or two or
+
+00:50:38.500 --> 00:50:42.570
+more. If you have, if you want more, you can provide more in the positive
+
+00:50:43.489 --> 00:50:48.479
+range. And here we are spinning uh N
+
+00:50:48.489 --> 00:50:53.229
+number of times this self N is don't confuse this with
+
+00:50:53.239 --> 00:50:56.459
+the number of, you know, with the ntep salsa.
+
+00:50:56.729 --> 00:50:59.729
+For example, we are dealing here with the environment,
+
+00:50:59.739 --> 00:51:03.719
+not with an RL algorithm and it should not be,
+
+00:51:03.729 --> 00:51:07.790
+you know, confusing. But anyway, and here is the number of spins that we are doing
+
+00:51:08.520 --> 00:51:12.600
+and it's a hyper parameter. Uh It's set around
+
+00:51:12.610 --> 00:51:17.479
+3028 something like that. Uh You can play around with this to
+
+00:51:17.489 --> 00:51:22.399
+make it you, you know your own way. Uh We're
+
+00:51:22.409 --> 00:51:26.889
+spinning more than uh if we are moving forward than when we are spinning
+
+00:51:26.979 --> 00:51:31.149
+when we are turning because turning needs to be,
+
+00:51:31.159 --> 00:51:35.760
+it's a more uh nuanced. It needs to be a little bit more
+
+00:51:35.770 --> 00:51:40.679
+careful when we are turning. Not just to be to overturn if you like.
+
+00:51:41.449 --> 00:51:46.110
+Um OK. And then I'm calling the reward function to
+
+00:51:46.120 --> 00:51:49.270
+return our reward and whether we've done or not.
+
+00:51:49.780 --> 00:51:54.550
+And the this is not used but it's there for you if you want to utilize it.
+
+00:51:55.550 --> 00:52:00.139
+And then at the end, we are returning the self ss and
+
+00:52:00.149 --> 00:52:03.899
+reward and done. Actually, I might have said this is needed.
+
+00:52:03.909 --> 00:52:08.820
+I don't think you need this underscore it will be
+
+00:52:08.830 --> 00:52:12.889
+as long as it is here. You calling it something consistent.
+
+00:52:13.000 --> 00:52:16.899
+I think you you'd be OK. But for consistency with other,
+
+00:52:17.120 --> 00:52:21.610
+you know, our coverage, we use this as underscore to
+
+00:52:21.620 --> 00:52:24.939
+represent obtaining a state.
+
+00:52:27.620 --> 00:52:32.570
+OK. Stop obviously will stop the robot. There
+
+00:52:32.580 --> 00:52:37.389
+is an important thing here which is I'm calling stop every time I'm doing an
+
+00:52:37.399 --> 00:52:41.989
+action, I'm calling a stop after it and the stop will do
+
+00:52:42.270 --> 00:52:47.030
+also a number of spins here, however, it is far less as I'm dividing by
+
+00:52:47.040 --> 00:52:51.629
+eight here over N and that's to, uh
+
+00:52:51.969 --> 00:52:56.370
+yeah, that's to make um that to stop.
+
+00:52:56.629 --> 00:53:01.510
+So to have a well defined, you know, actions and hence well
+
+00:53:01.520 --> 00:53:04.540
+defined behavior you see here that, you know,
+
+00:53:04.550 --> 00:53:08.510
+it's not, you can, you can see that there is a little bit of stops,
+
+00:53:08.520 --> 00:53:10.429
+but it's really smooth because, you know,
+
+00:53:10.439 --> 00:53:15.409
+I tried to make it as smooth as possible with these settings of the end and the rest
+
+00:53:15.419 --> 00:53:18.939
+of it and the frequency, frequency plays an important role as well.
+
+00:53:19.600 --> 00:53:23.429
+Um But we are stopping after each action so that,
+
+00:53:23.439 --> 00:53:28.139
+you know, if you don't, the robot will keep moving because you publish something
+
+00:53:28.510 --> 00:53:30.750
+and the topic as long as this, you know,
+
+00:53:30.760 --> 00:53:35.709
+this um um the robot will
+
+00:53:35.719 --> 00:53:39.780
+see that it is certain speed it, whenever you spin,
+
+00:53:39.790 --> 00:53:43.860
+it will keep doing it. You might argue that you don't need it.
+
+00:53:43.870 --> 00:53:48.790
+It's OK. Try and see whatever produce I provided
+
+00:53:48.800 --> 00:53:53.800
+here this for you to experiment with. And you know,
+
+00:53:53.810 --> 00:53:58.310
+there, there might be some redundancies that you might get away by
+
+00:53:58.320 --> 00:54:03.149
+removing them. So, you know, experiment uh don't just
+
+00:54:04.540 --> 00:54:08.939
+uh you know, keep this as is uh for the reset,
+
+00:54:08.949 --> 00:54:11.550
+this is where we are resetting the environment.
+
+00:54:12.040 --> 00:54:15.209
+Um I could have done just one here, right.
+
+00:54:15.219 --> 00:54:19.189
+OK. This, this is, this is the call here and that will work.
+
+00:54:19.870 --> 00:54:23.570
+But uh if you see that there might be some,
+
+00:54:23.580 --> 00:54:27.879
+you know, something in the queue of the robot that uh that needed to
+
+00:54:27.889 --> 00:54:32.810
+be executed. And this delay in the hardware can
+
+00:54:32.820 --> 00:54:35.030
+cause problems. For example, if you reset,
+
+00:54:35.320 --> 00:54:38.639
+you see if you reset one, sometimes you see the robot moved,
+
+00:54:38.820 --> 00:54:43.000
+you know, already due to other previous
+
+00:54:43.010 --> 00:54:47.850
+episodes or previous actions that are in the queue and
+
+00:54:47.860 --> 00:54:51.300
+hence, we needed to flush them. So I'm resetting ones,
+
+00:54:51.560 --> 00:54:55.399
+of course, you can remove this for loop or experiment with more
+
+00:54:57.689 --> 00:55:02.330
+uh stuff. Uh And then I'm moving
+
+00:55:02.340 --> 00:55:07.110
+slightly this speed 0.001 just also to make sure
+
+00:55:07.120 --> 00:55:11.709
+that, you know, we are flushing anything and we are getting an
+
+00:55:11.719 --> 00:55:16.489
+um an up to date odometer and scan because this is
+
+00:55:16.500 --> 00:55:21.179
+another problem. So the the the hardware reading of the
+
+00:55:21.189 --> 00:55:24.550
+scan will be delayed and hence it is it has the,
+
+00:55:24.560 --> 00:55:29.540
+the scan of the previous reading. This can cause the robot for example
+
+00:55:29.550 --> 00:55:34.139
+to be uh to uh to remember it's
+
+00:55:34.149 --> 00:55:38.689
+reading near the uh the uh the goal. And as
+
+00:55:39.520 --> 00:55:44.429
+you see that it's just uh you have a very
+
+00:55:44.439 --> 00:55:49.000
+short episodes and these are actually bugs because of the
+
+00:55:49.010 --> 00:55:53.840
+delays in the sensors. And this one here is uh four loop
+
+00:55:54.040 --> 00:55:58.449
+as well as resetting again after it, make sure that we don't get this
+
+00:55:58.459 --> 00:56:01.189
+artifact or problem or bug.
+
+00:56:03.629 --> 00:56:07.600
+Uh John Hi. Um I saw in other
+
+00:56:07.610 --> 00:56:12.219
+tutorials that people who, who have done similar things that they
+
+00:56:12.229 --> 00:56:17.139
+pause in the physics, then reset the environment and then unpause the physics
+
+00:56:17.149 --> 00:56:21.969
+again. So to avoid those. Um, yeah. Yeah.
+
+00:56:21.979 --> 00:56:24.199
+Yeah, you can, you can try this as well.
+
+00:56:24.209 --> 00:56:26.300
+Of course, it's not the only one I think.
+
+00:56:27.060 --> 00:56:30.199
+I, uh, yeah, I said there are, there might be some other,
+
+00:56:30.209 --> 00:56:34.949
+other ways to do it but, uh, um, I think that that
+
+00:56:35.370 --> 00:56:40.290
+h is, is less uh technical, um,
+
+00:56:40.929 --> 00:56:44.560
+easier to do and, uh, you know, can get us by.
+
+00:56:44.860 --> 00:56:48.639
+Um But yeah, by all means you can try other things as well.
+
+00:56:49.209 --> 00:56:52.489
+Bear in mind that in reality, you know, to be honest with you,
+
+00:56:52.500 --> 00:56:56.199
+uh if you have a, a real robot, you will not be able to do this.
+
+00:56:56.209 --> 00:56:59.729
+You have to uh either you just shut down,
+
+00:56:59.739 --> 00:57:02.870
+for example, the whole robot which is not preferred,
+
+00:57:02.879 --> 00:57:07.860
+of course, it will take long. Uh So this hack might work
+
+00:57:07.870 --> 00:57:12.520
+better for real robots. Of course, there are ways
+
+00:57:12.530 --> 00:57:16.409
+which, you know, some sensors, if you look at the,
+
+00:57:16.419 --> 00:57:21.080
+the um you know, they provided that they provide a way mechanism to flush the
+
+00:57:21.090 --> 00:57:26.000
+sensor so you can call them directly. But that means that we have to dig deeper into the
+
+00:57:26.010 --> 00:57:30.719
+hardware. And um yeah, OK. You know, if
+
+00:57:30.729 --> 00:57:35.169
+you are uh if you dealt with the robot for a long time and
+
+00:57:35.179 --> 00:57:39.919
+robotics, then yeah, you'd be able. But for the kind of knowledge that we have this is I
+
+00:57:39.929 --> 00:57:44.439
+think, you know, and a good, good utility?
+
+00:57:45.350 --> 00:57:48.770
+Mm. Well, yeah, thank you for uh for pointing this out.
+
+00:57:48.780 --> 00:57:53.500
+Uh OK. And this render is for
+
+00:57:53.510 --> 00:57:56.409
+compatibility. So we needed two things for compatibility,
+
+00:57:56.419 --> 00:58:00.699
+the V I think V max and this uh render.
+
+00:58:01.070 --> 00:58:03.260
+OK. Uh Any question?
+
+00:58:09.580 --> 00:58:14.300
+Oh, I have uh questions. Uh May you go up a little bit
+
+00:58:14.310 --> 00:58:18.919
+about the scan and part and the
+
+00:58:18.929 --> 00:58:23.929
+orient part? Yeah. Ok.
+
+00:58:23.939 --> 00:58:28.459
+But uh I want to see the code. Yeah,
+
+00:58:28.469 --> 00:58:33.179
+because uh for the orient oriental dot Y
+
+00:58:33.629 --> 00:58:37.489
+dot uh something, is it the same as the,
+
+00:58:38.159 --> 00:58:41.350
+the function of approaches? Is I, I don't remember it.
+
+00:58:41.360 --> 00:58:46.199
+Is the Odon 0.0 dot Y, are they the same or are
+
+00:58:46.209 --> 00:58:50.699
+they different? Actually the o dome? The,
+
+00:58:50.709 --> 00:58:54.550
+the Odom dot Y is what? Sorry? Uh Oh
+
+00:58:56.790 --> 00:59:01.300
+yeah, I, I mean the uh old on dot Is uh
+
+00:59:01.310 --> 00:59:06.169
+is it the same as old or en dot as those kind of things
+
+00:59:06.179 --> 00:59:10.850
+or are they two different things? Uh I'm obtaining the
+
+00:59:10.860 --> 00:59:15.419
+odometer reading in every uh you know, a
+
+00:59:15.429 --> 00:59:20.060
+few seconds according to the frequency. So um
+
+00:59:21.850 --> 00:59:24.820
+as you can see it, you know, at least we should get,
+
+00:59:24.830 --> 00:59:29.770
+get, I mean, the idea is about five times a second to obtain
+
+00:59:29.780 --> 00:59:34.370
+the odometer reading. And the X self dot X would obtain,
+
+00:59:34.379 --> 00:59:38.449
+we have the X coordinate for the robot from the odometer.
+
+00:59:38.989 --> 00:59:43.959
+The Y, the self dot Y also the uh the
+
+00:59:43.969 --> 00:59:48.399
+odometer or the, the position, the Y position of the robot also from the
+
+00:59:48.409 --> 00:59:53.070
+dormitory uh as well as the THETA, but theta is converted to,
+
+00:59:53.080 --> 00:59:56.330
+you know, to RADI. I hope I answered your question,
+
+00:59:58.989 --> 01:00:03.850
+James. Hello. Um
+
+01:00:04.409 --> 01:00:09.050
+So I'm at the point where I'm working on the second model and is it too soon to
+
+01:00:09.060 --> 01:00:13.100
+jump into that or are we sort of? No, no,
+
+01:00:13.110 --> 01:00:18.080
+no, we will, we will, I will go into connecting this environment with one of
+
+01:00:18.090 --> 01:00:22.689
+our uh you know, algorithms in in a second.
+
+01:00:22.699 --> 01:00:27.489
+Just give me uh you know, a few. But specifically as I've already done that because
+
+01:00:27.500 --> 01:00:31.530
+I've done the first model but the um specifically for like the neural network stuff,
+
+01:00:31.540 --> 01:00:32.830
+I'm wondering if we're going to cover that,
+
+01:00:32.939 --> 01:00:37.739
+right? Um No, the neural network,
+
+01:00:38.209 --> 01:00:40.659
+but it's, it's already there in the lessons.
+
+01:00:40.669 --> 01:00:45.290
+All what you need to just is to uh um you
+
+01:00:45.300 --> 01:00:50.189
+know, well, let's just start on my question because it says to use the neural network architecture with a
+
+01:00:50.280 --> 01:00:53.649
+policy gradient model. But from what I can tell it,
+
+01:00:53.659 --> 01:00:58.419
+that has not been done in the lessons because all the policy gradient stuff is using the um
+
+01:00:59.229 --> 01:01:04.110
+MD P architecture. And then there's a yes EQN on the on the new network.
+
+01:01:04.120 --> 01:01:08.189
+So yeah, I mean, that's right. That's why,
+
+01:01:08.199 --> 01:01:12.840
+you know, we needed like something that not because otherwise
+
+01:01:12.850 --> 01:01:17.709
+everything is done, you know, in the, in the code that we provided.
+
+01:01:18.010 --> 01:01:21.889
+The only thing that you need to take into account with that if you look at the Q learning,
+
+01:01:21.899 --> 01:01:24.929
+for example, the neural network Q learning that we provided.
+
+01:01:25.419 --> 01:01:30.179
+Uh the difference is that you need similar network for the V function.
+
+01:01:30.189 --> 01:01:33.540
+You have the Q network, all you need, you know,
+
+01:01:33.550 --> 01:01:38.149
+you can implement an actor critic and you can look at the actor critic
+
+01:01:38.159 --> 01:01:42.239
+implementation in, in the linear model. All the,
+
+01:01:42.250 --> 01:01:46.770
+all what you need to do is to define a new neural network for the D
+
+01:01:46.780 --> 01:01:51.760
+function and then add them to the Q uh network that
+
+01:01:51.770 --> 01:01:56.729
+you have already. And that's it. Um So OK,
+
+01:01:56.739 --> 01:02:00.320
+I'll give that a go. Um So in the, in the,
+
+01:02:00.330 --> 01:02:02.909
+in the brief, it says to not write any of our own algorithms,
+
+01:02:02.919 --> 01:02:07.629
+but um we'd have to, we'd have to pour in some of the
+
+01:02:07.689 --> 01:02:12.620
+actor critic code to be able to get that working or would that to
+
+01:02:12.679 --> 01:02:17.669
+do that? Right. That's a good question. So uh what you can do
+
+01:02:17.679 --> 01:02:21.219
+is to inherit from this uh the code that we provided.
+
+01:02:21.229 --> 01:02:25.639
+Let me, I think my uh environment maybe have
+
+01:02:25.649 --> 01:02:30.280
+collapsed here and I have to stop it. Uh
+
+01:02:31.679 --> 01:02:35.169
+OK. Uh No, actually it did. It didn't but uh
+
+01:02:36.600 --> 01:02:41.370
+um I might have pressed a lot of
+
+01:02:41.379 --> 01:02:45.899
+buttons when I was trying to uh move around.
+
+01:02:45.929 --> 01:02:49.979
+OK. Um I think I'm going to force it to quit.
+
+01:02:49.989 --> 01:02:54.159
+It doesn't matter. And hopefully we will see something uh
+
+01:02:54.169 --> 01:02:58.709
+down there. It's not scrolling.
+
+01:02:59.010 --> 01:03:01.330
+OK. Let's force it to quit,
+
+01:03:05.090 --> 01:03:08.679
+right? Did you see this, you know, it is uh
+
+01:03:10.729 --> 01:03:15.649
+still running. Um OK.
+
+01:03:15.659 --> 01:03:20.340
+Uh That's the other thing OK. If this happened to
+
+01:03:20.350 --> 01:03:24.929
+you, uh For example, your robot
+
+01:03:24.939 --> 01:03:28.479
+has uh or training stopped.
+
+01:03:30.870 --> 01:03:35.469
+And actually this is not uh this was not
+
+01:03:35.479 --> 01:03:38.209
+the uh I was running to the visual studio
+
+01:03:50.129 --> 01:03:52.260
+uh two instances.
+
+01:04:33.070 --> 01:04:33.120
+Mhm
+
+01:04:49.239 --> 01:04:54.030
+So we were talking about uh that
+
+01:04:54.040 --> 01:04:57.850
+one, right? So you have in the MRP here,
+
+01:04:59.020 --> 01:05:03.760
+you have already the implementation for the the function,
+
+01:05:04.129 --> 01:05:06.879
+right? It's there for you, you have them.
+
+01:05:07.750 --> 01:05:12.540
+And yeah, I guess my question is specifically about the algorithm that
+
+01:05:17.399 --> 01:05:22.270
+yeah, so uh you can add to them, you can just inherit from them.
+
+01:05:22.280 --> 01:05:26.739
+That's fine. Yeah. So you can uh inherit from this uh
+
+01:05:26.750 --> 01:05:30.439
+class or from any want
+
+01:05:31.229 --> 01:05:35.560
+and that should be fine. By the way, uh You reminded me
+
+01:05:36.290 --> 01:05:40.750
+now, our code is already integrated as we know and you
+
+01:05:40.760 --> 01:05:44.300
+can, you know, import from the notebooks and so on.
+
+01:05:44.429 --> 01:05:49.389
+But uh you know, in the interest of uh being able
+
+01:05:49.399 --> 01:05:54.040
+to debug better and someone of you were asking me about the intuition as well.
+
+01:05:55.500 --> 01:06:00.439
+Uh So what I did is to uh isolate the code that you
+
+01:06:00.449 --> 01:06:04.810
+need in a few uh dot P
+
+01:06:05.790 --> 01:06:10.340
+um files. And uh
+
+01:06:10.350 --> 01:06:15.290
+these will contain all the, you know, the algorithms that you might
+
+01:06:15.300 --> 01:06:20.149
+want to use. Uh RL will have the uh the one that
+
+01:06:20.159 --> 01:06:24.449
+is not vectorized. It's just the tabula algorithms in the
+
+01:06:24.459 --> 01:06:29.020
+RL. Uh the nonlinear function approximation in the
+
+01:06:29.030 --> 01:06:33.969
+RLV. And uh sorry, the linear, not the linear
+
+01:06:34.080 --> 01:06:38.989
+um um algorithms RL
+
+01:06:39.000 --> 01:06:43.879
+algorithms in RLV. And the nonlinear is in the RL and
+
+01:06:43.889 --> 01:06:47.790
+N from neural network. And you can see, you know,
+
+01:06:47.810 --> 01:06:52.709
+uh it's already, it's the same code. I haven't
+
+01:06:52.719 --> 01:06:57.639
+changed a line. I just all this will be
+
+01:06:57.649 --> 01:07:01.600
+published today. Yes. OK. Cool. Thank you.
+
+01:07:02.679 --> 01:07:06.689
+No problem. So if you are utilizing the
+
+01:07:07.439 --> 01:07:10.620
+uh you know the Jupiter notebooks and you are happy with them,
+
+01:07:10.629 --> 01:07:13.419
+that's fine. If you want to utilize these,
+
+01:07:14.629 --> 01:07:19.149
+uh it's also OK. And fine. This will allow you to debug
+
+01:07:19.159 --> 01:07:23.070
+better, you know, because it will show you where is the problem?
+
+01:07:23.080 --> 01:07:26.530
+Exactly. While with the Jupiter notebooks,
+
+01:07:26.669 --> 01:07:29.860
+it's great for learning. But then when you start to debug,
+
+01:07:30.250 --> 01:07:34.459
+um you know, it has its own
+
+01:07:34.600 --> 01:07:39.139
+issues. OK? Uh I wanted to show you also there is a
+
+01:07:39.149 --> 01:07:43.840
+utility for us to uh also
+
+01:07:43.969 --> 01:07:47.439
+to, I think it's running still this um
+
+01:07:48.300 --> 01:07:53.100
+Anyway, uh maybe not, there is a utility for us
+
+01:07:53.110 --> 01:07:57.659
+to resume training. So assume that this is,
+
+01:07:57.669 --> 01:08:00.379
+you know, collapse and it stopped, right?
+
+01:08:00.750 --> 01:08:03.959
+Um So what do we do? Well, that's not a problem.
+
+01:08:03.969 --> 01:08:08.459
+You don't need to repeat the whole uh experiment.
+
+01:08:08.469 --> 01:08:11.409
+Please don't do this because that will be like,
+
+01:08:11.429 --> 01:08:16.319
+you know, um very frustrating or what you need to do is to
+
+01:08:16.330 --> 01:08:21.200
+rerun, for example, re rerun, I'll just do it in a moment and then
+
+01:08:21.740 --> 01:08:24.709
+you can presume So say I said here, you know,
+
+01:08:24.720 --> 01:08:28.919
+three episodes and or 100 episodes doesn't matter.
+
+01:08:29.519 --> 01:08:33.738
+And then I want to resume or extent you just set the same
+
+01:08:33.749 --> 01:08:38.338
+object um salsa or instance of a salsa, uh you set the
+
+01:08:38.349 --> 01:08:43.028
+interact into resume equal two and then it will resume if there are still
+
+01:08:43.039 --> 01:08:46.298
+episodes to be run. If you want to extend,
+
+01:08:46.309 --> 01:08:49.949
+for example, here from three, when we run resume,
+
+01:08:49.958 --> 01:08:52.858
+it will not do anything else because it reached the,
+
+01:08:53.059 --> 01:08:56.179
+you know, the three here. If you want to run more,
+
+01:08:58.240 --> 01:09:02.220
+then I can set the episode to 10. And
+
+01:09:02.240 --> 01:09:07.220
+uh and then uh no,
+
+01:09:07.229 --> 01:09:10.609
+it will work. It will work and then you again,
+
+01:09:10.620 --> 01:09:15.060
+you see. Ok. So let's see. Um
+
+01:09:16.700 --> 01:09:20.600
+So I I'm not necessarily confined by this.
+
+01:09:20.879 --> 01:09:25.089
+I can as long as Yeah. Ok. So uh if it's crashed
+
+01:09:25.100 --> 01:09:30.049
+completely, this is a good point. Uh If it's crashed completely,
+
+01:09:30.060 --> 01:09:33.729
+that's um that's something else if you, if you crash
+
+01:09:34.950 --> 01:09:38.359
+because you know, uh that will
+
+01:09:39.930 --> 01:09:44.830
+remove the, the memory. Um But uh this
+
+01:09:44.839 --> 01:09:48.270
+is where you want. If you want to uh provide,
+
+01:09:48.569 --> 01:09:53.100
+for example, save your salsa pickles or
+
+01:09:53.109 --> 01:09:57.770
+something else. Can you just every now and then uh save
+
+01:09:57.779 --> 01:10:02.729
+the object into some file. It's your choice
+
+01:10:02.740 --> 01:10:06.430
+how you do it and then you can upload it again.
+
+01:10:06.439 --> 01:10:09.490
+Once you upload it, you can receive, right?
+
+01:10:09.959 --> 01:10:13.740
+I haven't provided this utility, but uh it should be fine.
+
+01:10:13.750 --> 01:10:17.959
+It should be straightforward just to check if you are not familiar with this,
+
+01:10:17.970 --> 01:10:21.270
+check on the internet, how to store things.
+
+01:10:22.100 --> 01:10:25.839
+Um Also realizing. Yeah. Yeah. Yeah. Yeah.
+
+01:10:26.910 --> 01:10:30.149
+Good, good, good stuff. I'm, I'm sure you're savvy,
+
+01:10:30.160 --> 01:10:33.200
+you know, you, you're doing this module,
+
+01:10:33.209 --> 01:10:35.709
+it's, you know, OK. Anyway,
+
+01:10:37.529 --> 01:10:38.549
+so um
+
+01:10:43.779 --> 01:10:45.799
+let's see if it is uh
+
+01:10:55.359 --> 01:11:00.189
+right. OK. Now, uh the other thing that I want to uh so
+
+01:11:00.200 --> 01:11:05.140
+here I, instead of importing from uh this approximate control,
+
+01:11:05.149 --> 01:11:08.740
+I'm importing directly from RLV everything.
+
+01:11:08.750 --> 01:11:11.330
+And then, you know, this is the environment,
+
+01:11:11.339 --> 01:11:16.290
+the V environment as usual. Uh I'm just re implementing
+
+01:11:16.299 --> 01:11:20.990
+the S in a way that I'm just uh obtaining the scans,
+
+01:11:21.669 --> 01:11:26.529
+you can do whatever I'm just doing some uh kind of hot encoding,
+
+01:11:26.540 --> 01:11:30.799
+but feel free to expand the things and give me,
+
+01:11:30.810 --> 01:11:33.879
+you know what you experimented with and uh you know,
+
+01:11:33.890 --> 01:11:38.589
+post it, you know, when you submit
+
+01:11:38.600 --> 01:11:43.560
+your, your work and then you run some other algorithm and Salsa Lamda
+
+01:11:44.589 --> 01:11:48.729
+or other algorithm. And similarly, you do
+
+01:11:50.259 --> 01:11:54.939
+uh as we did here for the RNN for the RLNN.
+
+01:11:55.299 --> 01:11:59.919
+Um I created some kind of uh
+
+01:11:59.930 --> 01:12:03.089
+com to D but you don't need necessarily,
+
+01:12:03.100 --> 01:12:06.859
+you know, convolution neural networks. If you are not familiar with them,
+
+01:12:07.120 --> 01:12:12.040
+don't feel obliged to use them, use whatever you're comfortable with.
+
+01:12:12.109 --> 01:12:14.939
+For example, you can use any shallow neural network,
+
+01:12:15.180 --> 01:12:19.810
+I don't mind. OK? Because you, you are using a scan the
+
+01:12:19.819 --> 01:12:24.379
+input, this the, you know the state input would
+
+01:12:24.390 --> 01:12:29.040
+be the same. It is the sky, let's face it do
+
+01:12:29.049 --> 01:12:31.620
+not enter, do not provide the dormitory.
+
+01:12:31.629 --> 01:12:36.600
+That will be a cheating basically. OK. No dormitory into the
+
+01:12:36.609 --> 01:12:41.370
+state, we utilize them in the reward that's fine but
+
+01:12:41.379 --> 01:12:46.200
+not in the state. Um And these sensors, you know
+
+01:12:46.209 --> 01:12:51.120
+the scanner sensors, they will be fed into instead of a
+
+01:12:51.129 --> 01:12:55.250
+simple multiplication with the with the like in the uh in
+
+01:12:55.759 --> 01:13:00.149
+the linear models in the nonlinear, we feed them
+
+01:13:00.160 --> 01:13:03.669
+into a neural network. But if the concept is the same really,
+
+01:13:04.319 --> 01:13:09.129
+OK. Um there's here, there's weight loading and there's
+
+01:13:09.140 --> 01:13:13.419
+saving weight for you. So I'm already deal with this utility.
+
+01:13:13.959 --> 01:13:18.620
+But again, you know, it's up to you, you can then reload them again
+
+01:13:18.970 --> 01:13:20.890
+if you are training with the neural network.
+
+01:13:22.830 --> 01:13:27.089
+Um OK. Uh The batch and everything is there,
+
+01:13:27.100 --> 01:13:29.970
+this is the code that we already have in the notebooks.
+
+01:13:30.310 --> 01:13:35.169
+OK? I just copied them and with the MD
+
+01:13:35.180 --> 01:13:39.149
+P, I'm providing you the extra cue and uh really,
+
+01:13:39.160 --> 01:13:44.000
+you know, uh Q underscore is implemented here.
+
+01:13:44.399 --> 01:13:48.790
+Um My storage
+
+01:13:49.259 --> 01:13:54.189
+is also implemented for you don't really need to
+
+01:13:54.200 --> 01:13:58.750
+worry about it. And the V here. So this is the V implementation and this
+
+01:13:58.759 --> 01:14:03.189
+is V underscore and underscore these are important parts.
+
+01:14:03.950 --> 01:14:08.529
+Um So yeah, you can then run whatever. For example,
+
+01:14:08.540 --> 01:14:12.009
+the DQM um algorithm is
+
+01:14:13.509 --> 01:14:18.439
+as you can see in front of you, uh you could uh take
+
+01:14:18.450 --> 01:14:22.959
+inspiration from this and just train a V
+
+01:14:22.970 --> 01:14:27.680
+function similarly, you know, we are
+
+01:14:27.689 --> 01:14:30.620
+obtaining here the badge. So it's already here for you.
+
+01:14:30.629 --> 01:14:35.580
+So the infrastructure is there for you. All you need to do is just to update,
+
+01:14:35.870 --> 01:14:39.689
+this is the update for the queues and the V will be similar.
+
+01:14:40.029 --> 01:14:43.939
+Just think about it, how to do it. Um
+
+01:14:47.500 --> 01:14:52.370
+ok. Um I hope that's helpful that
+
+01:14:52.379 --> 01:14:56.819
+should uh scaffold everything that you
+
+01:14:57.430 --> 01:15:01.479
+uh you might come across. Well, you know,
+
+01:15:01.490 --> 01:15:05.009
+almost everything there is the double DQ and it's same,
+
+01:15:05.029 --> 01:15:09.359
+same idea similar. Uh The update is a bit different
+
+01:15:11.859 --> 01:15:15.560
+and you can have a look at the differences between them.
+
+01:15:15.979 --> 01:15:20.879
+And here we are taking max, you know, the
+
+01:15:20.890 --> 01:15:25.580
+first for all of them. Here we are just uh taking first
+
+01:15:25.589 --> 01:15:28.839
+the Macs and then providing this through as,
+
+01:15:28.850 --> 01:15:33.430
+as an index for the Q. So instead of taking the Macs directly,
+
+01:15:33.620 --> 01:15:38.069
+we are obtaining the max from the, via the SN.
+
+01:15:38.379 --> 01:15:43.330
+And that, that, that's the idea of double QQN because it's going
+
+01:15:43.339 --> 01:15:48.080
+to reduce the uh it will,
+
+01:15:48.350 --> 01:15:53.339
+you know, it will do the decoupling and reduce the uh
+
+01:15:53.500 --> 01:15:57.919
+the bias and we already reduced the,
+
+01:15:58.189 --> 01:16:02.620
+the, the variance by utilizing the Q, the,
+
+01:16:02.629 --> 01:16:06.609
+the two network already in the DQN.
+
+01:16:07.399 --> 01:16:12.089
+OK. Uh I'm going to stop talking and if you
+
+01:16:12.100 --> 01:16:15.959
+want uh to ask questions, please do ask questions,
+
+01:16:31.029 --> 01:16:32.160
+no questions.
+
+01:16:37.759 --> 01:16:40.770
+Um So uh
+
+01:16:43.109 --> 01:16:47.990
+how much of the code you can, you can change?
+
+01:16:48.000 --> 01:16:52.020
+I mean, if you, if you are changing uh the environment,
+
+01:16:52.029 --> 01:16:57.029
+that's fine. Uh what I want from you is to minimize the changes
+
+01:16:57.040 --> 01:16:59.600
+that you're doing unless it is necessary.
+
+01:16:59.609 --> 01:17:03.310
+So you inherit from, as long as you're inheriting from this,
+
+01:17:04.250 --> 01:17:07.890
+uh one of the classes that we provided here,
+
+01:17:07.899 --> 01:17:12.759
+particularly I, you know, did uh the DQN
+
+01:17:14.990 --> 01:17:18.200
+here, then you'll be fine
+
+01:17:20.040 --> 01:17:23.080
+inherit from this and provide your own code.
+
+01:17:23.509 --> 01:17:27.790
+Um That's fine if you want to inherit from the
+
+01:17:27.799 --> 01:17:31.979
+PG directly, uh then
+
+01:17:31.990 --> 01:17:35.660
+justify why. And uh
+
+01:17:38.240 --> 01:17:40.750
+it should be similar to the functionality here.
+
+01:17:41.299 --> 01:17:44.029
+So particularly the update should be straightforward,
+
+01:17:44.040 --> 01:17:47.799
+not convoluted, uh you know,
+
+01:17:47.810 --> 01:17:52.600
+delving deeper into the neural network and how they,
+
+01:17:53.040 --> 01:17:57.040
+they uh they operate because that will be um
+
+01:17:57.930 --> 01:18:00.870
+that would be difficult for, you know, for marking as well.
+
+01:18:01.569 --> 01:18:06.370
+So try to um OK,
+
+01:18:06.379 --> 01:18:11.069
+sorry. Um If I may ask a question here. So this is
+
+01:18:11.080 --> 01:18:14.819
+about the um notebooks that were provided.
+
+01:18:15.240 --> 01:18:19.830
+And uh so I believe there were some updates and I'm
+
+01:18:19.839 --> 01:18:24.750
+sometimes confused about which notebooks have been updated and what you're showing now,
+
+01:18:25.060 --> 01:18:29.390
+whether that is actually in the version that I downloaded.
+
+01:18:30.060 --> 01:18:35.009
+And so would it be possible that this is indicated somehow what has
+
+01:18:35.020 --> 01:18:39.609
+been updated? And when uh
+
+01:18:39.620 --> 01:18:44.180
+yes, I mean, the the code has not been updated except maybe for
+
+01:18:44.589 --> 01:18:49.220
+uh the, I think it was the adding the
+
+01:18:49.229 --> 01:18:53.669
+videos to the uh OK.
+
+01:18:54.049 --> 01:18:58.250
+It's just I understood uh oh, maybe my understanding is incorrect.
+
+01:18:58.259 --> 01:19:02.720
+Um that lesson 16 the lesson
+
+01:19:02.729 --> 01:19:07.290
+16 notebook has been extended. What what you just showed
+
+01:19:07.299 --> 01:19:12.209
+before? Has that been provided? Right?
+
+01:19:12.220 --> 01:19:17.080
+So uh lesson 16 that I was showing is
+
+01:19:17.089 --> 01:19:21.970
+an extra help for you to address the uh you know the
+
+01:19:21.979 --> 01:19:26.549
+the assessment we provided already with you with the lesson 16.
+
+01:19:26.950 --> 01:19:30.649
+This is to help you. Yes, I understand this.
+
+01:19:30.660 --> 01:19:35.660
+It's just I haven't seen that code in that way before I
+
+01:19:35.669 --> 01:19:40.040
+believe. May maybe I'm mistaken. It might be the case.
+
+01:19:41.390 --> 01:19:44.930
+Yes, you're right. This is, this code is as I said,
+
+01:19:44.979 --> 01:19:49.870
+I'm you with this code as a kind of help because this is to
+
+01:19:49.879 --> 01:19:54.839
+be honest. OK? I don't want to say words that is going to uh you know
+
+01:19:54.850 --> 01:19:58.640
+um let me put it this way. I'm mhm
+
+01:20:01.750 --> 01:20:06.729
+You were supposed to do the this part of this code by yourself but
+
+01:20:07.720 --> 01:20:12.569
+as a scaffolding and to help you, I provided this.
+
+01:20:13.350 --> 01:20:16.290
+OK. OK. And
+
+01:20:20.649 --> 01:20:25.609
+uh yeah. OK. Uh No problem. Can you, I'm
+
+01:20:25.620 --> 01:20:30.350
+not reading uh uh If the question is, I think the
+
+01:20:30.359 --> 01:20:35.339
+question is whether or not the new version of 16 has been uploaded and not yet.
+
+01:20:35.479 --> 01:20:37.850
+Uh If this is the question, it's not yet,
+
+01:20:37.859 --> 01:20:42.500
+I'm going to upload it uh soon uh
+
+01:20:42.509 --> 01:20:46.569
+so that, you know, you can either use it or take inspiration,
+
+01:20:46.580 --> 01:20:51.069
+it's up to you. Um So yeah,
+
+01:20:54.450 --> 01:20:59.390
+no problem. Um No worries at all um in
+
+01:20:59.399 --> 01:21:03.020
+the in the consideration of um of marking,
+
+01:21:03.029 --> 01:21:07.930
+will there be any way given to, to if people have worked this stuff out themselves or
+
+01:21:07.939 --> 01:21:12.910
+is it just, of course, you know,
+
+01:21:12.919 --> 01:21:15.169
+there will be some uh
+
+01:21:17.899 --> 01:21:22.609
+uh OK, I mean, there is, there is some requirements
+
+01:21:22.660 --> 01:21:25.959
+if you've done it yourself. I think that is personally,
+
+01:21:25.970 --> 01:21:30.169
+I think that is the most rewarding experience of,
+
+01:21:30.180 --> 01:21:34.870
+of, you know, of this uh one of the most rewarding experiences in the module.
+
+01:21:35.339 --> 01:21:40.240
+Uh I will look into uh the
+
+01:21:40.250 --> 01:21:44.600
+different um implementation of the environment regardless.
+
+01:21:44.609 --> 01:21:48.120
+So you don't necessarily have to follow what,
+
+01:21:48.129 --> 01:21:52.979
+what I provided. And certainly I appreciate good code and nice code
+
+01:21:52.990 --> 01:21:57.580
+which has been done differently. So if you've done this well done,
+
+01:21:57.899 --> 01:22:01.189
+um that will be an added credit to your,
+
+01:22:01.200 --> 01:22:05.339
+to your project. But if you don't then don't feel,
+
+01:22:06.319 --> 01:22:08.240
+you know, you're behind, you're not, you,
+
+01:22:08.589 --> 01:22:13.500
+you know, you can now connect to your robot and do uh stuff
+
+01:22:13.509 --> 01:22:17.629
+that uh possibly was a little bit uh harder before to,
+
+01:22:17.640 --> 01:22:18.740
+to, to, to do.
+
+01:22:25.310 --> 01:22:28.729
+So who's uh OK. Do, do you have other questions,
+
+01:22:30.399 --> 01:22:34.120
+you know, was it clear for you what we have covered?
+
+01:22:34.520 --> 01:22:39.430
+Is it um um is it
+
+01:22:39.439 --> 01:22:43.330
+OK? Is it, is it helpful? I've got a question.
+
+01:22:43.339 --> 01:22:48.240
+Um Yeah, I think this is definitely very useful just to,
+
+01:22:48.500 --> 01:22:53.200
+to manage expectations. There's some of us that potentially haven't come from ross development
+
+01:22:53.209 --> 01:22:56.370
+backgrounds, neural networks, all of that stuff could be quite new.
+
+01:22:56.379 --> 01:23:01.140
+But this bridges that gap quite a bit. Um My question is around
+
+01:23:01.220 --> 01:23:06.220
+training times realistically, what is a ballpark figure that we should be expecting?
+
+01:23:06.229 --> 01:23:08.040
+And this might be an answer in the discussion forum.
+
+01:23:08.339 --> 01:23:11.680
+But what is a realistic training time expectation for these?
+
+01:23:13.509 --> 01:23:17.240
+Um It really varies between the hardware,
+
+01:23:17.250 --> 01:23:20.140
+I couldn't tell. And the, you know, the implementation,
+
+01:23:20.279 --> 01:23:25.189
+for example, if I change this and a little bit,
+
+01:23:25.200 --> 01:23:29.870
+the, you know, the robot might run slower or faster if you change your
+
+01:23:29.879 --> 01:23:34.229
+frequency, the same, um, all of that will add up.
+
+01:23:34.379 --> 01:23:39.270
+And, um, really you can't put AAA
+
+01:23:39.279 --> 01:23:43.779
+number and of course, the hardware, as maybe I mentioned before
+
+01:23:44.770 --> 01:23:49.450
+using the virtual machines, um, let's say a max time just so we can forecast
+
+01:23:49.459 --> 01:23:53.939
+this into the kind of assessment time I would say.
+
+01:23:53.950 --> 01:23:58.620
+Ok. Um, I think you
+
+01:23:58.629 --> 01:24:03.490
+should, it should train in a few hours, you know,
+
+01:24:03.779 --> 01:24:08.540
+no more. Uh, but you might want, you might spend a lot of hour
+
+01:24:08.549 --> 01:24:11.240
+until you reach this stage of, you know,
+
+01:24:11.250 --> 01:24:14.979
+everything is set up. Everything is tuned.
+
+01:24:15.470 --> 01:24:19.899
+It's quite nuance. You can think that is between people.
+
+01:24:20.029 --> 01:24:22.790
+But once you reach this stage, maybe, you know,
+
+01:24:23.500 --> 01:24:26.290
+I would say reasonable four hours, it should,
+
+01:24:26.330 --> 01:24:29.990
+you know, be OK, four hours. Yeah.
+
+01:24:31.490 --> 01:24:31.609
+Ok.
+
+01:24:41.060 --> 01:24:43.390
+Well, great, excellent Scott. That's very,
+
+01:24:43.399 --> 01:24:46.959
+very good. Uh, pleased to hear that. Uh,
+
+01:24:47.370 --> 01:24:52.000
+ah, you can run headless if you want and
+
+01:24:53.279 --> 01:24:58.240
+the issue with the headless is once you're not watching it
+
+01:24:58.250 --> 01:25:02.819
+can be actually a bit uh faster uh but not
+
+01:25:02.830 --> 01:25:07.140
+necessarily a lot faster. I tried it before you tell me,
+
+01:25:07.149 --> 01:25:12.100
+it depends between people. So uh you can,
+
+01:25:12.109 --> 01:25:16.819
+you can set this um flag on uh on the robot on
+
+01:25:16.830 --> 01:25:21.779
+the gazebo not to show the environment and that should save you a little bit
+
+01:25:21.790 --> 01:25:26.220
+of um uh you know, compute time uh and
+
+01:25:26.609 --> 01:25:31.580
+may help you also not to crash. I'm
+
+01:25:31.589 --> 01:25:34.020
+yet to see like a strong evidence for it.
+
+01:25:34.029 --> 01:25:39.009
+Maybe it's due to gazebo implementation and I used earlier version
+
+01:25:39.020 --> 01:25:42.750
+of ubuntu so that can that convey?
+
+01:25:43.680 --> 01:25:45.810
+Um Yeah.
+
+01:25:53.490 --> 01:25:56.649
+Yeah. Yeah. Yeah. Yeah. It, it should be reasonable.
+
+01:25:56.660 --> 01:26:01.509
+Yes. Uh If you don't have to show this, but I think I suspect that
+
+01:26:01.520 --> 01:26:06.459
+what Gazebo is doing is something like it's doing it anyway and it
+
+01:26:06.470 --> 01:26:11.290
+doesn't show it on the screen. Um Certainly there is another
+
+01:26:11.299 --> 01:26:16.089
+issue with the headless, which is, I don't think it's a problem
+
+01:26:16.100 --> 01:26:19.259
+for us because uh we are not using, we're not using the camera.
+
+01:26:19.270 --> 01:26:21.720
+But if you're using the camera, if you're on headless,
+
+01:26:21.729 --> 01:26:26.660
+you will get black images usually unless this has been fixed with the
+
+01:26:26.669 --> 01:26:31.540
+recent gazebo implementation. Um Yeah. OK.
+
+01:26:31.660 --> 01:26:35.410
+Uh que other questions I think we have and Alan,
+
+01:26:36.600 --> 01:26:41.129
+yes, for the video. Do you want us to, do you want to see the actual robot hitting the
+
+01:26:41.140 --> 01:26:45.859
+target or just whilst it's training? Uh Both please.
+
+01:26:45.870 --> 01:26:48.310
+That's a good question. Thank you for asking this,
+
+01:26:48.379 --> 01:26:51.450
+Alan, uh I would want you to show me like,
+
+01:26:51.459 --> 01:26:54.910
+you know, uh early uh early episodes, middle episodes,
+
+01:26:54.919 --> 01:26:58.229
+end of the episode, not necessarily like,
+
+01:26:58.240 --> 01:27:00.540
+you know, talking for 10 minutes each, no,
+
+01:27:00.549 --> 01:27:04.879
+just a few seconds for the first few episodes,
+
+01:27:04.890 --> 01:27:09.620
+middle episodes, end of the episode showing the also maybe the environment
+
+01:27:10.109 --> 01:27:14.120
+and uh then uh running it after training
+
+01:27:16.629 --> 01:27:21.620
+and that should be it, that would provide strong evidence also that
+
+01:27:21.629 --> 01:27:24.859
+you actually have trained. And you know,
+
+01:27:24.870 --> 01:27:29.020
+the code is, is is running. Please also bear in mind that,
+
+01:27:29.029 --> 01:27:33.560
+that I remember now I would need to be able to run the
+
+01:27:33.569 --> 01:27:38.370
+code in my machine because otherwise I wouldn't know what he did.
+
+01:27:38.879 --> 01:27:43.290
+So that's also part of the idea of having to use,
+
+01:27:43.479 --> 01:27:48.370
+you know, the code that we provided. So I need to uh uh either
+
+01:27:48.759 --> 01:27:53.290
+um import the RL or RLV or RLNN or
+
+01:27:53.299 --> 01:27:58.120
+the, you know, the, the notebooks and then I'll be able to
+
+01:27:58.129 --> 01:28:01.660
+run your code. Not necessarily, I might not train to the end,
+
+01:28:01.669 --> 01:28:04.419
+but I just want to know, have this feeling of,
+
+01:28:04.430 --> 01:28:09.430
+you know, what uh what you and
+
+01:28:09.439 --> 01:28:11.799
+if there is something extra that you did,
+
+01:28:11.810 --> 01:28:14.439
+for example, if you want to explain to me,
+
+01:28:14.450 --> 01:28:19.319
+I inherited the, you know, the, this class and then I changed
+
+01:28:19.330 --> 01:28:22.959
+this bit or I added this functionality or,
+
+01:28:22.970 --> 01:28:26.640
+you know, and, and, and so on, but don't make your video long.
+
+01:28:27.169 --> 01:28:31.580
+It's really problematic for us. Because that will delay
+
+01:28:31.589 --> 01:28:36.000
+greatly the, you know, the marking and the lease of the month
+
+01:28:36.009 --> 01:28:40.970
+because you know, it adds up, you know, imagine that I
+
+01:28:41.959 --> 01:28:45.149
+some of you, for example, with the previous modules,
+
+01:28:45.339 --> 01:28:48.720
+they, they submitted like, you know, a 10 minute video,
+
+01:28:48.729 --> 01:28:51.330
+a 20 minutes video and that's really, you know,
+
+01:28:51.870 --> 01:28:56.819
+uh problematic. So please try to do maximum two minutes,
+
+01:28:57.370 --> 01:28:59.410
+you know, video and that would be, you know.
+
+01:29:02.330 --> 01:29:02.810
+Mhm.
+
+01:29:09.000 --> 01:29:12.330
+OK. No problem. Uh Yasin, please go ahead.
+
+01:29:13.569 --> 01:29:18.169
+Yeah, first. Yeah, 1st, 1st I apologize if my question would look
+
+01:29:18.180 --> 01:29:22.819
+like um I, I'm just making sure because maybe it's my paranoia or
+
+01:29:22.830 --> 01:29:27.649
+something. But uh the, the example of what we did
+
+01:29:27.660 --> 01:29:32.580
+right here is having the, the grade over the wallet
+
+01:29:32.589 --> 01:29:37.310
+that we have. But for, for the project in and
+
+01:29:37.319 --> 01:29:40.759
+practically we won't use a grid like this,
+
+01:29:40.770 --> 01:29:44.359
+right? It's, it's for applying our algorithms.
+
+01:29:44.370 --> 01:29:49.029
+We are not going to um use a grid for this word.
+
+01:29:49.350 --> 01:29:54.149
+It's just for being compatible with Sara and those exams.
+
+01:29:54.600 --> 01:29:59.310
+Am I getting this right? Uh
+
+01:29:59.720 --> 01:30:04.259
+Well, yes and no, because you,
+
+01:30:04.270 --> 01:30:08.220
+we needed the, the, the grid for the salsa
+
+01:30:09.089 --> 01:30:13.359
+when you import from the RL, the SAS A is
+
+01:30:13.370 --> 01:30:17.689
+expecting indices for the states. But once you move
+
+01:30:17.700 --> 01:30:22.479
+into um the,
+
+01:30:22.910 --> 01:30:27.799
+so the R the RLV, then no, you can just
+
+01:30:27.810 --> 01:30:30.069
+directly utilize, look what I've done here.
+
+01:30:30.080 --> 01:30:33.100
+That's why I'm I repeated this, you know,
+
+01:30:33.109 --> 01:30:37.729
+the same environment. I only just re implemented the s
+
+01:30:38.319 --> 01:30:40.580
+and that's all, you know, it's the same.
+
+01:30:41.600 --> 01:30:44.520
+All the functionality is regardless the rewards,
+
+01:30:44.529 --> 01:30:48.549
+the, at all, at goal, the
+
+01:30:48.560 --> 01:30:53.459
+difference, uh the angular distance, the distance,
+
+01:30:53.729 --> 01:30:58.120
+the y, the everything is the same except for this one
+
+01:30:58.129 --> 01:31:01.020
+function, which is, if you change it, that's it.
+
+01:31:03.819 --> 01:31:08.740
+Yeah, we totally makes sense. Now, I was making sure I get
+
+01:31:08.750 --> 01:31:12.859
+it right. Yeah, no problem. Once you've changed it,
+
+01:31:13.089 --> 01:31:16.439
+you can now create an instance of this environment.
+
+01:31:17.049 --> 01:31:21.609
+The is the, you know, uh environment and then I
+
+01:31:21.620 --> 01:31:25.399
+passed it through this salam and it should work fine.
+
+01:31:25.709 --> 01:31:29.839
+Be mindful this Mac T in the current implementation of the
+
+01:31:31.720 --> 01:31:35.470
+uh of the Monte Carlo. Uh
+
+01:31:35.479 --> 01:31:37.450
+Currently
+
+01:31:39.589 --> 01:31:43.180
+it's um
+
+01:31:46.259 --> 01:31:49.000
+uh where is it? Stop.
+
+01:31:51.180 --> 01:31:55.569
+Yeah. Stop. Ep Correct. Yeah. Uh Is it stop?
+
+01:31:55.580 --> 01:32:00.100
+Ep Yeah. In here. Uh You will uh
+
+01:32:00.109 --> 01:32:04.779
+it, it only work if we are storing the
+
+01:32:04.790 --> 01:32:09.770
+um you know, the trajectories. If you want to change that you can just simply if you
+
+01:32:09.779 --> 01:32:14.310
+want for the sake of the uh of this implementation,
+
+01:32:14.319 --> 01:32:17.589
+just remove it and then it will work so that,
+
+01:32:17.600 --> 01:32:19.990
+you know, you're not running for a long time.
+
+01:32:20.000 --> 01:32:23.350
+So because each episode take each episode,
+
+01:32:23.359 --> 01:32:26.959
+taking 2000 steps for this, it will be, you know,
+
+01:32:26.970 --> 01:32:30.790
+it will be a killer that will play also against your time.
+
+01:32:30.950 --> 01:32:35.750
+So uh maybe I'd say 3050 max T
+
+01:32:36.339 --> 01:32:40.000
+uh because also if you put it as a small number,
+
+01:32:40.419 --> 01:32:44.740
+your robot might not learn quickly because the episode is,
+
+01:32:45.140 --> 01:32:48.169
+you know, interrupted. So, you know, it's up to you,
+
+01:32:48.180 --> 01:32:52.560
+you play around with this. Ok. Uh, play around with this.
+
+01:32:52.569 --> 01:32:55.279
+Uh, you need to understand the, the code also.
+
+01:32:55.479 --> 01:33:00.029
+Also before I forget, um, in the,
+
+01:33:00.500 --> 01:33:05.200
+um, I'm not watching the, uh, the chat, I'll
+
+01:33:05.209 --> 01:33:09.580
+just check in the, otherwise I'm trying to answer them there.
+
+01:33:09.870 --> 01:33:13.839
+Thanks. Thanks a lot. So, um, in, in, in the,
+
+01:33:13.879 --> 01:33:18.879
+you know, in the Monte Carlo, uh we provided it with uh
+
+01:33:18.890 --> 01:33:23.779
+where is it? Yeah, actually in the interact uh
+
+01:33:23.790 --> 01:33:28.750
+if in the drug there is a um
+
+01:33:29.370 --> 01:33:31.950
+an exception like you know, a try catch,
+
+01:33:32.240 --> 01:33:37.080
+but it's commented out and that can be useful.
+
+01:33:37.089 --> 01:33:41.720
+Uh So that you're not crashing your uh you know,
+
+01:33:41.729 --> 01:33:46.669
+your environment. So I would say uh com this in
+
+01:33:46.680 --> 01:33:51.279
+and utilize it. Of course, you need to push everything uh
+
+01:33:53.089 --> 01:33:58.089
+you know, uh forward to be able to, to utilize it.
+
+01:33:58.100 --> 01:34:02.580
+But otherwise this, I think will be also very
+
+01:34:02.589 --> 01:34:05.160
+helpful. Um
+
+01:34:07.549 --> 01:34:10.709
+Yeah, it depends, see, you know, what, what fits you.
+
+01:34:13.680 --> 01:34:14.419
+What did they do?
+
+01:34:18.910 --> 01:34:20.049
+Yeah. OK.
+
+01:34:23.720 --> 01:34:26.620
+My machine is a bit uh Not
+
+01:34:28.939 --> 01:34:33.930
+OK. So that's it. Uh This is now committed in and then you'll be
+
+01:34:33.939 --> 01:34:38.240
+able to, if, if your, if your algorithm stop for some reason,
+
+01:34:38.660 --> 01:34:43.229
+you know, uh it doesn't crash and you lose everything
+
+01:34:43.240 --> 01:34:45.970
+before, particularly if you're saving, you know,
+
+01:34:45.979 --> 01:34:50.399
+using serialization or something else, then
+
+01:34:50.410 --> 01:34:55.129
+you um you're not losing what you've trained so far also,
+
+01:34:55.140 --> 01:34:59.089
+this can play. So uh you know, uh play around with this a little bit.
+
+01:34:59.100 --> 01:35:03.959
+Uh try to make, you know, your, your setting resilience so that
+
+01:35:04.700 --> 01:35:09.459
+if crash happened, it might uh then uh you know,
+
+01:35:09.470 --> 01:35:14.370
+you are guarded against. OK. Um Questions
+
+01:35:14.600 --> 01:35:18.350
+in the chat or everything is fine.
+
+01:35:21.089 --> 01:35:25.600
+Uh uh uh You should check them out. Um
+
+01:35:26.600 --> 01:35:29.189
+Is Q learning a policy gradient method?
+
+01:35:39.209 --> 01:35:42.890
+Anyone? It's not.
+
+01:35:43.810 --> 01:35:47.709
+No, it's not why it's a value base to my knowledge.
+
+01:35:48.200 --> 01:35:52.069
+Yeah. Yeah, yeah. So thank you for the question.
+
+01:35:52.359 --> 01:35:56.649
+It's it might be actually a little bit
+
+01:35:56.660 --> 01:36:01.339
+sometimes unclear. The we do
+
+01:36:01.520 --> 01:36:06.339
+adjust um policy
+
+01:36:06.629 --> 01:36:11.620
+um parameters. WS for example, which is very similar to
+
+01:36:11.629 --> 01:36:16.479
+what we do for the for the Q learning. And I appreciate that it might be a little
+
+01:36:16.490 --> 01:36:20.140
+bit unclear why. But you know, with, with the,
+
+01:36:20.149 --> 01:36:24.640
+with the policy gradient, we directly approximate the policy itself,
+
+01:36:24.649 --> 01:36:28.479
+not the Q value. OK. Although we might utilize,
+
+01:36:28.729 --> 01:36:33.040
+for example, we utilize the V values or the state values
+
+01:36:33.709 --> 01:36:38.339
+tabular or non tabular, right? But we, we are not
+
+01:36:38.350 --> 01:36:43.189
+confined by the Q value because the Q values remember they are the
+
+01:36:43.200 --> 01:36:48.080
+expected, they are the expected returns or the and the returns
+
+01:36:48.089 --> 01:36:52.640
+are the sum of the rewards discounted. So they
+
+01:36:52.649 --> 01:36:56.950
+must, you know, get the rewards approximated,
+
+01:36:56.959 --> 01:37:00.240
+approximated, you know, fine like, you know,
+
+01:37:00.250 --> 01:37:05.089
+solidly to be able to, to, to reach a policy with the policy
+
+01:37:05.100 --> 01:37:07.799
+grading methods, we don't need this, we can,
+
+01:37:07.939 --> 01:37:12.919
+you know, for example, the, the W might get range of
+
+01:37:12.930 --> 01:37:16.689
+values that they are freer. If you, if you like in this sense,
+
+01:37:16.700 --> 01:37:21.129
+they are more free to take um a a a AAA
+
+01:37:21.140 --> 01:37:25.470
+wide range of values rather than when we
+
+01:37:25.479 --> 01:37:30.470
+confined them to the key values, right? So that's one
+
+01:37:30.479 --> 01:37:35.109
+advantage of the policy gradient methods and hence they become
+
+01:37:35.310 --> 01:37:39.729
+more resilient, more practical, especially for you know,
+
+01:37:39.740 --> 01:37:44.720
+uh for practical problems. So yeah, Q learning is
+
+01:37:44.729 --> 01:37:48.330
+a an action value function and it's an action value.
+
+01:37:48.729 --> 01:37:51.390
+Uh Sorry, Q is an actual value function.
+
+01:37:51.470 --> 01:37:55.740
+And Q learning is an action value algorithm uh
+
+01:37:56.140 --> 01:38:01.080
+while a a critic um is, is a policy gradient
+
+01:38:01.089 --> 01:38:05.220
+method and that can be found, for example,
+
+01:38:06.640 --> 01:38:08.779
+uh I think he,
+
+01:38:37.609 --> 01:38:40.919
+I don't know why I'm using my virtual machine to show you this.
+
+01:38:40.930 --> 01:38:45.189
+I could have gone down to the uh to uh
+
+01:38:50.310 --> 01:38:54.850
+come on and start scrolling, right?
+
+01:38:57.259 --> 01:39:02.100
+Yeah, let me show you something else.
+
+01:39:05.270 --> 01:39:09.220
+Um A
+
+01:39:09.990 --> 01:39:10.399
+mass,
+
+01:39:21.350 --> 01:39:26.290
+all right, because the, the director machine is not
+
+01:39:26.299 --> 01:39:27.609
+responding actually,
+
+01:39:37.259 --> 01:39:38.560
+you can see this right.
+
+01:39:42.250 --> 01:39:45.229
+I just uh OK. I,
+
+01:39:50.560 --> 01:39:51.720
+I like to see
+
+01:39:55.609 --> 01:39:59.830
+that's foster. So that's the active critic.
+
+01:40:01.259 --> 01:40:06.000
+OK. So you can see here that updating according to the delta to the
+
+01:40:06.009 --> 01:40:11.000
+delta, which is the TD arrow W as well as the
+
+01:40:11.009 --> 01:40:15.859
+W capital, which is this is the way the charm
+
+01:40:15.870 --> 01:40:20.000
+of the actor critic comes. OK. We usually update the cue
+
+01:40:20.009 --> 01:40:24.770
+accordingly similarly but not using this one minus pi,
+
+01:40:24.779 --> 01:40:29.560
+I mean this is mainly the difference as well as this uh gamma to the
+
+01:40:29.569 --> 01:40:34.020
+power of some tea. And so yeah,
+
+01:40:34.680 --> 01:40:39.419
+so we do both updates at the same time, the W small letter and W capital
+
+01:40:39.430 --> 01:40:43.520
+letter. This is this one represent the V function.
+
+01:40:44.209 --> 01:40:46.890
+So this is the V function and this is,
+
+01:40:48.990 --> 01:40:53.899
+you know, crudely, it's not the Q function but it's similar to Q
+
+01:40:53.910 --> 01:40:56.770
+function, you call it the actor. And it's,
+
+01:40:57.720 --> 01:41:02.629
+you can think about it. The, the um the dimension of W is
+
+01:41:02.640 --> 01:41:05.220
+the same when we were doing the Q learning,
+
+01:41:06.160 --> 01:41:10.859
+right? Of capital W it's the same of the Q but it's different flavor if you
+
+01:41:10.870 --> 01:41:14.850
+want or, and it's not confined by that.
+
+01:41:15.350 --> 01:41:20.330
+Uh you know, OK. So that's why I was, when
+
+01:41:20.339 --> 01:41:23.640
+I was asked about the nonlinear, you know,
+
+01:41:24.259 --> 01:41:28.850
+it's very similar, the, the update you just need to take into account.
+
+01:41:28.859 --> 01:41:31.910
+These will be these terms we already provided this,
+
+01:41:32.379 --> 01:41:36.450
+you might just want to do this bit here anyway.
+
+01:41:36.459 --> 01:41:37.600
+Um Yeah,
+
+01:41:44.120 --> 01:41:48.240
+not that, you know, also also not that this
+
+01:41:48.970 --> 01:41:53.930
+updating W affect, affect also the delta here
+
+01:41:53.939 --> 01:41:58.149
+because the vs utilize the W small
+
+01:41:58.319 --> 01:42:02.229
+which then in turn, we are using this delta,
+
+01:42:02.240 --> 01:42:06.970
+the TD function TD error in the update of this capital
+
+01:42:06.979 --> 01:42:11.450
+W. So this is another part of the uh
+
+01:42:11.459 --> 01:42:15.509
+actor critic. OK. Uh Another question,
+
+01:42:19.850 --> 01:42:24.609
+hi, Professor I have a question about. So I was reading
+
+01:42:24.620 --> 01:42:29.160
+the assessment um So marking criteria
+
+01:42:29.430 --> 01:42:33.149
+and it says there that the, so we should use,
+
+01:42:33.160 --> 01:42:36.870
+we, we should correctly use odometer and laser scans as input.
+
+01:42:37.080 --> 01:42:41.049
+But from, from what you you mentioned. So uh
+
+01:42:41.060 --> 01:42:45.830
+basically, I'm trying to understand if, if I
+
+01:42:45.839 --> 01:42:50.759
+have, if I choose to use a vectorized environment where I would just have a feature
+
+01:42:50.770 --> 01:42:54.540
+vector, then this should only include laser scans,
+
+01:42:54.549 --> 01:42:59.529
+not both, not both. Yes. Yes. Otherwise,
+
+01:42:59.540 --> 01:43:04.370
+I mean, yes, yes. You want to start by cheating,
+
+01:43:04.379 --> 01:43:08.600
+for example, by
+
+01:43:08.609 --> 01:43:13.330
+utilizing the odometer for the robot to train quickly and see if you know you're setting
+
+01:43:13.339 --> 01:43:16.040
+everything is fine, you know, it's for you to do,
+
+01:43:16.700 --> 01:43:21.689
+right? You might like to do so and see, you know how
+
+01:43:21.700 --> 01:43:26.660
+accurate it is in the end. But uh once you want to,
+
+01:43:26.669 --> 01:43:30.109
+the things that you're submitting the results that you're submitting,
+
+01:43:30.359 --> 01:43:33.109
+it should not, it should only obtain, you know,
+
+01:43:33.120 --> 01:43:37.220
+contain this, the scan and the odometer is used in the reward.
+
+01:43:37.229 --> 01:43:41.390
+That's fine without it being used in the state.
+
+01:43:44.689 --> 01:43:49.419
+All right, good. OK. Thank you. No worries.
+
+01:43:49.430 --> 01:43:54.279
+Um OK. Um Any other questions
+
+01:43:54.359 --> 01:43:59.229
+I'm here to uh answer your questions and make you feel good and
+
+01:43:59.240 --> 01:44:03.779
+ready to be able to offer a final webinar next week to address any
+
+01:44:03.790 --> 01:44:06.470
+questions. Uh
+
+01:44:10.700 --> 01:44:15.560
+mm I don't know about that one, Dina. I will uh I
+
+01:44:16.529 --> 01:44:20.330
+I think the discussion forum should be fine.
+
+01:44:20.709 --> 01:44:23.399
+Uh with the, you know, with the current uh,
+
+01:44:23.410 --> 01:44:28.060
+code and we extended the deadline
+
+01:44:28.069 --> 01:44:32.990
+already. So I hope that that should be enough.
+
+01:44:35.330 --> 01:44:40.049
+Um, do you, I mean, ok, uh what do you
+
+01:44:40.060 --> 01:44:42.910
+feel, you know, I want to obtain, you know,
+
+01:44:42.919 --> 01:44:47.549
+um, your views, everyone. Do, do you feel that you're ok now to
+
+01:44:47.560 --> 01:44:51.229
+address this or do you want uh, more help?
+
+01:44:56.790 --> 01:44:59.549
+Yeah, I mean, the discussion forms are easier.
+
+01:44:59.560 --> 01:45:01.740
+I must admit in that from that perspective as well.
+
+01:45:01.750 --> 01:45:06.689
+Logistically also for us to arrange the webinar might be a bit
+
+01:45:06.700 --> 01:45:11.500
+problematic. Yeah.
+
+01:45:12.209 --> 01:45:16.910
+Right. Uh It's not a
+
+01:45:16.919 --> 01:45:21.439
+question just uh you know, um put it in the
+
+01:45:21.450 --> 01:45:22.330
+discussion.
+
+01:45:26.209 --> 01:45:29.859
+Yeah. Neros, you want, you want an extra session,
+
+01:45:31.430 --> 01:45:36.140
+I mean, it's less than a session but all this code that we've got at the moment there is a lot of moving.
+
+01:45:36.930 --> 01:45:41.279
+Once we get connecting it, it would be nice to have a drop in session to have questions.
+
+01:45:41.290 --> 01:45:46.140
+Not necessarily. Yeah. OK. Fine. Um
+
+01:45:46.299 --> 01:45:50.740
+I want you to be uh to feel supportive. I
+
+01:45:50.750 --> 01:45:55.729
+provide maybe I'll see what can I do if
+
+01:45:56.500 --> 01:46:01.169
+we have the discussion for already? Um And if I
+
+01:46:01.180 --> 01:46:06.060
+feel that, you know, uh like half an hour drop in session is,
+
+01:46:06.069 --> 01:46:10.520
+is uh is necessary, then I'll do that.
+
+01:46:16.220 --> 01:46:20.970
+Mhm Yeah. I mean, look that why I
+
+01:46:20.979 --> 01:46:24.129
+want you also to, to experiment with the code and you know,
+
+01:46:24.140 --> 01:46:27.729
+feel the resilience and feel the uh you know,
+
+01:46:27.740 --> 01:46:31.850
+um get into the zone. Let me put it this way.
+
+01:46:32.189 --> 01:46:36.080
+So, you know, because I think if you feel that you are by yourself,
+
+01:46:36.089 --> 01:46:41.029
+you will be able to, to do more. Um I think anyway.
+
+01:46:41.569 --> 01:46:46.209
+Uh All right, Barry. Yeah, no
+
+01:46:46.220 --> 01:46:51.089
+problem. OK. Uh Any other
+
+01:46:51.100 --> 01:46:55.299
+questions things you want to, to raise um you're happy,
+
+01:46:55.310 --> 01:47:00.189
+you know, uh or otherwise go on. Uh
+
+01:47:01.100 --> 01:47:05.589
+but it just was one question in the discussion about where we will be putting the lesson
+
+01:47:05.600 --> 01:47:09.509
+16 updated volume. It will be put in
+
+01:47:09.520 --> 01:47:14.250
+the uh Yeah. OK, good question. Um Lesson
+
+01:47:14.259 --> 01:47:19.209
+16 will be put in lesson 16. Um I
+
+01:47:19.220 --> 01:47:23.919
+will add uh in the same space uh these uh
+
+01:47:23.930 --> 01:47:28.100
+the other extra um RL dot Y
+
+01:47:29.000 --> 01:47:31.060
+and those are the workbooks. Excuse me, sir.
+
+01:47:31.069 --> 01:47:35.419
+Those are the workbooks for unit five. Thank you.
+
+01:47:36.040 --> 01:47:40.270
+Just to confirm. Yes. Yes. In the space in my space.
+
+01:47:40.279 --> 01:47:44.720
+Did I say unit six? I didn't say no, no,
+
+01:47:44.819 --> 01:47:49.740
+no, no, not at all. I was just confirming that that was the location where I saw 16
+
+01:47:50.470 --> 01:47:52.580
+when you talk about a new file in the RN,
+
+01:47:53.140 --> 01:47:55.779
+I mean the NRL. Excuse me. So yeah. No, that's great.
+
+01:47:56.000 --> 01:47:57.540
+Thanks for confirming. That will be useful.
+
+01:47:57.640 --> 01:48:00.520
+I might have a question since I've got the floor here.
+
+01:48:01.919 --> 01:48:06.560
+Thank you very. It's very apologized. Um II
+
+01:48:06.939 --> 01:48:11.609
+I think the question must sort of ask, but how comfortable are you in terms of
+
+01:48:12.160 --> 01:48:16.250
+uh our adaptation of your code utilization of your code line for lying.
+
+01:48:16.509 --> 01:48:21.160
+I know we're changing obviously the environment from um to the
+
+01:48:21.169 --> 01:48:24.729
+vector environment from what you put in.
+
+01:48:24.899 --> 01:48:26.970
+Um Can you give us some direction on that,
+
+01:48:26.979 --> 01:48:29.910
+or perhaps a few words in that, on that topic?
+
+01:48:29.919 --> 01:48:34.240
+Thank you. And no problem Barry. So you want a clarification
+
+01:48:34.250 --> 01:48:39.250
+on uh on, on what exactly to, to
+
+01:48:39.259 --> 01:48:43.959
+change in the code or you don't mean to tell me exactly.
+
+01:48:43.970 --> 01:48:47.680
+But I'm thinking more along the lines of can I cut and paste and,
+
+01:48:47.689 --> 01:48:51.089
+you know, tweak or, or what do you want from us?
+
+01:48:51.229 --> 01:48:55.080
+I mean, I'd like to just cut and paste. I think your code is always blows me away.
+
+01:48:55.089 --> 01:48:59.990
+I don't think I could touch it but others have much deeper
+
+01:49:00.000 --> 01:49:02.620
+skills than me, that's for sure. Uh But,
+
+01:49:02.629 --> 01:49:05.930
+but just a general direction you're providing us with a lot,
+
+01:49:05.939 --> 01:49:08.430
+which is great. I don't, I'm not there there.
+
+01:49:08.439 --> 01:49:11.540
+That's why I'm suggesting a drop in or some other follow up,
+
+01:49:11.810 --> 01:49:16.569
+but the linkage and utilizing your code and what do you feel comfortable in terms of?
+
+01:49:16.580 --> 01:49:18.180
+I don't know, would you throw out a percentage?
+
+01:49:18.189 --> 01:49:20.970
+Would you throw it an attitude? I'm not sure.
+
+01:49:21.620 --> 01:49:25.910
+Uh OK. OK. I see. Um So I
+
+01:49:25.919 --> 01:49:30.910
+think what you should uh expect I would say to be honest
+
+01:49:30.919 --> 01:49:35.330
+with you, I think what I'm coming from is that I don't want you to
+
+01:49:35.919 --> 01:49:40.060
+completely re invent the wheel and create everything from scratch because,
+
+01:49:40.069 --> 01:49:43.830
+you know, once you start to unpick the code and you,
+
+01:49:43.839 --> 01:49:46.620
+you might not understand why we are doing this in this way.
+
+01:49:46.629 --> 01:49:49.029
+I might do it in a different way and you start to,
+
+01:49:49.609 --> 01:49:54.220
+uh you know, uh unroll everything in the
+
+01:49:54.229 --> 01:49:58.930
+code. It will take a lot of time. It will actually
+
+01:49:58.939 --> 01:50:03.899
+uh my, my fear is that it will derail you.
+
+01:50:03.910 --> 01:50:07.649
+It will make, not only I'm not talking about you,
+
+01:50:07.660 --> 01:50:10.850
+Barry, I'm talking about everyone and uh it will,
+
+01:50:10.859 --> 01:50:15.450
+it will um it will actually be counter productive.
+
+01:50:16.200 --> 01:50:20.870
+I think what you should do, you should try to do the minimum work,
+
+01:50:20.899 --> 01:50:25.500
+right? The minimum coding and most of the time you should spend
+
+01:50:25.509 --> 01:50:28.729
+on tweaking the, you know what we, what we,
+
+01:50:28.740 --> 01:50:33.580
+what is already provided. Um The only maybe
+
+01:50:33.589 --> 01:50:37.959
+um I would say kind of significant
+
+01:50:38.560 --> 01:50:43.459
+uh implementation that you need to do is when you're doing the
+
+01:50:43.839 --> 01:50:47.080
+uh the policy gradient methods, which is the active,
+
+01:50:47.379 --> 01:50:50.339
+you're adding just this update, you know,
+
+01:50:50.350 --> 01:50:53.609
+slightly changing them and you can have a look at the,
+
+01:50:54.729 --> 01:50:57.430
+you know, online and do our lesson and what we,
+
+01:50:57.439 --> 01:51:01.310
+how we did the update and all of that it should be,
+
+01:51:01.319 --> 01:51:06.149
+but once it should be OK, it should be easy to,
+
+01:51:06.160 --> 01:51:10.370
+to do. Um But once you start to
+
+01:51:11.200 --> 01:51:14.080
+what you're describing is very useful. Thank you.
+
+01:51:14.720 --> 01:51:19.169
+No problem. And the other thing is that I want to attract your attention to is
+
+01:51:19.180 --> 01:51:23.859
+actually uh you know, for the for the linear case,
+
+01:51:24.229 --> 01:51:27.069
+it should be straightforward because you have everything.
+
+01:51:27.080 --> 01:51:31.649
+So, you know, I think uh you know, more than now,
+
+01:51:32.160 --> 01:51:34.819
+I can't remember the, you know, the percentages.
+
+01:51:34.830 --> 01:51:39.479
+So don't get me, you know, don't uh uh take my word for
+
+01:51:39.490 --> 01:51:44.450
+it. Um I think, you know, what we are providing
+
+01:51:44.459 --> 01:51:48.970
+you with here is that maybe 22 3rd of the
+
+01:51:48.979 --> 01:51:51.890
+requirement is already required, you know,
+
+01:51:51.899 --> 01:51:55.899
+is already given to you and you only need to tweak things,
+
+01:51:56.330 --> 01:51:58.500
+you know, the hyper parameter and you know,
+
+01:51:58.790 --> 01:52:03.430
+and train and the last step also, most of it is being
+
+01:52:03.439 --> 01:52:07.979
+provided, you need to change, you know, maybe few lines of
+
+01:52:07.990 --> 01:52:12.399
+code. That's what you know, that's what I think it should be the case,
+
+01:52:12.410 --> 01:52:16.930
+it should be, you should be able to implement something as small as this
+
+01:52:17.370 --> 01:52:22.299
+or maybe a little bit longer, maybe twice and then you'll be fine no more,
+
+01:52:23.180 --> 01:52:25.839
+right? And you spend your time more on the training,
+
+01:52:25.850 --> 01:52:30.259
+on the tweaking and and so on. Uh Hopefully I provided you with this
+
+01:52:30.270 --> 01:52:34.770
+ability with this infrastructure and with this linkage between uh
+
+01:52:34.779 --> 01:52:38.430
+reinforcement learning and robotics and you will be able to do this.
+
+01:52:38.439 --> 01:52:43.419
+This is definitely the intention. Uh I hope you
+
+01:52:43.430 --> 01:52:46.540
+will be able and I think you should. Uh No,
+
+01:52:46.589 --> 01:52:49.290
+no, no, no. That's great. That's great. Thank you.
+
+01:52:50.270 --> 01:52:52.549
+Appreciate it. No problem with it.
+
+01:52:56.680 --> 01:52:59.549
+Yeah, the Nino version of the
+
+01:53:02.919 --> 01:53:07.220
+great, great to hear Scott. Um Great.
+
+01:53:11.649 --> 01:53:16.229
+Yeah. Thank you, Ricardo. Uh Yeah. So two th how far is it uh
+
+01:53:16.870 --> 01:53:21.790
+is an experience? Ah So experience to play mechanism is
+
+01:53:21.799 --> 01:53:25.899
+already provided for you. Uh Yeah, so it's there,
+
+01:53:25.910 --> 01:53:28.330
+where is it? Um Let me go back to the
+
+01:53:30.160 --> 01:53:33.359
+experience. Replay one second,
+
+01:53:36.100 --> 01:53:40.430
+nonlinear. So uh experience,
+
+01:53:40.439 --> 01:53:44.910
+replay is already in, you know, this
+
+01:53:45.319 --> 01:53:50.189
+there is the batching here which is uh done for you and in the MD
+
+01:53:50.200 --> 01:53:54.819
+P, you have all of these infrastructure also
+
+01:53:54.859 --> 01:53:59.479
+provided for you. So you don't need to do a lot.
+
+01:53:59.779 --> 01:54:01.750
+And then uh
+
+01:54:05.250 --> 01:54:10.229
+um you
+
+01:54:10.240 --> 01:54:13.470
+know, because we are doing batching, right?
+
+01:54:13.479 --> 01:54:17.080
+We are doing a batch. It's already we are doing experience,
+
+01:54:17.089 --> 01:54:21.140
+we play here, right? Because I am taking a batch of
+
+01:54:21.450 --> 01:54:26.299
+uh previous experiences and encoding it
+
+01:54:26.310 --> 01:54:30.680
+here. So this batch is actually a set of uh
+
+01:54:30.689 --> 01:54:34.189
+rejected of, of, you know, of previous state visit,
+
+01:54:34.200 --> 01:54:39.000
+visitation and rewards and actions. All of that is encoded here.
+
+01:54:39.399 --> 01:54:43.979
+It's minimal. You think it's one, it's not actually it's
+
+01:54:43.990 --> 01:54:48.819
+lots. And then uh I am passing these to
+
+01:54:48.830 --> 01:54:53.379
+obtain their Q values. I'm passing the, the next state as well to obtain the
+
+01:54:53.390 --> 01:54:57.709
+Q, the next value, the queue for the next values and whether they are done or not.
+
+01:54:57.720 --> 01:55:01.100
+And then this update you with the indices provided there.
+
+01:55:01.270 --> 01:55:06.160
+So it's already provided for you. Um Hope,
+
+01:55:06.169 --> 01:55:11.100
+hope uh hope it's a I was
+
+01:55:11.129 --> 01:55:16.060
+like um what episode? Uh I couldn't get
+
+01:55:16.069 --> 01:55:17.509
+you clearly. Uh sorry.
+
+01:55:21.779 --> 01:55:26.569
+Yeah, is it, is it OK? Is it clear with the,
+
+01:55:26.580 --> 01:55:28.600
+with the, you know what, what we meant there?
+
+01:55:29.669 --> 01:55:31.799
+You have the infrastructure you have already,
+
+01:55:31.810 --> 01:55:36.140
+you know how to do it. Uh Try to focus, OK.
+
+01:55:36.149 --> 01:55:39.490
+Let me be clear, try to focus on this update.
+
+01:55:39.500 --> 01:55:42.089
+OK. If in your, in your policy gradient,
+
+01:55:42.620 --> 01:55:46.879
+if you are OK. I I'll tell you what if you are at all,
+
+01:55:47.759 --> 01:55:52.540
+you know, desperate and do something similar to this DQN and then of
+
+01:55:52.549 --> 01:55:56.580
+course you lose marks. Um It's your choice.
+
+01:56:00.009 --> 01:56:04.979
+I don't know what yet. Uh Great Alan.
+
+01:56:04.990 --> 01:56:09.620
+Well, great, great. Uh No worries, Philip.
+
+01:56:09.629 --> 01:56:13.290
+Um Great,
+
+01:56:15.160 --> 01:56:18.350
+brilliant. Any other question which I haven't attended to?
+
+01:56:18.359 --> 01:56:21.459
+Please do, let me know. I like your questions.
+
+01:56:21.470 --> 01:56:25.950
+I enjoy actually, you know, answering them because you are,
+
+01:56:25.959 --> 01:56:28.160
+you know, you unpick my brain, you make me,
+
+01:56:29.120 --> 01:56:33.890
+you know, um express what
+
+01:56:33.899 --> 01:56:38.640
+I, you know, spend a lot of time on. So it's a pleasure
+
+01:56:38.649 --> 01:56:39.240
+always.
+
+01:56:45.759 --> 01:56:48.020
+Uh just a quick question on what you just mentioned,
+
+01:56:48.029 --> 01:56:52.750
+which was um you know, if we're desperate and we implement the DQN uh
+
+01:56:52.770 --> 01:56:56.390
+update, um you know, we would lose market.
+
+01:56:56.399 --> 01:56:59.640
+Is that just because DQ is not a policy gradient?
+
+01:56:59.649 --> 01:57:02.609
+Is that what you're referring to? Is that why we're losing mark or is it because?
+
+01:57:03.439 --> 01:57:06.209
+Yes correct. BQN is not a policy gradient.
+
+01:57:06.220 --> 01:57:09.649
+You are not addressing, you know, if you do,
+
+01:57:09.660 --> 01:57:14.410
+you're not addressing the uh the requirement and then there will be
+
+01:57:14.879 --> 01:57:18.279
+you know? Ok, that makes sense. Thanks. Yeah,
+
+01:57:19.290 --> 01:57:23.029
+no worries. Neither. Double DQN as well.
+
+01:57:23.040 --> 01:57:26.259
+They, both of them are not, um, policy grad.
+
+01:57:26.720 --> 01:57:29.089
+I mean, this might be the only challenge that,
+
+01:57:29.470 --> 01:57:34.120
+uh, uh, is left because, you know, all of the
+
+01:57:34.129 --> 01:57:36.700
+castles of challenges possibly should be.
+
+01:57:36.709 --> 01:57:41.439
+Now. Uh, ok. I mean, don't get me wrong.
+
+01:57:41.450 --> 01:57:46.180
+You spend time obviously tweaking and training and that's not trivial by
+
+01:57:46.189 --> 01:57:50.959
+itself. So, um, uh, I'm, I'm, I'm my
+
+01:57:52.560 --> 01:57:55.620
+personally, I'm looking forward to see your uh you know,
+
+01:57:55.629 --> 01:57:58.490
+your results and your code and tell me your experience.
+
+01:57:58.959 --> 01:58:03.870
+What I want to say also is, you know, um try
+
+01:58:03.879 --> 01:58:08.680
+your best, I think since you come so far with the
+
+01:58:08.689 --> 01:58:12.890
+module, uh you've done really well because this,
+
+01:58:12.899 --> 01:58:17.140
+this is, this is quite, you know, I think this is quite
+
+01:58:17.149 --> 01:58:21.790
+sophisticated uh topic to, to cover.
+
+01:58:21.799 --> 01:58:26.790
+So if you gone so far and you are able, you could understand what's been
+
+01:58:26.799 --> 01:58:30.410
+covered before, you know, the differences between the algorithms.
+
+01:58:30.629 --> 01:58:33.950
+Um You know, the different approaches that we took,
+
+01:58:33.959 --> 01:58:38.549
+you know, the coding encoding, um moving from
+
+01:58:38.560 --> 01:58:43.270
+tabular to linear then to nonlinear, you know,
+
+01:58:44.060 --> 01:58:48.790
+eligibility, eligibility traces. Um You know,
+
+01:58:48.799 --> 01:58:53.250
+uh the nuances of these, the different environment linking the
+
+01:58:53.259 --> 01:58:58.000
+robotics with the, the RL you've done really a lot
+
+01:58:58.549 --> 01:59:01.270
+and that's, that's really, you know, uh that's,
+
+01:59:01.279 --> 01:59:03.850
+that, that is really good. And
+
+01:59:05.770 --> 01:59:10.160
+OK, uh I gather you don't have more questions for me.
+
+01:59:13.839 --> 01:59:15.399
+Um No, I think
+
+01:59:18.620 --> 01:59:23.069
+good, good. OK, brilliant. I hope you uh
+
+01:59:23.209 --> 01:59:28.060
+enjoy uh the module. Um as I did, I enjoy
+
+01:59:28.370 --> 01:59:31.729
+you guys. And really, I, I developed, you know,
+
+01:59:31.740 --> 01:59:36.549
+although it's online, I said this is at least my feeling I don't express
+
+01:59:36.560 --> 01:59:41.560
+it that much in the discussion forum, but I feel that I developed a kind of um
+
+01:59:41.569 --> 01:59:46.259
+relationship with a lot of you. I've seen you in a few modules
+
+01:59:46.459 --> 01:59:51.029
+and uh really, you know, um uh I value your,
+
+01:59:51.040 --> 01:59:55.209
+you know, your input and your uh participation
+
+01:59:55.540 --> 01:59:58.669
+and uh I hope to see you in, in, you know,
+
+01:59:58.680 --> 02:00:03.049
+possibly later when you graduating. Um
+
+02:00:04.220 --> 02:00:09.109
+Brilliant. OK. Uh You're most welcome. The one,
+
+02:00:09.120 --> 02:00:13.430
+the last question is, oh,
+
+02:00:14.609 --> 02:00:18.060
+uh it should have been uh released today.
+
+02:00:18.069 --> 02:00:21.500
+I'm not sure why they are keeping them. I'll just chase them,
+
+02:00:21.799 --> 02:00:26.500
+uh should, should be released soon. I think you,
+
+02:00:26.509 --> 02:00:31.339
+you know, uh in general, they are also thank
+
+02:00:31.350 --> 02:00:34.819
+you and thank you for everything um in this and previous way,
+
+02:00:34.850 --> 02:00:39.100
+you know, no problem uh very happy. Actually,
+
+02:00:39.109 --> 02:00:42.500
+I wanted also to mention a few things here,
+
+02:00:42.549 --> 02:00:47.049
+appreciating, you know, the team, uh the help of Zhan as well.
+
+02:00:47.430 --> 02:00:52.430
+And um you know, a lot of you were, were really good and uh you
+
+02:00:52.439 --> 02:00:55.209
+know, active in the discussion for this is really very,
+
+02:00:55.220 --> 02:00:59.410
+very pleasing to um contributing and, you know,
+
+02:00:59.419 --> 02:01:04.149
+helping each other uh pointing out things which need maybe
+
+02:01:04.160 --> 02:01:07.890
+some consideration so that all of that is really valuable.
+
+02:01:08.140 --> 02:01:12.910
+Uh um I was maybe I, I wanted to
+
+02:01:12.919 --> 02:01:17.100
+mention it uh earlier on uh one of you uh
+
+02:01:17.109 --> 02:01:21.100
+participated in all of the discussion forms from the start.
+
+02:01:21.109 --> 02:01:25.299
+I think maybe he is not here or yeah, I think he or she like
+
+02:01:26.299 --> 02:01:31.109
+uh and really, um I'm, I'm impressed with this,
+
+02:01:31.120 --> 02:01:36.009
+you know, dedication and, and you know, and hard working so well and
+
+02:01:36.020 --> 02:01:39.020
+all of you and I hope to see you in the future.
+
+02:01:39.029 --> 02:01:43.140
+Thank you. Thank you.
+
+02:01:46.310 --> 02:01:46.870
+Bye bye.
+
