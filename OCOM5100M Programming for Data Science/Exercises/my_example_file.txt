@@ -1,0 +1,2 @@
+Here is some different text for my file.
+Another line of nonsense.
