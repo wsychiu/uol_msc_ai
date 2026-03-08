@@ -1,0 +1,56 @@
+﻿(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+
+        var walkMeOptOut = true;
+        var walkMeEnvironment = '/';  
+
+        //Look for a WalkMeEnvironment parameter on the querystring.  This will be used to load test scripts if needed.
+        var queryStringParams = new URLSearchParams(window.location.search.toLowerCase());
+        var walkMeEnvironmentParam = queryStringParams.get('WalkMeEnvironment'.toLowerCase());
+        if (walkMeEnvironmentParam && walkMeEnvironmentParam.toLowerCase() === 'test') {
+            walkMeEnvironment = '/' + walkMeEnvironmentParam + '/';
+        }
+
+        //Portal Apps
+        if (window.location.href.toLowerCase().indexOf('/manage') > 0 ||
+            window.location.href.toLowerCase().indexOf('/search') > 0 ||
+            window.location.href.toLowerCase().indexOf('/moderate') > 0 ||
+            window.location.href.toLowerCase().indexOf('/poll') > 0 ||
+            window.location.href.toLowerCase().indexOf('/editor') > 0) {
+            walkMeOptOut = window.App.WalkMeOptOut;
+        }
+        //Showcase
+        else if (window.location.href.toLowerCase().indexOf('/showcase') > 0) {
+            walkMeOptOut = window.App.WalkMeOptOut;
+        }
+        //WebApps
+        else if (window.location.href.toLowerCase().indexOf('/mymediasite') > 0 ||
+            window.location.href.toLowerCase().indexOf('/channel/') > 0) {
+            walkMeOptOut = window.ApplicationInitialization.WalkMeOptOut;
+        }
+        //Player
+        else if (window.location.href.toLowerCase().indexOf('/play') > 0) {
+            walkMeOptOut = window.SiteData.WalkMeOptOut;
+        }
+        //LTI
+        else if (window.location.href.toLowerCase().indexOf('/lti') > 0) {
+            walkMeOptOut = window.WalkMeOptOut;
+        }
+
+        if (!walkMeOptOut) {
+
+            //*****  START WALKME SNIPPET *****         
+            (function () {
+                var walkme = document.createElement('script');
+                walkme.type = 'text/javascript';
+                walkme.async = true;
+                walkme.src = 'https://cdn.walkme.com/users/67fecdd3e185492f812b7fbff591f308' + walkMeEnvironment + 'walkme_67fecdd3e185492f812b7fbff591f308_https.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(walkme, s);
+                window._walkmeConfig = { smartLoad: true };
+            })();
+            //*****  END WALKME SNIPPET *****
+        }
+
+    });
+})();

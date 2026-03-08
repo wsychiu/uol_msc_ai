@@ -1,0 +1,1 @@
+window.InsightsConfigurationCallback&&InsightsConfigurationCallback({"trackedEventsWhitelist":{"clicks":{"classes":{},"ids":{},"text":{},"labels":{},"selectors":[]},"inputs":{"classes":{},"ids":{},"text":{},"labels":{},"selectors":[]},"settings":{"sampleRate":100}}});
