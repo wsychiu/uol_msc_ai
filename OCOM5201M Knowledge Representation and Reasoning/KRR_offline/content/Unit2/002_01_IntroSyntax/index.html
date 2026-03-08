@@ -1,0 +1,1448 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 1 Introducing First Order Logic (FOL) - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-1-introducing-first-order-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 1 Introducing First Order Logic (FOL)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../02_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 1 Introducing First Order Logic (FOL)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-first-order-logic-adds-to-propositional-logic" class="md-nav__link">
+    What first order logic adds to propositional logic
+  </a>
+  
+    <nav class="md-nav" aria-label="What first order logic adds to propositional logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-predicates-properties" class="md-nav__link">
+    Relations, predicates, properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-language" class="md-nav__link">
+    The language
+  </a>
+  
+    <nav class="md-nav" aria-label="The language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-symbols" class="md-nav__link">
+    Logical symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-logical-symbols" class="md-nav__link">
+    Non-logical symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    Terms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    Formulas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    Equality
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-first-order-logic-adds-to-propositional-logic" class="md-nav__link">
+    What first order logic adds to propositional logic
+  </a>
+  
+    <nav class="md-nav" aria-label="What first order logic adds to propositional logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-predicates-properties" class="md-nav__link">
+    Relations, predicates, properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-language" class="md-nav__link">
+    The language
+  </a>
+  
+    <nav class="md-nav" aria-label="The language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-symbols" class="md-nav__link">
+    Logical symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-logical-symbols" class="md-nav__link">
+    Non-logical symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terms" class="md-nav__link">
+    Terms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formulas" class="md-nav__link">
+    Formulas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    Equality
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-1-introducing-first-order-logic">Lesson 1: Introducing first order logic</h1>
+<p>In propositional logic there is only one kind of thing: statements (propositions).
+These can be true or false. The logic provides ways of building up complex statements out of simpler ones.
+But propositional logic is not expressive enough for many things we want to represent and reason about.
+<strong>First order logic</strong>, also called <strong>predicate logic</strong> or <strong>predicate calculus</strong>, is more expressive because
+as well as statements that can be true or false, there are also individual things for the statements to talk about.</p>
+<div class="admonition success">
+<p class="admonition-title">Lesson 1 Learning outcomes:</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>distinguish relations and relation symbols (and so on)</li>
+<li>propose language elements to represent given scenarios</li>
+<li>distinguish between terms and formulas</li>
+<li>use quantifiers and other parts of first order logic to write syntactically correct formulas.</li>
+</ul>
+</div>
+<h2 id="what-first-order-logic-adds-to-propositional-logic">What first order logic adds to propositional logic</h2>
+<p>In first order logic we can represent much more of the following situation than we could in propositional logic:</p>
+<ul>
+<li>All of the red parcels were delivered yesterday.</li>
+<li>The parcel with the new component was one of the red ones.</li>
+<li>Every parcel delivered in the last 10 days was received undamaged.</li>
+</ul>
+<p>A consequence of those statements is:</p>
+<ul>
+<li>The new component was received undamaged</li>
+</ul>
+<p>The novelties here (not in propositional logic) are:</p>
+<ul>
+<li>things (e.g. parcels) in addition to propositions and statements,</li>
+<li>properties things may have (a thing may be a parcel; it may be red),</li>
+<li>relationships between things (a particular parcel contains certain things),</li>
+<li>The words 'all', 'every' and 'one of' are used to talk about collections of individuals.</li>
+</ul>
+<p>To work with the statements we would also need a way of representing things such as:</p>
+<ul>
+<li>Yesterday is within the last 10 days</li>
+<li>If a parcel contained something and was received, then the contents were received.</li>
+</ul>
+<h3 id="relations-predicates-properties">Relations, predicates, properties</h3>
+<p>It can be confusing that many different words are often used to talk about the same things.</p>
+<p>Consider these examples:</p>
+<ul>
+<li>Manchester is between Liverpool and Leeds</li>
+<li>Sally is older than Fred</li>
+<li>Sally is tall</li>
+<li>It is true that it is raining</li>
+</ul>
+<p>We might represent these in first order logic by:</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{between}(\mathit{Manchester},  \mathit{Liverpool}, \mathit{Leeds})\)</span></li>
+<li><span class="arithmatex">\(\mathit{olderThan}(\mathit{Sally}, \mathit{Fred})\)</span></li>
+<li><span class="arithmatex">\(\mathit{tall}(\mathit{Sally})\)</span></li>
+<li><span class="arithmatex">\(\mathit{itIsRaining}\)</span></li>
+</ul>
+<p>In this unit, we use the following terminology:</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{between}\)</span> is a relation symbol of arity 3; it takes 3 arguments</li>
+<li><span class="arithmatex">\(\mathit{olderThan}\)</span> is a relation symbol of arity 2; it takes 2 arguments</li>
+<li><span class="arithmatex">\(\mathit{tall}\)</span> is a relation symbol of arity 1; it takes 1 argument</li>
+<li><span class="arithmatex">\(\mathit{itIsRaining}\)</span> is a relation symbol of arity 0; takes 0 arguments</li>
+</ul>
+<p>However, you might come across alternative conventions elsewhere. For example, people often:</p>
+<ul>
+<li>say <strong>predicate symbol</strong> instead of <strong>relation symbol</strong></li>
+<li>drop the word 'symbol' if the difference between a relation and a name for a relation is obvious or unhelpful</li>
+<li>say <strong>property</strong> instead of <strong>predicate</strong> or <strong>relation</strong> for arity 1  </li>
+<li>say <strong>proposition symbol</strong> or <strong>propositional constant</strong> for a predicate of arity 0</li>
+<li>call things of arity 0 <strong>constants</strong></li>
+<li>call things of arity 1 <strong>unary</strong></li>
+<li>call things of arity 2 <strong>binary</strong></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Parcel delivery example</p>
+<p>This gives an example of how the earlier statements about parcels can be represented in
+first order logic. This is only one possibility. Different options include having <span class="arithmatex">\(\mathit{Undamaged}\)</span>
+    as a unary relation symbol, rather than as a constant. The treatment of time is very simple and would not
+    necessarily extend to different examples.</p>
+<p><span class="arithmatex">\(\forall x\,
+(\mathit{parcel}(x) \wedge \mathit{red}(x) \to \mathit{delivered}(x, \mathit{Yesterday}))\)</span></p>
+<p><span class="arithmatex">\(\exists x\,(\mathit{parcel}(x) \wedge \mathit{red}(x) \wedge \mathit{contains}(x, \mathit{NewComponent}))\)</span></p>
+<p><span class="arithmatex">\(\forall x\,
+(\mathit{parcel}(x) \wedge \mathit{delivered}(x, \mathit{InLast10Days}) \to
+\mathit{received}(x, \mathit{Undamaged}))\)</span></p>
+<p><span class="arithmatex">\(\forall x\,
+(\mathit{delivered}(x, \mathit{Yesterday}) \to \mathit{delivered}(x, \mathit{InLast10Days}))\)</span></p>
+<p><span class="arithmatex">\(\forall x\, \forall y\, ((\mathit{contains}(x,y) \wedge \mathit{received}(x, \mathit{Undamaged}))
+    \to \mathit{received}(y, \mathit{Undamaged}))\)</span></p>
+<p>and we should be able to deduce:</p>
+<p><span class="arithmatex">\(\mathit{received}(\mathit{NewComponent}, \mathit{Undamaged}))\)</span></p>
+</div>
+<h2 id="the-language">The language</h2>
+<p>The language is the basis of the syntax of our logic. What is described is only one
+possibility for the syntax of first order logic.</p>
+<p>It is made out of what are called <strong>symbols</strong> (these do not always have to be single
+characters - a word can be a 'symbol').</p>
+<p>Symbols come in two flavours:</p>
+<ul>
+<li>logical, and</li>
+<li>non-logical.</li>
+</ul>
+<p>The non-logical symbols depend on the application, the logical ones are always the same.</p>
+<p>Certain strings of these symbols will be valid <strong>expressions</strong>.</p>
+<p>There are two kinds of expressions: <strong>terms</strong> and <strong>formulas</strong>. Terms can refer to individuals, whereas formulas  (also called formulae) model statements about individuals.</p>
+<h3 id="logical-symbols">Logical symbols</h3>
+<p>These are the logical symbols:</p>
+<ul>
+<li>
+<p><strong>Punctuation</strong>: parentheses and commas: ( and ) and ,</p>
+</li>
+<li>
+<p><strong>Connectives</strong>: <span class="arithmatex">\(\vee\)</span>, <span class="arithmatex">\(\wedge\)</span>, <span class="arithmatex">\(\neg\)</span>, <span class="arithmatex">\(\to\)</span></p>
+</li>
+<li>
+<p><strong>Quantifiers</strong>: <span class="arithmatex">\(\forall\)</span>, <span class="arithmatex">\(\exists\)</span></p>
+</li>
+<li>
+<p><strong>Variables</strong>: an infinite supply of these, usually written <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> etc and sometimes
+<span class="arithmatex">\(x_1\)</span>, <span class="arithmatex">\(x_2\)</span>, etc.</p>
+</li>
+</ul>
+<h3 id="non-logical-symbols">Non-logical symbols</h3>
+<p>The non-logical symbols consist of</p>
+<ul>
+<li>
+<p><strong>Constant symbols</strong></p>
+<p>For specific individual things.
+   For Example: <span class="arithmatex">\(\mathit{Yesterday}\)</span>.</p>
+<p>There is no fixed convention, but I have tried
+ to use upper case (capital) letters at the start of constants to help distinguish them
+ from relation symbols.</p>
+</li>
+<li>
+<p><strong>Relation symbols</strong></p>
+<p>each with specified arity (no. of inputs <span class="arithmatex">\(\geqslant 1\)</span>)</p>
+<p>For relationships and properties. For Example: <span class="arithmatex">\(\mathit{between}\)</span>, <span class="arithmatex">\(\mathit{red}\)</span>.</p>
+</li>
+<li>
+<p><strong>Proposition symbols</strong></p>
+<p>(<span class="arithmatex">\(0\)</span>-ary relation symbols)</p>
+<p>For Example:  <span class="arithmatex">\(\mathit{itIsRaining}\)</span>, etc</p>
+</li>
+</ul>
+<h3 id="terms">Terms</h3>
+<p><strong>Terms</strong> are linguistic entities  that can refer to individual things.
+Don't confuse terms with <strong>formulas</strong>, which can have truth values.</p>
+<p>To give an analogy, in English <em>'the cat is happy'</em> is a sentence.
+Within that sentence <em>'the cat'</em> refers to a particular individual thing
+in the world. This is like being a term in first order logic. The sentence
+as a whole is something that is true or false. This sentence is like a formula.</p>
+<p>The rules for building terms are very simple:</p>
+<ul>
+<li>Every variable is a term.</li>
+<li>Every constant symbol is a term.</li>
+<li>Nothing else is a term.</li>
+</ul>
+<p>If we add function symbols this becomes slightly more complicated.
+Function symbols are an additional complication which are more useful
+for modelling aspects of mathematical practice than for most applications
+of knowledge representation in AI.</p>
+<p>To give an example, we can model one person being the mother of another
+in two ways. (For the purposes of the example about functions,
+we have to imagine that everybody
+has exactly one mother.)</p>
+<ul>
+<li>as a relationship that holds between two individuals, or</li>
+<li>as a function that given a person as input, returns their mother as output.</li>
+</ul>
+<p>The first of these approaches is more flexible. In the second approach
+we are forced to make sense of</p>
+<p><em>'the mother of the mother of the mother of &hellip; the mother of someone'</em></p>
+<p>where there is no limit at all to the number of generations hidden in the &hellip; .</p>
+<h3 id="formulas">Formulas</h3>
+<p><strong>Formulas</strong> are things in the language that can have truth values.</p>
+<p>Don't confuse formulas  with terms, which can refer to individual things.</p>
+<p>Formulas are also sometimes called <strong>well formed formulas</strong> or <strong>wffs</strong>, just as
+in the case of propositional logic.</p>
+<p>The rules for formulas:</p>
+<ul>
+<li>Every propositional symbol is a formula.</li>
+<li>If <span class="arithmatex">\(P\)</span> is a predicate symbol of arity <span class="arithmatex">\(n \geqslant 1\)</span>, and <span class="arithmatex">\(t_1, \ldots, t_n\)</span> are terms,
+  then <span class="arithmatex">\(P(t_1, \ldots, t_n)\)</span> is a formula.</li>
+<li>If <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are formulas then these are formulas:<ul>
+<li><span class="arithmatex">\(\neg \alpha\)</span></li>
+<li><span class="arithmatex">\((\alpha \vee \beta)\)</span></li>
+<li><span class="arithmatex">\((\alpha \wedge \beta)\)</span></li>
+</ul>
+</li>
+<li>If <span class="arithmatex">\(x\)</span> is a variable, and <span class="arithmatex">\(\alpha\)</span> is a formula, then <span class="arithmatex">\(\forall x \; \alpha\)</span> and
+      <span class="arithmatex">\(\exists x \; \alpha\)</span> are formulas.</li>
+<li>Nothing else is a formula.</li>
+</ul>
+<p>Note that the definition of what it means to be a formula is recursive.</p>
+<p>The informal idea to have at the moment is that</p>
+<div class="arithmatex">\[
+\left.
+\begin{array}{l}
+\forall x \;\alpha\\[1ex]
+\exists x \;\alpha\\[1ex]
+\neg \alpha\\[1ex]
+(\alpha \vee \beta)\\[1ex]
+(\alpha \wedge \beta)\\[1ex]
+(\alpha \to \beta)
+\end{array}
+\right\}
+\text{ means }
+\left\{
+\begin{array}{l}
+\text{For all } x \text{ it is that case that } \alpha\\[1ex]
+\text{There is some } x \text{ such that } \alpha\\[1ex]
+\text{Not } \alpha\\[1ex]
+\alpha \text{ or } \beta\\[1ex]
+\alpha \text{ and } \beta\\[1ex]
+\alpha \text{ implies } \beta
+\end{array}
+\right.
+\]</div>
+<p>Beware that</p>
+<ul>
+<li>'or' is inclusive,</li>
+<li>'some' means one or more,</li>
+<li>'all' really means literally all, and not all except one or two.</li>
+</ul>
+<p>Parentheses get left out if there is no danger of ambiguity.</p>
+<div class="admonition danger">
+<p class="admonition-title">Do not confuse terms with formulas</p>
+<p>You can imagine someone saying:</p>
+<blockquote>
+<p>When was the paint delivered? Not yesterday.</p>
+</blockquote>
+<p>You might be tempted to represent that by
+<span class="arithmatex">\(\mathit{delivered}(\mathit{ThePaint}, \neg \mathit{Yesterday})\)</span>,
+turning the informal 'not yesterday' into the formal <span class="arithmatex">\(\neg \mathit{Yesterday}\)</span>.</p>
+<p>This does not work. You can only use the logical connectives with statements that are capable of being
+true or false.</p>
+<p>The word <span class="arithmatex">\(\mathit{Yesterday}\)</span> stands for an individual thing (a specific time),
+not something that can be true or false.
+You need to say
+<span class="arithmatex">\(\neg \mathit{delivered}(\mathit{ThePaint}, \mathit{Yesterday}).\)</span></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Check your understanding</p>
+<ul>
+<li>
+<p>Constant symbols :
+    <span class="arithmatex">\(\mathit{Homer}\)</span>, <span class="arithmatex">\(\mathit{Bart}\)</span>, <span class="arithmatex">\(\mathit{Pink}\)</span>, <span class="arithmatex">\(\mathit{Yellow}\)</span>, <span class="arithmatex">\(\mathit{TheDonut}\)</span></p>
+</li>
+<li>
+<p>Relation symbols (arity 1):
+    <span class="arithmatex">\(\mathit{isAPerson}\)</span>, <span class="arithmatex">\(\mathit{isAColour}\)</span>, <span class="arithmatex">\(\mathit{isEdible}\)</span></p>
+</li>
+<li>
+<p>Relation symbols (arity 2):
+    <span class="arithmatex">\(\mathit{hasColour}\)</span>, <span class="arithmatex">\(\mathit{likes}\)</span>.</p>
+</li>
+<li>
+<p>Proposition symbols:
+    <span class="arithmatex">\(\mathit{itIsTuesday}\)</span>, and where</p>
+</li>
+<li>
+<p><span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, <span class="arithmatex">\(z\)</span> are variables.</p>
+</li>
+</ul>
+<p>Which of the following are formulas  according to the rules?</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\mathit{isAColour}(\mathit{Pink}) \wedge \mathit{hasColour}(\mathit{TheDonut}, \mathit{Yellow})\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x \; (\mathit{likes}(\mathit{Homer}, x) \vee \neg \mathit{isEdible}(x) )\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x \; \neg \exists y \; (\mathit{hasColour}(x,y) \wedge \neg \mathit{isAColour}(y))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((\mathit{hasColour}(\mathit{Pink},\mathit{Yellow}) \vee \mathit{Homer}(\mathit{likes},\mathit{TheDonut}))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathit{itIsFriday}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathit{hasColour}(\mathit{isEdible}(x), \mathit{isAColour}(y))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x\; ( \exists y\; (\forall z\; \mathit{isEdible}(y) \wedge \mathit{likes}(z,z)) ) \vee \mathit{isEdible}(x))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((((\mathit{itIsTuesday} \wedge \neg \mathit{itIsTuesday}) \wedge \neg \neg \mathit{itIsTuesday}) \wedge \forall x \; \mathit{isEdible}(y))\)</span></p>
+</li>
+</ol>
+</div>
+<details class="question"><summary>Reveal answers</summary><p>1, 2, 3 are all formulas.</p>
+<p>4 is not, because</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{Homer}\)</span> is not a binary relation symbol</li>
+<li><span class="arithmatex">\(\mathit{likes}\)</span> is not a term</li>
+</ul>
+<p>5 is not, because</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{itIsFriday}\)</span> is not in the language at all.</li>
+</ul>
+<p>6 is not, because</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{isEdible}(x)\)</span> is  a formula and there needs to be a term in its place</li>
+<li><span class="arithmatex">\(\mathit{isAColour}(y)\)</span> is  a formula and there needs to be a term in its place</li>
+</ul>
+<p>7 is not, because the parentheses are not in matching pairs</p>
+<p>8 is a formula.</p>
+<p>Remember that being a formula is simply about the syntax. Something can be a formula without corresponding to anything useful that you could imagine anyone wanting to represent in the first place.</p>
+</details>
+<h2 id="equality">Equality</h2>
+<p>In <strong>first order logic with equality</strong> there is a special binary relation symbol, <span class="arithmatex">\(=\)</span>.</p>
+<p>This is written in the <strong>infix</strong> style: we write <span class="arithmatex">\(x = y\)</span> rather than <span class="arithmatex">\(=(x,y)\)</span>.</p>
+<p>The <span class="arithmatex">\(=\)</span> sign is always interpreted as meaning equality in the usual sense
+between the individual things that the
+language is talking about.
+For example, <span class="arithmatex">\(x=x\)</span> will always be a true statement.
+But if we have a binary relation symbol <span class="arithmatex">\(\mathit{greaterThan}\)</span> the situation
+is different. If we want it to be the case that
+nothing is greater than itself, making <span class="arithmatex">\(\neg \mathit{greaterThan}(x,x)\)</span> true,
+then we have to say explicitly that this holds. The key point here is that
+the sign <span class="arithmatex">\(=\)</span> is the only relation or predicate symbol which always comes
+with a particular fixed meaning.</p>
+<p>In general we will always include <span class="arithmatex">\(=\)</span> as part of the language in first
+order logic. If there is any exercise or example in which it is not to be
+used then this will be stated very clearly.</p>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 1, you can test your knowledge in a formative exercise.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-2 Lesson 1'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../02_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About Unit 2
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../002_02_Semantics/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 2 Semantics of FOL
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

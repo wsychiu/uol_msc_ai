@@ -1,0 +1,1837 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 1 Introducing KRR - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-1-introducing-krr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 1 Introducing KRR
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 1 Introducing KRR
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 1 Introducing KRR
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-name-krr" class="md-nav__link">
+    1.1 The name KRR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-introducing-the-main-concepts" class="md-nav__link">
+    1.2 Introducing the main concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Introducing the main concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-inferencereasoning" class="md-nav__link">
+    What is inference/reasoning?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-knowledge" class="md-nav__link">
+    What is knowledge?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-representation" class="md-nav__link">
+    What is representation?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-knowledge-representation" class="md-nav__link">
+    What is knowledge representation?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-why-do-we-need-knowledge-representation" class="md-nav__link">
+    1.3 Why do we need knowledge representation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-krr-research-at-leeds-some-examples" class="md-nav__link">
+    1.4 KRR research at Leeds (some examples)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-semantic-technology" class="md-nav__link">
+    1.5 Semantic technology
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Semantic technology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rdf" class="md-nav__link">
+    RDF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ontology" class="md-nav__link">
+    Ontology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-logics" class="md-nav__link">
+    Description logics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-early-history-of-krr" class="md-nav__link">
+    1.6 Early History of KRR
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 Early History of KRR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-john-mccarthy-1958" class="md-nav__link">
+    1.6.1 John McCarthy 1958
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-earlier-history" class="md-nav__link">
+    1.6.2 Earlier history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-aspects-of-logics" class="md-nav__link">
+    1.7 Aspects of  logics
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 Aspects of  logics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-and-other-mechanisms" class="md-nav__link">
+    Inference and other mechanisms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-variety-of-logics" class="md-nav__link">
+    The variety of logics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-and-computation" class="md-nav__link">
+    Inference and computation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-review-of-basic-mathematical-terminology" class="md-nav__link">
+    1.8 Review of basic mathematical terminology
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 Review of basic mathematical terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations" class="md-nav__link">
+    Relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists-and-non-binary-relations" class="md-nav__link">
+    Lists and non-binary relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-name-krr" class="md-nav__link">
+    1.1 The name KRR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-introducing-the-main-concepts" class="md-nav__link">
+    1.2 Introducing the main concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Introducing the main concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-inferencereasoning" class="md-nav__link">
+    What is inference/reasoning?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-knowledge" class="md-nav__link">
+    What is knowledge?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-representation" class="md-nav__link">
+    What is representation?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-knowledge-representation" class="md-nav__link">
+    What is knowledge representation?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-why-do-we-need-knowledge-representation" class="md-nav__link">
+    1.3 Why do we need knowledge representation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-krr-research-at-leeds-some-examples" class="md-nav__link">
+    1.4 KRR research at Leeds (some examples)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-semantic-technology" class="md-nav__link">
+    1.5 Semantic technology
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Semantic technology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rdf" class="md-nav__link">
+    RDF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ontology" class="md-nav__link">
+    Ontology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description-logics" class="md-nav__link">
+    Description logics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-early-history-of-krr" class="md-nav__link">
+    1.6 Early History of KRR
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 Early History of KRR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-john-mccarthy-1958" class="md-nav__link">
+    1.6.1 John McCarthy 1958
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-earlier-history" class="md-nav__link">
+    1.6.2 Earlier history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-aspects-of-logics" class="md-nav__link">
+    1.7 Aspects of  logics
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 Aspects of  logics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inference-and-other-mechanisms" class="md-nav__link">
+    Inference and other mechanisms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-variety-of-logics" class="md-nav__link">
+    The variety of logics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-and-computation" class="md-nav__link">
+    Inference and computation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-review-of-basic-mathematical-terminology" class="md-nav__link">
+    1.8 Review of basic mathematical terminology
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 Review of basic mathematical terminology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations" class="md-nav__link">
+    Relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists-and-non-binary-relations" class="md-nav__link">
+    Lists and non-binary relations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-1-introducing-krr">Lesson 1: Introducing KRR</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>explain what main topics we study</li>
+<li>identify deduction, induction, and abduction in examples</li>
+<li>understand the general historical antecedents of the topics we study.</li>
+</ul>
+</div>
+<h2 id="11-the-name-krr">1.1 The name KRR</h2>
+<p>Knowledge Representation and Reasoning (KRR) concerns the representation of knowledge in a form suitable for computational manipulation and exchange, together with the use of reasoning to process knowledge represented in this way in order to both generate new knowledge and to uncover properties of existing knowledge. Typically KRR uses techniques which originated in the mathematical study of logic and in philosophy, but the needs of AI have led to contemporary KRR diverging from these disciplines.</p>
+<p>This module deals with:</p>
+<ul>
+<li>The representation of knowledge, and</li>
+<li>Reasoning about knowledge using representations in formal logics.</li>
+</ul>
+<p>In this lesson you will be introduced to the meanings of these terms.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The abbreviation KRR is always pronounced by saying the name of each letter individually: K R R. In computing this is like AI, which is always A I, but unlike some names such as SQL which sometimes becomes 'sequel' in speech.</p>
+<p>In the Computing literature, KRR is sometimes shortened to KR and <em>Knowledge Representation</em> can include reasoning in its meaning. The main academic conference on the topic is known simply as <a href="https://kr.org/" target="_blank">KR</a>.</p>
+</div>
+<h2 id="12-introducing-the-main-concepts">1.2 Introducing the main concepts</h2>
+<h3 id="what-is-inferencereasoning">What is inference/reasoning?</h3>
+<p>Reasoning is computation with symbols representing statements, rather
+than with numerals.
+This means it is very like arithmetic.
+For example in binary addition (addition base 2) we have inputs combined
+following rules to produce an output.</p>
+<div class="arithmatex">\[1011, 10 \leadsto 1101\]</div>
+<p>In reasoning we deal with statements like this:</p>
+<blockquote>
+<p><em>If it is a bank holiday then the weather is bad;
+  it is a bank holiday; so the weather is bad</em></p>
+</blockquote>
+<p>By representing the statements as symbols that can be manipulated
+according to rules, we  see processes like this:</p>
+<div class="arithmatex">\[P \to Q, \quad P \quad \leadsto \quad Q.\]</div>
+<p>Notice the analogy with the numerical computation: two inputs are combined
+according to a rule to produce an output result.</p>
+<h3 id="what-is-knowledge">What is knowledge?</h3>
+<p>One definition is 'things that can be known'. So, anything that could fill the gap here:</p>
+<p>''Harry knows that &hellip;''</p>
+<p>Another is that knowledge is a relationship between an <strong>agent</strong> and a <strong>proposition</strong>.</p>
+<p>Propositions are
+either true or false e.g.    </p>
+<ul>
+<li><span class="arithmatex">\(2+2=4\)</span>,</li>
+<li>Today is sunny.</li>
+</ul>
+<p>More accurately: propositions are  uses of sentences in specific contexts which
+are true or false (because of indexicals such as 'today')</p>
+<p>Questions and commands are <strong>not</strong> propositions. For instance:</p>
+<ul>
+<li>Close the door!</li>
+<li>Are there 26 students in the room?</li>
+</ul>
+<p>We don't deal with</p>
+<ul>
+<li>''Harry knows how to &hellip; (play the piano)'', nor</li>
+<li>''Harry believes that &hellip;'' (although there are logics of belief)</li>
+</ul>
+<h3 id="what-is-representation">What is representation?</h3>
+<p>Representation, in the context of KRR, is modelling something in such a way that handling the model is better
+suited to our purpose than handling the thing itself.</p>
+<p>Representations generally abstract from what is modelled (leaving out details).
+They may introduce features of their own that do not correspond to anything
+in the modelled domain.</p>
+<p>In the well-known map of the London Underground the connections between
+stations are represented, but distances are not represented and directions are
+only sometimes roughly represented. Whether a station is North or South of the river
+Thames is represented, but an East-West or North-South relationship on the ground may not
+be indicated at all correctly.</p>
+<h3 id="what-is-knowledge-representation">What is knowledge representation?</h3>
+<p>There is no universally agreed answer, but we can make some observations</p>
+<ul>
+<li>It is:<ul>
+<li>How to appropriately encode and utilise
+   information in computational models of cognition.</li>
+<li>such encoding is generally explicit, symbolic, unambiguous</li>
+<li>the use and modelling is mostly engineering orientated,
+but sometimes aims
+for psychological or linguistic plausibility.</li>
+</ul>
+</li>
+</ul>
+<p>Knowledge representation often involves:</p>
+<ul>
+<li>syntax,</li>
+<li>semantics,</li>
+<li>inference,   </li>
+</ul>
+<p>but only syntax and inference are evident in implementation.</p>
+<p>There are many different KR languages (ways to write down or encode knowledge).</p>
+<ul>
+<li>some have more than one syntax
+(e.g. textual/graphical)</li>
+<li>different languages have different expressiveness and computational properties.</li>
+</ul>
+<h2 id="13-why-do-we-need-knowledge-representation">1.3 Why do we need knowledge representation?</h2>
+<p>One motivation is the current awareness that we need <strong>explainable AI</strong>.
+That is, not just systems that can carry out complex tasks, but ones that can
+<strong>explain</strong> why they came to a particular decision. This can be important
+to avoid bias and discrimination that can arise, for example, in some machine
+learning situations where the data is not appropriate for the ultimate use of the system.</p>
+<p>KR can be useful to describe behaviour of sufficiently complex
+systems (human or otherwise) in terms of beliefs, goals,
+intentions, hopes.
+For example:</p>
+<ul>
+<li>
+<p>the computer moved the pawn to block a threat from the white bishop  </p>
+<ul>
+<li>even if the reason was just because of heuristic search of a game.</li>
+</ul>
+</li>
+<li>
+<p>The program diagnosed a faulty bulb because the fuse and switch are
+working correctly.</p>
+</li>
+</ul>
+<p>These type of examples come from an approach known as the
+<strong>physical symbol system hypothesis</strong> suggested in this paper:</p>
+<ul>
+<li>Allen Newell and Herbert A. Simon,
+“Computer Science as Empirical Inquiry: Symbols and Search,”
+Communications of the ACM. vol. 19, No. 3, pp. 113-126, March, 1976.
+<a href="https://dl.acm.org/doi/pdf/10.1145/1283920.1283930" target="_blank">Available online here</a></li>
+</ul>
+<h2 id="14-krr-research-at-leeds-some-examples">1.4 KRR research at Leeds (some examples)</h2>
+<p>We will return to spatial information in knowledge representation and reasoning
+in detail in unit 5. There have been a number of important contributions to
+research in this area by people working at Leeds. Some of these contributions
+are highlighted <a href="https://artificial-intelligence.leeds.ac.uk/qualitative-spatial-representation-and-reasoning/" target="_blank">on this page</a>, which links to papers on the following two research areas:</p>
+<ul>
+<li>
+<p>The <strong>Region-Connection Calculus</strong> or <strong>RCC</strong> is a formal system of spatial
+relationships corresponding to ideas such as <strong>inside</strong>, <strong>touching only at the boundary</strong>,
+<strong>overlapping</strong>, <strong>separate from</strong>. This was developed by David Randell, Zhan Cui, and <a href="https://eps.leeds.ac.uk/computing/staff/76/professor-anthony-tony-g-cohn-freng-ceng-citp" target="_blank">Tony Cohn</a>, starting with initial work at Warwick University. The origins go back much further to ideas of A. N. Whitehead and others in the early part of the twentieth century.</p>
+</li>
+<li>
+<p>Qualitative spatial and temporal representation and reasoning (QSTR) has been used in <strong>event recognition from videos</strong>.
+  The basic problem here is to determine what event is taking place in a video. For example, given two people engaged
+  in some activity, can you tell if they are having an argument, sharing a meal, or playing a card game?
+  The way  QSTR is used here involves abstracting from geometrical data (bounding boxes for people and objects) in individual frames and modelling how relationships (between these bounding boxes) change over time. This enables patterns of relationships to be discovered and used as part of the mechanism to identify events.</p>
+</li>
+</ul>
+<p>Other KRR activity at Leeds includes the following:</p>
+<ul>
+<li>
+<p><a href="https://eps.leeds.ac.uk/computing/staff/121/dr-brandon-bennett" target="_blank">Brandon Bennett</a> has
+worked on the <strong>ontology of geographic information</strong> including projects supported by the Ordnance Survey and questions
+such as how to formulate definitions of concepts, for example: <em>forest</em>, <em>mountain</em> and  <em>building</em>, in a logical way.</p>
+</li>
+<li>
+<p>A new project starting in 2022, led by Ian Gregory at Lancaster, involves spatial relationships in an interdisciplinary context and includes collaboration with Leeds staff <a href="https://eps.leeds.ac.uk/computing/staff/258/dr-john-stell)" target="_blank">John Stell</a> and
+<a href="https://eps.leeds.ac.uk/computing/staff/76/professor-anthony-tony-g-cohn-freng-ceng-citp" target="_blank">Tony Cohn</a>, as well as other researchers at Lancaster together with Manchester, Bristol, Stanford, and IUPUI Indiana. The project,
+funded by ESRC and NSF, will include the use of spatial relationships in texts to
+represent information about narrative descriptions in language.
+The part of the project where Leeds is involved provides a representation of
+spatial relationships in historical narratives so that patterns of relationships
+can be discovered using KRR techniques. The historical narratives in the project include
+transcripts of interviews with survivors of the Holocaust, as well as nineteenth century
+and earlier writing about the Lake District.</p>
+</li>
+</ul>
+<h2 id="15-semantic-technology">1.5 Semantic technology</h2>
+<p>The semantic web has not delivered all that was promised,
+but ontology and other semantic technologies remain
+a key application area for KRR.</p>
+<p><strong>Read:</strong>
+Horrocks, I (2008) <a href="https://leeds.primo.exlibrisgroup.com/discovery/openurl?institution=44LEE_INST&vid=44LEE_INST:VU1&volume=51&date=20081201&pages=58-67&aulast=HORROCKS&issn=00010782&issue=12&genre=article&spage=58&title=Communications%20of%20the%20ACM&atitle=Ontologies%20and%20the%20Semantic%20Web.&sid=EBSCO:Business%20Source%20Premier
+" target="_blank"><em>Ontologies and the Semantic Web</em></a> Comm ACM 51(<strong>12</strong>) pp58-67 December 2008</p>
+<p>Horrocks' article raises several important issues, noted below:</p>
+<ul>
+<li>
+<p>Data integration is a problem.</p>
+</li>
+<li>
+<p>Tagging with keywords is not enough and we really need to have some way to
+represent what the terms mean. Web search is still very limited.</p>
+</li>
+</ul>
+<h3 id="rdf">RDF</h3>
+<p>RDF (Resource Description Framework) is a way to represent knowledge
+using triples.
+For example, knowledge that paper is made from wood, could be represented by
+three things in order:</p>
+<ol>
+<li>paper (the subject of the triple)</li>
+<li>is made from (the predicate of the triple)</li>
+<li>wood (the object of the triple)</li>
+</ol>
+<p>One advantage of RDF is the way a set of triples forms a graph where the
+nodes are labelled by things that can be subjects or objects, and the
+directed links are labelled by predicates.</p>
+<h3 id="ontology">Ontology</h3>
+<p>In computer science, an <strong>ontology</strong>
+is an engineering artifact, usually a
+model of (some aspect of) the world; it
+introduces vocabulary describing various
+aspects of the domain being modelled
+and provides an explicit specification
+of the intended meaning of that
+vocabulary
+(Horrocks 2008, p61).</p>
+<p>RDF (and various extensions of it) is limited as an ontology language because
+it has limited <strong>expressiveness</strong>. This means there are statements that it is
+useful to make but which are beyond what can be expressed in RDF.</p>
+<p>The Web Ontology Language OWL
+is a W3C standard designed for the Semantic Web, and is much more expressive
+than RDF.</p>
+<h3 id="description-logics">Description logics</h3>
+<p>A key feature of OWL is its basis in
+Description Logics (DLs), a family of
+logic-based knowledge-representation
+formalisms descended from Semantic
+Networks and KL-ONE but that have a
+formal semantics based on first-order
+logic. These formalisms all adopt an
+object-oriented model like the one
+used by Plato and Aristotle in which
+the domain is described in terms of
+individuals, concepts (called <em>classes</em>
+in RDF), and roles (called <em>properties</em>
+in RDF) (Horrocks 2008).</p>
+<h2 id="16-early-history-of-krr">1.6 Early History of KRR</h2>
+<h3 id="161-john-mccarthy-1958">1.6.1 John McCarthy 1958</h3>
+<p>John McCarthy was not merely a leading figure in KRR from the 1950s onwards,
+but  introduced the term "Artificial Intelligence" itself.</p>
+<p>Here he writes about a proposed AI system in 1959. The quotes below are taken from <a href="https://www.cs.rit.edu/~rlaz/is2014/files/McCarthyProgramsWithCommonSense.pdf" target="_blank">Mechanisation of thought processes: proceedings of a symposium held at the National Physical Laboratory on 24<sup>th</sup>-27<sup>th</sup> November 1958. (1959)</a>, in which Dr McCarthy presents his ideas, and his contemporaries at the symposium offer their responses. If you would like to read the document itself, a clearer version is also available <a href="http://www-formal.stanford.edu/jmc/mcc59/mcc59.html" target="_blank">here</a>.</p>
+<p>''The <em>advice taker</em> is a proposed program for solving problems
+by manipulating sentences in formal languages&hellip;        </p>
+<p>&hellip; Assume I am seated at my desk at home and I wish to go to the
+  airport. My car is at home also. The solution to the problem is to
+walk to the car and drive the car to the airport.
+First, we shall give a formal statement of the premises the
+<em>advice taker</em> uses to draw the conclusions. Then we shall
+discuss the heuristics which cause the <em>advice taker</em> to
+assemble these premises from the totality of facts it has available.''</p>
+<p><strong>But not everyone thought it would be any use at all:</strong></p>
+<p>''<strong>Prof. Y. Bar-Hillel:</strong>
+Dr. McCarthy's paper belongs in the <em>Journal of Half-Baked Ideas</em> &hellip;</p>
+<p>&hellip;A deductive argument, where you have first to find out what are the relevant premises,
+is something which many humans are not always able to carry out successfully.
+I do not see the slightest reason to believe, at present, machines should be able to
+perform things that humans find trouble in doing. I do not think there could possibly exist
+a program which would, given any problem, divide all the facts in the universe into
+those which are and those which are not relevant for the problem&hellip;"</p>
+<p><strong>McCarthy's reply:</strong>
+"&hellip;
+I hope that once we have succeeded in  making computer programs reason about the world,
+we will be able to reformulate epistemology as a branch of applied mathematics no more
+mysterious or controversial than physics&hellip;''</p>
+<h3 id="162-earlier-history">1.6.2 Earlier history</h3>
+<p>McCarthy's dream of reducing knowledge to mathematics is related to much earlier
+ideas (e.g. Leibniz' dream of reducing argument to calculation).</p>
+<p>Formal logic developed in the 19<sup>th</sup> and 20<sup>th</sup> centuries. Much of this later work was motivated
+from mathematics and philosophy rather than everyday commonsense reasoning.</p>
+<p>Boole (1847) developed an algebraic calculus for some forms of argument
+using statements like <em>All Xs are Ys</em> and <em>Some Ys are not-Zs</em> etc.</p>
+<p>This was mechanised by Jevons in 1869.</p>
+<figure role="group">
+  <img src="../images/KRR_IMG_013.jpeg" alt="An image showing Jevons' Logic Machine or Logical Piano." />
+  <figcaption><strong>Jevons' Logic Piano</strong> Licensed under CC 2.0 Attribution Share Alike https://commons.wikimedia.org/wiki/File:William_Stanley_Jevons_Logic_Piano.jpg</figcaption>
+</figure>
+
+<p>But
+logical machines can be traced back as far as Raymond Lull (1235&ndash;1315)
+with a mechanical system for
+generating combinations of concepts.</p>
+<h2 id="17-aspects-of-logics">1.7 Aspects of  logics</h2>
+<p>Traditionally, logic is the study of entailment (and
+syntax, semantics, rules of inference).</p>
+<h3 id="inference-and-other-mechanisms">Inference and other mechanisms</h3>
+<p>We saw the idea that computing with propositions is analogous to
+computing with numbers. There are different processes; here we mostly study deduction
+but you should also be aware of induction (which in the sense below is not the same as the
+deductive mechanism called 'mathematical induction'), and abduction.</p>
+<p>Humans often use induction and abduction but it must be remembered that only
+in the case of deduction is there any guarantee that the conclusion is correct.
+However, correctness may not be the only criterion of value in some cases. It can be
+more useful to have a likely (but wrong) conclusion in a short time than a certainly correct
+answer after a very long delay.</p>
+<p><strong>Deduction (inferring logical truths)</strong></p>
+<div class="arithmatex">\[\begin{array}{lll}
+\mathsf{All~ birds~ fly}      &amp; \qquad &amp;  \forall x \mathit{Bird}(x) \to \mathit{Flies}(x)\\
+\mathsf{Tweety~ is~ a~ bird}   &amp;               &amp; \mathit{Bird}(\mathit{tweety})\\
+\therefore \mathsf{Tweety~ flies} &amp;         &amp; \mathit{Flies}(\mathit{tweety})
+\end{array}\]</div>
+<p><strong>Induction (generalising from examples)</strong></p>
+<div class="arithmatex">\[\begin{array}{lll}
+\mathsf{Tweety~ flies}       &amp; \qquad &amp; \mathit{Flies}(\mathit{tweety})\\
+\mathsf{Tweety~ is~ a~ bird}   &amp;               &amp; \mathit{Bird}(\mathit{tweety})\\
+\therefore \mathsf{All~ birds~ fly}  &amp;         &amp; \forall x \mathit{Bird}(x) \to \mathit{Flies}(x)
+\end{array}\]</div>
+<p><strong>Abduction (explaining observations from background theory)</strong></p>
+<div class="arithmatex">\[\begin{array}{lll}
+\mathsf{All~ birds~ fly}       &amp; \qquad &amp; \forall x \mathit{Bird}(x) \to \mathit{Flies}(x)\\
+\mathsf{Tweety~ flies}       &amp;               &amp; \mathit{Flies}(\mathit{tweety})\\
+\therefore \mathsf{Tweety~ is~ a~ bird}      &amp;               &amp; \mathit{Bird}(\mathit{tweety})\\
+\end{array}\]</div>
+<h3 id="the-variety-of-logics">The variety of logics</h3>
+<p>First order logic (FOL) has
+played a leading role in KR. (also called 1<sup>st</sup> order predicate calculus).</p>
+<p>But FOL is just a starting point, and there are lots of other logics.
+Some of these are parts of FOL  (subsets of FOL);  others extend FOL with additional
+features (supersets of FOL). There are still other logics which are neither subsets nor supersets of
+FOL.</p>
+<ul>
+<li>
+<p><strong>Propositional logic</strong>    </p>
+<p>Here the only things manipulated are propositions; things that are true or false.</p>
+</li>
+<li>
+<p><strong>First order logic</strong>    </p>
+<p>Here, besides statements that can be true or false, there are also individual things
+that the statements can refer to. There is quantification over the collection of individuals.
+That means you can say that all of them have some property, or that at least one of them has
+some property.</p>
+</li>
+<li>
+<p><strong>Higher order logic</strong></p>
+<p>This differs from the first order case by allowing quantification over sets of the individuals
+(second order logic), or sets of sets, or sets of sets of sets, etc of the individuals.
+This can make some things easier to express at the expense of being more impractical to do any computation.</p>
+</li>
+<li>
+<p><strong>Modal logics</strong> (closely related to description logics)    </p>
+<p>These arose traditionally in expressing statements about propositions such as necessity and possibility.
+For example it is necessarily the case that if Zaphod Beeblebrox has two heads then he has more than
+one head. But it is only possible that Douglas Adams will one day be more famous than Shakespeare.</p>
+<p>Modal logics can be used to represent concepts such as an agent knowing something, a person believing
+something, someone being obliged to do something, one event happening in the future or the past of something else (temporal logics), etc.</p>
+</li>
+<li>
+<p><strong>Non monotonic logics</strong></p>
+<p>In classical logic adding new facts does not make something false that was previously
+true. But in a lot of human situations we do this in the sense of assuming things to be true
+that can be rejected after getting more information. For some reason in AI this is always
+explained by the example of knowing that <span class="arithmatex">\(\mathit{Tweety}\)</span> is a bird, then taking as true
+that <span class="arithmatex">\(\mathit{Tweety}\)</span> flies, only later to reject that when you are introduced to
+<span class="arithmatex">\(\mathit{Tweety}\)</span> herself and you realise you are talking to a penguin.
+This kind of <strong>default reasoning</strong> is not easy to model fully, but it is certainly something
+different from classical logic.</p>
+</li>
+</ul>
+<h3 id="inference-and-computation">Inference and computation</h3>
+<p>A tough issue that any AI reasoning system must confront
+is that of <strong>tractability</strong>.</p>
+<p>A problem domain is intractable if it is not possible for a
+(conventional) computer program to solve it in
+'reasonable' time (and with 'reasonable' use of other
+resources such as memory).</p>
+<p>Certain classes of logical problem are not only intractable
+but also undecidable.</p>
+<p>This means that there is no program that, given any
+instance of the problem, will in finite time either:</p>
+<ol>
+<li>find a solution; or</li>
+<li>terminate having determined that no
+solution exists.</li>
+</ol>
+<h2 id="18-review-of-basic-mathematical-terminology">1.8 Review of basic mathematical terminology</h2>
+<p>The module uses some very basic discrete mathematics terminology.
+Some concepts are listed here, but for fuller explanation see any
+good book on the topic. Rosen's <a href="https://leeds.primo.exlibrisgroup.com/discovery/fulldisplay?vid=44LEE_INST:VU1&docid=alma991019654648905181" target="_blank">Discrete Mathematics and its Applications (2019)</a> is one such example.</p>
+<h3 id="sets">Sets</h3>
+<p>Remember that a set is a collection of things without any order, and in which
+repeated elements are not allowed.</p>
+<p>Finite sets can be written down as <span class="arithmatex">\(\{1, 2, 4\}\)</span>. This is the same set as <span class="arithmatex">\(\{2, 1, 4\}\)</span>.</p>
+<p>The empty set can be written <span class="arithmatex">\(\{ \}\)</span> or as <span class="arithmatex">\(\varnothing\)</span>.
+The symbol <span class="arithmatex">\(\in\)</span> means 'is an element of' as in <span class="arithmatex">\(2 \in \{4,1,2\}\)</span>.</p>
+<p>You should know <strong>intersection</strong> <span class="arithmatex">\(\cap\)</span> and <strong>union</strong> <span class="arithmatex">\(\cup\)</span>
+and <strong>cartesian product</strong> <span class="arithmatex">\(\times\)</span>. You should know the idea of a <strong>subset</strong>,
+denoted <span class="arithmatex">\(A \subseteq B\)</span> meaning that <span class="arithmatex">\(A\)</span> is any set made entirely of elements
+of <span class="arithmatex">\(B\)</span>, including the extreme cases of none of the elements and all of them.</p>
+<p>The <strong>difference</strong> of sets is denoted many different ways, but here
+by a minus sign.
+<span class="arithmatex">\(A - B\)</span> is the set of things which are in <span class="arithmatex">\(A\)</span> but not in <span class="arithmatex">\(B\)</span>.</p>
+<p>In the context of a set <span class="arithmatex">\(U\)</span> and a subset <span class="arithmatex">\(A \subseteq U\)</span>
+the <strong>complement</strong> of <span class="arithmatex">\(A\)</span>, sometimes written <span class="arithmatex">\(\overline{A}\)</span> or
+<span class="arithmatex">\(-A\)</span>, is the difference <span class="arithmatex">\(U-A\)</span>.</p>
+<p>The notation <span class="arithmatex">\(\mathbb{N}\)</span> is used for the set of <strong>natural numbers</strong>.
+In this module we follow the convention that zero is a natural number.
+In the language of set theory we can express this as <span class="arithmatex">\(0 \in \mathbb{N}\)</span>.</p>
+<h3 id="relations">Relations</h3>
+<p>Much knowledge involves binary relations. Such as:</p>
+<ul>
+<li>
+<p>Harry is older than Sam</p>
+</li>
+<li>
+<p>Paper is made from wood</p>
+</li>
+<li>
+<p>Bradford is close to Leeds</p>
+</li>
+</ul>
+<p>A binary relation on a set <span class="arithmatex">\(X\)</span> is a set of pairs of elements of
+<span class="arithmatex">\(X\)</span>.
+In other words any subset of <span class="arithmatex">\(X \times X\)</span>.</p>
+<p>E.g. we might represent 'is older than' on the set
+<span class="arithmatex">\(\{\mathit{Harry}, \mathit{Sam}, \mathit{Jill}\}\)</span> by the relation
+<span class="arithmatex">\(\{(\mathit{Harry}, \mathit{Sam}), (\mathit{Jill}, \mathit{Sam})\}\)</span>.</p>
+<p>Diagrams with arrows are useful so that if the pair
+<span class="arithmatex">\((\mathit{Jill}, \mathit{Sam})\)</span> is in our relation we can draw this
+as an arrow from <span class="arithmatex">\(\mathit{Jill}\)</span> to <span class="arithmatex">\(\mathit{Sam}\)</span>.
+Of course the direction of the arrow is important.</p>
+<h3 id="lists-and-non-binary-relations">Lists and non-binary relations</h3>
+<p>A binary relation models a kind of statement, the truth of which depends on
+two parameters.</p>
+<p>But we may have dependence on three parameters.</p>
+<ul>
+<li>
+<p>Birmingham is between London and Glasgow</p>
+</li>
+<li>
+<p>7 is the sum of 3 and 4</p>
+</li>
+</ul>
+<p>A ternary relation on <span class="arithmatex">\(X\)</span> is a subset of <span class="arithmatex">\(X^3 = X \times X \times X\)</span>.</p>
+<p>e.g. <span class="arithmatex">\(\{(\mathit{Birmingham}, \mathit{London}, \mathit{Glasgow}),
+        (\mathit{Manchester}, \mathit{Leeds}, \mathit{Liverpool})\}\)</span></p>
+<p>There is no generally agreed way to draw pictures of ordered triples,
+which is at least one reason why binary relations are easier to think about.</p>
+<p>You can think of an ordered pair as a <strong>list</strong> of length two.
+In general an <span class="arithmatex">\(n\)</span>-tuple is a list of length <span class="arithmatex">\(n\)</span>.</p>
+<p>It makes sense to allow <span class="arithmatex">\(n\)</span> to be 0 or 1 sometimes.
+A set of lists of length 1 with elements from <span class="arithmatex">\(X\)</span> is really the same as (that means
+  'is best thought of as being')
+a subset of <span class="arithmatex">\(X\)</span>.
+We can think of this as modelling a property that elements of <span class="arithmatex">\(X\)</span> may have.</p>
+<div class="arithmatex">\[\{\mathit{Orange}, \mathit{Lemon}\} \subseteq \{\mathit{Orange},
+\mathit{Apple}, \mathit{Lemon},
+\mathit{Banana}\}\]</div>
+<p>This might be modelling the fact that oranges and lemons are citrus fruits and apples
+and bananas are not.</p>
+<p>A set of lists of length <span class="arithmatex">\(0\)</span> is either <span class="arithmatex">\(\{\}\)</span> or <span class="arithmatex">\(\{()\}\)</span>.
+Either the empty set (no lists) or the set containing the unique
+list of length zero (the empty list). We can think of these two sets
+as being the truth values false and true
+respectively.
+A <span class="arithmatex">\(0\)</span>-ary relation models (can model) something that is true or false (a proposition).</p>
+<p>The set of all lists of length <span class="arithmatex">\(n\)</span> made out of elements of a set <span class="arithmatex">\(A\)</span> is often denoted <span class="arithmatex">\(A^n\)</span>
+where this means the <span class="arithmatex">\(n\)</span>-fold cartesian product.</p>
+<div class="arithmatex">\[A^n = \overbrace{A \times A \times \cdots \times A}^n\]</div>
+<h3 id="functions">Functions</h3>
+<p>These are also called maps, mappings, and various other things.
+Writing <span class="arithmatex">\(f: A \to B\)</span> indicates that <span class="arithmatex">\(f\)</span> is a function which given any
+<span class="arithmatex">\(a\in A\)</span> gives an element of <span class="arithmatex">\(B\)</span> which is denoted <span class="arithmatex">\(f(a)\)</span>.
+This can be thought of as a special kind of relation; a subset of <span class="arithmatex">\(A \times B\)</span>
+where every <span class="arithmatex">\(a \in A\)</span> occurs in exactly one pair in the subset.</p>
+<p>Pictorially, drawing a relation as a collection of arrows connecting things from
+one set to another, a function has exactly one arrow leaving every element
+of the first set. There is no requirement that the elements of the second set
+have any particular number of arrows coming in to each of them.
+If there is at least one inward arrow for every element of the second set
+then the function is <strong>surjective</strong>. If there is at most one it is <strong>injective</strong>.
+If a function is both injective and surjective it is said to be <strong>bijective</strong>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About Unit 1
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../01_03_PropLogicIntro/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 2 Propositional logic
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

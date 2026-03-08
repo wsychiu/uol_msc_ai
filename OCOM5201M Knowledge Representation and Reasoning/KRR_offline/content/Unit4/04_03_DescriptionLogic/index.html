@@ -1,0 +1,2303 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 2 Description Logic - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 2 Description Logic
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../04_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 2 Description Logic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 2 Description Logic
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    2.1 Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-the-ingredients" class="md-nav__link">
+    2.1.1 The ingredients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-building-concepts" class="md-nav__link">
+    2.1.2 Building concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.2 Building concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-examples-of-restriction" class="md-nav__link">
+    More examples of restriction
+  </a>
+  
+    <nav class="md-nav" aria-label="More examples of restriction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existential-flavour-of-restriction" class="md-nav__link">
+    Existential flavour of restriction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal-flavour-of-restriction" class="md-nav__link">
+    Universal flavour of restriction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-number-restrictions" class="md-nav__link">
+    2.1.3 Number restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-sub-class-relationships" class="md-nav__link">
+    2.1.4 Sub-class relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-building-roles" class="md-nav__link">
+    2.1.5 Building roles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-tbox-and-abox-example" class="md-nav__link">
+    2.2 TBox and ABox example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-characteristics-of-relationships" class="md-nav__link">
+    2.3 Characteristics of relationships
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Characteristics of relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-introduction" class="md-nav__link">
+    2.3.1 Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-when-to-use-characteristics" class="md-nav__link">
+    2.3.2 When to use characteristics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-the-seven-characteristics" class="md-nav__link">
+    2.3.3 The seven characteristics
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 The seven characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises-on-the-characteristics" class="md-nav__link">
+    Exercises on the characteristics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-other-features-of-and-constructions-with-roles" class="md-nav__link">
+    2.4 Other features of and constructions with roles
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Other features of and constructions with roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-domain-and-range" class="md-nav__link">
+    2.4.1 Domain and range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-sub-property-and-super-property" class="md-nav__link">
+    2.4.2 Sub-property and super property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-composing-properties-chains" class="md-nav__link">
+    2.4.3 Composing properties (chains)
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.3 Composing properties (chains)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-more-examples" class="md-nav__link">
+    Some more examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-boolean-operations" class="md-nav__link">
+    2.4.4 Boolean operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#245-transitive-closure" class="md-nav__link">
+    2.4.5 Transitive closure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#246-identity-and-inverse" class="md-nav__link">
+    2.4.6 Identity and inverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-expressivity-of-description-logics" class="md-nav__link">
+    2.5 Expressivity of Description Logics
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Expressivity of Description Logics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-the-variety-of-different-logics" class="md-nav__link">
+    2.5.1 The variety of different logics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-mary-likes-all-cats" class="md-nav__link">
+    2.5.2 Mary likes all cats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-what-description-logic-means-here" class="md-nav__link">
+    2.5.3 What "Description Logic" means here.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-comparison-with-rdfs" class="md-nav__link">
+    2.5.4 Comparison with RDFS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-wording-and-representation" class="md-nav__link">
+    2.6 Wording and representation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-introduction" class="md-nav__link">
+    2.1 Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-the-ingredients" class="md-nav__link">
+    2.1.1 The ingredients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-building-concepts" class="md-nav__link">
+    2.1.2 Building concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1.2 Building concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-examples-of-restriction" class="md-nav__link">
+    More examples of restriction
+  </a>
+  
+    <nav class="md-nav" aria-label="More examples of restriction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existential-flavour-of-restriction" class="md-nav__link">
+    Existential flavour of restriction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal-flavour-of-restriction" class="md-nav__link">
+    Universal flavour of restriction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-number-restrictions" class="md-nav__link">
+    2.1.3 Number restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-sub-class-relationships" class="md-nav__link">
+    2.1.4 Sub-class relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-building-roles" class="md-nav__link">
+    2.1.5 Building roles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-tbox-and-abox-example" class="md-nav__link">
+    2.2 TBox and ABox example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-characteristics-of-relationships" class="md-nav__link">
+    2.3 Characteristics of relationships
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Characteristics of relationships">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-introduction" class="md-nav__link">
+    2.3.1 Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-when-to-use-characteristics" class="md-nav__link">
+    2.3.2 When to use characteristics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-the-seven-characteristics" class="md-nav__link">
+    2.3.3 The seven characteristics
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.3 The seven characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercises-on-the-characteristics" class="md-nav__link">
+    Exercises on the characteristics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-other-features-of-and-constructions-with-roles" class="md-nav__link">
+    2.4 Other features of and constructions with roles
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Other features of and constructions with roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-domain-and-range" class="md-nav__link">
+    2.4.1 Domain and range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-sub-property-and-super-property" class="md-nav__link">
+    2.4.2 Sub-property and super property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-composing-properties-chains" class="md-nav__link">
+    2.4.3 Composing properties (chains)
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4.3 Composing properties (chains)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-more-examples" class="md-nav__link">
+    Some more examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-boolean-operations" class="md-nav__link">
+    2.4.4 Boolean operations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#245-transitive-closure" class="md-nav__link">
+    2.4.5 Transitive closure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#246-identity-and-inverse" class="md-nav__link">
+    2.4.6 Identity and inverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-expressivity-of-description-logics" class="md-nav__link">
+    2.5 Expressivity of Description Logics
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Expressivity of Description Logics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-the-variety-of-different-logics" class="md-nav__link">
+    2.5.1 The variety of different logics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-mary-likes-all-cats" class="md-nav__link">
+    2.5.2 Mary likes all cats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-what-description-logic-means-here" class="md-nav__link">
+    2.5.3 What "Description Logic" means here.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254-comparison-with-rdfs" class="md-nav__link">
+    2.5.4 Comparison with RDFS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-wording-and-representation" class="md-nav__link">
+    2.6 Wording and representation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="description-logic">Description Logic</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>Explain the meaning of the terms "concept" and "role" as used in description logics.</li>
+<li>Write definitions of concepts in description logic using a variety of constructs for both concepts and roles.</li>
+<li>Identify when characteristics of roles are needed, such as being transitive, functional, or
+  symmetric.</li>
+<li>Explain why the statement "Mary likes all cats" is possible to express in some description logics but not in others.</li>
+</ul>
+</div>
+<h2 id="21-introduction">2.1 Introduction</h2>
+<h3 id="211-the-ingredients">2.1.1 The ingredients</h3>
+<p><strong>Description Logic</strong> exists to describe two kinds of thing:</p>
+<ul>
+<li>
+<p><strong>Concepts</strong>      <br />
+For example: <span class="arithmatex">\(\mathsf{Human}\)</span>, <span class="arithmatex">\(\mathsf{Pizza}\)</span>, <span class="arithmatex">\(\mathsf{Grandmother}\)</span>, <span class="arithmatex">\(\mathsf{MeatTopping}\)</span>.</p>
+<ul>
+<li>Think of a concept as a set of things (its instances).  </li>
+<li>The word 'concept' means the same as 'class' in this context.    </li>
+</ul>
+</li>
+<li>
+<p><strong>Roles</strong>      <br />
+For example: <span class="arithmatex">\(\mathsf{hasTopping}\)</span>, <span class="arithmatex">\(\mathsf{isMotherOf}\)</span>, <span class="arithmatex">\(\mathsf{isGrandmotherOf}\)</span>, <span class="arithmatex">\(\mathsf{likesToEat}\)</span>.</p>
+<ul>
+<li>Think of a role as a binary relation between things.     </li>
+</ul>
+</li>
+</ul>
+<h3 id="212-building-concepts">2.1.2 Building concepts</h3>
+<p>Concepts are built up in the following ways:</p>
+<ul>
+<li>
+<p><strong>Atomic concepts</strong>  <br />
+These are names of concepts e.g. <span class="arithmatex">\(\mathsf{Human}\)</span>, <span class="arithmatex">\(\mathsf{Pizza}\)</span>.   </p>
+</li>
+<li>
+<p><strong>Universal concept</strong>  <br />
+This is denoted by: <span class="arithmatex">\(\top\)</span>      <br />
+Instances are all things in the ontology.</p>
+</li>
+<li><strong>Bottom concept</strong>  <br />
+This is denoted by: <span class="arithmatex">\(\bot\)</span>         <br />
+This is the class with no instances, also called the empty concept.</li>
+<li><strong>Negated concept</strong>  <br />
+This is denoted by: <span class="arithmatex">\(\neg C\)</span> where <span class="arithmatex">\(C\)</span> is any concept     <br />
+Instances are things not in <span class="arithmatex">\(C\)</span>.    </li>
+<li><strong>Concept intersection</strong>  <br />
+This is denoted by: <span class="arithmatex">\(C \sqcap D\)</span> where <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span> are any concepts.       <br />
+The things in this class are those things that are instances of both <span class="arithmatex">\(C\)</span> and of <span class="arithmatex">\(D\)</span>.    <br />
+Note that this is written <span class="arithmatex">\(\sqcap\)</span> and not <span class="arithmatex">\(\cap\)</span>.</li>
+<li><strong>Concept union</strong>  <br />
+This is denoted by: <span class="arithmatex">\(C \sqcup D\)</span> where <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span> are any concepts.
+The things in this class are those things that are instances of <span class="arithmatex">\(C\)</span> or of <span class="arithmatex">\(D\)</span> (or both).    <br />
+Note that this is written <span class="arithmatex">\(\sqcup\)</span> and not <span class="arithmatex">\(\cup\)</span>.</li>
+<li><strong>Universal value restriction</strong>  <br />
+  This is denoted by:  <span class="arithmatex">\(\forall r.C\)</span>    where <span class="arithmatex">\(C\)</span> is a concept and <span class="arithmatex">\(r\)</span> is a role.       <br />
+  The things in this class are all those things where everything to which they stand in relation <span class="arithmatex">\(r\)</span>
+  belongs to the class <span class="arithmatex">\(C\)</span>.     <br />
+  For example, to talk about the class of things that only eat vegetables we could say:         </li>
+</ul>
+<div class="arithmatex">\[
+  \forall \mathsf{eats} . \mathsf{Vegetable}.
+\]</div>
+<ul>
+<li>Although the symbol <span class="arithmatex">\(\forall\)</span> is the same as in first order logic, be careful         <br />
+     that the way it is used here in the syntax is very different. In particular,        <br />
+<span class="arithmatex">\(\mathsf{eats}\)</span> is not a variable. To understand the connection with first order logic   <br />
+     imagine a language with two predicates <span class="arithmatex">\(\mathit{eats}\)</span> and <span class="arithmatex">\(\mathit{Vegetable}\)</span>.
+    The concept above would correspond to the set of those <span class="arithmatex">\(x\)</span> for which the following holds</li>
+</ul>
+<div class="arithmatex">\[
+    \forall y\, (\mathit{eats}(x,y) \to \mathit{Vegetable}(y)).
+    \]</div>
+<ul>
+<li><strong>Existential value restriction</strong>  <br />
+This is denoted by:  <span class="arithmatex">\(\exists r.C\)</span> where <span class="arithmatex">\(C\)</span> is a concept and <span class="arithmatex">\(r\)</span> is a role.     <br />
+The things in this class are all those things where something to which they stand in relation <span class="arithmatex">\(r\)</span>
+belongs to the class <span class="arithmatex">\(C\)</span>.     <br />
+For example, to talk about the class of things that eat at least one thing which is a vegetable we could say:         </li>
+</ul>
+<div class="arithmatex">\[
+\exists \mathsf{eats} . \mathsf{Vegetable}.
+\]</div>
+<ul>
+<li>Although the symbol <span class="arithmatex">\(\exists\)</span> is the same as in first order logic, be careful         <br />
+   that the way it is used here in the syntax is very different. In particular,        <br />
+<span class="arithmatex">\(\mathsf{eats}\)</span> is not a variable. To understand the connection with first order logic   <br />
+   imagine a language with two predicates <span class="arithmatex">\(\mathit{eats}\)</span> and <span class="arithmatex">\(\mathit{Vegetable}\)</span>.
+  The concept above would correspond to the set of those <span class="arithmatex">\(x\)</span> for which the following holds:</li>
+</ul>
+<div class="arithmatex">\[
+  \exists y\, (\mathit{eats}(x,y) \wedge \mathit{Vegetable}(y)).
+  \]</div>
+<h4 id="more-examples-of-restriction">More examples of restriction</h4>
+<h5 id="existential-flavour-of-restriction">Existential flavour of restriction</h5>
+<p>Suppose we have a class: <span class="arithmatex">\(\mathsf{Mansion}\)</span> and a property <span class="arithmatex">\(\mathsf{owns}\)</span>.          </p>
+<p>Two individuals are related by this property just when the
+first owns the second.    <br />
+For example a particular person owning a specific car.          </p>
+<p>We can build a new class from <span class="arithmatex">\(\mathsf{Mansion}\)</span> and <span class="arithmatex">\(\mathsf{owns}\)</span>.          </p>
+<p>This is the class consisting of every individual who
+<span class="arithmatex">\(\mathsf{owns}\)</span> a <span class="arithmatex">\(\mathsf{Mansion}\)</span>.          </p>
+<p>In Description Logic we could write
+ <span class="arithmatex">\(\exists\, \mathsf{owns} \cdot \mathsf{Mansion}\)</span></p>
+<p>This means the class of everyone who owns a mansion,   <br />
+or people where <em>something they own is a mansion</em>.         <br />
+We could call this class <span class="arithmatex">\(\mathsf{Rich}\)</span>, or better say it's a subclass of
+<span class="arithmatex">\(\mathsf{Rich}\)</span>.          </p>
+<p>In Prot&eacute;g&eacute; the same class is written:</p>
+<div class="highlight"><pre><span></span><code>owns  some  Mansion
+</code></pre></div>
+<h5 id="universal-flavour-of-restriction">Universal flavour of restriction</h5>
+<p>Suppose we have a class: <span class="arithmatex">\(\mathsf{Worthless}\)</span> and a property <span class="arithmatex">\(\mathsf{owns}\)</span>.          </p>
+<p>We can build a new class from <span class="arithmatex">\(\mathsf{Worthless}\)</span> and <span class="arithmatex">\(\mathsf{owns}\)</span>.          </p>
+<p>This is the class consisting of every individual who <strong>only</strong> <span class="arithmatex">\(\mathsf{owns}\)</span>
+things that are <span class="arithmatex">\(\mathsf{Worthless}\)</span>.          </p>
+<p>In Description Logic we could write
+ <span class="arithmatex">\(\forall\, \mathsf{owns} \cdot \mathsf{Worthless}\)</span></p>
+<p>This means the class of everyone who owns only worthless things,   <br />
+or people where <em>everything they own is worthless</em>.       <br />
+We could call this class <span class="arithmatex">\(\mathsf{Poor}\)</span>. It includes anyone owning nothing.          </p>
+<p>In Prot&eacute;g&eacute; the same class is written:</p>
+<div class="highlight"><pre><span></span><code>owns  only  Worthless
+</code></pre></div>
+<p>Notice how this is different from:</p>
+<div class="highlight"><pre><span></span><code>owns  some  Worthless
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">More restriction examples</p>
+<p>More examples of the power of Description Logic to define new classes out of existing
+ones and properties.</p>
+<ul>
+<li>Teaching staff are staff who teach some module:</li>
+</ul>
+<div class="arithmatex">\[\mathsf{TeachingStaff} \equiv \mathsf{Staff} \sqcap \exists\, \mathsf{teaches} . \mathsf{Module}\]</div>
+<ul>
+<li>A PG-only module is a module only studied by postgraduate students:       </li>
+</ul>
+<div class="arithmatex">\[\mathsf{PGOnlyModule} \equiv \mathsf{Module} \sqcap \forall\, \mathsf{studiedBy} . \mathsf{PostGrad}\]</div>
+</div>
+<h3 id="213-number-restrictions">2.1.3 Number restrictions</h3>
+<p>If <span class="arithmatex">\(R\)</span> is a property (role) and <span class="arithmatex">\(n\)</span> a non-negative integer then:</p>
+<div class="arithmatex">\[\leq n \; R  \quad\mathsf{~and~}\quad \geq n \; R \quad\mathsf{~and~}\quad = n \; R\qquad \mathsf{~are~concepts.}\]</div>
+<p>The concept <span class="arithmatex">\(\leq n \; R\)</span> consists of all those entities having the <span class="arithmatex">\(R\)</span> relationship to at most <span class="arithmatex">\(n\)</span> things.
+The other two concepts have the same idea, except we would be talking about <em>'at least <span class="arithmatex">\(n\)</span> things'</em>
+or <em>'exactly <span class="arithmatex">\(n\)</span> things'</em>.</p>
+<p>For example, if we want to say a criminal  with at least three cars is successful, we could do this:</p>
+<div class="arithmatex">\[\mathsf{Criminal} \sqcap (\geq 3 \; \mathsf{hasCar}) \sqsubseteq \mathsf{SuccessfulCriminal}.\]</div>
+<p>A <strong>qualified number restriction</strong> is one of these:</p>
+<div class="arithmatex">\[\leq n \; R . C \qquad \geq n \; R . C \qquad = n \; R . C\]</div>
+<p>These differ from the previous ones in having a concept <span class="arithmatex">\(C\)</span> as well as a role <span class="arithmatex">\(R\)</span>.
+We can then talk about not simply having three cars, but having three cars which belong to
+some class. For example:</p>
+<div class="arithmatex">\[\geq 3 \; \mathsf{hasCar} . \mathsf{Electric}.\]</div>
+<p>For another example, the concept of having exactly four bedrooms and all rooms (not just bedrooms) being spacious.</p>
+<div class="arithmatex">\[(= 4 \; \mathsf{hasRoom} . \mathsf{BedRoom}) \sqcap \forall\, \mathsf{hasRoom}.\mathsf{Spacious}\]</div>
+<p>Note that <span class="arithmatex">\(\geq 1 \; R.C\)</span> is equivalent to <span class="arithmatex">\(\exists \, R.C\)</span></p>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<ol>
+<li>
+<p><tt> </tt>
+    Someone belongs to this class:          </p>
+<div class="arithmatex">\[\geq 2 \, \mathsf{hasChild} . (\geq 2 \, \mathsf{hasChild} . \mathsf{Female})\]</div>
+<p>How could you express in natural English what this tells you about their children and grandchildren?</p>
+</li>
+<li>
+<p><tt> </tt>
+    Someone else belongs to this class:    </p>
+<div class="arithmatex">\[\geq 2 \, \mathsf{hasChild} . (\geq 2 \, \mathsf{hasLivedIn} . \mathsf{City}).\]</div>
+<p>What can you say about the total number of different cities which have been lived in by at least one
+    of their children?</p>
+</li>
+<li>
+<p>The structure of the two concepts above is very similar in the way they are defined, but the
+total number of cities and the total number of grandchildren do not have the same properties (assuming
+usual conventions about parents of children).                  </p>
+<p>Use first order logic
+    to express the additional constraint that the binary predicate <span class="arithmatex">\(\mathit{hasChild}\)</span> satisfies compared with
+    the binary predicate <span class="arithmatex">\(\mathit{hasLivedIn}\)</span>.</p>
+</li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answer 1</summary><p>They must have at least two children, and each of their children has at least two
+daughters. They must have at least four granddaughters is what we would like to say,
+but the description logic does not enforce this. It is logically possible that these
+four are not actually all different.</p>
+</details>
+<details class="question"><summary>Select to reveal answer 2</summary><p>They must have at least two children each of whom has lived in at least two different cities.
+  The total number of cities that have been lived in by at least one of their children is at least two.
+  This number might only be two if each of their children had
+  lived in the same two cities as the other children.</p>
+</details>
+<details class="question"><summary>Select to reveal answer 3</summary><p>In first order logic we need to express the following:</p>
+<ul>
+<li>if <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(z\)</span> are different children of the same person, then the children of <span class="arithmatex">\(y\)</span>
+  are all different from the children of <span class="arithmatex">\(z\)</span>.</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{l}
+\forall x \forall y \forall z\; ((\mathit{hasChild}(x, y) \wedge \mathit{hasChild}(x,z) \wedge \neg (y=z)) \to\\
+\qquad \qquad \forall c \forall d\; (\mathit{hasChild}(y, c) \wedge \mathit{hasChild}(z, d)) \to \neg (c=d)))
+\end{array} \]</div>
+</details>
+<h3 id="214-sub-class-relationships">2.1.4 Sub-class relationships</h3>
+<p>Terminological axioms allow us to state:</p>
+<ul>
+<li>
+<p><strong>Concept equivalence</strong>  <br />
+This is written   <span class="arithmatex">\(C \equiv D\)</span>     <br />
+Asserting that means concepts have the same instances.</p>
+</li>
+<li>
+<p><strong>Concept subsumption</strong>
+This is written      <span class="arithmatex">\(C \sqsubseteq D\)</span>.      <br />
+Asserting that means <span class="arithmatex">\(C\)</span> is a sub-concept of <span class="arithmatex">\(D\)</span>.</p>
+</li>
+</ul>
+<h3 id="215-building-roles">2.1.5 Building roles</h3>
+<p>There are many different flavours of Description Logic and
+one way these differ is in the ways they allow you to construct roles
+out of other roles. We will see some of these constructions later,
+but to get started we only need the constructions on roles.</p>
+<h2 id="22-tbox-and-abox-example">2.2 TBox and ABox example</h2>
+<p>This example shows how you can use the ways of constructing concepts
+to define some concepts from some given atomic ones.</p>
+<div class="admonition example">
+<p class="admonition-title">Description Logic Example: TBox</p>
+<p><span class="arithmatex">\(\mathsf{Atomic ~Concepts ~and ~Roles:}
+\quad
+\left\{
+\begin{array}{ll}
+\mathsf{Person}  &amp;\mathsf{(concept)} \\         
+\mathsf{Female}  &amp;\mathsf{(concept)}     \\     
+\mathsf{hasChild}&amp;\mathsf{(role)}\\
+\end{array}
+\right.\)</span></p>
+<p><span class="arithmatex">\(\begin{array}{rcl}
+\mathsf{Woman}    &amp; \equiv &amp; \mathsf{Person} \sqcap \mathsf{Female}  \\              
+\mathsf{Mother}   &amp; \equiv &amp; \mathsf{Woman}  \sqcap \exists \mathsf{hasChild}.\mathsf{Person} \\         
+\mathsf{Parent}   &amp; \equiv &amp; \mathsf{Person}  \sqcap \exists \mathsf{hasChild}.\mathsf{Person}\\             
+\mathsf{ParentOfOnlyDaughters} &amp; \equiv &amp; \mathsf{Person} \sqcap \forall \mathsf{hasChild}.\mathsf{Female}  \\        
+\mathsf{Grandmother}    &amp; \equiv &amp; \mathsf{Mother} \sqcap \exists \mathsf{hasChild}.\mathsf{Parent}\\
+\end{array}\)</span></p>
+</div>
+<p>A typical Description Logic specification consists of:</p>
+<ul>
+<li>the <strong>TBox</strong>, which is a set of terminological axioms as in the above example, and also</li>
+<li>the <strong>ABox</strong>, which is a set of assertions about individuals as in the following.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Description Logic example: ABox</p>
+<p><span class="arithmatex">\(\qquad\qquad\begin{array}{l}
+\mathsf{Woman}(\mathsf{MARGE})\\    
+\mathsf{Woman}(\mathsf{LISA})\\
+\mathsf{hasChild}(\mathsf{MARGE}, \mathsf{LISA})
+\end{array}\)</span></p>
+</div>
+<p>This example indicates the basic ideas, but there is a lot that
+you might want to say about the concepts and roles.
+For example:</p>
+<ul>
+<li>Every person has exactly two people whose child they are.</li>
+<li>The <span class="arithmatex">\(\mathsf{hasChild}\)</span> role cannot relate anyone to themself or to their own parents.</li>
+</ul>
+<p>We shall see how to express these later.</p>
+<h2 id="23-characteristics-of-relationships">2.3 Characteristics of relationships</h2>
+<h3 id="231-introduction">2.3.1 Introduction</h3>
+<p>A relationship means a way in which individuals might be related,   <br />
+for example:</p>
+<ul>
+<li>Parent of, child of, brother of, sister of, ancestor of, etc.</li>
+<li>Older than, younger than, taller than, heavier than, etc.</li>
+<li>Studies, teaches, studies with.</li>
+<li>Is inside, is next to, overlaps with, etc.</li>
+<li>Is part of, has part.</li>
+<li>Earlier than, later than, at same time as, during, etc.</li>
+<li>Author of, editor of, illustrator of.</li>
+<li>Actor in, director of, script writer of.</li>
+<li>Was written in, was first screened.</li>
+<li>Follows, is followed by, knows (person), is friend of, etc.</li>
+</ul>
+<p>Unfortunately terminology is not uniform.
+The following three words are used to mean the same thing by different communities:</p>
+<ul>
+<li>Relationship (this is used in Entity-Relationship modelling).</li>
+<li>Property (this is used in OWL, the Web Ontology Language in Prot&eacute;g&eacute;).</li>
+<li>Role (this is used in many Description Logics).</li>
+</ul>
+<p>A relationship can have features (such as being transitive, or being reflexive).
+As OWL uses the word property already we will say <strong>characteristics</strong> instead
+of properties for these features. This is what Prot&eacute;g&eacute; does
+as you can see in the following screenshot:</p>
+<details class="info"><summary>Select for full text description of screenshot 4.2.1.</summary><p>The image is a screenshot. There are two headings, each of which has a list underneath.</p>
+<ol>
+<li>
+<p>On the left-hand side the heading is <strong>Characteristics</strong>. There is a list of checkboxes underneath the heading. In descending order, these are labelled: <strong>Functional</strong>, <strong>Inverse functional</strong>, <strong>Transitive</strong>, <strong>Symmetric</strong>, <strong>Asymmetric</strong>, <strong>Reflexive</strong>, <strong>Irreflexive</strong>.</p>
+</li>
+<li>
+<p>On the right-hand side the heading is <strong>Description</strong>. There is a list of options underneath which are greyed out. Each of these also has a plus button alongside it, as if each option could be expanded. In descending order, these are: <strong>Equivalent To</strong>, <strong>SubProperty Of</strong>, <strong>Inverse Of</strong>, <strong>Domains (intersection)</strong>, <strong>Ranges (intersection)</strong>, <strong>Disjoint With</strong> and <strong>SuperProperty Of (Chain)</strong>.</p>
+</li>
+</ol>
+</details>
+<p>The seven characteristics listed are all used in the usual sense of these
+words in books and other resourses on discrete mathematical structures.
+The characteristic <strong>inverse functional</strong> is often called <strong>injective</strong>
+in a lot of settings, and also gets called <strong>one-to-one</strong> in some places.</p>
+<h3 id="232-when-to-use-characteristics">2.3.2 When to use characteristics</h3>
+<p>Before we review the definitions of the characteristics, it is important to note
+when it is appropriate to say that a relationship has one of these characteristics in
+an ontology:</p>
+<ul>
+<li>The relationship <strong>'ancestor of'</strong> has the property:              <ul>
+<li>If A is an <strong>'ancestor of'</strong> B, and B is an <strong>'ancestor of'</strong> C      <br />
+   Then A is an <strong>'ancestor of'</strong> C.</li>
+</ul>
+</li>
+<li>This <strong>is not</strong> about:<ul>
+<li>accidental features of
+  particular individuals that happen to be in an ontology at one time.</li>
+</ul>
+</li>
+<li>This <strong>is</strong> about<ul>
+<li>all individuals that could ever possibly be related.</li>
+</ul>
+</li>
+</ul>
+<p>Compare that with the relationship <strong>'has heard of'</strong> between people (used in the
+  usual sense of the phrase, and applied to a large number of people):</p>
+<ul>
+<li>it might just happen that we have an ontology in which it is true of
+all the individuals there at present that<ul>
+<li>if A has <strong>'heard of'</strong>  B, and B has <strong>'heard of'</strong> C,               <br />
+   then A has <strong>'heard of'</strong> C;</li>
+</ul>
+</li>
+<li>but this <strong>does not</strong> mean we should be asserting that
+<strong>'heard of'</strong> has the same characteristic as <strong>'ancestor of'</strong> does.
+We only assert that a relationship has a characteristic if it is forced
+to have it by virtue of the meaning of the relationship as it can apply to
+any individuals whatsoever.</li>
+</ul>
+<h3 id="233-the-seven-characteristics">2.3.3 The seven characteristics</h3>
+<ul>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>functional</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> is any individual, then it <strong>never happens</strong> that      </p>
+<ul>
+<li>there are individuals <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> which are different from each other, and</li>
+<li><span class="arithmatex">\(R(A, B)\)</span> and <span class="arithmatex">\(R(A,C)\)</span>,</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>inverse functional</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> is any individual, then it <strong>never happens</strong> that      </p>
+<ul>
+<li>there are individuals <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> which are different from each other, and</li>
+<li><span class="arithmatex">\(R(B, A)\)</span> and <span class="arithmatex">\(R(C, A)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>transitive</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span> are any individuals       <br />
+(including possibly some of them being equal to others)      <br />
+then it <strong>always happens</strong> that      </p>
+<ul>
+<li>if <span class="arithmatex">\(R(A,B)\)</span> and <span class="arithmatex">\(R(B,C)\)</span> then <span class="arithmatex">\(R(A,C)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>symmetric</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are any individuals       <br />
+(including possibly both being the same)      <br />
+then it <strong>always happens</strong> that      </p>
+<ul>
+<li>if <span class="arithmatex">\(R(A,B)\)</span> then <span class="arithmatex">\(R(B,A)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>asymmetric</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are any individuals       <br />
+(including possibly both being the same)      <br />
+then it <strong>never happens</strong> that      </p>
+<ul>
+<li>both <span class="arithmatex">\(R(A,B)\)</span> and <span class="arithmatex">\(R(B,A)\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>reflexive</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> is any individuals           <br />
+then it <strong>always happens</strong> that      </p>
+<ul>
+<li><span class="arithmatex">\(R(A,A)\)</span> holds.</li>
+</ul>
+</li>
+<li>
+<p>A relationship <span class="arithmatex">\(R\)</span> is <strong>irreflexive</strong> means:   <br />
+if <span class="arithmatex">\(A\)</span> is any individuals           <br />
+then it <strong>never happens</strong> that      </p>
+<ul>
+<li><span class="arithmatex">\(R(A,A)\)</span> holds.  </li>
+</ul>
+</li>
+</ul>
+<p>All of these definitions need to be read using the language in a very literal
+way, just as in the way logic is used.</p>
+<p>Beware of these points:</p>
+<ul>
+<li>The characteristic irreflexive is not the same as 'not reflexive'. A relation can be
+not reflexive without being irreflexive.</li>
+<li>The characteristic asymmetric is not the same as 'not symmetric'. A relation can be
+not symetric without being asymmetric.</li>
+<li>The key part of the definition of transitive says: 'If <span class="arithmatex">\(R(A,B)\)</span> and <span class="arithmatex">\(R(B,C)\)</span>'.
+In the event that these do not both hold for particular <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span>, or
+that there are no individuals at all for which both hold, neither of these things
+does anything to prevent <span class="arithmatex">\(R\)</span> being transitive (remember how implication works in
+  propositonal logic).</li>
+<li>The key part of the definition of symmetric also uses 'if' at a similar key point.</li>
+</ul>
+<h4 id="exercises-on-the-characteristics">Exercises on the characteristics</h4>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<p>For each of the following (with the most obvious meaning),    <br />
+which of the seven characteristics should it have?</p>
+<ul>
+<li><strong>brotherOf</strong></li>
+<li><strong>hasMother</strong></li>
+<li><strong>hasParent</strong></li>
+<li><strong>hasChild</strong></li>
+<li><strong>ancestorOf</strong></li>
+<li><strong>sameAgeAs</strong></li>
+<li><strong>youngerThan</strong></li>
+<li><strong>isMarriedTo</strong></li>
+</ul>
+</div>
+<details class="question"><summary>Select to reveal answers</summary><p>For the first one, <strong>brotherOf</strong>, the full reasons why we only want it to be
+irreflexive are given in detail. In the other cases only the desired characteristics
+are given.</p>
+<p><strong>brotherOf</strong></p>
+<ul>
+<li>Functional? Someone can be the brother of two different people.    <br />
+      We do not require it to be functional.</li>
+<li>Inverse functional? Someone can have two different people who are  brothers of them.  <br />
+      We do not require it to be inverse functional.</li>
+<li>Transitive? Assuming no one is a brother of themself, we do not require the relation to be transitive.</li>
+<li>Symmetric? Think of two people <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>,  who are brother and sister. If
+      <span class="arithmatex">\((a,b)\)</span> is in the relation then <span class="arithmatex">\((b,a)\)</span> is not in the relation in this situation.
+      We do not require it to be symmetric.</li>
+<li>Asymmetric? Two people can be brothers of each other.
+      We do not require it it be asymmetric.</li>
+<li>Reflexive? We do not say someone is a brother to themself.
+      We do not require it it be reflexive.</li>
+<li>Irreflexive? Yes, we do want this because we never
+      say someone is a brother to themself.</li>
+</ul>
+<p><strong>hasMother</strong></p>
+<ul>
+<li>Functional if modelling a situation where people never have more than one mother</li>
+<li>Asymmetric</li>
+<li>Irreflexive</li>
+</ul>
+<p><strong>hasParent</strong></p>
+<ul>
+<li>Asymmetric</li>
+<li>Irreflexive</li>
+</ul>
+<p><strong>hasChild</strong></p>
+<ul>
+<li>Asymmetric</li>
+<li>Irreflexive</li>
+</ul>
+<p><strong>ancestorOf</strong></p>
+<ul>
+<li>Transitive</li>
+<li>Asymmetric</li>
+<li>Irreflexive</li>
+</ul>
+<p><strong>sameAgeAs</strong></p>
+<ul>
+<li>Transitive</li>
+<li>Symmetric</li>
+<li>Reflexive</li>
+</ul>
+<p><strong>youngerThan</strong></p>
+<ul>
+<li>Transitive</li>
+<li>Symmetric</li>
+<li>Reflexive</li>
+</ul>
+<p><strong>isMarriedTo</strong></p>
+<ul>
+<li>Symmetric</li>
+<li>In many cultures both functional and inverse functional.</li>
+</ul>
+</details>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<ol>
+<li>
+<p>Draw a relation with three individuals which is
+functional, inverse functional,
+transitive, symmetric and reflexive.</p>
+</li>
+<li>
+<p>Draw a relation with three individuals with none of the seven characteristics.  </p>
+</li>
+<li>
+<p>Draw a relation with three individuals which is only functional, asymmetric, irreflexive and transitive.</p>
+</li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answer 1</summary><p>Three dots each with one loop. No other arrows.</p>
+</details>
+<details class="question"><summary>Select to reveal answer 2</summary><p>Three dots, one having a loop. One of the other dots has an arrow <strong>to</strong> the one with a loop. The other dot without a loop has an arrow <strong>from</strong> the one with a loop to it.</p>
+<p>In other words, three dots and two arrows like this <span class="arithmatex">\(\bullet \to \bullet \to \bullet\)</span> <strong>plus</strong> a third arrow which goes from the middle dot to itself.</p>
+</details>
+<details class="question"><summary>Select to reveal answer 3</summary><p>Three dots and two arrows like this: <span class="arithmatex">\(\bullet \to \bullet \leftarrow  \bullet\)</span></p>
+</details>
+<h2 id="24-other-features-of-and-constructions-with-roles">2.4 Other features of and constructions with roles</h2>
+<h3 id="241-domain-and-range">2.4.1 Domain and range</h3>
+<p>It is possible to say that individuals connected by a property must belong to specified classes.</p>
+<p>We might want to say that a property <span class="arithmatex">\(\mathsf{teaches}\)</span> should be from the class
+<span class="arithmatex">\(\mathsf{Staff}\)</span> to class <span class="arithmatex">\(\mathsf{Module}\)</span>.</p>
+<p>In this case <span class="arithmatex">\(\mathsf{Staff}\)</span> is the Domain and  <span class="arithmatex">\(\mathsf{Module}\)</span> is the Range.</p>
+<p>The Domain and the Range can be the same, but this is NOT the same as the property being reflexive!</p>
+<p>One Description Logic notation for domain and range is:</p>
+<ul>
+<li><span class="arithmatex">\(\mathsf{Domain}(R,C)\)</span>.        <br />
+Meaning that whenever <span class="arithmatex">\(R\)</span> relates individual <span class="arithmatex">\(x\)</span> to
+individual <span class="arithmatex">\(y\)</span>, then <span class="arithmatex">\(x\)</span> belongs to <span class="arithmatex">\(C\)</span>.</li>
+<li><span class="arithmatex">\(\mathsf{Range}(R,C)\)</span>.        <br />
+Meaning that whenever <span class="arithmatex">\(R\)</span> relates individual <span class="arithmatex">\(x\)</span> to
+individual <span class="arithmatex">\(y\)</span>, then <span class="arithmatex">\(y\)</span> belongs to <span class="arithmatex">\(C\)</span>.</li>
+</ul>
+<h3 id="242-sub-property-and-super-property">2.4.2 Sub-property and super property</h3>
+<p>We know:                   <br />
+If <span class="arithmatex">\(A \text{ is } \mathrel{\mathsf{motherOf}} B\)</span> then <span class="arithmatex">\(A  \text{ is } \mathrel{\mathsf{parentOf}} B\)</span>.  </p>
+<p>In Description Logic:           <br />
+The <span class="arithmatex">\(\mathsf{motherOf}\)</span> property is a sub-property of <span class="arithmatex">\(\mathsf{parentOf}\)</span> and we write this as:</p>
+<div class="arithmatex">\[\mathsf{motherOf} \sqsubseteq \mathsf{parentOf}.\]</div>
+<p>Another way of saying the same thing is:             <br />
+<span class="arithmatex">\(\mathsf{parentOf}\)</span> property is a super property of <span class="arithmatex">\(\mathsf{motherOf}\)</span>.</p>
+<p>In Description Logic we use <span class="arithmatex">\(\sqsubseteq\)</span> for inclusion of properties as well as for classes.</p>
+<h3 id="243-composing-properties-chains">2.4.3 Composing properties (chains)</h3>
+<p>In Description Logic, OWL and Prot&eacute;g&eacute; (but not in lots of other places):          </p>
+<p>Given properties <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span>,         <br />
+<span class="arithmatex">\(R \circ S\)</span> is the property where <span class="arithmatex">\(x\)</span> is linked to <span class="arithmatex">\(z\)</span> if:          </p>
+<ol>
+<li><span class="arithmatex">\(x\)</span> is linked to something <span class="arithmatex">\(y\)</span> by <span class="arithmatex">\(R\)</span>, and</li>
+<li><span class="arithmatex">\(y\)</span> is linked to <span class="arithmatex">\(z\)</span> by <span class="arithmatex">\(S\)</span>      </li>
+</ol>
+<p>This is nice for pictures but opposite to the most popular (if arguably misguided)
+convention
+for function composition.</p>
+<div class="admonition example">
+<p class="admonition-title">Chain composition example</p>
+<p>Classes: <strong>Module</strong>, <strong>Student</strong>, <strong>Degree</strong></p>
+<p>Properties: <strong>takenBy</strong>, <strong>compulsoryFor</strong>, <strong>studiedBy</strong></p>
+<ul>
+<li>A module can be studied by a student.</li>
+<li>A degree can be taken by a student.</li>
+<li>A module can be compulsory for a degree.</li>
+</ul>
+<p>How do we say this?          <br />
+- If a module is compulsory for a degree taken by a student
+then the module must be studied by the student.</p>
+<div class="arithmatex">\[\mathsf{compulsoryFor} \circ \mathsf{takenBy} \sqsubseteq \mathsf{studiedBy}\]</div>
+<p>In Prot&eacute;g&eacute;: <span class="arithmatex">\(\mathsf{studiedBy}\)</span> needs to be a super property of the chain
+<span class="arithmatex">\(\mathsf{compulsoryFor} \circ \mathsf{takenBy}\)</span></p>
+<p>The composition or chain <span class="arithmatex">\(\mathsf{compulsoryFor} \circ \mathsf{takenBy}\)</span>
+is a new property relating every module which is compulsory for some degree to every student taking that degree.</p>
+</div>
+<p>Composition is a powerful idea. See how it works in this exercise.</p>
+<div class="admonition exercise">
+<p class="admonition-title">Composition exercises</p>
+<p>Assuming <strong>parentOf</strong>, <strong>childOf</strong>, <strong>motherOf</strong> and <strong>daughterOf</strong> have conventional meanings, which of these correspond to
+or include the properties <strong>granddaughterOf</strong>, <strong>grandmotherOf</strong>, <strong>siblingOf</strong>, <strong>grandparentOf</strong>, or other easily named things?</p>
+<ol>
+<li><strong>childOf</strong> o <strong>childOf</strong>.</li>
+<li><strong>parentOf</strong> o <strong>childOf</strong>.</li>
+<li><strong>childOf</strong> o <strong>parentOf</strong>.</li>
+<li><strong>daughterOf</strong> o <strong>childOf</strong>.</li>
+<li><strong>motherOf</strong> o <strong>parentOf</strong>.</li>
+<li><strong>parentOf</strong> o <strong>brotherOf</strong>.</li>
+</ol>
+</div>
+<h4 id="some-more-examples">Some more examples</h4>
+<p>Concept:              <br />
+<em>Knowing someone who has a child who plays football</em>:</p>
+<div class="arithmatex">\[\qquad \exists \; (\mathsf{knows} \circ \mathsf{hasChild}) . \mathsf{PlaysFootball}\]</div>
+<p>concept:                  <br />
+<em>Having a child who knows someone who plays football</em>:</p>
+<div class="arithmatex">\[\qquad \exists \; (\mathsf{hasChild} \circ \mathsf{knows}) . \mathsf{PlaysFootball}\]</div>
+<p>In first order logic the first example corresponds to those <span class="arithmatex">\(x\)</span> for which:</p>
+<div class="arithmatex">\[\qquad \exists y \; \exists z\; (\mathsf{knows}(x,y) \wedge \mathsf{hasChild}(y,z) \wedge \mathsf{PlaysFootball}(z))\]</div>
+<p>How in Description Logic could we formulate the concept of:                                       <br />
+<em>knowing someone who plays football who has a child</em>?</p>
+<h3 id="244-boolean-operations">2.4.4 Boolean operations</h3>
+<p>If <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span> are roles then we can construct these roles:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(R \sqcup S\)</span> (union)       <br />
+   Two things are related by this role if they are related by <span class="arithmatex">\(R\)</span> or by <span class="arithmatex">\(S\)</span> or by both.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(R \sqcap S\)</span> (intersection)      <br />
+   Two things are related by this role if they are related by both <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\neg R\)</span> (complement)      <br />
+   Two things are related by this role if they are not related <span class="arithmatex">\(R\)</span>.</p>
+</li>
+</ol>
+<h3 id="245-transitive-closure">2.4.5 Transitive closure</h3>
+<p>If <span class="arithmatex">\(R\)</span> is a role then we can construct these roles:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(R^+\)</span> (transitive closure).         <br />
+Two things <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are related by this role if there is a sequence of <span class="arithmatex">\(n+1\)</span> things</p>
+<div class="arithmatex">\[ x_0, x_1, \ldots, x_n\]</div>
+<p>where <span class="arithmatex">\(x = x_0\)</span>, <span class="arithmatex">\(x_n = y\)</span>, <span class="arithmatex">\(n \geqslant 1\)</span> and <span class="arithmatex">\(R(x_i, x_{i+1})\)</span> for all <span class="arithmatex">\(0 \leqslant i &lt; n\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(R^\ast\)</span> (reflexive transitive closure).                  <br />
+    Two things <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are related by this role if there is a sequence of <span class="arithmatex">\(n+1\)</span> things</p>
+<div class="arithmatex">\[ x_0, x_1, \ldots, x_n\]</div>
+<p>where <span class="arithmatex">\(x = x_0\)</span>, <span class="arithmatex">\(x_n = y\)</span>, <span class="arithmatex">\(n \geqslant 0\)</span> and <span class="arithmatex">\(R(x_i, x_{i+1})\)</span> for all <span class="arithmatex">\(0 \leqslant i &lt; n\)</span>.</p>
+</li>
+</ol>
+<p>The difference between <span class="arithmatex">\(R^\ast\)</span> and <span class="arithmatex">\(R^+\)</span> is <span class="arithmatex">\(R^\ast(x,x)\)</span> always holds, but
+<span class="arithmatex">\(R^+(x,x)\)</span> only holds in the case that <span class="arithmatex">\(R(x,x)\)</span>.</p>
+<h3 id="246-identity-and-inverse">2.4.6 Identity and inverse</h3>
+<p>If <span class="arithmatex">\(R\)</span> is a role then we can have these roles:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(R^{-1}\)</span> or <span class="arithmatex">\(R^-\)</span> (inverse / converse).      <br />
+This is the role where <span class="arithmatex">\(R^-(x,y)\)</span> iff <span class="arithmatex">\(R(y,x)\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\mathsf{id}(C)\)</span>  (identity role on concept <span class="arithmatex">\(C\)</span>).        <br />
+   This is the role where the domain and range are <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(x\)</span> is related to <span class="arithmatex">\(y\)</span> iff <span class="arithmatex">\(x = y\)</span>.</p>
+</li>
+</ol>
+<h2 id="25-expressivity-of-description-logics">2.5 Expressivity of Description Logics</h2>
+<h3 id="251-the-variety-of-different-logics">2.5.1 The variety of different logics</h3>
+<p>There are many different systems called description logics and they differ among themselves
+according to the different constructs allowed. We have introduced a variety of features to
+indicate what is possible, but not all description logics allow all the features we have discussed.</p>
+<p>A widely used starting point is a language denoted by <span class="arithmatex">\(\mathcal{AL}\)</span>. This only allows the formation
+of concepts as follows:</p>
+<ul>
+<li>atomic concepts</li>
+<li>the top, <span class="arithmatex">\(\top\)</span>, and bottom, <span class="arithmatex">\(\bot\)</span>, concepts</li>
+<li>negation, <span class="arithmatex">\(\neg\)</span>, applied only to atomic concepts</li>
+<li>intersection of concepts: <span class="arithmatex">\(C \sqcap D\)</span></li>
+<li>universal restriction: <span class="arithmatex">\(\forall R . C\)</span></li>
+<li>existential restriction in the limited form <span class="arithmatex">\(\exists R . \top\)</span></li>
+</ul>
+<p>In this logic unions of concepts are not allowed and expressions like <span class="arithmatex">\(\neg (C \cap D)\)</span> are also
+not allowed. There are no constructions on roles, just atomic names for roles.
+In the literature on description logics there is a convention about naming logics by using
+particular letters in the name to indicate what features are allowed. For example, extending the
+logic <span class="arithmatex">\(\mathcal{AL}\)</span> by allowing negation for arbitrary concepts results in a logic
+called <span class="arithmatex">\(\mathcal{ALC}\)</span> where the <span class="arithmatex">\(\mathcal{C}\)</span> stands for 'complement'.</p>
+<h3 id="252-mary-likes-all-cats">2.5.2 Mary likes all cats</h3>
+<p>The statement <em>'Mary likes all cats'</em> has become part of the culture almost as
+much as <em>'Tweety'</em> being a bird when discussing non-monotontic logic, or the names <em>'Alice'</em>
+and <em>'Bob'</em> for opposed players in games.</p>
+<p>The significance of Mary liking all cats is that in several description logics, including
+<span class="arithmatex">\(\mathcal{ALC}\)</span>, it is impossible to express the concept of liking all cats, and hence
+there is no way to say that Mary belongs to this concept. To be precise, it is impossible
+to do this in terms of:</p>
+<ul>
+<li>a role <span class="arithmatex">\(\mathsf{likes}\)</span>, and</li>
+<li>concept <span class="arithmatex">\(\mathsf{Cat}\)</span>.</li>
+</ul>
+<p>Using these two things we can build the concept <span class="arithmatex">\(\forall\; \mathsf{likes} . \mathsf{Cat}\)</span>.
+This is <strong>not</strong> the concept of liking all cats. This is the concept of liking only cats.
+An individual who fitted the concept <span class="arithmatex">\(\forall\; \mathsf{likes} . \mathsf{Cat}\)</span> might only like
+one thing. That one thing would certainly have to be a cat,
+but there might be any number of cats that the
+individual did not like.</p>
+<p>If we have a more expressive description logic where roles can be negated, then it is
+possible to construct the concept <span class="arithmatex">\(\forall\; \neg \mathsf{likes} . \neg \mathsf{Cat}\)</span>.
+Saying Mary belongs to the class defined by this concept is to say</p>
+<ul>
+<li>Mary only dislikes non-cats</li>
+</ul>
+<p>or, in more natural but less concise English:</p>
+<ul>
+<li>Everything that Mary does not like is not a cat.</li>
+</ul>
+<p>This is equivalent to saying Mary likes all cats. Because if we have any cat, then
+Mary cannot dislike it. So it has to be one of the things that Mary likes.
+Don't forget that this is quite different from saying Mary only likes cats. If Mary
+likes all cats, then there may be things other than cats which Mary likes.</p>
+<p>There is always a trade-off between expressivity and the abilty to have reasoning
+tools that compute using a particular language. In some cases adding constructs makes
+reasoning impossible to do efficiently, that is in a reasonable amount of time.
+In other cases, the inclusion of certain features actually makes some reasoning
+problems impossible altogether.</p>
+<h3 id="253-what-description-logic-means-here">2.5.3 What "Description Logic" means here.</h3>
+<p>In this module the term "Description Logic" without any further qualification will
+allow the use of any of the constructs mentioned in this unit.</p>
+<p>If an exercise, question, or assessment requires the use of a particular description logic
+in which only certain constructs are allowed, then this will be stated explicitly.</p>
+<h3 id="254-comparison-with-rdfs">2.5.4 Comparison with RDFS</h3>
+<p>In lesson 1 of this unit we already met the idea that RDFS, is very limited
+in what it can express. The example there was that we cannot say the classes of
+cats and of people are disjoint. In description logic this is simply</p>
+<div class="arithmatex">\[\mathsf{Cat} \sqcap \mathsf{Person} \sqsubseteq \bot\]</div>
+<p>Some other examples of statements that are known to be impossible
+to make in RDFS are the following.
+These examples are found in  R. Arp,
+B. Smith, A. D. Spear: <em>'Building ontologies with Basic Formal Ontology'</em>
+MIT Press, 2015, (page 155).</p>
+<ul>
+<li>Every person  has a mother who is also a person</li>
+<li>Every person has exactly two biological parents</li>
+</ul>
+<p>You should be able write these in description logic using the constructs we
+have seen in this lesson.</p>
+<h2 id="26-wording-and-representation">2.6 Wording and representation</h2>
+<p>These examples show English phrases corresponding to concepts and statements in Description Logic.
+Note in particular that the word 'and'  can indicate different things depending on the context.</p>
+<p><em>Undergraduate students are students</em>:</p>
+<div class="arithmatex">\[\mathsf{UnderGrad} \sqsubseteq \mathsf{Student}\]</div>
+<p><em>Modules and students are disjoint</em>:</p>
+<div class="arithmatex">\[\mathsf{Module} \sqcap \mathsf{Student} \equiv \bot\]</div>
+<p><em>Every student is a postgrad or undergrad (or possibly both)</em>:</p>
+<div class="arithmatex">\[\mathsf{Student} \sqsubseteq \mathsf{UnderGrad} \sqcup \mathsf{PostGrad}\]</div>
+<p><em>Undergrads and postgrads are students</em> (beware the <em>and</em> here modelled by <span class="arithmatex">\(\sqcup\)</span>):</p>
+<div class="arithmatex">\[\mathsf{UnderGrad} \sqcup \mathsf{PostGrad} \sqsubseteq \mathsf{Student}\]</div>
+<p><em>People who are staff and students are postgrads</em>  (notice <em>and</em> modelled by <span class="arithmatex">\(\sqcap\)</span>):</p>
+<div class="arithmatex">\[\mathsf{Staff} \sqcap \mathsf{Student} \sqsubseteq \mathsf{PostGrad}\]</div>
+<p>or more accurately:</p>
+<div class="arithmatex">\[\mathsf{Person} \sqcap \mathsf{Staff} \sqcap \mathsf{Student} \sqsubseteq \mathsf{PostGrad}\]</div>
+<p>but:   </p>
+<p><em>Staff and students are people</em>:</p>
+<div class="arithmatex">\[\mathsf{Staff} \sqcup \mathsf{Student} \sqsubseteq \mathsf{Person}\]</div>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<p>Here are some atomic concepts (classes) and roles (properties).           </p>
+<div class="arithmatex">\[\begin{array}{l}
+\mathsf{Animal}\\     
+\mathsf{Insect} \\    
+\mathsf{Human}  \\   
+\mathsf{LivingThing} \\    
+\mathsf{Carnivore}  \\   
+\mathsf{Herbivore} \\    
+\mathsf{Plant}    \\[3ex]
+\mathsf{eats}     \\
+\mathsf{isEatenBy}\\
+\end{array}
+\]</div>
+<p>Express in Description Logic  the following statements:</p>
+<ol>
+<li>
+<p>Animals are living things           </p>
+</li>
+<li>
+<p>Plants and animals are living things.          </p>
+</li>
+<li>
+<p>Nothing is both a plant and an animal.          </p>
+</li>
+<li>
+<p>'Herbivore' means 'animal that  only eats plants'.          </p>
+</li>
+<li>
+<p>'Carnivore means 'living thing that eats animals (but may eat other things as well).</p>
+</li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answer 1</summary><div class="arithmatex">\[\mathsf{Animal} \sqsubseteq \mathsf{LivingThing}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 2</summary><div class="arithmatex">\[\mathsf{Animal} \sqcup \mathsf{Plant} \sqsubseteq \mathsf{LivingThing}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 3</summary><div class="arithmatex">\[\mathsf{Animal} \sqcap \mathsf{Plant} \equiv \bot\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 4</summary><div class="arithmatex">\[\mathsf{Herbivore} \equiv \mathsf{Animal} \sqcap \forall \mathsf{eats} . \mathsf{Plant}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 5</summary><div class="arithmatex">\[\mathsf{Carnivore} \equiv \mathsf{LivingThing} \sqcap \exists \mathsf{eats} . \mathsf{Animal}\]</div>
+</details>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise continued</p>
+<p>Invent appropriate names for the following additional concepts (classes).          </p>
+<p>In these the 'are / is' means 'are exactly / is defined to be'.          </p>
+<p>Write down the appropriate axioms.          </p>
+<ol>
+<li>
+<p>Edible plants are plants that humans eat.          </p>
+</li>
+<li>
+<p>Carnivorous plants are plants that eat animals.          </p>
+</li>
+<li>
+<p>Insectivores are living things that eat insects.          </p>
+</li>
+<li>
+<p>An exclusive insectivore is one with a diet consisting entirely of insects.          </p>
+</li>
+<li>
+<p>Special insects are insects where some of the things that eat them only eat insects.</p>
+</li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answer 1</summary><div class="arithmatex">\[\mathsf{EdiblePlant} \equiv \mathsf{Plant} \sqcap \exists \mathsf{isEatenBy} . \mathsf{Human}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 2</summary><div class="arithmatex">\[\mathsf{CarnivorousPlant} \equiv \mathsf{Plant} \sqcap \exists \mathsf{eats} . \mathsf{Animal}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 3</summary><div class="arithmatex">\[\mathsf{Insectivore} \equiv \mathsf{LivingThing} \sqcap \exists \mathsf{eats} . \mathsf{Insect}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 4</summary><div class="arithmatex">\[\mathsf{ExclusiveInsectivore} \equiv \mathsf{Insectivore} \sqcap \forall \mathsf{eats} . \mathsf{Insect}\]</div>
+</details>
+<details class="question"><summary>Select to reveal answer 5</summary><div class="arithmatex">\[\mathsf{SpecialInsect} \equiv \exists \mathsf{isEatenBy} . \mathsf{ExclusiveInsectivore}\]</div>
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04_02_OntologyRDF/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 1 Ontology
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04_04_Protege/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 3 Protege
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

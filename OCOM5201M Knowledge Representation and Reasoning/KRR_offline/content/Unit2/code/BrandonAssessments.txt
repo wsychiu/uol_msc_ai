@@ -1,0 +1,190 @@
+%% bb_kb_2021.pl 
+%% A Prolog knowledge base and inference system.
+%% Brandon Bennett 
+%% First version:   20.11.2011   
+%% Revised: 20.11.2018
+%% Current version: 16.11.2021
+
+%% Preliminary Declarations
+:- op( 950, xfx, ==>  ).        % Define a special operator to make the rules more readable.
+:- dynamic fact/1, new_fact/1.  % fact/1 predicate can be altered while program is running.
+
+:- retractall( fact(_) ). % Clear previously stored facts.
+
+%% DEFINE SOME FACTS
+%% First some general conceptual relationships.
+fact( [dog,     is_subclass_of, mamal] ).
+fact( [mamal,   is_subclass_of, animal] ).
+fact( [animal,  is_subclass_of, living_thing] ).
+fact( [penguin, is_subclass_of, bird] ).
+
+%% Now some specific facts.
+fact( [rex,    isa, dog] ).
+fact( [fido,   isa, dog] ).
+fact( [lassie, isa, dog] ).
+
+fact( [rex,    is, male] ).
+fact( [fido, is, male] ).
+fact( [lassie, is, female] ).
+
+fact( [champ, isa, dog] ).
+fact( [champ, is_age, 1] ).
+
+fact( [rex, is_parent_of, fido] ).
+fact( [fido, is_parent_of, champ] ).
+fact( [lassie, is_parent_of, champ] ).
+
+fact( [tweety, isa, bird] ).
+fact( [pete, isa, penguin] ).
+fact( [felix, isa, cat] ).
+%fact( -[felix, isa, dog] ).
+
+
+
+%% SPECIFY INFERENCE RULES
+
+ruleset([_]). % This will allow any rule to work. Comment this line if using specific set.
+% ruleset([logic,taxonomy]). % Can restrict to a given ruleset.
+
+
+%% General logical and set-theoretic rules
+rule( logic1, [[C1, is_subclass_of, C2], [C2, is_subclass_of, C3]]  ==>  [[C1, is_subclass_of, C3]] ).
+rule( logic2, [[X, isa, C1], [C1, is_subclass_of, C2]]  ==>  [[X, isa, C2]] ).
+
+%% Taxonomic relationships regarding the concept vocabulary
+rule( taxonomy, [[X, is_parent_of, Y], [X, is, male]]   ==> [[X, is_father_of, Y]] ).
+rule( taxonomy, [[X, is_parent_of, Y], [X, is, female]] ==> [[X, is_mother_of, Y]] ).
+rule( taxonomy, [[X, isa, dog], [X, is_age, A], test(A < 2) ]   ==> [[X, isa, puppy]] ).
+
+rule( taxonomy, [[X, isa, dog]] ==> [-[X,isa,cat]] ).
+rule( taxonomy, [[X, isa, cat]] ==> [-[X,isa,dog]] ).
+
+rule( inverse_relation, [[X, is_parent_of, Y]] ==> [[Y, is_child_of, X]] ).
+
+
+%%1
+rule( happiness, [[X, isa, dog], [X, is, happy]] ==> [[X, wags, tail]] ).
+%%2
+rule( happiness, [[X, isa, puppy]]  ==> [[X, is, happy]] ).
+
+rule( cuteness, [[X, isa, puppy], [X, wags, tail]] ==> [[X, is, cute]] ).
+
+rule( genetics, [[X, isa, dog], [X, is_parent_of, Y]] ==> [[Y,isa,dog]] ).
+rule( genetics, [[X, isa, dog], [X, is_child_of, Y]] ==>  [[Y,isa,dog]] ).
+
+%% Default rules make inferences on condition that something is not provable.
+%% Such rules should go after the positive inference rules.
+
+rule( default,  [[X, isa, bird], \+(-[X, flies]) ]  ==>  [[X, flies]] ).
+
+rule( exception, [[X, isa, penguin]] ==> [-[X, flies]] ).
+
+%% Define how to interpret 'test' conditions in rule preconditions:
+test( X < Y ) :- X < Y.
+test( X =< Y ) :- X =< Y.
+%% You could add extra test conditions.
+
+%% SUGGESTIONS FOR NEW RULES TO ADD
+%% a) Add a rule which enforces the condition: "Cats hate all dogs except puppies".
+
+%% b) Define a compositional inference rule which would enable deduction of
+%%    the implied fact: [grandfather,rex,champ]
+
+%% c) Uncomment the following "genesis" rule and explain what happens when you
+%%    then run the inference mechanism.
+%%    rule( genesis, [[dog,X]] ==> [dog, fatherof(X)] ).
+
+%% THE INFERENCE MECHANISM
+
+%% applyrule: check if premisses are satisfiable. If so assert the conclusion.
+
+applyrule( T, [] ==> Conc ) :- % If no premisses, assert conclusion (unless already known).
+    add_conclusions( T, Conc ).
+
+applyrule( T, [-(P) | Rest] ==> Conc ) :-   % Check strong negated premiss is a negative fact
+    fact( -(P) ),
+    applyrule( T, Rest ==> Conc ).
+
+applyrule( T,  [\+(P) | Rest] ==> Conc ) :-   % Check weak negated premiss is not a fact
+    \+(fact( P )),
+    applyrule( T, Rest ==> Conc ).
+
+applyrule( T, [test(Condition) | Rest] ==> Conc ) :-  % Evaluate a test condition.
+     ground(Condition), 
+     test( Condition ),
+     applyrule( T, Rest ==> Conc ).
+
+applyrule( T,[Prem | Rest] ==> Conc ) :-     % Look for fact matching first premiss
+     fact( Prem ),
+     applyrule( T, Rest ==> Conc ).
+
+add_conclusion(T, Conc ) :-
+    \+( fact( Conc ) ; new_fact( Conc ) ), % Check fact not already known or derived
+    assert( new_fact( Conc ) ),
+    (show_inferences -> show_inference(Conc, T) ; true).
+
+add_conclusions(_, []).
+add_conclusions(T, [C1 | Rest] ) :-
+    add_conclusion(T, C1),
+    add_conclusions(T, Rest).
+
+check_consistency :- fact(F), fact(-F), !,
+      write( '!! WARNING: inconsistent facts:'), nl,
+      write(F), nl, write(-F), nl.
+check_consistency. % 
+
+%% infer applies all rules to all currently stored facts.
+infer :- ruleset(Rules),
+         check_consistency,
+         findall(R, ( rule(Type, R), member(Type, Rules), applyrule(Type, R)), Infs ),
+         length( Infs, Len ),
+         write('*** Number of inferences carried out: '), write( Len ), nl, nl,
+         Len > 0,  % fail if no inferences found.
+         %% Assert new facts to the main set of facts:
+		 findall( _, (new_fact(F), assert(fact(F))), _),
+		 retractall(new_fact(_)).
+
+%% infer/1 repeatedly calls infer up to a given inference depth limit.
+infer( Limit ) :- infer( 1, Limit ).
+infer( Depth, Limit ) :- Depth>Limit, !, write( '*** Max inference depth reached' ), nl, nl.
+infer( Depth, Limit ) :- write( '*** Inference depth: ' ), write( Depth ), 
+                              write( ' ... ' ), nl,
+                              infer, !, 
+                              Next is Depth + 1, infer( Next, Limit ).
+infer( _, _ ) :- write( '*** No more inferences found' ), nl, nl.          
+
+
+%% Useful Display Predicates
+%% Show all facts 
+allfacts :-  write('=== ALL KNOWN FACTS ==='), nl, (fact(F), write(F), nl, fail) ; true.
+%% Show all facts involving terms in list L
+describe(L) :- L=[] ; (L = [H|T], describe(H), describe(T)).
+describe(X) :- write('=== Facts involving: '), write( X ), write(' ==='), nl, 
+              ( (fact(F), (member(X,F);(F= -(G), member(X,G))), write(F), nl, fail) ; true ).
+
+show_inference( Conc, Type ) :-
+    format( 'Infer: ~p ~40+  (~p)~n', [Conc, Type] ).
+
+show_inferences :- true. %% Change this to false to hide inference output.
+
+/** <examples>
+ %% You can add your own queries here.
+ 
+ %% Display known facts about a thing or list of things:
+?- describe( champ ).
+?- describe( [pete,rex,tweety] ).
+
+?- allfacts. %% Display all known facts.
+
+%% Compute inferences up to a given depth:
+?- infer(1).
+?- infer(2). 
+?- infer(5). 
+
+%% Compute inferences to a given level; then display known facts (including those inferred):
+?- infer(1), describe([rex,champ]).
+?- infer(3), describe([tweety]).    
+?- infer(2), allfacts.
+*/
+
+

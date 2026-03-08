@@ -1,0 +1,1465 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 4 Reasoning in DL - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reasoning-in-description-logic-dl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 4 Reasoning in DL
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../04_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 4 Reasoning in DL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 4 Reasoning in DL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-reasoning-tasks" class="md-nav__link">
+    4.1. Reasoning tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Reasoning tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-subsumption" class="md-nav__link">
+    4.1.1. Subsumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-satisfiability" class="md-nav__link">
+    4.1.2. Satisfiability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-tableau-method-in-description-logic" class="md-nav__link">
+    4.2. Tableau method in description logic
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Tableau method in description logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-negation-normal-form-nnf" class="md-nav__link">
+    4.2.1. Negation normal form (NNF)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-general-idea" class="md-nav__link">
+    4.2.2. General idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-the-rules" class="md-nav__link">
+    4.2.3. The rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-examples" class="md-nav__link">
+    4.3. Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-example-1" class="md-nav__link">
+    4.3.1. Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-example-2" class="md-nav__link">
+    4.3.2. Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-example-3" class="md-nav__link">
+    4.3.3. Example 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-example-4" class="md-nav__link">
+    4.3.4. Example 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-reasoning-tasks" class="md-nav__link">
+    4.1. Reasoning tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Reasoning tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-subsumption" class="md-nav__link">
+    4.1.1. Subsumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-satisfiability" class="md-nav__link">
+    4.1.2. Satisfiability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-tableau-method-in-description-logic" class="md-nav__link">
+    4.2. Tableau method in description logic
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Tableau method in description logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-negation-normal-form-nnf" class="md-nav__link">
+    4.2.1. Negation normal form (NNF)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-general-idea" class="md-nav__link">
+    4.2.2. General idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-the-rules" class="md-nav__link">
+    4.2.3. The rules
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-examples" class="md-nav__link">
+    4.3. Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-example-1" class="md-nav__link">
+    4.3.1. Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-example-2" class="md-nav__link">
+    4.3.2. Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-example-3" class="md-nav__link">
+    4.3.3. Example 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-example-4" class="md-nav__link">
+    4.3.4. Example 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="reasoning-in-description-logic-dl">Reasoning in Description Logic (DL)</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>Put a subsumption assertion into the appropriate format for tableau reasoning.</li>
+<li>Use the <span class="arithmatex">\(\exists\)</span> rule in tableau reasoning for description logic</li>
+<li>Use the <span class="arithmatex">\(\forall\)</span> rule in tableau reasoning for description logic</li>
+<li>Interpret the outcome of a completed tableau for description logic.</li>
+</ul>
+</div>
+<p>We approach this through the example of Tableau Reasoning, building on our
+experience of this method for first order logic.</p>
+<p><span class="arithmatex">\(\def\E{\exists}
+\def\A{\forall}
+\def\geq{\geqslant}
+\def\tru{\texttt{true}}
+\def\fls{\texttt{false}}
+\newcommand{\ul}[1]{\underline{#1}}
+\def\t{\text{\normalfont\sffamily T}}
+\def\f{\text{\normalfont\sffamily F}}
+\newcommand{\m}[4]{{\left[ \begin{array}{rr}#1 &amp; #2    #3 &amp; #4\end{array} \right]} }
+\newcommand{\cv}[2]{{\left[ \begin{array}{r}#1    #2 \end{array} \right]} }
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\emptyset{\varnothing}
+\def\iff{\leftrightarrow}
+\def\blank{ }
+\def\tick{{\makebox[0in][l]{\hspace{1em}\color{green}{\checkmark}}}}
+\newcommand{\close}[1]{\begin{array}{c}#1\\{\color{red}{\times}}\end{array}}
+\newcommand{\nodelab}[1]{\makebox[0in][l]{\hspace{1em}\color{blue}{#1}}}
+\newcommand{\leftlab}[1]{\makebox[0in][r]{\color{blue}{#1}\hspace{1em}}}\)</span></p>
+<h2 id="41-reasoning-tasks">4.1. Reasoning tasks</h2>
+<p>Given some concepts, roles, and individuals specified by a TBox and an ABox we have the idea of an <strong>interpretation</strong>, <span class="arithmatex">\(\mathcal{I}\)</span>.
+This is essentially the same idea as in first order logic. The word <strong>model</strong> is often used for an
+interpretation.       </p>
+<p>This is a set (domain) <span class="arithmatex">\(\Delta^\mathcal{I}\)</span>, and for each concept <span class="arithmatex">\(C\)</span>, a set <span class="arithmatex">\(C^{\mathcal{I}} \subseteq \Delta^\mathcal{I}\)</span>,
+and  for each role a binary relation on <span class="arithmatex">\(\Delta^\mathcal{I}\)</span>, and elements of <span class="arithmatex">\(\Delta^\mathcal{I}\)</span> for each individual,
+subject to the TBox and ABox assertions.</p>
+<p>It is possible that <span class="arithmatex">\(C^{\mathcal{I}}\)</span> is empty for some concepts.</p>
+<p>The two key reasoning tasks are to:</p>
+<ul>
+<li>Test for subsumption between two concepts, and to,</li>
+<li>Test for satisfiability of a concept.</li>
+</ul>
+<h3 id="411-subsumption">4.1.1. Subsumption</h3>
+<p>For concepts <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>
+(with T-Box axioms <span class="arithmatex">\(\mathcal{T}\)</span>)
+we say that</p>
+<p><span class="arithmatex">\(A\)</span> <strong>is subsumed by</strong>   <span class="arithmatex">\(B\)</span>, or that <span class="arithmatex">\(B\)</span> <strong>subsumes</strong>   <span class="arithmatex">\(A\)</span>, and write <span class="arithmatex">\(A \sqsubseteq B\)</span></p>
+<p>if for every model <span class="arithmatex">\(\mathcal{I}\)</span> of <span class="arithmatex">\(\mathcal{T}\)</span> we have <span class="arithmatex">\(A^{\mathcal{I}} \subseteq B^\mathcal{I}\)</span></p>
+<p>If <span class="arithmatex">\(A \sqsubseteq B\)</span> then <span class="arithmatex">\(B\)</span> is a more general concept than <span class="arithmatex">\(A\)</span>.</p>
+<p>For example: we would want  that <span class="arithmatex">\(\mathsf{Mother}\)</span> subsumes <span class="arithmatex">\(\mathsf{Grandmother}\)</span> because every grandmother
+must be a mother.</p>
+<h3 id="412-satisfiability">4.1.2. Satisfiability</h3>
+<p>A concept <span class="arithmatex">\(A\)</span> is said to be <strong>satisfiable</strong> if there is a model <span class="arithmatex">\(\mathcal{I}\)</span> in which <span class="arithmatex">\(A^\mathcal{I}\)</span> is non-empty.</p>
+<p>The concept is <strong>unsatisfiable</strong> when <span class="arithmatex">\(A^\mathcal{I}\)</span> is empty in every model.</p>
+<p>We can use a type of tableau method to show that a concept is unsatisfiable.</p>
+<p>This gives us a means of testing for subsumption:</p>
+<div class="arithmatex">\[ A \sqsubseteq B \quad \mathsf{~if ~and ~only ~if } \quad A \sqcap \neg B \quad \mathsf{ ~is ~unsatisfiable.}\]</div>
+<h2 id="42-tableau-method-in-description-logic">4.2. Tableau method in description logic</h2>
+<p>The rules for building a tableau
+assume we have concept descriptions in Negation Normal Form (NNF).</p>
+<h3 id="421-negation-normal-form-nnf">4.2.1. Negation normal form (NNF)</h3>
+<p>To get concept descriptions into Negation Normal Form (NNF) we apply transformations to concept descriptions:</p>
+<p>Replace <span class="arithmatex">\(\neg (\alpha \sqcup \beta)\)</span> by <span class="arithmatex">\(\neg \alpha \sqcap \neg \beta\)</span>, and
+replace <span class="arithmatex">\(\neg (\alpha \sqcap \beta)\)</span> by <span class="arithmatex">\(\neg \alpha \sqcup \neg \beta\)</span></p>
+<p>Replace <span class="arithmatex">\(\neg \E r.\alpha\)</span> by <span class="arithmatex">\(\A r.\neg \alpha\)</span>, and
+replace <span class="arithmatex">\(\neg \A r.\alpha\)</span> by <span class="arithmatex">\(\E r.\neg \alpha\)</span></p>
+<p>Replace <span class="arithmatex">\(\neg \neg \alpha\)</span> by <span class="arithmatex">\(\alpha\)</span></p>
+<p>The <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> can be any concept descriptions, not just concept names.</p>
+<h3 id="422-general-idea">4.2.2. General idea</h3>
+<p>General idea is just as we saw earlier. You construct a tree in stages and continue until
+no further development is possible. Paths may become closed and if all paths close then the
+concept you started with is unsatisfiable.</p>
+<p>The nodes in the tree either:</p>
+<ul>
+<li>Have the form <span class="arithmatex">\(\alpha (x)\)</span> where <span class="arithmatex">\(\alpha\)</span> is a concept description and <span class="arithmatex">\(x\)</span> is an
+  individual name,</li>
+</ul>
+<p>or          </p>
+<ul>
+<li>Have the form <span class="arithmatex">\(r(x,y)\)</span> where <span class="arithmatex">\(r\)</span> is a role name and <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are individual names.</li>
+</ul>
+<p>The assertion <span class="arithmatex">\(\alpha (x)\)</span> means that <span class="arithmatex">\(x\)</span> satisfies <span class="arithmatex">\(\alpha\)</span>, and <span class="arithmatex">\(r(x,y)\)</span> means that <span class="arithmatex">\(x\)</span> stands in the
+relation <span class="arithmatex">\(r\)</span> to <span class="arithmatex">\(y\)</span>.</p>
+<p>Each path that we construct by building the tree is a part of a possible model.</p>
+<p>A path becomes closed when it contains both <span class="arithmatex">\(A(x)\)</span> and <span class="arithmatex">\(\neg A(x)\)</span> for some concept name <span class="arithmatex">\(A\)</span>.
+This means that particular attempt to build a model has to be abandoned.</p>
+<p>To show that a concept description <span class="arithmatex">\(\alpha\)</span> is satisfiable, we start with a node <span class="arithmatex">\(\alpha (x)\)</span>
+and develop a tree using the rules.</p>
+<p>The <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\alpha (x)\)</span> is not a variable; it is a name for an individual in the model that we are building.
+We assume that we can always generate new individuals to take part in the model.</p>
+<p>To show <span class="arithmatex">\(A \sqsubseteq B\)</span> we start with the assertion <span class="arithmatex">\((A \sqcap \neg B)(x)\)</span>.</p>
+<h3 id="423-the-rules">4.2.3. The rules</h3>
+<div class="arithmatex">\[\mathsf{Rules~for~} \sqcup \mathsf{~and~} \sqcap \qquad
+\begin{prooftree}
+\AXC{$(A \sqcup B) (x)$}
+\UIC{$A(x) \mid B(x)$}
+\end{prooftree}
+\qquad \quad
+\begin{prooftree}
+\AXC{$(A \sqcap B)(x)$}
+\UIC{$\begin{array}{c}A(x)\\ B(x)\end{array}$}
+\end{prooftree}
+\]</div>
+<div class="arithmatex">\[\mathsf{Rule~for~} \E  \qquad
+\begin{prooftree}
+\AXC{$(\E r . A) (x)$}
+\UIC{$\begin{array}{c}A(y)\\ r(x,y)\end{array}$}
+\end{prooftree}
+\quad
+\mathsf{(where~} y \mathsf{~is~a~new~individual)}
+\]</div>
+<div class="arithmatex">\[\mathsf{Rule~for~} \A  \qquad
+\begin{prooftree}
+\AXC{$\begin{array}{c}(\A r . A)\\ r(x,y)\end{array}$}
+\UIC{$A(y)$}
+\end{prooftree}\]</div>
+<p>For practical reasons we would not add nodes to a path if it duplicates information that is already present.</p>
+<h2 id="43-examples">4.3. Examples</h2>
+<h3 id="431-example-1">4.3.1. Example 1</h3>
+<p>In this example the tableau method is used to see if:
+<span class="arithmatex">\(\E r.A \sqcap \E r.B \sqsubseteq \E r.(A \sqcap B)\)</span>.</p>
+<p>Concept names: <strong>House</strong>, <strong>School</strong>, <strong>Station</strong>.</p>
+<p>Role name: <strong>closeTo</strong></p>
+<p>Consider these two attempts to describe the concept of a house close to a school and a station.
+Are they the same?</p>
+<p><span class="arithmatex">\(\mathsf{House} \sqcap \E \mathsf{closeTo}.(\mathsf{School} \sqcap \mathsf{Station})\)</span></p>
+<p><span class="arithmatex">\(\mathsf{House} \sqcap \E \mathsf{closeTo}.\mathsf{School} \sqcap \E \mathsf{closeTo}.\mathsf{Station}\)</span></p>
+<p><img alt="Fig 4.4.1. Please see the full text description below." src="../images/04_05_DLTab01.png" /></p>
+<p><strong>Fig 4.4.1.</strong> <!--Please see the full text description below.--></p>
+<details class="info"><summary>Select for full text description of screenshot 4.4.1.</summary><p>Full text description to follow.</p>
+</details>
+<p><span class="arithmatex">\(\E r.A \sqcap \E r.B\)</span> is not subsumed by <span class="arithmatex">\(\E r.(A \sqcap B)\)</span>
+because <span class="arithmatex">\(\E r.A \sqcap \E r.B \sqcap \neg (\E r.(A \sqcap B))\)</span> is satisfiable</p>
+<h3 id="432-example-2">4.3.2. Example 2</h3>
+<p>In Lesson 3 of this unit we met this quotation:</p>
+<p><em>'Have nothing in your house that you do not know to be useful, or believe to be beautiful'</em></p>
+<p>Which of these concepts matches a house satisfying the quotation
+(the role inHouse relates a house to something in the house)?</p>
+<p><span class="arithmatex">\(\qquad \A\, \text{inHouse}.(\text{Useful} \sqcup \text{Beautiful})\)</span></p>
+<p><span class="arithmatex">\(\qquad \A\, \text{inHouse}.\text{Useful} \sqcup \A\, \text{inHouse}.\text{Beautiful}\)</span></p>
+<p>In this example the tableau method is used to investigate this statement:</p>
+<ul>
+<li><span class="arithmatex">\(\A r.(A \sqcup B) \sqsubseteq \A r.A \sqcup \A r.B\)</span>  </li>
+</ul>
+<p>After reducing to negation normal form, we continue:</p>
+<ul>
+<li>
+<p>Start the tree with</p>
+<p><span class="arithmatex">\(((\A r . (A \sqcup B)) \sqcap (\E r . \neg A) \sqcap (\E r . \neg B))(x)\)</span></p>
+</li>
+<li>
+<p>Using the <span class="arithmatex">\(\sqcap\)</span> rule more than once gives three things to add to the one path:</p>
+<ul>
+<li><span class="arithmatex">\((\A r . (A \sqcup B))(x)\)</span></li>
+<li><span class="arithmatex">\((\E r. \neg A)(x)\)</span></li>
+<li><span class="arithmatex">\((\E r. \neg B)(x)\)</span></li>
+</ul>
+</li>
+<li>
+<p>There are two opportunities to apply the <span class="arithmatex">\(\E\)</span> rule, so we introduce two new individuals <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(z\)</span> and add these to the path:</p>
+<ul>
+<li><span class="arithmatex">\(r(x,y)\)</span></li>
+<li><span class="arithmatex">\(\neg A (y)\)</span></li>
+<li><span class="arithmatex">\(r(x,z)\)</span></li>
+<li><span class="arithmatex">\(\neg B (z)\)</span></li>
+</ul>
+</li>
+<li>
+<p>We now use the <span class="arithmatex">\(\A\)</span> rule with each of <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(z\)</span> to get these:</p>
+<ul>
+<li><span class="arithmatex">\((A \sqcup B)(y)\)</span></li>
+<li><span class="arithmatex">\((A \sqcup B)(z)\)</span></li>
+</ul>
+</li>
+<li>
+<p>At this point the tree branches:</p>
+<ul>
+<li>One branch has <span class="arithmatex">\(A(y)\)</span>, but we can close this immediately as we have <span class="arithmatex">\(\neg A (y)\)</span></li>
+<li>
+<p>The other branch has <span class="arithmatex">\(B(y)\)</span>. This branch splits again:</p>
+<ul>
+<li>One branch has <span class="arithmatex">\(B(z)\)</span>, but we can close this immediately as we have <span class="arithmatex">\(\neg B (z)\)</span></li>
+<li>The other branch has <span class="arithmatex">\(A(z)\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nothing further is possible. We conclude that the concept at the start is satisfiable. The model that can be read off the tree has three individuals with <span class="arithmatex">\(x\)</span> related by <span class="arithmatex">\(r\)</span> to both <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(z\)</span>. The individual <span class="arithmatex">\(y\)</span> is an instance of the concept <span class="arithmatex">\(\neg A \sqcap B\)</span>, whereas <span class="arithmatex">\(z\)</span> is an instance of the concept <span class="arithmatex">\(A \sqcap \neg B\)</span>.      </p>
+</li>
+</ul>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<p>A further example is left as an exercise for you:</p>
+<p><span class="arithmatex">\(\A r.A \sqcup \A r.B \sqsubseteq \A r.(A \sqcup B)\)</span></p>
+<p>You should be able to show that the subsumption does indeed hold.</p>
+</div>
+<h3 id="433-example-3">4.3.3. Example 3</h3>
+<p>We can make these definitions:</p>
+<p><span class="arithmatex">\(\qquad \text{Parent} \equiv \E\, \text{hasChild}.\top\)</span></p>
+<p><span class="arithmatex">\(\qquad \text{GrandParent} \equiv \E\, \text{hasChild}.\text{Parent}\)</span></p>
+<p>In this example the tableau method is used to show that:   <span class="arithmatex">\(\text{GrandParent} \sqsubseteq \text{Parent}\)</span>.</p>
+<p>The steps are described next. You should draw the tree yourself as you go through these.</p>
+<ul>
+<li>
+<p>To simplify notation, just write <span class="arithmatex">\(r\)</span> instead of <span class="arithmatex">\(\mathsf{hasChild}\)</span>.</p>
+</li>
+<li>
+<p>We need to show that <span class="arithmatex">\(\E r. (\E r. \top) \sqcap \neg \E r.\top\)</span> is unsatisfiable.</p>
+</li>
+<li>
+<p>We start the tree with <span class="arithmatex">\((\E r. (\E r. \top) \sqcap \A r.\bot) (x)\)</span>.</p>
+</li>
+<li>
+<p>Using the rule for <span class="arithmatex">\(\sqcap\)</span> we add two things to the path:</p>
+<ul>
+<li><span class="arithmatex">\((\exists r . ( \exists r . \top )) (x)\)</span></li>
+<li><span class="arithmatex">\((\forall r . \top) (x)\)</span></li>
+</ul>
+</li>
+<li>
+<p>Using the rule for <span class="arithmatex">\(\exists\)</span>, we introduce a new individual <span class="arithmatex">\(y\)</span> and add two more
+things to the path:</p>
+<ul>
+<li><span class="arithmatex">\(( \exists r . \top ) (x)\)</span></li>
+<li><span class="arithmatex">\(r(x,y)\)</span></li>
+</ul>
+</li>
+<li>
+<p>Now, using the <span class="arithmatex">\(\forall\)</span> rule we get <span class="arithmatex">\(\bot (y)\)</span>.</p>
+</li>
+<li>
+<p>As <span class="arithmatex">\(\bot\)</span> is the empty concept, a path with <span class="arithmatex">\(\bot (y)\)</span> must be closed.</p>
+</li>
+<li>
+<p>There was only one path, so we conclude that the concept at the start is unsatisfiable.
+In other words, it is impossible to have a grandparent who is not a parent.</p>
+</li>
+</ul>
+<h3 id="434-example-4">4.3.4. Example 4</h3>
+<p>Of course, being a parent does not imply being a grandparent, but can the
+reasoning method detect this?</p>
+<p>What happens if we investigate <span class="arithmatex">\(\E r.\top \sqsubseteq \E r. (\E r. \top)\)</span>?</p>
+<p>You should draw your own tree as you follow these steps.</p>
+<ul>
+<li>
+<p>We start with  <span class="arithmatex">\((\E r.\top \sqcap \A r.(\A r.\bot))(x)\)</span></p>
+</li>
+<li>
+<p>Using the <span class="arithmatex">\(\sqcap\)</span> rule we add these to the one path:</p>
+<ul>
+<li><span class="arithmatex">\((\E r.\top)(x)\)</span></li>
+<li><span class="arithmatex">\((\A r.(\A r.\bot))(x)\)</span></li>
+</ul>
+</li>
+<li>
+<p>Using the <span class="arithmatex">\(\exists\)</span> rule we get two more things to add about a new individual, <span class="arithmatex">\(y\)</span>.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(r(x,y)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\top (y)\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Now, using the <span class="arithmatex">\(\forall\)</span> rule we get <span class="arithmatex">\((\A r.\bot)(y)\)</span>, which means for our
+example that <span class="arithmatex">\(y\)</span> has no children.</p>
+</li>
+<li>
+<p>No further applications of rules are possible, and we see that the starting
+concept is satisfiable. The method has constructed a model where <span class="arithmatex">\(x\)</span> has child <span class="arithmatex">\(y\)</span>,
+and <span class="arithmatex">\(y\)</span> has no children.</p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04_04_Protege/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 3 Protege
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../Unit5/05_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 5
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

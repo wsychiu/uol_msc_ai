@@ -1,0 +1,1444 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 2 Propositional logic - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-2-propositional-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 2 Propositional logic
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 2 Propositional logic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 2 Propositional logic
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#propositions" class="md-nav__link">
+    Propositions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precedence-conventions" class="md-nav__link">
+    Precedence conventions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beware-logic-can-differ-from-everyday-discourse" class="md-nav__link">
+    Beware: logic can differ from everyday discourse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truth-tables-for-connectives" class="md-nav__link">
+    Truth tables for connectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-proposition-and-relationships-between-propositions" class="md-nav__link">
+    Types of proposition and relationships between propositions
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of proposition and relationships between propositions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truth-tables-provide-a-mechanical-process" class="md-nav__link">
+    Truth tables provide a mechanical process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#propositions" class="md-nav__link">
+    Propositions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#precedence-conventions" class="md-nav__link">
+    Precedence conventions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beware-logic-can-differ-from-everyday-discourse" class="md-nav__link">
+    Beware: logic can differ from everyday discourse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truth-tables-for-connectives" class="md-nav__link">
+    Truth tables for connectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-proposition-and-relationships-between-propositions" class="md-nav__link">
+    Types of proposition and relationships between propositions
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of proposition and relationships between propositions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#truth-tables-provide-a-mechanical-process" class="md-nav__link">
+    Truth tables provide a mechanical process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-2-propositional-logic">Lesson 2: Propositional logic</h1>
+<p><strong>This may be revision if you are familiar with this material.
+It is included here to make sure the notation and terminology is clear
+as some of this may be different from what you know.</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>use truth tables to determine whether a statement in propositional logic is
+a tautology, a contradiction, or a contingency</li>
+<li>understand the syntax of propositional logic and be able to spot mistakes.</li>
+</ul>
+</div>
+<h2 id="propositions">Propositions</h2>
+<p>A <strong>proposition</strong> is a statement that (perhaps in some context) is
+either true or false (even if no one knows which).</p>
+<div class="admonition example">
+<p class="admonition-title">Examples and non-examples</p>
+<ul>
+<li><em>Today is Monday</em> is a proposition (if we fix when Today is).</li>
+<li><em>The room is empty</em> is a proposition (if we know which room).</li>
+<li><em>Leeds is in England</em> is a proposition
+   (assuming we agree on the meaning of the places mentioned).</li>
+<li><em>Leeds is bigger than London</em> is a proposition.
+   Being a proposition has nothing to do with whether it is true or false</li>
+<li><em>Is Leeds in China?</em> is not a proposition, it's a question.</li>
+<li><span class="arithmatex">\(x = 1\)</span> is a proposition (if we know what <span class="arithmatex">\(x\)</span> is).</li>
+<li><em>Let</em> <span class="arithmatex">\(x =1\)</span> is not a proposition; it's a request or an instruction.</li>
+<li><code>x := 1</code> (in a programming language) is not a proposition; it is a command or an instruction to do something</li>
+</ul>
+</div>
+<p>A <strong>compound proposition</strong> is a statement that consists of  simpler
+propositions combined together.
+For example, <em>The room is empty and the window is broken</em>
+is made by combining <em>The room is empty</em> with <em>the window is broken</em>.
+Formal propositional logic models combinations like this.
+In classical logic the combinations behave in a <strong>truth functional</strong>
+way. This means that the truth of a compound proposition depends only on
+what combination is used and on the truth of the component parts.</p>
+<h2 id="syntax">Syntax</h2>
+<p>Formal logic has a precise syntax, just like any programming language.</p>
+<p>Propositional logic builds statements out of:</p>
+<ul>
+<li>Letters (or words) for atomic propositions, often called
+<strong>propositional variables</strong> or just <strong>variables</strong>.</li>
+<li>The <strong>logical connectives</strong><ul>
+<li><span class="arithmatex">\(\wedge\)</span> (and),</li>
+<li><span class="arithmatex">\(\vee\)</span> (or),</li>
+<li><span class="arithmatex">\(\neg\)</span> (not),</li>
+<li><span class="arithmatex">\(\to\)</span> (implies / if &ndash; then &ndash;),</li>
+<li><span class="arithmatex">\(\leftrightarrow\)</span> (iff / &ndash; if and only if &ndash;).</li>
+</ul>
+</li>
+<li>Parentheses '(' and ')' to avoid ambiguity.</li>
+</ul>
+<p>The statements in the logic are sometimes called <strong>formulas</strong> or  <strong>formulae</strong>. These are
+both acceptable plurals of <strong>formula</strong>.</p>
+<p>Sometimes, instead of 'formula', people say <strong>well formed formula</strong> or <strong>wff</strong> (which you can pronounce
+  'woof' as in the sound made by a dog) to emphasise that there are strings of
+  symbols, such as</p>
+<div class="arithmatex">\[p\; \vee\; \to \;q \;r \;\neg \qquad \text{ or }
+  \qquad (\;(\;p\;(\;q\;(\;(\;\wedge\;\neg
+\]</div>
+<p>which are (in programming terms) 'syntax errors' and are not 'well formed'.</p>
+<p>The use of single letters for propositional variables saves a lot of effort, but
+can lead to less intelligible expressions. In computer science, the importance
+of meaningful identifiers in programming is well known. So, we may sometimes
+write logical expressions like this:</p>
+<div class="arithmatex">\[\mathit{theSunIsShiningToday} \to
+(\neg \mathit{itIsRaining} \vee \mathit{itIsWarmOutsideToday})\]</div>
+<p>rather than just <span class="arithmatex">\(s \to (\neg r \vee w)\)</span>.</p>
+<p>It is important not to be misled by imagining that using meaningful
+names for propositions makes any difference to the logical content.
+The meaningful names are very useful for humans, but the two logical expressions
+above would be treated in the same way when processed by software dealing with logic.</p>
+<h3 id="precedence-conventions">Precedence conventions</h3>
+<p>To avoid using too many parentheses we can use conventions about
+precedence of logical connectives.
+In the following table a lower number means insert parentheses earlier.</p>
+<div class="arithmatex">\[
+\begin{array}{lcccccc}
+\hline
+\mathsf{Operator} &amp;  \neg &amp; \wedge &amp; \vee &amp; \to &amp; \leftrightarrow\\
+\mathsf{Precedence} &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\
+\hline
+\end{array}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<ul>
+<li><span class="arithmatex">\(\neg p \vee q \wedge r \to s\)</span> means <span class="arithmatex">\(((\neg p) \vee (q \wedge r)) \to s\)</span></li>
+<li><span class="arithmatex">\(p \wedge \neg q \to r \vee s \wedge t\)</span> means <span class="arithmatex">\((p \wedge (\neg q)) \to (r \vee (s \wedge t))\)</span></li>
+<li><span class="arithmatex">\(p \to \neg q \leftrightarrow r \wedge s \vee t\)</span> means <span class="arithmatex">\((p \to (\neg q)) \leftrightarrow ((r \wedge s) \vee t)\)</span></li>
+</ul>
+</div>
+<p>It is often assumed that binary operators associate to the left so that for example</p>
+<ul>
+<li><span class="arithmatex">\(p \to q \to r\)</span> means <span class="arithmatex">\((p \to q) \to r\)</span> not <span class="arithmatex">\(p \to (q \to r)\)</span></li>
+<li><span class="arithmatex">\(p \wedge q \wedge r\)</span> means <span class="arithmatex">\((p \wedge q) \wedge r\)</span> not <span class="arithmatex">\(p \wedge (q \wedge r)\)</span>.</li>
+</ul>
+<p>Rather than use all the precedence rules all the time you can add more parentheses
+ than strictly necessary, as follows.</p>
+<div class="admonition summary">
+<p class="admonition-title">Suggested use of parentheses and precedence</p>
+<ul>
+<li><span class="arithmatex">\(\neg\)</span> has highest precedence among propositional connectives</li>
+<li><span class="arithmatex">\(\vee\)</span> and <span class="arithmatex">\(\wedge\)</span> come next, but put in parentheses to distinguish
+   <span class="arithmatex">\((p \vee q) \wedge r\)</span>
+  and <span class="arithmatex">\(p \vee (q \wedge r)\)</span>,</li>
+<li><span class="arithmatex">\(\to\)</span> and <span class="arithmatex">\(\leftrightarrow\)</span> come next, but put in parentheses to
+  distinguish <span class="arithmatex">\((p \to q) \leftrightarrow r\)</span>
+  and <span class="arithmatex">\(p \to (q \leftrightarrow r)\)</span></li>
+<li>put in parentheses to distinguish <span class="arithmatex">\((p \to q) \to r\)</span>
+  and <span class="arithmatex">\(p \to (q \to r)\)</span>; and similarly for all the binary connectives,
+  so that if the difference between <span class="arithmatex">\((p \vee q) \vee r\)</span>
+  and <span class="arithmatex">\(p \vee (q \vee r)\)</span> is important then write them in this way.</li>
+</ul>
+</div>
+<h2 id="semantics">Semantics</h2>
+<p>In classical propositional logic the meaning of the connectives is defined by
+truth tables as follows.
+You should have seen these before and be familiar with the process of working out
+a truth table for any compound proposition.</p>
+<h3 id="beware-logic-can-differ-from-everyday-discourse">Beware: logic can differ from everyday discourse</h3>
+<p>From the knowledge representation perspective, some key points to note about the
+connectives are:</p>
+<ul>
+<li><span class="arithmatex">\(\vee\)</span> means <strong>inclusive or</strong>.
+The formula <span class="arithmatex">\(p \vee q\)</span> is true when both <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> are true, and also when
+exactly one is true.<br />
+If you need to say <em>'<span class="arithmatex">\(p\)</span> or <span class="arithmatex">\(q\)</span>, but not both'</em> then
+you have to say explicitly, such as one of the following.</li>
+</ul>
+<div class="arithmatex">\[
+(p \vee q) \wedge \neg(p \wedge q)
+\qquad \qquad
+(p \wedge \neg q) \vee (q \wedge \neg p)\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\wedge\)</span> means <strong>and</strong> but sometimes the place we include the word in statements
+can be confusing.    <br />
+In the sentence "I bought an apple and an orange", the
+part "I bought an apple" is a proposition, but "an orange" (which comes after the
+  connecting "and") is not a proposition.
+In the example the statement is essentially a short form of "I bought an apple and
+I bought an orange" in which you clearly see two propositions connected together.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\to\)</span> means <strong>material implication</strong>.
+The truth of <span class="arithmatex">\(p \to q\)</span> has nothing at all to do with whether <span class="arithmatex">\(p\)</span> causes <span class="arithmatex">\(q\)</span>
+or whether there is any relationship between what the propositions represent.</p>
+</li>
+</ul>
+<p>The expression gets its truth value only from the separate individual
+truth values of <span class="arithmatex">\(p\)</span> and of
+<span class="arithmatex">\(q\)</span>.  </p>
+<p>This can be confusing because in everyday speech we can use <em>'if &mdash; then &mdash;'</em> in other ways. For example, if we model the statement <em>'if I want to speak Russian then I can speak Russian'</em> in propositional logic as <span class="arithmatex">\(w \to s\)</span> where the statement <span class="arithmatex">\(w\)</span>: <em>'I want to speak Russian'</em> is false, then the statement as a whole is true. This is the case whether or not <span class="arithmatex">\(s\)</span>: <em>'I can speak Russian'</em> holds. Yet, in an everyday situation, someone saying <em>'if I want to speak Russian then I can speak Russian'</em> who was completely unable to speak Russian at all, might not be regarded as being truthful.</p>
+<p>We will return to this issue when we discuss representation in more detail. The fact that classical propositional logic has these features does not mean it is fundamentally 'wrong'. It is a tool which is capable of representing  certain aspects of the world but in the process ignores other aspects. This is found in any kind of modelling process.
+There are ways to model aspects of the language <em>if &mdash; then &mdash;</em> that are ignored in classical propositional logic, such as <em>relevance logic</em>, but these are complex and are beyond the scope of this module.</p>
+<h3 id="truth-tables-for-connectives">Truth tables for connectives</h3>
+<p>The truth tables are listed here, but you should be familiar with these already.</p>
+<div class="arithmatex">\[
+\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; p \wedge q\\
+\hline
+T &amp; T &amp; T \\
+T &amp; F &amp; F \\
+F &amp; T &amp; F \\
+F &amp; F &amp; F \\
+\hline
+\end{array}
+\qquad \qquad
+\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; p \vee q\\
+\hline
+T &amp; T &amp; T \\
+T &amp; F &amp; T \\
+F &amp; T &amp; T \\
+F &amp; F &amp; F \\
+\hline
+\end{array}
+\qquad \qquad
+\begin{array}{|c|c|}
+\hline
+p &amp; \neg p\\
+\hline
+T &amp; F \\
+F &amp; T \\
+\hline
+\end{array}\]</div>
+<div class="arithmatex">\[\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; p \to q\\
+\hline
+T &amp; T &amp; T \\
+T &amp; F &amp; F \\
+F &amp; T &amp; T \\
+F &amp; F &amp; T \\
+\hline
+\end{array}
+\qquad
+\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; p \leftrightarrow q\\
+\hline
+T &amp; T &amp; T \\
+T &amp; F &amp; F \\
+F &amp; T &amp; F \\
+F &amp; F &amp; T \\
+\hline
+\end{array}
+\]</div>
+<h2 id="types-of-proposition-and-relationships-between-propositions">Types of proposition and relationships between propositions</h2>
+<p>These types of proposition are important:</p>
+<ul>
+<li><strong>tautology</strong>: This means a proposition that is true under all values given
+to the variables it contains. For example <span class="arithmatex">\(p \vee \neg p\)</span> is a tautology.
+However,  <span class="arithmatex">\(p \wedge \neg p\)</span> is not a tautology, and neither is
+ <span class="arithmatex">\(p\)</span>.</li>
+<li>
+<p><strong>contingency</strong>: This means a proposition that is true overall when its variables are given
+some truth values, but false in other cases. For example <span class="arithmatex">\(p \vee q\)</span> is a contingency.
+However neither <span class="arithmatex">\(p \vee \neg p\)</span> nor <span class="arithmatex">\(p \wedge \neg p\)</span> is a contingency.</p>
+</li>
+<li>
+<p><strong>contradiction</strong>:  This means a proposition that is false overall
+whatever truth values its variables are given. For example <span class="arithmatex">\(p \wedge \neg p\)</span>
+is a contradiction.</p>
+</li>
+</ul>
+<p>A proposition is said to be <strong>satisfiable</strong> when there is some choice of values
+for the variables that makes it true. All tautologies and all contingencies
+are satisfiable. A proposition which is not satisfiable is said to be <strong>unsatisfiable</strong>.</p>
+<p>Besides propositions individually being of a certain type, we also need to talk
+about relationships between propositions.
+We say that a proposition <span class="arithmatex">\(\alpha\)</span> <strong>logically implies</strong> a proposition <span class="arithmatex">\(\beta\)</span>
+if whenever <span class="arithmatex">\(\alpha\)</span> evaluates to true, then <span class="arithmatex">\(\beta\)</span> does so as well.
+When this happens we write <span class="arithmatex">\(\alpha \vDash \beta\)</span>.</p>
+<p>Logical implication is a relationship <strong>between</strong> propositions, not
+a new way of constructing propositions. It is similar to the situation when discussing
+different natural languages. Someone talking in German about two English
+statements could be describing a relationship between English statements but
+they would be making a statement in German and not in English.</p>
+<p>The symbol <span class="arithmatex">\(\vDash\)</span> is sometimes called a <strong>double turnstile</strong> when
+people talk about the symbol itself rather than what it means. A turnstile in
+non-mathematical contexts is a kind of revolving gate to control a flow of people.
+In most traditional forms a turnstile revolves about a vertical axis, like the single vertical line in the symbol. When we get to proof we also meet the <strong>single turnstile</strong>,
+<span class="arithmatex">\(\vdash\)</span>. Either of these symbols might just be called <strong>turnstile</strong> if it causes no
+ambiguity and, like of lot of mathematical symbols, there is no consistency about how different people may use them in writing about logic.</p>
+<p>Sometimes the relationship of
+logical implication is called <strong>semantic consequence</strong>.
+This is because it depends on the
+semantics of the statements  involved, which in the context of propositional logic
+means how the truth values of propositions are related.  This is different from
+the notion of <strong>proof</strong> or <strong>syntactic consequence</strong> where relationships depend on the
+syntactic structure of the formulas.</p>
+<p>In reading out the formula <span class="arithmatex">\(P \vDash Q\)</span> you can say <em>'<span class="arithmatex">\(P\)</span> logically implies <span class="arithmatex">\(Q\)</span>'</em> or
+<em>'<span class="arithmatex">\(P\)</span> entails <span class="arithmatex">\(Q\)</span>'</em>. An example of someone talking <strong>about</strong> the <span class="arithmatex">\(\vDash\)</span>
+symbol as opposed to <strong>using</strong> it would be <em>'I am using the double turnstile to denote
+logical implication'</em>.</p>
+<p>For example, the following logical implications hold:</p>
+<div class="arithmatex">\[
+\neg p \vDash p \to q,
+\qquad
+p \wedge q \vDash q \vee \neg (p \wedge r),
+\qquad
+p \wedge \neg p \vDash q.
+\]</div>
+<p>Note in the last example that the statement to the left of the <span class="arithmatex">\(\vDash\)</span>
+symbol is never true. Logical implication is only claiming that when
+the statement on the left is true, then the statement on the right is true.
+You may find it helpful to think of this another way:
+<span class="arithmatex">\(\alpha \vDash \beta\)</span> means that it is impossible for <span class="arithmatex">\(\alpha\)</span> to be true
+for some values of the propositional variables and for <span class="arithmatex">\(\beta\)</span> to be false
+for those same values.</p>
+<p>More generally, a logical implication can involve any number of
+formulas on the left.
+So that <span class="arithmatex">\(\alpha_1, \alpha_2, \ldots, \alpha_n \vDash \beta\)</span>
+asserts that whenever all of the <span class="arithmatex">\(\alpha_i\)</span> are true then
+<span class="arithmatex">\(\beta\)</span> is true too.
+You may find it helpful to think of this another way:
+<span class="arithmatex">\(\alpha_1, \alpha_2, \ldots, \alpha_n \vDash \beta\)</span>
+ means that it is impossible for all of the <span class="arithmatex">\(\alpha_i\)</span> to be true
+for some values of the propositional variables and for <span class="arithmatex">\(\beta\)</span> to be false
+for those same values.</p>
+<p>For example the following logical implication holds. You can check this either
+by drawing up truth tables, or by thinking of all the possible ways to make all
+of the formulas on the left come out true, and making sure that the formula on the right
+is true in every one of these cases.</p>
+<div class="arithmatex">\[
+P \to (Q \vee \neg R),\; P \wedge R,\; Q \to S \vDash Q \wedge S
+\]</div>
+<p>In the special case that there are no formulas on the left,
+writing <span class="arithmatex">\({ }\vDash \beta\)</span> just means that <span class="arithmatex">\(\beta\)</span> is a tautology.</p>
+<h3 id="truth-tables-provide-a-mechanical-process">Truth tables provide a mechanical process</h3>
+<p>Truth tables provide a finite procedure which for any formula will say whether
+it is a tautology or not. More generally, given any claimed logical implication</p>
+<div class="arithmatex">\[\alpha_1, \alpha_2, \ldots, \alpha_n \vDash \beta\]</div>
+<p>whether this holds or not can be determined automatically: simply draw up a
+truth table to find out for what values of the variables involved all of the
+formulas on the left evaluate to true, and then see whether or not the
+formula, <span class="arithmatex">\(\beta\)</span> on the left is true in all of these cases.</p>
+<p>Propositional logic is very different from other logics that we meet later
+in that there are only a finite number of ways of interpreting the
+symbols in any formula. The propositional variables can only be true
+or false, so if there are <span class="arithmatex">\(n\)</span> different variables there are <span class="arithmatex">\(2^n\)</span>
+different interpretations for the formula. Each of these interpretations
+corresponds to a line in the truth table.</p>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 2, you can test your knowledge in a formative exercise about the nature of propositions.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-1 Lesson 2'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01_01_Lesson1/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 1 Introducing KRR
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../01_04_Representation/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 3 Representation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

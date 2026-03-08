@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3/"
+     xml:base="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-3="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3">
+        <rdfs:comment>Exercise for OCOM5201M KRR</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#contains">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isInside"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isCloseTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isCloseTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isInside -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isInside">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Building -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Building"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#ExpensiveHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#ExpensiveHouse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isCloseTo"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#School"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#GoodHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#GoodHouse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#contains"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#PuristHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#PuristHouse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#contains"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#School -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#School">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Building"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Building"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Unicorn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Unicorn"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#ValuableHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#ValuableHouse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isCloseTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#School"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isCloseTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#42Contents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#42Contents">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Painting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#WashingMachine"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#isInside"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#42_Acacia_Avenue"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Chandelier -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Chandelier">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#DishWasher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#DishWasher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Fridge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Fridge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Garden -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Garden">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Painting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Painting">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Piano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Piano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#BeautifulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Red_House -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Red_House">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#School"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Rug -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Rug">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Sprinkler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Sprinkler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#WashingMachine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#WashingMachine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#UsefulThing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#West_Avenue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#West_Avenue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Station"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#42_Acacia_Avenue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#42_Acacia_Avenue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#House"/>
+        <untitled-ontology-3:contains rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Chandelier"/>
+        <untitled-ontology-3:contains rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#WashingMachine"/>
+        <untitled-ontology-3:isCloseTo rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#Red_House"/>
+        <untitled-ontology-3:isCloseTo rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/untitled-ontology-3#West_Avenue"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

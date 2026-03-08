@@ -1,0 +1,51 @@
+
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+% Above line is not true, but it does need to be there!
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  clear(auto).
+  clear(auto_setup).
+  clear(auto_limits).
+  clear(auto_denials).
+  clear(auto_inference).
+  clear(auto_process).
+  assign(eq_defs, pass).
+  assign(max_seconds, 10).
+  assign(max_weight, 2147483647).
+  assign(sos_limit, -1).
+  clear(predicate_elim).
+  set(binary_resolution).
+  set(paramodulation).
+  set(factor).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+%% If the fruit is yellow then it is a banana
+
+Yellow -> Banana.
+
+%% Either the fruit is yellow or it is not a banana
+
+Yellow | - Banana.
+
+%% If the fruit is not a banana then it is still yellow
+
+- Banana -> Yellow.
+
+end_of_list.
+
+formulas(goals).
+
+%% There is no doubt that the fruit is a yellow banana.
+
+Yellow & Banana.
+
+end_of_list.
+

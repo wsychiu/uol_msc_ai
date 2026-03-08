@@ -1,0 +1,1904 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 3 Natural deduction (FOL) - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#first-order-natural-deduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 3 Natural deduction (FOL)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../03_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 3 Natural deduction (FOL)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-the-informal-ideas-behind-the-rules" class="md-nav__link">
+    3.1 The informal  ideas behind the rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 The informal  ideas behind the rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-universal-elimination" class="md-nav__link">
+    3.1.1 Universal elimination
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.1 Universal elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-universal-introduction" class="md-nav__link">
+    3.1.2 Universal introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.2 Universal introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-example" class="md-nav__link">
+    Security example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-existential-elimination" class="md-nav__link">
+    3.1.3 Existential elimination
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.3 Existential elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_2" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-existential-introduction" class="md-nav__link">
+    3.1.4 Existential Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.4 Existential Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_3" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-the-rules-for-quantifiers-expressed-formally" class="md-nav__link">
+    3.2 The rules for quantifiers expressed formally
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 The rules for quantifiers expressed formally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-existential-rules" class="md-nav__link">
+    3.2.1 Existential Rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1 Existential Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-universal-rules" class="md-nav__link">
+    3.2.2 Universal Rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.2 Universal Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elimination" class="md-nav__link">
+    Elimination
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-examples-of-misusing-the-rules" class="md-nav__link">
+    3.3 Examples of misusing the rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-interaction-between-quantifiers" class="md-nav__link">
+    3.4 Interaction between quantifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-example-proofs" class="md-nav__link">
+    3.5 Example Proofs
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Example Proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-example" class="md-nav__link">
+    3.5.1 Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-example" class="md-nav__link">
+    3.5.2 Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-the-informal-ideas-behind-the-rules" class="md-nav__link">
+    3.1 The informal  ideas behind the rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 The informal  ideas behind the rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-universal-elimination" class="md-nav__link">
+    3.1.1 Universal elimination
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.1 Universal elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-universal-introduction" class="md-nav__link">
+    3.1.2 Universal introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.2 Universal introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-example" class="md-nav__link">
+    Security example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313-existential-elimination" class="md-nav__link">
+    3.1.3 Existential elimination
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.3 Existential elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_2" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-existential-introduction" class="md-nav__link">
+    3.1.4 Existential Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.4 Existential Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_3" class="md-nav__link">
+    Idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-the-rules-for-quantifiers-expressed-formally" class="md-nav__link">
+    3.2 The rules for quantifiers expressed formally
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 The rules for quantifiers expressed formally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-existential-rules" class="md-nav__link">
+    3.2.1 Existential Rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.1 Existential Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-universal-rules" class="md-nav__link">
+    3.2.2 Universal Rules
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2.2 Universal Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elimination" class="md-nav__link">
+    Elimination
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-examples-of-misusing-the-rules" class="md-nav__link">
+    3.3 Examples of misusing the rules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-interaction-between-quantifiers" class="md-nav__link">
+    3.4 Interaction between quantifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-example-proofs" class="md-nav__link">
+    3.5 Example Proofs
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Example Proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-example" class="md-nav__link">
+    3.5.1 Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-example" class="md-nav__link">
+    3.5.2 Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="first-order-natural-deduction">First order natural deduction</h1>
+<p><span class="arithmatex">\(\def\phi{\varphi}\)</span>
+We have seen natural deduction proofs for propositional logic. For first order logic there are extra rules to deal with the quantifiers.</p>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>
+<p>write proofs for simple first order formulas in the natural deduction style</p>
+</li>
+<li>
+<p>correctly label every step of a natural deduction proof with the rule that allows it</p>
+</li>
+<li>
+<p>find errors in attempts at natural deduction proofs that are faulty.</p>
+</li>
+</ul>
+</div>
+<h2 id="31-the-informal-ideas-behind-the-rules">3.1 The informal  ideas behind the rules</h2>
+<p>For each of the two quantifiers there are two kinds of argument which are
+modelled by natural deduction rules.
+The kinds of arguments will be introduced, and then we will see how they
+have rules that capture these.</p>
+<h3 id="311-universal-elimination">3.1.1 Universal elimination</h3>
+<h4 id="idea">Idea</h4>
+<p>The argument goes like this:          </p>
+<ul>
+<li>We know that for all <span class="arithmatex">\(x\)</span> the statement <span class="arithmatex">\(\phi\)</span> holds.</li>
+<li>We have a term <span class="arithmatex">\(t\)</span> that we need to use in our argument.</li>
+<li>So we know that the statement <span class="arithmatex">\(\phi\)</span> holds if we replace <span class="arithmatex">\(x\)</span> by <span class="arithmatex">\(t\)</span> everywhere in the statement.          </li>
+</ul>
+<p>The idea is that we know <span class="arithmatex">\(\phi\)</span> talking about <span class="arithmatex">\(x\)</span> holds for all elements of the domain, so
+if we make the same statement but about a particular thing, <span class="arithmatex">\(t\)</span>, it must also hold.</p>
+<h4 id="examples">Examples</h4>
+<p>These take place in a setting where the stated things are known.</p>
+<ul>
+<li>We know that for all <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x^2 \geq 0\)</span>.</li>
+<li>We are talking about the constant 42 in our argument.</li>
+<li>
+<p>So we know that <span class="arithmatex">\(42^2 \geq 0\)</span>.</p>
+</li>
+<li>
+<p>We know that for all <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(x^2 \geq 0\)</span>.</p>
+</li>
+<li>We are talking about the term <span class="arithmatex">\(y +1\)</span> in our argument.</li>
+<li>So we know that <span class="arithmatex">\((y+1)^2 \geq 0\)</span>.          </li>
+</ul>
+<p>But you do have to be careful:</p>
+<ul>
+<li>We know that for every <span class="arithmatex">\(x\)</span>, we can find an element <span class="arithmatex">\(y\)</span> where <span class="arithmatex">\(x \neq y\)</span>.</li>
+<li>Since we know that for every <span class="arithmatex">\(x\)</span>, it must hold in particular for <span class="arithmatex">\(y\)</span>.</li>
+<li>So we know that we can find an element <span class="arithmatex">\(y\)</span> where <span class="arithmatex">\(y \neq y\)</span>.</li>
+</ul>
+<p>No. This is not a valid argument.</p>
+<p>We substituted <span class="arithmatex">\(y\)</span> for <span class="arithmatex">\(x\)</span> in a setting where the <span class="arithmatex">\(y\)</span> became bound by another quantifier.</p>
+<h3 id="312-universal-introduction">3.1.2 Universal introduction</h3>
+<h4 id="idea_1">Idea</h4>
+<p>This is when you have this kind of argument:</p>
+<ul>
+<li>We are using <span class="arithmatex">\(x\)</span> for a completely arbitrary element of the domain, being careful
+      not to assume it has any special properties.</li>
+<li>We show that <span class="arithmatex">\(x\)</span> has to have the property stated in the formula <span class="arithmatex">\(\phi\)</span>.</li>
+<li>Because <span class="arithmatex">\(x\)</span> was arbitrary, we conclude that the formula <span class="arithmatex">\(\phi\)</span> must hold for all <span class="arithmatex">\(x\)</span>.</li>
+</ul>
+<h4 id="example">Example</h4>
+<ul>
+<li>Imagine we are talking about natural numbers.      </li>
+<li>Let's use <span class="arithmatex">\(x\)</span> for an arbitrary number.       </li>
+<li>Now, suppose <span class="arithmatex">\(x\)</span> is odd, so <span class="arithmatex">\(\mathit{Odd}(x)\)</span> holds.        </li>
+<li>We can find <span class="arithmatex">\(k\)</span> such that <span class="arithmatex">\(x = 2k + 1\)</span>.      </li>
+<li>Then <span class="arithmatex">\(x^2 = 2(2k^2 +k) + 1\)</span>.          </li>
+<li>We have shown <span class="arithmatex">\(\mathit{Odd}(x) \to \mathit{Odd}(x^2)\)</span>.          </li>
+<li>As <span class="arithmatex">\(x\)</span> was arbitrary, we conclude that</li>
+</ul>
+<div class="arithmatex">\[\forall x\, (\mathit{Odd}(x) \to \mathit{Odd}(x^2))\]</div>
+<p>You have to be very careful that you are not assuming anything special about <span class="arithmatex">\(x\)</span>
+when making this type of argument.</p>
+<p>Now a second example:</p>
+<h4 id="security-example">Security example</h4>
+<ul>
+<li>assume <span class="arithmatex">\(x\)</span> is arbitrary person          </li>
+<li>and imagine they are inside Room 27     </li>
+<li>but the only route from the outside to room 27
+passes through corridor 15
+(information from map of building)          </li>
+<li>conclude: everyone in room 27 has passed through corridor 15</li>
+</ul>
+<h3 id="313-existential-elimination">3.1.3 Existential elimination</h3>
+<h4 id="idea_2">Idea</h4>
+<p>The argument goes like this:          </p>
+<ul>
+<li>We know there is some <span class="arithmatex">\(x\)</span> with the property stated by <span class="arithmatex">\(\phi\)</span>.          </li>
+<li>Let's introduce a new name, <span class="arithmatex">\(a\)</span>,  for a particular thing with this property.          </li>
+<li>We deduce that some statement, <span class="arithmatex">\(\psi\)</span>,  (not involving <span class="arithmatex">\(a\)</span>) must hold by
+an argument using the assumption that <span class="arithmatex">\(a\)</span> has property <span class="arithmatex">\(\phi\)</span>.           </li>
+<li>We conclude that <span class="arithmatex">\(\psi\)</span> holds on its own, without the assumption about <span class="arithmatex">\(a\)</span> having property <span class="arithmatex">\(\phi\)</span>.</li>
+</ul>
+<p>There are differences about how this is explained in different books: one way is to allow <span class="arithmatex">\(a\)</span> to be a new constant
+(so strictly speaking we have to expand the language), another is to say <span class="arithmatex">\(a\)</span> is a variable &ndash; you can call it <span class="arithmatex">\(x\)</span>,
+but this can be confusing in some cases.</p>
+<h4 id="example_1">Example</h4>
+<ul>
+<li>Fred can see everyone in room 27:       <br />
+<span class="arithmatex">\(\forall x\, (\mathit{IsIn}(x, room27) \to CanSee(fred,x ))\)</span>.        </li>
+<li>There is someone in room 27:        <br />
+<span class="arithmatex">\(\exists y\, \mathit{IsIn}(y, room27)\)</span>.       </li>
+<li>(<span class="arithmatex">\(\ast\)</span>)
+Let's call this person <span class="arithmatex">\(p27\)</span> and
+work under the assumption <span class="arithmatex">\(\mathit{IsIn}(p27, room27)\)</span>.    </li>
+<li>We know (<span class="arithmatex">\(\forall\)</span> elimination) that:        <br />
+<span class="arithmatex">\(\mathit{IsIn}(p27, room27) \to  \mathit{CanSee}(fred,p27 )\)</span>.    </li>
+<li>We deduce (<span class="arithmatex">\(\to\)</span> elimination) that:        <br />
+<span class="arithmatex">\(\mathit{CanSee}(fred,p27 )\)</span>    </li>
+<li>We get (<span class="arithmatex">\(\exists\)</span> introduction) that:        <br />
+<span class="arithmatex">\(\exists x\,  \mathit{CanSee}(fred,x )\)</span>, Fred can see someone,        <br />
+but this is under the assumption <span class="arithmatex">\(\mathit{IsIn}(p27, room27)\)</span>.     </li>
+<li>Now, we use <span class="arithmatex">\(\exists\)</span> elimination to conclude:        <br />
+<span class="arithmatex">\(\exists x\, \mathit{CanSee}(fred,x )\)</span>, Fred can see someone.        <br />
+This no longer depends on the assumption in <span class="arithmatex">\(\ast\)</span>.    </li>
+</ul>
+<h3 id="314-existential-introduction">3.1.4 Existential Introduction</h3>
+<h4 id="idea_3">Idea</h4>
+<p>The argument goes like this:          </p>
+<ul>
+<li>We have a statement <span class="arithmatex">\(\phi\)</span> about some particular term <span class="arithmatex">\(t\)</span>.        </li>
+<li>We conclude  there is some <span class="arithmatex">\(x\)</span> with the property stated by <span class="arithmatex">\(\phi\)</span>
+where we replace <span class="arithmatex">\(t\)</span> by <span class="arithmatex">\(x\)</span>.   </li>
+</ul>
+<h4 id="example_2">Example</h4>
+<ul>
+<li>We know Fred is in room 27: <span class="arithmatex">\(\mathit{IsIn(Fred, Room27)}\)</span>.      </li>
+<li>We conclude  there is someone in Room 27:
+<span class="arithmatex">\(\exists x\, \mathit{IsIn}(x, \mathit{Room27})\)</span>.</li>
+</ul>
+<h2 id="32-the-rules-for-quantifiers-expressed-formally">3.2 The rules for quantifiers expressed formally</h2>
+<h3 id="321-existential-rules">3.2.1 Existential Rules</h3>
+<p>Introduction Rule</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$\phi(t)$}
+\RightLabel{$\; \exists I$}
+\UIC{$\exists x\, \phi (x)$}
+\end{prooftree}
+\]</div>
+<p>Here <span class="arithmatex">\(\phi(t)\)</span> means some formula containing a term <span class="arithmatex">\(t\)</span>, and <span class="arithmatex">\(\phi (x)\)</span>
+means the same formula but with <span class="arithmatex">\(t\)</span> replaced by <span class="arithmatex">\(x\)</span>.          </p>
+<p>For example (assuming <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(2\)</span> are constants in the language and <span class="arithmatex">\(+\)</span> is a function symbol)</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$1 + 1 = 2$}
+\RightLabel{$\; \exists I$}
+\UIC{$\exists x\, (x + x = 2)$}
+\end{prooftree}
+\]</div>
+<p>Elimination Rule   </p>
+<p>The idea of the <span class="arithmatex">\(a\)</span> here is as an arbitrary constant.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$\exists x\, \phi (x)$}    \AXC{$[\phi(a) ]_n \quad$}
+                                \noLine
+                                \UIC{$\vdots \quad$}
+                                \noLine
+                                \UIC{$\psi \quad$}
+                                                      \RightLabel{$\;\exists E_n$}
+                 \BIC{$\psi$}
+\end{prooftree}\]</div>
+<p>This rule can only be used under certain conditions.
+All of the following must happen in a correct use of the rule.</p>
+<ol>
+<li><span class="arithmatex">\(a\)</span> does not occur in <span class="arithmatex">\(\phi(x)\)</span>, and       </li>
+<li><span class="arithmatex">\(a\)</span> does not occur in <span class="arithmatex">\(\psi\)</span>, and             </li>
+<li><span class="arithmatex">\(a\)</span> does not occur in any undischarged assumption
+(except <span class="arithmatex">\(\phi(a)\)</span> itself) used in the derviation of <span class="arithmatex">\(\psi\)</span> from <span class="arithmatex">\(\phi(a)\)</span>.</li>
+</ol>
+<h4 id="example_3">Example</h4>
+<p>The existential quantifier rules are shown in action in this example:   <br />
+<span class="arithmatex">\(\exists x\, \neg P(x) \vdash \exists x\, (P(x) \to Q(x))\)</span>          </p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$\exists \neg P(x)$} \AXC{$[\neg P(a)]_3$}    \AXC{$[P(a)]_2$}    \AXC{$[\neg Q(a)]_1$}   
+                                                     \RightLabel{$\;{\wedge}I$}
+                                         \BIC{$P(a) \wedge \neg Q(a)$}
+                                                     \RightLabel{$\;{\wedge}Er$}
+                                          \UIC{$P(a)$}
+                                                     \RightLabel{$\; {\wedge}I$}
+                    \BIC{$\neg P(a) \wedge P(a)$}
+                                             \RightLabel{$\; {\neg}E_1$}
+                             \UIC{$Q(a)$}
+                                             \RightLabel{$\; {\to}I_2$}
+                        \UIC{$P(a) \to Q(a)$}
+                                             \RightLabel{$\; {\exists}I$}
+     \UIC{$\exists x (P(x) \to Q(x))$}
+                                             \RightLabel{$\; {\exists}E_3$}
+                        \BIC{$\exists x (P(x) \to Q(x))$}
+\end{prooftree}                      
+\]</div>
+<h3 id="322-universal-rules">3.2.2 Universal Rules</h3>
+<h4 id="introduction">Introduction</h4>
+<p>Here, <span class="arithmatex">\(\phi(x)\)</span> means the formula <span class="arithmatex">\(\phi(a)\)</span> with every occurrence of the constant <span class="arithmatex">\(a\)</span> replaced by the variable <span class="arithmatex">\(x\)</span>.          </p>
+<div class="arithmatex">\[
+\begin{prooftree}
+   \AXC{$\phi(a)$}
+   \RightLabel{$\forall I$}
+   \UIC{$\forall x\, \phi(x)$}
+\end{prooftree}
+\]</div>
+<p>The rule can only be used:          </p>
+<p>Provided that the constant <span class="arithmatex">\(a\)</span> does not occur in any undischarged assumption used in the derivation of <span class="arithmatex">\(\phi(a)\)</span>.          </p>
+<h4 id="elimination">Elimination</h4>
+<div class="arithmatex">\[
+\begin{prooftree}    
+    \AXC{$\forall x \, \phi(x)$}
+    \RightLabel{$\forall E$}
+    \UIC{$\phi(t)$}
+\end{prooftree}    
+\]</div>
+<p>In this rule <span class="arithmatex">\(t\)</span> is a term that gets substituted for <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\phi(x)\)</span> to give <span class="arithmatex">\(\phi(t)\)</span>.          </p>
+<p>This is only allowed if <span class="arithmatex">\(t\)</span> does not have any variables which become bound when substituted for <span class="arithmatex">\(x\)</span>.</p>
+<h2 id="33-examples-of-misusing-the-rules">3.3 Examples of misusing the rules</h2>
+<div class="admonition danger">
+<p class="admonition-title">Do not do this!</p>
+<p>This faulty proof appears to show that something is different from itself
+in a setting where each thing has something different from it.</p>
+<div class="arithmatex">\[
+\begin{prooftree}    
+\AXC{$\forall x \, \exists y\, \neg (x = y)$}
+\RightLabel{$\forall E$}
+\UIC{$\exists y\, \neg (y = y)$}
+\end{prooftree}    
+\]</div>
+<p>The problem in this example is substituting  <span class="arithmatex">\(y\)</span> for <span class="arithmatex">\(x\)</span> when <span class="arithmatex">\(x\)</span> is within the scope of
+the existential quantification of <span class="arithmatex">\(y\)</span>.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Do not do this!</p>
+<p>This is a faulty proof. It would follow from this that all numbers
+are zero.   We assume a language in which there is a constant, <span class="arithmatex">\(0\)</span>,
+and the equality predicate, <span class="arithmatex">\(=\)</span>.</p>
+<div class="arithmatex">\[
+\begin{prooftree}  
+\AXC{$0 = 0$}
+    \AXC{$[a = 0]_1$}
+    \RightLabel{$ {\forall}I $ }
+    \UIC{$\forall x (x = 0)$}             
+    \RightLabel{$ {\to}I_1 $ }
+    \UIC{$a = 0 \to \forall x (x = 0)$}           
+    \RightLabel{$ {\forall}I $ }
+    \UIC{$\forall x\, (x = 0 \to \forall x (x = 0))$}
+    \RightLabel{$ \forall E $ }           
+    \UIC{$0 = 0 \to \forall x\, (x = 0) $}
+\RightLabel{$ {\to}E $ }
+\BIC{$\forall x (x = 0)$}            
+\end{prooftree}    
+\]</div>
+<p>There is just one problem with the proof.
+The first use of the <span class="arithmatex">\(\forall I\)</span> rule goes from
+the assumption <span class="arithmatex">\(a = 0\)</span> to the statement
+<span class="arithmatex">\(\forall x\, (x=0)\)</span>. This is not allowed because the
+assumption <span class="arithmatex">\(a = 0\)</span> is undischarged at this point.
+We would be assuming that <span class="arithmatex">\(a\)</span> has a special property
+and then deducing that everything must have that property.
+Note that the assumption <span class="arithmatex">\(a = 0\)</span> is discharged later in the proof,
+but is undischarged when the <span class="arithmatex">\(\forall I\)</span> rule is first used.</p>
+<p>The problem here has nothing to do with special properties of the number zero
+or of equality. In a language with a constant <span class="arithmatex">\(k\)</span> and  a binary predicate <span class="arithmatex">\(P\)</span>
+the idea of the proof could be used (wrongly) to show</p>
+<div class="arithmatex">\[ P(k,k) \vdash \forall x\, P(x,k).\]</div>
+</div>
+<h2 id="34-interaction-between-quantifiers">3.4 Interaction between quantifiers</h2>
+<p>The proof shown in this section justifies
+<span class="arithmatex">\(\neg \forall x P(x) \vdash \exists x \neg P(x)\)</span>.</p>
+<p>This useful fact gives us a derived rule:</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+                            \AXC{$\neg \forall x P(x)$}
+                            \RightLabel{$\neg\forall \exists \neg$}
+                            \UIC{$\exists x \neg P(x)$}
+\end{prooftree}
+\]</div>
+<p>To keep things simple it is written here for a unary predicate <span class="arithmatex">\(P\)</span>.
+It works with any formula which may contain several free occurrences of <span class="arithmatex">\(x\)</span>.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+                            \AXC{$[\neg P(a)]_2$}
+                            \RightLabel{$\; {\exists} I$}
+                            \UIC{$\exists x \neg P(x)$}        \AXC{$[\neg \exists x \neg P(x)]_1$}
+                            \RightLabel{$\; {\neg} E_2$}
+                            \BIC{$P(a)$}
+                            \RightLabel{$\; {\forall} I$}
+                            \UIC{$\forall x P(x)$}           \AXC{$\neg \forall x P(x)$}
+                                             \RightLabel{$\; {\neg} E_1$}
+                                             \BIC{$\exists x \neg P(x)$}
+\end{prooftree}
+\]</div>
+<p>Let's see how the proof works. I will do this by revealing each part of the proof as the idea behind that part is explained.</p>
+<ul>
+<li>
+<p>Assume, contrary to what we want to get, that <span class="arithmatex">\(\neg \exists x \neg P(x)\)</span>.</p>
+<p><img alt="image" src="../images/ND-FOL-step1.png" /></p>
+</li>
+<li>
+<p>Imagine picking an arbitrary element, <span class="arithmatex">\(a\)</span>, in the domain.</p>
+</li>
+<li>
+<p>Suppose (or "assume", it means the same here) it is the case that <span class="arithmatex">\(\neg P(a)\)</span> holds.</p>
+<p><img alt="image" src="../images/ND-FOL-step2.png" /></p>
+</li>
+<li>
+<p>If this happens we know that <span class="arithmatex">\(\exists x \neg P(x)\)</span> holds.</p>
+<p><img alt="image" src="../images/ND-FOL-step3.png" /></p>
+</li>
+<li>
+<p>Now we have both <span class="arithmatex">\(\exists x \neg P(x)\)</span> and <span class="arithmatex">\(\neg \exists x \neg P(x)\)</span>, which is a contradiction.</p>
+</li>
+<li>So something we have assumed must be rejected.</li>
+<li>
+<p>The proof works by rejecting the assumption <span class="arithmatex">\(\neg P(a)\)</span>.</p>
+<ul>
+<li>you could try seeing what happens if instead you reject the assumption <span class="arithmatex">\(\neg \exists x \neg P(x)\)</span> at this point, but that would be a different proof and it does not appear to be a promising direction.</li>
+</ul>
+</li>
+<li>
+<p>As we are rejecting <span class="arithmatex">\(\neg P(a)\)</span> we have <span class="arithmatex">\(P(a)\)</span>.</p>
+<p><img alt="image" src="../images/ND-FOL-step4.png" /></p>
+</li>
+<li>
+<p>But the element <span class="arithmatex">\(a\)</span> is arbitrary; at this point we are under no special assumptions about it, so we get <span class="arithmatex">\(\forall x P(x)\)</span>.</p>
+<p><img alt="image" src="../images/ND-FOL-step5.png" /></p>
+</li>
+<li>
+<p>But now we have both <span class="arithmatex">\(\forall x P(x)\)</span> and <span class="arithmatex">\(\neg \forall x P(x)\)</span>, which is a contradiction.</p>
+<p><img alt="image" src="../images/ND-FOL-step6.png" /></p>
+</li>
+<li>
+<p>So something we have assumed must be rejected.</p>
+</li>
+<li>
+<p>This time we do reject the assumption <span class="arithmatex">\(\neg \exists x \neg P(x)\)</span> and we conclude <span class="arithmatex">\(\exists x \neg P(x)\)</span>.</p>
+<p><img alt="image" src="../images/ND-FOL-step7.png" /></p>
+</li>
+</ul>
+<h2 id="35-example-proofs">3.5 Example Proofs</h2>
+<h3 id="351-example">3.5.1 Example</h3>
+<div class="arithmatex">\[
+\forall x\, \forall y\, \forall z\, (R(x,y) \wedge R(y,z) \to R(x,z)),\;
+\exists x\, \exists y\, (R(x,y) \wedge R(y,x))
+\vdash
+\exists x\, R(x,x)
+\]</div>
+<div class="arithmatex">\[
+\begin{prooftree}    
+  %----------------------------------------------------
+\AXC{$\exists x\, \exists y\, (R(x,y) \wedge R(y,x))$}
+      \AXC{$[\exists y\, (R(a,y) \wedge R(y,a))]_2$}
+          \AXC{$[R(a,b) \wedge R(b,a)]_1$}
+                       \AXC{$\forall x\, \forall y\, \forall z\, (R(x,y) \wedge R(y,z) \to R(x,z))$}
+                       \RightLabel{$ {\forall}E$}
+                       \UIC{$\forall y\, \forall z\, (R(a,y) \wedge R(y,z) \to R(a,z))$}
+                       \RightLabel{$ {\forall}E $ }
+                       \UIC{$\forall z\, (R(a,b) \wedge R(b,z) \to R(a,z))$}
+                       \RightLabel{$ {\forall}E $ }
+                       \UIC{$R(a,b) \wedge R(b,a) \to R(a,a)$}             
+                       \RightLabel{$ {\to}E $ }
+              \BIC{$R(a,a)$}  
+              \RightLabel{${\exists}I$}            
+              \UIC{$\exists x\, R(x,x)$}
+      \RightLabel{$ {\exists}E_1 $ }
+      \BIC{$\exists x\, R(x,x)$}
+    \RightLabel{$ {\exists}E_2 $ }
+    \BIC{$\exists x\, R(x,x)$}                       
+  \end{prooftree}    
+\]</div>
+<h3 id="352-example">3.5.2 Example</h3>
+<p><span class="arithmatex">\(\forall x\, \forall y\, (P(x) \vee  Q(y)) \vdash \forall x\, P(x) \vee \forall y\, Q(y)\)</span></p>
+<p>First the idea behind the proof.</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+\mathsf{Either~ } \forall x\, P(x)\mathsf{~or~ not.}\\         
+\qquad \mathsf{If~ }  \forall x\, P(x)  \mathsf{~then~}  \forall x\, P(x) \vee \forall y\, Q(y) \\          
+\qquad \mathsf{If~ } \neg \forall x\, P(x)  \mathsf{~then~}  \exists x \neg P(x).\\  
+\qquad \quad \mathsf{Let's~call~this~element~}  a  \mathsf{~and~let~}  b  \mathsf{~be~an~arbitrary~element.}\\           
+\qquad \quad \mathsf{As~}  \forall x\, \forall y\, (P(x) \vee  Q(y))  \mathsf{~it~must~hold~that~} P(a) \vee Q(b).\\          
+\qquad \quad \mathsf{Consider~the~two~cases } P(a)  \mathsf{and}   Q(b) .\\            
+\qquad \quad \qquad \mathsf{The~case~  } P(a) \mathsf{and~ cannot~arise,~as~we~would~have~ } P(a) \wedge \neg P(a).  \\          
+\qquad \quad \qquad\mathsf{Hence~} Q(b) , \mathsf{~but~}  b \mathsf{~is~arbitrary,~so~ }\forall y\, Q(y) . \\           
+\qquad \quad \mathsf{So~in~the~case~that~} \neg \forall x\, P(x) , \mathsf{~we~have~}~\forall x\, P(x) \vee \forall y\, Q(y)\\            
+\mathsf{Hence,~in~either~case,~} \forall x\, P(x) \vee \forall y\, Q(y) \\  
+\end{array}
+\]</div>
+<p>And now the detailed proof itself.</p>
+<p>$$</p>
+<p>\begin{prooftree}  </p>
+<p>\AXC{<span class="arithmatex">\(\quad\)</span>}</p>
+<p>\RightLabel{$ EM $ }</p>
+<p>\UIC{$\forall x\, P(x) \vee \neg \forall x\, P(x) $}           </p>
+<div class="highlight"><pre><span></span><code>   \AXC{$[\forall x\, P(x)]_2$}
+
+   \RightLabel{$ {\vee}I $ }
+
+   \UIC{$\forall x\, P(x) \vee \forall y\, Q(y)$}
+
+                \AXC{$\forall x\, \forall y\, (P(x) \vee Q(y))$}
+
+                \RightLabel{$ {\forall}E $ }
+
+                \UIC{$\forall  y\, (P(a) \vee Q(y))  $}
+
+                \RightLabel{$ {\forall}E $ }
+
+                \UIC{$P(a) \vee Q(b)$}
+
+                         \AXC{$[P(a)]_1$}
+
+                               \AXC{$[\neg \forall x P(x)]_2$}
+
+                               \RightLabel{$ {\neg \forall \exists \neg} $ }
+
+                               \UIC{$\exists x \neg P(x)$}
+
+                               \RightLabel{$ {\exists}E $ }
+
+                               \UIC{$\neg P(a)$}
+
+                            \RightLabel{$ {\wedge}I $ }
+
+                            \BIC{$P(a) \wedge \neg P(a) $}
+
+                            \RightLabel{$ EFQL $ }
+
+                            \UIC{$Q(b)$}
+
+                        \AXC{$[Q(b)]_1$}
+
+                    \RightLabel{$ {\vee}E_1 $ }
+
+                    \TIC{$Q(b) $}
+
+                \RightLabel{$ {\forall}I $ }
+
+                \UIC{$\forall y\, Q(y)$}
+
+                \RightLabel{$ {\vee}I $ }
+
+            \UIC{$\forall x\, P(x) \vee \forall y\, Q(y)  $}
+
+    \RightLabel{$ {\vee}E_2 $ }
+</code></pre></div>
+<p>\TIC{$\forall x\, P(x) \vee \forall y\, Q(y)  $}           </p>
+<p>\end{prooftree}   </p>
+<p>$$</p>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Below are some suggestions for further practice in constructing natural deduction proofs.</p>
+<p>Solutions will be provided for all of these in Unit 4. If you have any questions before then, you can raise them in this week's webinar. In some cases there may be alternative solutions that are equally correct, so do not assume that if your answer is different then it is wrong.</p>
+<p>In each case you should construct a proof using the rules including labels for all steps so that you say which rule has been used and which assumptions (if any) have been discharged.</p>
+<p>The first ones are simple. The strategy is roughly to get rid of the quantifiers (but making sure you do only moves that are allowed by the rules) and then do a proof that only involves propositional ideas, and finally replace the quantifiers (again strictly abiding by the rules).</p>
+<ul>
+<li><span class="arithmatex">\(\forall x \; (P(x) \to Q(x)) \vdash \forall x (\neg Q(x) \to \neg P(x))\)</span>.</li>
+<li><span class="arithmatex">\(\exists x\; (P(x) \vee Q(x)) \vdash \exists x P(x)\)</span>.</li>
+</ul>
+<p>Finally a first order example that should help you with part of the second assessment.</p>
+<ul>
+<li><span class="arithmatex">\(\forall x\ (\neg P(x) \vee \neg Q(x)) \vdash (\exists x P(x)) \to (\exists y \neg Q(y))\)</span>.</li>
+</ul>
+<p>You have just finished lesson 3, which contains several examples given in detail. To make sure you understand how natural deduction proofs work in first order logic, you may want to go back and study these. It is also good to come up with your own simple examples of formulas that you can see should be provable (by thinking about the semantics) and then looking for natural deduction proofs of these.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03_02_NaturalDeduction/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 2 Natural deduction (propositional)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03_03_PropositionalResolution/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 4 Resolution (propositional)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

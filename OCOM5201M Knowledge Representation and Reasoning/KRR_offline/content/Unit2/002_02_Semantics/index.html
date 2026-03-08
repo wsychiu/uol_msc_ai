@@ -1,0 +1,1544 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 2 Semantics of FOL - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-2-the-semantics-of-first-order-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 2 Semantics of FOL
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../02_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 2 Semantics of FOL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 2 Semantics of FOL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informal-idea-of-an-interpretation" class="md-nav__link">
+    Informal idea  of an interpretation
+  </a>
+  
+    <nav class="md-nav" aria-label="Informal idea  of an interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-domain" class="md-nav__link">
+    The domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-interpretations" class="md-nav__link">
+    Examples of interpretations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picturing-interpretations-example-1" class="md-nav__link">
+    Picturing interpretations (example 1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picturing-interpretations-example-2" class="md-nav__link">
+    Picturing interpretations  (example 2)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    Equality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truth-and-validity" class="md-nav__link">
+    Truth and validity
+  </a>
+  
+    <nav class="md-nav" aria-label="Truth and validity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-informal-idea-of-a-valuation" class="md-nav__link">
+    The informal idea of a valuation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-and-bound-variables" class="md-nav__link">
+    Free and bound variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-informal-idea-of-truth" class="md-nav__link">
+    The informal idea of truth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-definition-of-interpretation" class="md-nav__link">
+    Formal definition of interpretation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valuations-defined-formally" class="md-nav__link">
+    Valuations defined formally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-truth" class="md-nav__link">
+    Definition of truth
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition of truth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-turnstile-notation" class="md-nav__link">
+    The turnstile notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informal-idea-of-an-interpretation" class="md-nav__link">
+    Informal idea  of an interpretation
+  </a>
+  
+    <nav class="md-nav" aria-label="Informal idea  of an interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-domain" class="md-nav__link">
+    The domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-interpretations" class="md-nav__link">
+    Examples of interpretations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picturing-interpretations-example-1" class="md-nav__link">
+    Picturing interpretations (example 1)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picturing-interpretations-example-2" class="md-nav__link">
+    Picturing interpretations  (example 2)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equality" class="md-nav__link">
+    Equality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truth-and-validity" class="md-nav__link">
+    Truth and validity
+  </a>
+  
+    <nav class="md-nav" aria-label="Truth and validity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-informal-idea-of-a-valuation" class="md-nav__link">
+    The informal idea of a valuation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-and-bound-variables" class="md-nav__link">
+    Free and bound variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-informal-idea-of-truth" class="md-nav__link">
+    The informal idea of truth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-definition-of-interpretation" class="md-nav__link">
+    Formal definition of interpretation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valuations-defined-formally" class="md-nav__link">
+    Valuations defined formally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-truth" class="md-nav__link">
+    Definition of truth
+  </a>
+  
+    <nav class="md-nav" aria-label="Definition of truth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-turnstile-notation" class="md-nav__link">
+    The turnstile notation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-2-the-semantics-of-first-order-logic">Lesson 2: The semantics of first order logic</h1>
+<p><span class="arithmatex">\(\def\phi{\varphi} % this is needed to make the Greek letter phi work\)</span></p>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes for lesson 2</p>
+<p>In this lesson you will:</p>
+<ul>
+<li>understand the concept of an interpretation</li>
+<li>work with examples of interpretations</li>
+<li>learn how to evaluate the truth value of sentences in the language</li>
+<li>learn basic logical equivalences</li>
+</ul>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>In propositional logic, an interpretation of the symbols in the language just means saying whether each
+propositional variable is true or false.</p>
+<p>In first order logic, an interpretation has to provide a lot more:</p>
+<ul>
+<li>a set of things to be the individuals that the language is talking about,</li>
+<li>elements of this set for all the constants in the language,</li>
+<li><span class="arithmatex">\(n\)</span>-ary relations on this set for each of the <span class="arithmatex">\(n\)</span>-ary relation symbols,</li>
+<li>functions on the set for any function symbols in the language.</li>
+</ul>
+<p>An expression in a first order language is just a string of symbols that<br />
+follow certain rules. It does not by itself mean anything. However suggestive the names chosen may be, an expression by itself really means nothing.</p>
+<p>Giving the symbols things that they refer to is called giving an <strong>interpretation</strong> for the language.
+This extends the idea of giving values to propositions in propositional logic.</p>
+<p>Once an interpretation is given, we can talk about whether a formula is <strong>true</strong> in that interpretation.
+Having a notion of truth, we can talk about formulas being <strong>valid</strong>, meaning true in all interpretations.</p>
+<p>In propositional logic, an interpretation just needs to give a truth value for each atomic proposition.
+There are only a finite number of ways to do this, and all of them can be summarised in a truth-table for the formula.</p>
+<p>In first order logic each interpretation has to provide a set of individuals, as well as meanings for the constants and the relation symbols
+in the language.</p>
+<p>This means there are infinitely many interpretations, so we cannot tell if something is true in all interpretations by checking all of them.</p>
+<h2 id="informal-idea-of-an-interpretation">Informal idea  of an interpretation</h2>
+<p>To specify an interpretation you must:</p>
+<ul>
+<li>
+<p>Give a  non-empty set, <span class="arithmatex">\(D\)</span>, called the <strong>domain</strong>.  </p>
+</li>
+<li>
+<p>For each constant symbol, give the element of <span class="arithmatex">\(D\)</span> for it.  </p>
+</li>
+<li>
+<p>For each <span class="arithmatex">\(n\)</span>-ary relation symbol, give an <span class="arithmatex">\(n\)</span>-ary relation on <span class="arithmatex">\(D\)</span>.</p>
+</li>
+<li>
+<p>For each propositional symbol, give a truth value.</p>
+</li>
+</ul>
+<p>In this module we use this simple notion of interpretation. There are variants, all of which would change
+what is said later
+about first order logic. These include allowing an empty domain, and the possibility of giving types to individuals
+so that there are multiple domains, one for each type. There are good reasons for these ideas, but we use the simplest
+approach here.</p>
+<p>The formal definition of 'interpretation' is given later in this lesson.
+First we look at some examples to motivate the idea.</p>
+<h3 id="the-domain">The domain</h3>
+<p>There is no restriction on what the elements of <span class="arithmatex">\(D\)</span> are.</p>
+<ul>
+<li>
+<p>They can be abstract things such as numbers, symbols,
+mathematical structures such as sets, etc.</p>
+</li>
+<li>
+<p>They can be physical concrete things in the real world, provided there
+is no ambiguity about how such things are described.</p>
+</li>
+<li>
+<p>They can be concepts used in the world such as a time, again provided
+there are unambiguous ways of referring to them.</p>
+</li>
+</ul>
+<h3 id="examples-of-interpretations">Examples of interpretations</h3>
+<p>Let's use this first order language:</p>
+<ul>
+<li>Constants: <span class="arithmatex">\(\mathit{Leeds}\)</span>, <span class="arithmatex">\(\mathit{Reggie}\)</span></li>
+<li>Unary relation symbols: <span class="arithmatex">\(\mathit{owl}\)</span>, <span class="arithmatex">\(\mathit{city}\)</span></li>
+<li>Binary relation symbols: <span class="arithmatex">\(\mathit{livesIn}\)</span></li>
+</ul>
+<p>We can make the domain <span class="arithmatex">\(D = \{1, 2, 3\}\)</span>, and specify:</p>
+<div class="arithmatex">\[
+\begin{array}{rcl}
+I(\mathit{Leeds}) &amp; = &amp; 1\\[1ex]
+I(\mathit{Reggie})  &amp; = &amp; 2\\[1ex]
+I(\mathit{city}) &amp; = &amp; \{1\}\\[1ex]
+I(\mathit{owl}) &amp; = &amp; \{2\}\\[1ex]
+I(\mathit{livesIn})  &amp; = &amp; \{(2,1)\}
+\end{array}
+\]</div>
+<p>You might wonder where Reggie has come from.
+The city of Leeds has a coat of arms with two owls and a Latin motto
+"Pro Rege et Lege", and it is tempting to misinterpret this as
+naming the two owls, one of which feels like it should be Reggie (Rege).</p>
+<h3 id="picturing-interpretations-example-1">Picturing interpretations (example 1)</h3>
+<p>Interpretations can be visualised in various ways.</p>
+<p>Here the unary predicates are indicated by labelling the domain elements for which the
+predicate holds. The binary relations are shown as arrows. The constant symbols point to the
+elements they are interpreted as.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram above is the visualisation of an interpretation. The diagram features a sketch of an oval on its side. The oval contains three numbers and the following details:</p>
+<p>The number 1, labelled city, is positioned left of the oval’s centre. A box labelled Leeds in the surrounding space is connected to the number 1 by a pointing arrow.</p>
+<p>The number 2, labelled owl, is positioned in the oval’s centre. A box labelled Reggie in the surrounding space is connected to the number 2 by a pointing arrow. There is an arrow pointing from 2 towards 1 labelled livesIn.</p>
+<p>The number 3 is positioned towards the lower left-hand side of the oval and is unlabelled.</p>
+</details>
+<h3 id="picturing-interpretations-example-2">Picturing interpretations  (example 2)</h3>
+<p>Here is a different interpretation of the same language with the same domain.</p>
+<p>It is allowed that different constant symbols are interpreted by the same
+element. It is also allowed that the interpretation of a predicate symbol is empty:
+here nothing is an owl. Note also the <span class="arithmatex">\(\mathit{livesIn}\)</span> predicate can be interpreted by
+any set of pairs of elements, even though the usual idea of something living in something
+might exclude things living in themselves.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram above is a visualisation of an interpretation. The diagram features a sketch of an oval on its side. The oval contains three numbers and the following details.</p>
+<p>The number one is positioned to the left and centre of the oval. Two dotted lines lead from the number one out of the oval to the surrounding space. The dotted line leading out and upwards is linked to a box labelled Leeds. The dotted line leading out and downwards is linked to a box labelled Reggie.</p>
+<p>The number 2, labelled city, is positioned in the oval’s centre. An arrow, labelled livesIn, connects 2 to 1. Another arrow circles downwards from two and points back up to it, and this arrow is also labelled livesIn.</p>
+<p>The number 3 is positioned to the right and centre of the oval. An arrow, labelled livesIn, pointing from two, connects to three.  </p>
+</details>
+<p>In the second example we have:</p>
+<p>The domain is <span class="arithmatex">\(D = \{1, 2, 3\}\)</span>.</p>
+<p>the interpretation of the symbols is:</p>
+<div class="arithmatex">\[
+\begin{array}{rcl}
+I(\mathit{Leeds}) &amp; = &amp; 1\\[1ex]
+I(\mathit{Reggie})  &amp; = &amp; 1\\[1ex]
+I(\mathit{city}) &amp; = &amp; \{2\}\\[1ex]
+I(\mathit{owl}) &amp; = &amp; \{\;\}\\[1ex]
+I(\mathit{livesIn})  &amp; = &amp; \{(2,1), (2, 3), (2,2)\}
+\end{array}
+\]</div>
+<h2 id="equality">Equality</h2>
+<p>The relation <span class="arithmatex">\(=\)</span> is important and you can include this as binary relation symbol
+in a first order language.</p>
+<p>We usually insist that <span class="arithmatex">\(=\)</span> is interpreted as the equality relation on the domain,
+and we then talk about <strong>first order logic with equality</strong>.</p>
+<p>If the domain is <span class="arithmatex">\(\{1, 2, 3\}\)</span>, the interpretation of <span class="arithmatex">\({=}\)</span> looks like the following diagram.
+In the diagram the arrows pointing from each number to itself should really be labelled by <span class="arithmatex">\({=}\)</span>
+in each case.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram above is a visualisation of an interpretation. The diagram features a sketch of an oval on its side. The oval contains three numbers – one, two and three. Each of the numbers is topped by a clockwise arrow that circles upwards and then points back towards the number it came from.</p>
+</details>
+<p>The binary relation of equality is reflexive, symmetric and transitive.
+It is also well behaved with respect to substitution.</p>
+<p>This means, for example,  that if <span class="arithmatex">\(P\)</span> is a unary relation symbol, and <span class="arithmatex">\(t_1 = t_2\)</span>
+holds then <span class="arithmatex">\(P(t_1)\)</span> and <span class="arithmatex">\(P(t_2)\)</span> must always have the same truth value.
+However, writing <span class="arithmatex">\(P(t_1) = P(t_1)\)</span> is not allowed. This is because the two expressions
+related by <span class="arithmatex">\(=\)</span> are formulas and not terms.</p>
+<h2 id="truth-and-validity">Truth and validity</h2>
+<p>Given an interpretation we can calculate a truth value for some formulas in the language.
+For example, the formula <span class="arithmatex">\(\mathit{Leeds} = \mathit{Reggie}\)</span>
+is true in example 2, because the domain element used to interpret the constant symbol
+<span class="arithmatex">\(\mathit{Leeds}\)</span> is the same domain element as the one used to interpret <span class="arithmatex">\(\mathit{Reggie}\)</span>.</p>
+<p>In example 1 these domain elements are different, so the formula <span class="arithmatex">\(\mathit{Leeds} = \mathit{Reggie}\)</span>
+is false in that case.</p>
+<p>We can 'extend' the interpretation <span class="arithmatex">\(I\)</span>, so that
+<span class="arithmatex">\(I(\mathit{Leeds} = \mathit{Reggie})\)</span> is true if
+<span class="arithmatex">\(I(\mathit{Leeds})\)</span> and <span class="arithmatex">\(I(\mathit{Reggie})\)</span> are the same element of <span class="arithmatex">\(D\)</span>.</p>
+<p>Formulas with variables, like <span class="arithmatex">\(I(\mathit{livesIn}(\mathit{Reggie}, x))\)</span>,
+need the idea of a <strong>valuation</strong>.</p>
+<h3 id="the-informal-idea-of-a-valuation">The informal idea of a valuation</h3>
+<p>Given an interpretation <span class="arithmatex">\(I\)</span> with domain <span class="arithmatex">\(D\)</span>, a valuation means a function that
+gives an element of <span class="arithmatex">\(D\)</span> for each variable.</p>
+<p>For example, for the interpretation <span class="arithmatex">\(I\)</span> in example 1,
+we can have a valuation <span class="arithmatex">\(V\)</span> where <span class="arithmatex">\(V(x) = 1\)</span> and <span class="arithmatex">\(V(y) = 2\)</span>.</p>
+<p>In this valuation the formula <span class="arithmatex">\(\mathit{livesIn}(y, x)\)</span> can be evaluated to true, because
+<span class="arithmatex">\((V(y), V(x)) \in I(\mathit{livesIn})\)</span>.</p>
+<p>But <span class="arithmatex">\(\mathit{livesIn}(x, y)\)</span> would be evaluated to false because
+<span class="arithmatex">\((V(x), V(y)) \notin I(\mathit{livesIn})\)</span>.</p>
+<h3 id="free-and-bound-variables">Free and bound variables</h3>
+<p>In simple arithmetic with natural numbers we might come across a statement such as</p>
+<div class="arithmatex">\[x + 1 = 2x.\]</div>
+<p>This on its own, as a statement, is neither true nor false because we have not said
+how to understand <span class="arithmatex">\(x\)</span>.</p>
+<ul>
+<li>
+<p>Is the statement saying that the equality holds for all values of <span class="arithmatex">\(x\)</span>?</p>
+</li>
+<li>
+<p>Is the statement saying that it is possible to find some <span class="arithmatex">\(x\)</span> making it true?</p>
+</li>
+<li>
+<p>Is the statement in a context where a particular value of <span class="arithmatex">\(x\)</span> is known, and the
+statement asserts that for this value the equality holds?</p>
+</li>
+<li>
+<p>Or maybe it is not a statement at all. Maybe it is an instruction to find one or all values
+of <span class="arithmatex">\(x\)</span> making it true.</p>
+</li>
+</ul>
+<p>In first order logic, any variable which is not quantified in an explicit way is
+said to be a <strong>free variable</strong>. Variables which are associated to quantifiers are
+called <strong>bound variables</strong>. In all the following four examples every <span class="arithmatex">\(x\)</span> is a free variable
+and every <span class="arithmatex">\(y\)</span> is a bound variable.</p>
+<ul>
+<li><span class="arithmatex">\(\forall y\; (r(x,y)\vee r(y,x))\)</span></li>
+<li><span class="arithmatex">\(p(x) \to \exists y\; r(y,x)\)</span></li>
+<li><span class="arithmatex">\(\forall y\; (y = y)\)</span></li>
+<li><span class="arithmatex">\(x = x\)</span></li>
+</ul>
+<p>Being free or bound is not really a property of a variable itself,
+but of a particular occurrence of a variable in a formula.
+The same variable can appear bound and free in different places in the same formula.
+We shall try to avoid tricky examples like this next one but it illustrates
+that we need to be careful.</p>
+<div class="arithmatex">\[p(y,y)
+\wedge \forall y \; \exists z (r(z,y) \to \exists y \; s(y,x))\]</div>
+<p>In that example</p>
+<ul>
+<li>the two <span class="arithmatex">\(y\,\)</span>s in <span class="arithmatex">\(p(y,y)\)</span> are both free</li>
+<li>the <span class="arithmatex">\(y\)</span> in <span class="arithmatex">\(r(z,y)\)</span> is bound by the universal quantification <span class="arithmatex">\(\forall y\)</span></li>
+<li>the <span class="arithmatex">\(y\)</span> in <span class="arithmatex">\(s(y,x)\)</span> is bound by the existential quantification <span class="arithmatex">\(\exists y\)</span></li>
+</ul>
+<p>The example is logically indistinguishable from</p>
+<div class="arithmatex">\[p(y,y)
+\wedge \forall w \; \exists z (r(z,w) \to \exists v \; s(v,x))\]</div>
+<p>in which the <span class="arithmatex">\(y\)</span> bound to the universal quantifier has been replaced by <span class="arithmatex">\(w\)</span>
+and the <span class="arithmatex">\(y\)</span> bound to the existential quantifier has been replaced by <span class="arithmatex">\(v\)</span>.</p>
+<p>In many cases it is safe to replace bound variables by different named variables
+but we would not be able to replace all the bound <span class="arithmatex">\(y\,\)</span> by <span class="arithmatex">\(z\,\)</span>s in the example
+as the <span class="arithmatex">\(y\)</span> originally
+bound by the <span class="arithmatex">\(\forall y\)</span> gets captured by the <span class="arithmatex">\(\exists z\)</span>.</p>
+<h3 id="the-informal-idea-of-truth">The informal idea of truth</h3>
+<p>Given a formula with no free variables and an interpretation, we can work out a truth value for the formula.</p>
+<p>The definition is recursive, breaking down the truth value of a formula in terms of simpler formulas.</p>
+<p>For example, if <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are formulas, then the definition shows how to calculate the truth value of
+<span class="arithmatex">\(\alpha \wedge \beta\)</span> in terms of the truth values of <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span>.</p>
+<h3 id="formal-definition-of-interpretation">Formal definition of interpretation</h3>
+<p>Given a first order language, <span class="arithmatex">\(\mathscr{L}\)</span>, an <strong>interpretation</strong>
+for <span class="arithmatex">\(\mathscr{L}\)</span> is a pair <span class="arithmatex">\((D, I)\)</span> where</p>
+<ul>
+<li><span class="arithmatex">\(D\)</span> is a non-empty set, called the <strong>domain</strong>, and</li>
+<li><span class="arithmatex">\(I\)</span> is a function which:<ul>
+<li>to each constant symbol <span class="arithmatex">\(c\)</span> of <span class="arithmatex">\(\mathscr{L}\)</span> assigns an element <span class="arithmatex">\(I(c) \in D\)</span>,</li>
+<li>to each <span class="arithmatex">\(n\)</span>-ary predicate symbol <span class="arithmatex">\(P\)</span>, (<span class="arithmatex">\(n &gt; 0\)</span>), assigns an <span class="arithmatex">\(n\)</span>-ary relation <span class="arithmatex">\(I(P) \subseteq D^n\)</span>,</li>
+<li>to each propositional constant <span class="arithmatex">\(q\)</span>, assigns a truth value <span class="arithmatex">\(I(q)\)</span>.</li>
+</ul>
+</li>
+</ul>
+<p>Sometimes <span class="arithmatex">\(I\)</span> is called a <strong>structure</strong>.</p>
+<h3 id="valuations-defined-formally">Valuations defined formally</h3>
+<p>Given a structure <span class="arithmatex">\((D, I)\)</span> for a language <span class="arithmatex">\(\mathscr{L}\)</span>,
+a <strong>valuation</strong> is a function from the set of all variables
+to <span class="arithmatex">\(D\)</span>.</p>
+<p>Given a valuation <span class="arithmatex">\(\mathcal{V}\)</span>, a variable <span class="arithmatex">\(x\)</span>, and <span class="arithmatex">\(d \in D\)</span>, we define
+the valuation <span class="arithmatex">\(\mathcal{V}[x \mapsto d]\)</span> to be the same as <span class="arithmatex">\(\mathcal{V}\)</span> for every
+variable other than <span class="arithmatex">\(x\)</span>, and <span class="arithmatex">\(x\)</span> gets sent to <span class="arithmatex">\(d\)</span>.</p>
+<div class="arithmatex">\[
+\mathcal{V}[x \mapsto d]\, (u) = \left\{
+\begin{array}{ll}
+\mathcal{V}(u) &amp;  \text{ if $u$ is not $x$,}\\
+d              &amp;  \text{ if $u$ is $x$.}
+\end{array}
+\right.
+\]</div>
+<p>If you imagine <span class="arithmatex">\(\mathcal{V}\)</span> as a table of input-output pairs, this is the idea of updating one of these pairs.</p>
+<p>Remember that a <strong>term</strong> is either a variable or a constant symbol.</p>
+<p>Given <span class="arithmatex">\(\mathcal{A} = (D, I)\)</span>, and a valuation <span class="arithmatex">\(\mathcal{V}\)</span>, it is convenient
+to use the notation
+<span class="arithmatex">\(\mathcal{V}(t)\)</span> when <span class="arithmatex">\(t\)</span> is any term as follows</p>
+<div class="arithmatex">\[
+\mathcal{V}(t) = \left\{
+\begin{array}{ll}
+\mathcal{V}(u) &amp;  \text{ if $t$ is a variable  $u$,}\\[2ex]
+I(c)              &amp;  \text{ if $t$ is a constant symbol $c$.}
+\end{array}
+\right.
+\]</div>
+<h3 id="definition-of-truth">Definition of truth</h3>
+<p>For a structure <span class="arithmatex">\(\mathcal{A} = (D, I)\)</span>, and a valuation <span class="arithmatex">\(\mathcal{V}\)</span>, and a formula <span class="arithmatex">\(\phi\)</span>,
+the notation</p>
+<div class="arithmatex">\[\mathcal{A}, \mathcal{V} \vDash \phi\]</div>
+<p>will mean that <span class="arithmatex">\(\phi\)</span> is true
+in the structure <span class="arithmatex">\(\mathcal{A}\)</span> under the valuation <span class="arithmatex">\(\mathcal{V}\)</span>.</p>
+<p>This relationship is defined as follows in the cases that <span class="arithmatex">\(\phi\)</span> is of the form <span class="arithmatex">\(P(t_1, \ldots, t_n)\)</span> for an <span class="arithmatex">\(n\)</span>-ary predicate symbol <span class="arithmatex">\(P\)</span>,
+or <span class="arithmatex">\(\phi\)</span> is <span class="arithmatex">\(q\)</span> for a propositional constant <span class="arithmatex">\(q\)</span>.</p>
+<div class="arithmatex">\[\begin{array}{ll}
+\mathcal{A}, \mathcal{V} \vDash P(t_1, \ldots, t_n) &amp; \text{ iff } (\mathcal{V}(t_1),\ldots,  \mathcal{V}(t_n)) \in I(P)\\[1ex]
+\mathcal{A}, \mathcal{V} \vDash q &amp; \text{ iff } I(q)
+\end{array}\]</div>
+<p>For formulas <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> we define</p>
+<div class="arithmatex">\[\begin{array}{ll}
+\mathcal{A}, \mathcal{V} \vDash \alpha \wedge \beta &amp; \text{ iff both } \mathcal{A}, \mathcal{V} \vDash \alpha \text { and }
+\mathcal{A}, \mathcal{V} \vDash \beta \\[1ex]
+\mathcal{A}, \mathcal{V} \vDash \alpha \vee \beta &amp; \text{ iff }   \mathcal{A}, \mathcal{V} \vDash \alpha \text { or }
+\mathcal{A}, \mathcal{V} \vDash \beta \text{ or both}\\[1ex]
+\mathcal{A}, \mathcal{V} \vDash \alpha \to \beta &amp; \text{ iff } \mathcal{A}, \mathcal{V} \vDash \alpha \text { does not hold, or }
+\mathcal{A}, \mathcal{V} \vDash \beta \text{ does,  or both} \\[1ex]
+\mathcal{A}, \mathcal{V} \vDash \alpha \leftrightarrow \beta &amp; \text{ iff } \mathcal{A}, \mathcal{V} \vDash \alpha \text { and }
+\mathcal{A}, \mathcal{V} \vDash \beta \text{ either both hold or neither does} \\[1ex]
+\mathcal{A}, \mathcal{V} \vDash \neg \alpha  &amp; \text{ iff it is not the case that }  \mathcal{A}, \mathcal{V} \vDash \alpha\\[3ex]
+\mathcal{A}, \mathcal{V} \vDash \forall x\, \alpha  &amp; \text{ iff for every } d \in D \text{ it holds that }
+                                                     \mathcal{A}, \mathcal{V}[x \mapsto d] \vDash \alpha\\[1ex]
+\mathcal{A}, \mathcal{V} \vDash \exists x\, \alpha  &amp; \text{ iff for some } d \in D \text{ it holds that }
+                                                     \mathcal{A}, \mathcal{V}[x \mapsto d] \vDash \alpha                                                    
+\end{array}\]</div>
+<p>We can use
+<span class="arithmatex">\(\mathcal{A}, \mathcal{V} \nvDash \alpha\)</span> to indicate that <span class="arithmatex">\(\mathcal{A}, \mathcal{V} \vDash \alpha\)</span> does not hold.</p>
+<h4 id="the-turnstile-notation">The turnstile notation</h4>
+<p>The symbol <span class="arithmatex">\(\vDash\)</span> is sometimes called 'double turnstile', and it has a counterpart 'single turnstile', <span class="arithmatex">\(\vdash\)</span>, which
+we meet later. The symbol <span class="arithmatex">\(\vDash\)</span> is used in some ways that can be confusing when compared with the usage
+<span class="arithmatex">\(\mathcal{A}, \mathcal{V} \vDash \phi\)</span> above.</p>
+<p>Remember that a <strong>sentence</strong> is a formula with no free variables.</p>
+<p><span class="arithmatex">\(\vDash \phi\)</span> means that for all structures, <span class="arithmatex">\(\mathcal{A}\)</span>, and all valuations <span class="arithmatex">\(\mathcal{V}\)</span> for that structure,
+<span class="arithmatex">\(\mathcal{A}, \mathcal{V} \vDash \phi\)</span>.</p>
+<p>When <span class="arithmatex">\(\phi\)</span> is a sentence, <span class="arithmatex">\(\phi\)</span> will get the same truth value under all valuations. However we still need to deal with valuations
+even for sentences because of the way they appear in the definition of truth for quantified statements.</p>
+<p>Writing <span class="arithmatex">\(\mathcal{A} \vDash \phi\)</span> will mean <span class="arithmatex">\(\phi\)</span> is true in the structure <span class="arithmatex">\(\mathcal{A}\)</span> (under any valuation).
+We then say <span class="arithmatex">\(\mathcal{A}\)</span> is a model of <span class="arithmatex">\(\phi\)</span>.</p>
+<p>For formulas <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\psi\)</span> we say <span class="arithmatex">\(\psi\)</span> <strong>logically implies</strong> <span class="arithmatex">\(\phi\)</span> if for every stucture and valuation
+such that <span class="arithmatex">\(\mathcal{A}, \mathcal{V} \vDash \psi\)</span>, it is also the case that <span class="arithmatex">\(\mathcal{A}, \mathcal{V} \vDash \phi\)</span>.
+Logical implication is denoted <span class="arithmatex">\(\psi \vDash \phi\)</span>.</p>
+<p>This notation can be confusing because we use both <span class="arithmatex">\(\mathcal{A} \vDash \phi\)</span> and <span class="arithmatex">\(\psi \vDash \phi\)</span>
+with very different entities on the left of the turnstile. There is no problem here, but be sure you are aware of the difference between
+a formula and an interpretation or a structure.</p>
+<p>If <span class="arithmatex">\(\Gamma\)</span> is a set of sentences, we write <span class="arithmatex">\(\Gamma \vDash \phi\)</span> to mean every model for all of the sentences in <span class="arithmatex">\(\Gamma\)</span> is also a model
+of <span class="arithmatex">\(\phi\)</span>.</p>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 2, you can test your knowledge in a formative exercise.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-2 Lesson 2'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../002_01_IntroSyntax/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 1 Introducing First Order Logic (FOL)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../002_03_Representation/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 3 FOL applied to representation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

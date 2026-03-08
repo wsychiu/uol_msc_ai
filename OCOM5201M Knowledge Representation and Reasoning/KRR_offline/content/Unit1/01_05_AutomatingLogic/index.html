@@ -1,0 +1,1753 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 4 Automating logic - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-4-automation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 4 Automating logic
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 4 Automating logic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 4 Automating logic
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prolog-getting-started" class="md-nav__link">
+    Prolog: getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Prolog: getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declarative-not-imperative" class="md-nav__link">
+    Declarative not imperative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-with-prolog" class="md-nav__link">
+    Interaction with Prolog
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction with Prolog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swi-prolog" class="md-nav__link">
+    SWI-Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swish-prolog" class="md-nav__link">
+    SWISH Prolog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-idea-of-goals-in-prolog" class="md-nav__link">
+    The idea of goals in Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-the-simple-prolog-example" class="md-nav__link">
+    Beyond the simple Prolog example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prover9-getting-started" class="md-nav__link">
+    Prover9: getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Prover9: getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-prover9-yourself" class="md-nav__link">
+    Installing Prover9 yourself
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-prover9-via-virtual-machine" class="md-nav__link">
+    Using Prover9 via virtual machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-prover9" class="md-nav__link">
+    Working with Prover9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#did-the-elephant-sit-on-the-fence" class="md-nav__link">
+    Did the elephant sit on the fence?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automating-the-extended-example" class="md-nav__link">
+    Automating the extended example
+  </a>
+  
+    <nav class="md-nav" aria-label="Automating the extended example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prover9" class="md-nav__link">
+    Prover9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prolog-version" class="md-nav__link">
+    Prolog version
+  </a>
+  
+    <nav class="md-nav" aria-label="Prolog version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#negation-in-prolog" class="md-nav__link">
+    Negation in Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressing-not-in-prolog" class="md-nav__link">
+    Expressing not in Prolog.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prolog-getting-started" class="md-nav__link">
+    Prolog: getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Prolog: getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declarative-not-imperative" class="md-nav__link">
+    Declarative not imperative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-with-prolog" class="md-nav__link">
+    Interaction with Prolog
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction with Prolog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swi-prolog" class="md-nav__link">
+    SWI-Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swish-prolog" class="md-nav__link">
+    SWISH Prolog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-idea-of-goals-in-prolog" class="md-nav__link">
+    The idea of goals in Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-the-simple-prolog-example" class="md-nav__link">
+    Beyond the simple Prolog example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prover9-getting-started" class="md-nav__link">
+    Prover9: getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Prover9: getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-prover9-yourself" class="md-nav__link">
+    Installing Prover9 yourself
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-prover9-via-virtual-machine" class="md-nav__link">
+    Using Prover9 via virtual machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-with-prover9" class="md-nav__link">
+    Working with Prover9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#did-the-elephant-sit-on-the-fence" class="md-nav__link">
+    Did the elephant sit on the fence?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automating-the-extended-example" class="md-nav__link">
+    Automating the extended example
+  </a>
+  
+    <nav class="md-nav" aria-label="Automating the extended example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prover9" class="md-nav__link">
+    Prover9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prolog-version" class="md-nav__link">
+    Prolog version
+  </a>
+  
+    <nav class="md-nav" aria-label="Prolog version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#negation-in-prolog" class="md-nav__link">
+    Negation in Prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressing-not-in-prolog" class="md-nav__link">
+    Expressing not in Prolog.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-4-automation">Lesson 4: Automation</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>In this lesson we study two ways of automating logical reasoning:</p>
+<ul>
+<li><strong>Prolog:</strong> a logic programming language, and</li>
+<li><strong>Prover9:</strong> a theorem prover.</li>
+</ul>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>use Prolog to represent simple situations involving propositions,</li>
+<li>explain the difference between the <strong>open world assumption</strong> and the
+<strong>closed world assumption</strong></li>
+<li>make use of the way Prolog works with <strong>negation as failure</strong> in simple examples</li>
+<li>use Prover9 to input propositional logic statements and check
+whether a given goal can be proved from these.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Formative activities for Lesson 4</p>
+<p>In this lesson you should make use of both Prover9 and of Prolog and
+run all of the examples presented in the lesson.</p>
+<p>You should also explore what happens if you make small alterations to the
+examples given.</p>
+<ul>
+<li>
+<p>What happens</p>
+<ul>
+<li>if you add extra logical statements,<ul>
+<li>or if you change the existing ones,</li>
+<li>or if you remove some of them?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Can you understand why the
+behaviour changes when you do these things?</p>
+</li>
+<li>
+<p>If you come across things that don't seem to
+make sense this is valuable as you can then ask questions about this on the discussion
+board or by asking the module leader directly.</p>
+</li>
+<li>
+<p>If there is something that does not behave as you would expect, then it is
+important to  make an example that is as simple as possible before asking about it.</p>
+<ul>
+<li>Try to cut down examples as far as possible to still get something you don't understand
+      while having as little as possible that is not essential.</li>
+</ul>
+</li>
+</ul>
+<p>You should also experiment with putting some of the examples from lessons 2 and 3
+into Prover9 or Prolog, or both, and seeing if things behave as expected.</p>
+</div>
+<h2 id="prolog-getting-started">Prolog: getting started</h2>
+<h3 id="declarative-not-imperative">Declarative not imperative</h3>
+<p>Prolog is a logic programming language.
+If you have not seen other declarative
+languages before, you may find Prolog surprising at first.
+If your experience is limited to imperative languages
+you will be familiar with writing statements which are commands,
+and fragments of code may look like this:</p>
+<div class="highlight"><pre><span></span><code>x := y + 2;
+y := y + 1;
+</code></pre></div>
+<p>We understand such code as instructions to change the values stored
+in locations called <tt>x</tt> and <tt>y</tt>.  However, in Prolog, code can look like this</p>
+<div class="highlight"><pre><span></span><code> todayIsTuesday.
+ tomorrowIsWednesday :- todayIsTuesday.
+</code></pre></div>
+<p>These can be read not as commands to do something, but as logical statements.</p>
+<ul>
+<li>The first <code>todayIsTuesday.</code> is asserting a <strong>fact</strong> that the proposition
+<em>today  is Tuesday</em> holds.</li>
+<li>The second <code>tomorrowIsWednesday :- todayIsTuesday.</code> is a <strong>clause</strong>
+asserting that <em>if it is true that today is Tuesday, then it is true that tomorrow is Wednesday</em>.
+In the clause the <strong>head</strong> is the part before the
+<tt> :- </tt> and the <strong>body</strong> is the part after the <tt> :- </tt>.</li>
+</ul>
+<p>Note that every fact and every clause is terminated with a full stop.
+Forgetting this can lead to confusion at first.
+It is also essential that propositions always start with a lower case letter.</p>
+<h3 id="interaction-with-prolog">Interaction with Prolog</h3>
+<p>A simple way of using Prolog is to put the above code into a file, and then
+to interactively enter a Prolog <strong>query</strong>. A query is again a logical statement,
+and the Prolog interpreter will respond by telling you whether the query
+can be deduced from the assertions in the code or not. One view of
+Prolog code is that it provides a database of basic facts together with rules
+(written as clauses) that allow new facts to be deduced. An example of interacting
+with Prolog can look like this:</p>
+<blockquote>
+<p><tt>
+    Welcome to SWI-Prolog (threaded, 64 bits, version 7.5.0)<br>
+    SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.<br></p>
+<p>?- <b>consult('/Users/scsjgs/today.pl').</b> <br>
+   true.</p>
+<p>?- <b>tomorrowIsWednesday.</b><br>
+    true.
+</tt></p>
+</blockquote>
+<p>In the above example, the interactive prompt from the interpreter is
+<tt>?- </tt> and the input typed by the user follows on the same line.
+Prolog tries to appear as if everything is a logical statement, but
+this is a bit misleading as the input <tt><b>consult('/Users/scsjgs/today.pl').</b></tt><br> is more like an instruction to read in a database of facts and rules.
+The response <tt>true.</tt> tells the user that the code has been successfully
+read. The second input from the user is
+<tt><b>tomorrowIsWednesday.</b></tt> which is the query asking whether this proposition can be deduced from the facts and rules.</p>
+<h4 id="swi-prolog">SWI-Prolog</h4>
+<p>You can download the free SWI-prolog implementation from
+<a href="https://www.swi-prolog.org/" target="_blank">www.swi-prolog.org</a></p>
+<h4 id="swish-prolog">SWISH Prolog</h4>
+<p>There is an alternative way of using SWI-prolog that runs online
+and requires no installation.
+At <a href="https://swish.swi-prolog.org/" target="_blank">swish.swi-prolog.org</a> you will
+see an interface like this:</p>
+<p><img alt="A screenshot of the SWISH website. Please see the full text description below." src="../images/swish-00-start.png" /></p>
+<details class="info"><summary>Select for full text description of screenshot 1</summary><p>A screenshot of the SWISH website as it appears when you first open it up. At the top of the page is a toolbar with drop down menus for file, edit, examples and help. To the toolbar’s right is an icon indicating the number of users online and a search box. Further to the right are icon login links for Google, Stack Overflow and an online hangout. Below this the screen is split into two, with clickable elements and instructions on the left-hand side and a box to input and run queries on the right. The query box is overlooked by the SWISH avatar, a cartoon owl.</p>
+</details>
+<p>To get started with the simple example you can just follow these instructions
+and ignore the details you can see where it says 'Prolog Elements'.</p>
+<p>The first thing is to click on the <b>+</b> sign at the top of the left hand pane
+in the interface and below the bar that runs across the whole interface.
+You should see this:</p>
+<details class="info"><summary>Select for full text description of screenshot 2</summary><p>A screenshot of the SWISH website after having clicked the plus button on the left-hand side under the menu toolbar to open a new tab. This tab gives you options to create a program or notebook. Clicking program will take you to a new window to the bottom right of the screen where you can enter code.</p>
+</details>
+<p>Click on Program (on the upper left where it says 'Create a Program &hellip; ')
+and ignore everything else.
+You will get a window to the bottom right of the screen, into which you can paste the two lines of prolog code
+we had earlier:</p>
+<div class="highlight"><pre><span></span><code> todayIsTuesday.
+ tomorrowIsWednesday :- todayIsTuesday.
+</code></pre></div>
+<p>In addition, you may find it helpful to select the Edit menu and make sure that
+Semantic highlighting is not ticked. If it is ticked you will find that the code
+looks as if there are errors in it with some words in red, but this is not useful
+to start with.</p>
+<details class="info"><summary>Select for full text description of screenshot 3</summary><p>A screenshot of the SWISH website with the edit menu open. The edit menu features check boxes to turn a number of options on and off. The purpose of this screenshot is to ensure that you have semantic highlighting turned off.</p>
+</details>
+<p>Having entered the code, you can then:</p>
+<ul>
+<li>enter the query in the lower of the two right hand panes,</li>
+<li>click on 'Run!' in the bottom right corner, and</li>
+<li>see the response in the upper pane on the right.</li>
+</ul>
+<details class="info"><summary>Select for full text description of screenshot 4</summary><p>A screenshot of the SWISH website which shows the response in the program window on the upper left-hand side after you have run a query in the box on the lower right-hand side.</p>
+</details>
+<p>You can then explore some of the other features that swish allows,
+but you will not need all of these for the module.</p>
+<h3 id="the-idea-of-goals-in-prolog">The idea of goals in Prolog</h3>
+<p>In our very simple example, <tt>tomorrowIsWednesday.</tt> is a <strong>goal</strong>
+that the prolog interpreter attempts to justify as true given the facts and rules
+it has. You can imagine it does this as follows, searching through the database of facts and clauses to
+find a reason why the goal statement must hold.</p>
+<ol>
+<li><tt>tomorrowIsWednesday</tt> is found  as the head of a clause in the database.</li>
+<li>
+<p>The body of the clause: <tt>todayIsTuesday</tt> now becomes a new goal because
+the clause can be read as:</p>
+<ul>
+<li>the goal <tt>tomorrowIsWednesday</tt> can be achieved if the (sub)goal
+<tt>todayIsTuesday</tt> can be achieved.</li>
+</ul>
+</li>
+<li>
+<p>The goal <tt>todayIsTuesday</tt> is achieved (can be satisfied) because this is
+stated as fact in the database.       </p>
+</li>
+</ol>
+<p>Notice that this is a very procedural way of thinking about the Prolog code.
+Writing effective Prolog code involves both thinking about logic as instructions and
+as declarative statements.</p>
+<h3 id="beyond-the-simple-prolog-example">Beyond the simple Prolog example</h3>
+<p>The above example only illustrates an extremely simple example of Prolog. The language
+itself includes far more, such as the ability to:</p>
+<ul>
+<li>use variables,</li>
+<li>manipulate complex data structures involving lists,</li>
+<li>use sophisticated pattern-matching in writing rules,</li>
+<li>write code that alters the database of facts and rules, and</li>
+<li>control the way the interpreter searches through the available facts and clauses.</li>
+</ul>
+<p>This last aspect, altering the way goals are attempted to be satisfied,
+shows that Prolog programs can end up being a long way from purely logical statements.
+In order to make effective  use of Prolog, you will need to learn something of the
+way the logic is processed.</p>
+<h2 id="prover9-getting-started">Prover9: getting started</h2>
+<p>Prover9 is a theorem prover which works for first order logic, including propositional logic.
+Alongside Prover9 you can use Mace4 to search for finite models of first order theories.</p>
+<p>There are two ways to get access to Prover9. You can install it on your own computer,
+or you can use it via a virtual machine provided for you for this module.</p>
+<h3 id="installing-prover9-yourself">Installing Prover9 yourself</h3>
+<p>You can download the software
+from <a href="https://www.cs.unm.edu/~mccune/prover9/" target="_blank">the Prover9 site</a>.
+There are two ways to interact with Prover9 and Mace4. The command line version
+should be possible to install on most Linux or MacOS computers.
+There is also a version with a graphical
+interface that may not work depending on your operating system.
+Installing it yourself may not be easy and the module does not assume
+you have been able to do this.</p>
+<h3 id="using-prover9-via-virtual-machine">Using Prover9 via virtual machine</h3>
+<p>You will need to be familiar with basic linux commands such as   <br />
+<tt>ls, cd, pwd, mkdir, mv, cp, rm, more, man</tt> and so on.</p>
+<p>First, follow these step-by-step <a href="../../..">instructions for accessing a virtual machine (VM)</a>.</p>
+<p>Log in to the virtual machine as per these instructions, then create an input file.
+An input file for Prover9 looks like this:</p>
+<div class="highlight"><pre><span></span><code>formulas(assumptions).   % you can add comments like this
+  - awake -&gt; asleep.
+  awake.
+end_of_list.
+
+formulas(goals).         
+  - asleep.
+end_of_list.
+</code></pre></div>
+<p>Logically this input consists of these two assumptions:</p>
+<p><span class="arithmatex">\(\neg \mathit{awake} \to \mathit{asleep}\)</span>,
+<br>
+<span class="arithmatex">\(\mathit{awake}\)</span>.</p>
+<p>and this goal which the aim is to prove from the given assumptions:</p>
+<p><span class="arithmatex">\(\neg \mathit{asleep}\)</span>.</p>
+<p>Running Prover9 on the command line will look like    </p>
+<p><tt>
+prover9 &lt; input_file &gt; output_file
+</tt>    </p>
+<p>where <tt>input_file</tt> and <tt>output_file</tt>
+are the names of files for the input and output.</p>
+<p>In this example the output is not very interesting as the goal cannot be proved.
+We get this:</p>
+<p><tt>
+scsjgs@vm-ocom5201m:~$ prover9 &lt; sleepexample &gt; sleepout      </p>
+<p>SEARCH FAILED         </p>
+<p>------ process 25020 exit (sos_empty) ------         <br />
+</tt></p>
+<h3 id="working-with-prover9">Working with Prover9</h3>
+<p>We will use Prover9 substantially in some units of this module,
+and it will be used in part of the assessment. The method of proof that
+Prover9 uses is called <strong>resolution</strong> and the details of this will be
+studied as part of the module itself.
+This is also the reasoning mechanism used by Prolog.</p>
+<div class="admonition activity">
+<p class="admonition-title">Do This</p>
+<p>To make sure you understand the basic operation of Prover9,
+repeat the above example, but changing the input
+assumptions to</p>
+<p><span class="arithmatex">\(\mathit{awake} \to \neg \mathit{asleep}\)</span>,
+<br>
+<span class="arithmatex">\(\mathit{awake}\)</span>.</p>
+<p>Check that the goal</p>
+<p><span class="arithmatex">\(\neg \mathit{asleep}\)</span></p>
+<p>can now be proved.</p>
+</div>
+<h3 id="did-the-elephant-sit-on-the-fence">Did the elephant sit on the fence?</h3>
+<p>here is a bigger example</p>
+<div class="highlight"><pre><span></span><code>scsjgs@vm-ocom5201m:~$ more p9prop1
+formulas(assumptions).
+ElephantOnFence -&gt; BrokenFence.
+ElephantScared -&gt; (ElephantOnFence | ElephantOnCar).
+(MouseInGarden &amp; SunnyDay) -&gt; ElephantScared.
+SunnyDay -&gt; - ElephantOnCar.
+CatInHouse -&gt; (MouseInGarden &amp; BirdsInGarden).
+CatInHouse &amp; SunnyDay.
+end_of_list.
+
+formulas (goals).
+BrokenFence.
+end_of_list.
+scsjgs@vm-ocom5201m:~$ prover9 &lt; p9prop1 &gt; out1
+-------- Proof 1 --------
+
+THEOREM PROVED
+
+------ process 20565 exit (max_proofs) ------
+</code></pre></div>
+<p>If you look at the output file you will see a great deal of detail about the processing but including the proof:</p>
+<div class="highlight"><pre><span></span><code>1 ElephantOnFence -&gt; BrokenFence # label(non_clause).  [assumption].
+2 ElephantScared -&gt; ElephantOnFence | ElephantOnCar # label(non_clause).  [assumption].
+3 MouseInGarden &amp; SunnyDay -&gt; ElephantScared # label(non_clause).  [assumption].
+4 SunnyDay -&gt; -ElephantOnCar # label(non_clause).  [assumption].
+5 CatInHouse -&gt; MouseInGarden &amp; BirdsInGarden # label(non_clause).  [assumption].
+6 CatInHouse &amp; SunnyDay # label(non_clause).  [assumption].
+7 BrokenFence # label(non_clause) # label(goal).  [goal].
+8 -ElephantOnFence | BrokenFence.  [clausify(1)].
+9 -ElephantScared | ElephantOnFence | ElephantOnCar.  [clausify(2)].
+10 -MouseInGarden | -SunnyDay | ElephantScared.  [clausify(3)].
+11 -SunnyDay | -ElephantOnCar.  [clausify(4)].
+12 -CatInHouse | MouseInGarden.  [clausify(5)].
+14 CatInHouse.  [clausify(6)].
+15 SunnyDay.  [clausify(6)].
+16 -BrokenFence.  [deny(7)].
+18 MouseInGarden.  [back_unit_del(12),unit_del(a,14)].
+19 -ElephantOnCar.  [back_unit_del(11),unit_del(a,15)].
+20 ElephantScared.  [back_unit_del(10),unit_del(a,18),unit_del(b,15)].
+21 -ElephantOnFence.  [back_unit_del(8),unit_del(b,16)].
+22 $F.  [back_unit_del(9),unit_del(a,20),unit_del(b,21),unit_del(c,19)].
+</code></pre></div>
+<h2 id="automating-the-extended-example">Automating the extended example</h2>
+<p>We now see how the example of reasoning from Lesson 3 about whether
+there is a power cut or the light bulb in the lamp is dead
+can be handled both in Prover9 and in Prolog.
+We will see Prover9 first as Prolog involves an additional
+topic: <strong>negation as failure</strong>.</p>
+<h3 id="prover9">Prover9</h3>
+<p>We can input the scenario and goal thus:</p>
+<div class="highlight"><pre><span></span><code>formulas(assumptions).
+    harryAlone &amp; - harrySwitchedOff -&gt; switchOn.
+    tv -&gt; powerOK.
+    - lampLit &amp; switchOn &amp; powerOK -&gt; bulbDead.
+    tv.
+    - harrySwitchedOff.
+    harryAlone.
+    - lampLit.
+end_of_list.
+
+formulas(goals).          
+   bulbDead.
+end_of_list.
+</code></pre></div>
+<p>The output (which you are not expected to understand at this point) is:</p>
+<div class="highlight"><pre><span></span><code>1 harryAlone &amp; -harrySwitchedOff -&gt; switchOn # label(non_clause).  [assumption].
+2 tv -&gt; powerOK # label(non_clause).  [assumption].
+3 -lampLit &amp; switchOn &amp; powerOK -&gt; bulbDead # label(non_clause).  [assumption].
+4 bulbDead # label(non_clause) # label(goal).  [goal].
+5 -harryAlone | harrySwitchedOff | switchOn.  [clausify(1)].
+6 -tv | powerOK.  [clausify(2)].
+7 lampLit | -switchOn | -powerOK | bulbDead.  [clausify(3)].
+8 tv.  [assumption].
+9 -harrySwitchedOff.  [assumption].
+10 harryAlone.  [assumption].
+11 -lampLit.  [assumption].
+12 -bulbDead.  [deny(4)].
+13 powerOK.  [back_unit_del(6),unit_del(a,8)].
+14 switchOn.  [back_unit_del(5),unit_del(a,10),unit_del(b,9)].
+15 $F.  [back_unit_del(7),unit_del(a,11),unit_del(b,14),unit_del(c,13),unit_del(d,12)].
+</code></pre></div>
+<p>The basic operation of <strong>resolution</strong> can be seen in the passage from the assumptions</p>
+<div class="highlight"><pre><span></span><code>tv -&gt; powerOK.
+
+tv.
+</code></pre></div>
+<p>to the fact that <tt>powerOK</tt> holds.</p>
+<p>We can see the mechanism as follows:</p>
+<div class="highlight"><pre><span></span><code>2 tv -&gt; powerOK # label(non_clause).  [assumption].
+
+6 -tv | powerOK.  [clausify(2)].
+
+8 tv.  [assumption].
+
+13 powerOK.  [back_unit_del(6),unit_del(a,8)].
+</code></pre></div>
+<p>What is happening here is this:</p>
+<ul>
+<li>(step 2) the implication <span class="arithmatex">\(\mathit{tv} \to \mathit{powerOK}\)</span> is assumed to hold</li>
+<li>(step 6) the implication is logically equivalent to <span class="arithmatex">\(\neg \mathit{tv} \vee \mathit{powerOK}\)</span></li>
+<li>(step 8) we have the assumption <span class="arithmatex">\(\mathit{tv}\)</span></li>
+<li>(step 13) the only way the two statements in steps 6 and 8 can be true together
+is for <span class="arithmatex">\(\mathit{powerOK}\)</span> to be true.</li>
+</ul>
+<h3 id="prolog-version">Prolog version</h3>
+<p>We can use prolog</p>
+<div class="highlight"><pre><span></span><code>    switchOn :- harryAlone, not(harrySwitchedOff).
+
+    powerOK :- tv.
+
+    bulbDead :- not(lampLit), switchOn, powerOK.
+
+    tv.
+
+    harrySwitchedOff :- fail.
+
+    harryAlone.
+
+    lampLit :- fail.
+</code></pre></div>
+<p>the interaction is:</p>
+<div class="highlight"><pre><span></span><code>    ?- consult(&#39;bulb.pl&#39;).
+    true.
+
+    ?- bulbDead.
+    true.
+</code></pre></div>
+<p>The encoding of the problem in prolog looks strange. Why has it got <tt>fail</tt>
+twice in the input? Prolog treats logical negation in a different way to Prover9
+and the approach is called <strong>negation as failure</strong>.
+We will come back to the power cut example once we have looked at a very simple example
+to explain about negation as failure.</p>
+<h4 id="negation-in-prolog">Negation in Prolog</h4>
+<div class="admonition example">
+<p class="admonition-title">A simple comparison between Prover9 and Prolog</p>
+<p>In Prolog, enter the following in the program area of Swish</p>
+<div class="highlight"><pre><span></span><code>:- discontiguous(tuesday/0).
+
+monday.
+</code></pre></div>
+<p>Here <tt>monday</tt> is a proposition or a fact. The other part
+<tt>:- discontiguous(tuesday/0).</tt> has no logical function. It is there
+so that Prolog won't complain about never having heard of tuesday. Now,
+try the goal</p>
+<div class="highlight"><pre><span></span><code>not(tuesday).
+</code></pre></div>
+<p>Notice what response you get.</p>
+<p>Now contrast this with Prover9 by using this input file:</p>
+<div class="highlight"><pre><span></span><code>clear(auto_denials).
+
+formulas(assumptions).
+
+    monday.
+
+end_of_list.
+
+formulas (goals).
+
+    -tuesday.
+
+end_of_list.
+</code></pre></div>
+<p>You should run Prover9 with this example and see whether the goal is proved from the
+assumptions. The line <tt>clear(auto_denials).</tt> does not affect the logic, but
+generally helps avoid some opaque behaviour from Prover9.</p>
+<p>Note that this is giving essentially the same task as we just tried in Prolog:</p>
+<ul>
+<li>
+<p>we state that the proposition <tt>monday</tt> holds. We can think of this as
+    meaning today is monday if we want to.</p>
+</li>
+<li>
+<p>we then ask whether the negation of the proposition <tt>tuesday</tt> holds.</p>
+</li>
+</ul>
+<p>You should find that Prover9 and Prolog disagree with each other about this example.
+The reason is that they understand <em>not</em> to mean quite different things.</p>
+<ul>
+<li>
+<p>In Prolog
+it is not tuesday because it is impossible to prove that it is tuesday.</p>
+</li>
+<li>
+<p>In Prover9
+it is not the case that it is not tuesday, because there is no way to prove that
+it is not tuesday from the given assumptions.</p>
+</li>
+</ul>
+</div>
+<p>The way Prolog treats <em>not</em> is called
+<strong>negation as failure</strong>, because if it fails to prove something then it takes
+the negation of that something to be true.
+The way Prover9 treats <em>not</em> is the conventional mathematical way for classical logic.</p>
+<h4 id="expressing-not-in-prolog">Expressing <em>not</em> in Prolog.</h4>
+<p>To return to the powercut example, if we need to assert that some proposition is not true
+we can say that any attempt to satisfy the proposition as a goal must fail:</p>
+<div class="highlight"><pre><span></span><code>    lampLit :- fail.
+</code></pre></div>
+<p>An alternative way
+for a goal to fail is simply not to assert it at all. This is what happened in the small
+example we just saw. Explicit failure
+has the same effect and would make for more readable code in most cases.</p>
+<p>Prolog is taking an approach to negation that goes with the <strong>closed world assumption</strong>
+that things are false unless we know explicitly they are true.
+This is familiar in databases. For example, if an organisation
+wants to know if they have an employee called "Lyra Silvertongue" they might search in
+a database of all their employees and see if that name is there. If the name is not there
+they conclude that they have no such employee, despite it not being asserted
+directly that this person is not an employee.
+It is called the closed world assumption because it is assumed
+that the list of employees is complete and there cannot be any that are not recorded in the database.</p>
+<p>In Prolog, if we want to make a goal including some subgoals which must
+fail we express it like this</p>
+<div class="highlight"><pre><span></span><code>    switchOn :- harryAlone, not(harrySwitchedOff).
+</code></pre></div>
+<p>Note that</p>
+<ul>
+<li>in the body of a clause we can use the special Prolog word <tt>not</tt>, but</li>
+<li>to assert a fact of the form '<span class="arithmatex">\(x\)</span> is not true' we can say <tt> x :- fail.</tt>.</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01_04_Representation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 3 Representation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../01_06_CNFDNF/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 5 CNF and DNF
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

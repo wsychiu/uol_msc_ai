@@ -1,0 +1,1950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 2 Natural deduction (propositional) - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#natural-deduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 2 Natural deduction (propositional)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../03_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 2 Natural deduction (propositional)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-natural-deduction" class="md-nav__link">
+    Introduction to natural deduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-examples-of-natural-deduction-proofs-as-trees" class="md-nav__link">
+    Three examples of natural deduction proofs as trees
+  </a>
+  
+    <nav class="md-nav" aria-label="Three examples of natural deduction proofs as trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-natural-deduction-rules-for-each-connective" class="md-nav__link">
+    The natural deduction rules for each connective
+  </a>
+  
+    <nav class="md-nav" aria-label="The natural deduction rules for each connective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-and" class="md-nav__link">
+    Rules for AND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-or" class="md-nav__link">
+    Rules for OR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-not" class="md-nav__link">
+    Rules for NOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-implies" class="md-nav__link">
+    Rules for IMPLIES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-introductory-examples-in-complete-detail" class="md-nav__link">
+    The introductory examples in complete detail
+  </a>
+  
+    <nav class="md-nav" aria-label="The introductory examples in complete detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2_1" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3_1" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-examples-of-natural-deduction-proofs" class="md-nav__link">
+    More examples of natural deduction proofs
+  </a>
+  
+    <nav class="md-nav" aria-label="More examples of natural deduction proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-4-anything-follows-from-a-contradiction" class="md-nav__link">
+    Example 4: anything follows from a contradiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5" class="md-nav__link">
+    Example 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" class="md-nav__link">
+    Example 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negated-disjunction-examples-7-and-8" class="md-nav__link">
+    Negated disjunction examples: 7 and 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9-double-negation-elimination" class="md-nav__link">
+    Example 9: double negation elimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10-double-negation-introduction" class="md-nav__link">
+    Example 10: double negation introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-11-excluded-middle-em" class="md-nav__link">
+    Example 11: excluded middle (EM)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-natural-deduction" class="md-nav__link">
+    Introduction to natural deduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-examples-of-natural-deduction-proofs-as-trees" class="md-nav__link">
+    Three examples of natural deduction proofs as trees
+  </a>
+  
+    <nav class="md-nav" aria-label="Three examples of natural deduction proofs as trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-natural-deduction-rules-for-each-connective" class="md-nav__link">
+    The natural deduction rules for each connective
+  </a>
+  
+    <nav class="md-nav" aria-label="The natural deduction rules for each connective">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-and" class="md-nav__link">
+    Rules for AND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-or" class="md-nav__link">
+    Rules for OR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-not" class="md-nav__link">
+    Rules for NOT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-implies" class="md-nav__link">
+    Rules for IMPLIES
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-introductory-examples-in-complete-detail" class="md-nav__link">
+    The introductory examples in complete detail
+  </a>
+  
+    <nav class="md-nav" aria-label="The introductory examples in complete detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2_1" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3_1" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-examples-of-natural-deduction-proofs" class="md-nav__link">
+    More examples of natural deduction proofs
+  </a>
+  
+    <nav class="md-nav" aria-label="More examples of natural deduction proofs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-4-anything-follows-from-a-contradiction" class="md-nav__link">
+    Example 4: anything follows from a contradiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5" class="md-nav__link">
+    Example 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" class="md-nav__link">
+    Example 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negated-disjunction-examples-7-and-8" class="md-nav__link">
+    Negated disjunction examples: 7 and 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9-double-negation-elimination" class="md-nav__link">
+    Example 9: double negation elimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10-double-negation-introduction" class="md-nav__link">
+    Example 10: double negation introduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-11-excluded-middle-em" class="md-nav__link">
+    Example 11: excluded middle (EM)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="natural-deduction">Natural deduction</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>Build natural deduction proofs in tree format for propositional logic using formal rules at every step.</li>
+<li>Use temporary assumptions in these proofs and discharge them when the rules permit.</li>
+<li>Check natural deduction proofs for errors.</li>
+</ul>
+</div>
+<h2 id="introduction-to-natural-deduction">Introduction to natural deduction</h2>
+<p>In this lesson we study formal proofs set out in  a tree format and
+in a style called natural deduction.
+It is called natural deduction because the structure of the formal proof
+is close to the kind of argument that might be made in an informal
+way &ndash; when you are trying to explain the reason for something to somebody else.</p>
+<p>As with any style of proof, natural deduction proofs are used to justify
+that a conclusion follows from some hypotheses, or in some cases from no hypotheses.
+In the example studied in lesson 1, the proof justified:</p>
+<div class="arithmatex">\[R \rightarrow S, S \rightarrow \neg R \vdash \neg R.\]</div>
+<p>In this example there are two hypotheses:
+<span class="arithmatex">\(R \rightarrow S\)</span> and <span class="arithmatex">\(S \rightarrow \neg R\)</span>,
+and a conclusion: <span class="arithmatex">\(\neg R\)</span>.
+The key features to watch out for in natural deduction are:</p>
+<ol>
+<li>Temporary assumptions can be made which parts of the proof depend on,
+but which are not needed to justify the ultimate conclusion.</li>
+<li>When temporary assumptions are no longer needed they are <em>discharged</em>.
+In the proof a discharged assumption appears between square brackets <span class="arithmatex">\([\;\;]\)</span>.</li>
+<li>In addition to the modus ponens example in Lesson 1, there are other
+inference rules. These exist for each logical connective, and come in two
+flavours, or kinds:<ol>
+<li><strong>Introduction rules</strong>, in which the connective is introduced into the conclusion of the rule</li>
+<li><strong>Elimination rules</strong>, in which an occurrence of the connective in an antecedent of the rule is eliminated and does not appear in the conclusion of the rule.</li>
+</ol>
+</li>
+</ol>
+<h2 id="three-examples-of-natural-deduction-proofs-as-trees">Three examples of natural deduction proofs as trees</h2>
+<p>Before presenting all the details of the rules, we return to the three proofs
+shown in Lesson 1 of this unit.
+In each case there is a video in which the construction of the tree
+is shown alongside the proof as constructed in Lesson 1.</p>
+<h3 id="example-1">Example 1</h3>
+<iframe title="Example 1" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/f08e50d6ce7849cea5cfbab7babe3d961d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25089205_4" target="_blank">Download transcript (PDF).</a></p>
+<p>The proof shown in the video is this one:</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[R]$}
+      \AXC{$[R]$}
+      \AXC{$R \to S$}
+      \BIC{$S$}
+                      \AXC{$S \to \neg R$}
+               \BIC{$\neg R$}
+        \BIC{$R \wedge \neg R$}
+            \UIC{$\neg R$}        
+\end{prooftree}
+\]</div>
+<p>The proof justifies that
+<span class="arithmatex">\(R \to S,\; S \to \neg R \vdash \neg R\)</span>.</p>
+<p>You may notice that the horizontal lines in the proof above have different thicknesses.
+This has no significance, and may not be noticeable depending on your browser, screen, etc.</p>
+<p>The correspondence between the argument written in words and
+parts of the proof is shown in this image:</p>
+<details class="info"><summary>Select for full text description</summary><p>On the right hand side of the image a proof is displayed. The proof justifies that from R implies S and S implies not R we can derive that not R. The proof goes as follows:</p>
+<p>Line one: the label “Hypothesis 1”.</p>
+<p>Line two: open square bracket, R, closed square bracket. R implies S. The label on line 1 “Hypothesis 1” is shown above the formula R implies S. A black derivation line is displayed underneath the formulae open square bracket, R, closed square bracket and R implies S. Next to this there is the label “Hypothesis 2”.</p>
+<p>Line three: S. This is displayed underneath the derivation line of line two.</p>
+<p>Next to this there is S implies not R. The label on line two “Hypothesis 2” is shown above the formula S implies not R. A black derivation line is displayed underneath S and S implies not R.</p>
+<p>Line four: open square bracket, R, closed squared bracket. Next to this there is the formula not R. Not R is displayed underneath the derivation line of line three. A black derivation line is displayed underneath the formulae open square bracket, R, closed squared bracket and not R.</p>
+<p>Line five: R and not R. This is displayed underneath the derivation line of line four. A black derivation line is displayed underneath the formula R and not R.</p>
+<p>Line six: not R. This is displayed underneath the derivation line of line five.</p>
+<p>On the left hand side of the image there is the following writing. Line one says: “Suppose this is red”. There are two red arrows point to the formulae open square bracket, R, closed square bracket, displayed on lines two and four of the proof previously described.</p>
+<p>Line two says “By one, it is square”. There is a red arrow pointing to the formula S displayed on line three of the proof previously described.</p>
+<p>Line three says: “By two, it is not red”. There is a red arrow pointing to the formula not R displayed on line four of the proof previously described.</p>
+<p>Line four says: “Our assumption is impossible”. There is a red arrow pointing to the formula R and not R displayed on line five of the proof previously described.</p>
+<p>Line five says: “Hence it is not red”. There is a red arrow pointing to the formula not R displayed on line six of the proof previously described.</p>
+</details>
+<!--
+I used this and draw on a screenshot to get above image
+
+$$
+\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+\!\!\!\!\!\!\!
+\begin{array}[b]{l}
+\text{Suppose it is red.}\\
+\text{ }\\
+\text{By (1), it is square.}\\
+\text{By (2), it is not red.}\\
+\text{ }\\
+\text{Our assumption is impossible}\\
+\text{ }\\
+\text{Hence it is not red.}
+\end{array}
+\qquad \qquad
+\begin{prooftree}
+\AXC{$[R]$}
+      \AXC{$[R]$}
+      \AXC{Hyp 1}
+      \noLine
+      \UIC{$R \to S$}
+      \BIC{$S$}
+                      \AXC{Hyp 2}
+                      \noLine
+                      \UIC{$S \to \neg R$}
+               \BIC{$\neg R$}
+        \BIC{$R \wedge \neg R$}
+            \UIC{$\neg R$}        
+\end{prooftree}
+$$
+-->
+
+<h3 id="example-2">Example 2</h3>
+<iframe title="Example 2" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/fa06a80528464da79246480b16fd6a921d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25089206_4" target="_blank">Download transcript (PDF).</a></p>
+<p>The proof shown in the video is this one:</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$S \vee \neg S$}
+                         \AXC{$[\neg S]$}    \AXC{$[R]$} \AXC{$R \to S$}
+                                                   \BIC{$S$}
+                                    \BIC{$S \wedge \neg S$}
+                                    \UIC{$\neg R$}                      \AXC{$[S]$} \AXC{$S \to \neg R$}
+                                                                                 \BIC{$\neg R$}
+                                     \TIC{$\neg R$}                                                 
+\end{prooftree}
+\]</div>
+<p>The proof shows that
+<span class="arithmatex">\(S \vee \neg S,\; R \to S,\; S \to \neg R \vdash \neg R\)</span>.</p>
+<h3 id="example-3">Example 3</h3>
+<iframe title="Example 3" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/20bb5e07f59040a081f9bcd6c28725131d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25091147_4" target="_blank">Download transcript (PDF).</a></p>
+<p>The proof shown in the video is this one:</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$(A \wedge B) \vee C$}
+                       \AXC{$[A \wedge B]$}
+                       \UIC{$A$}
+                       \UIC{$A \vee C$}
+                                         \AXC{$[A \wedge B]$}
+                                         \UIC{$B$}
+                                          \UIC{$B \vee C$}
+                                 \BIC{$(A \vee C) \wedge (B \vee C)$}
+                                                            \AXC{$[C]$}
+                                                            \UIC{$A \vee C$}
+                                                                      \AXC{$[C]$}
+                                                                       \UIC{$B \vee C$}
+                                                             \BIC{$(A \vee C) \wedge (B \vee C)$}
+                                     \TIC{$(A \vee C) \wedge (B \vee C)$}                                                 
+\end{prooftree}
+\]</div>
+<p>The proof shows that
+<span class="arithmatex">\((A \wedge B) \vee C \vdash (A \vee C) \wedge (B \vee C)\)</span>.</p>
+<h2 id="the-natural-deduction-rules-for-each-connective">The natural deduction rules for each connective</h2>
+<p>Each connective has one or more rules to introduce the connective, and one or more rules
+to eliminate the connective.
+Each rule has a name which appears to the right of the horizontal line.
+The name consists of the symbol for the connective followed
+by <span class="arithmatex">\(I\)</span> (Introduction) or <span class="arithmatex">\(E\)</span> (Elimination), with possible additional
+letters to indicate a left hand version (<span class="arithmatex">\(\ell\)</span>) or a right hand one (<span class="arithmatex">\(r\)</span>).
+When a rule allows you to discharge an assumption, the name of the rule can carry
+a subscript number to keep track of which assumption is being discharged by a particular
+occurrence of a rule.</p>
+<p>The following video explains the rules.</p>
+<iframe title="Natural deduction- propositional logic" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/108e087945de4da888c4e08a86635f151d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26101708_4" target="_blank">Download transcript (PDF).</a></p>
+<h3 id="rules-for-and">Rules for <strong>AND</strong></h3>
+<div class="arithmatex">\[
+\begin{array}{c}
+\mathsf{Introduction}\\[2ex]
+\begin{prooftree}
+\AXC{$P$}
+\AXC{$Q$}
+\RightLabel{$\;\;\wedge I$}
+\BIC{$P \wedge Q$}
+\end{prooftree}
+\end{array}
+\qquad
+\qquad
+\qquad
+\qquad
+\begin{array}{c}
+\mathsf{Elimination}\\[2ex]
+\begin{prooftree}
+\AXC{$P \wedge Q$}
+\RightLabel{$\;\;\wedge Er$}
+\UIC{$P$}
+\end{prooftree}
+\quad
+\begin{prooftree}
+\AXC{$P \wedge Q$}
+\RightLabel{$\;\;\wedge E\ell$}
+\UIC{$Q$}
+\end{prooftree}
+\end{array}
+\]</div>
+<h3 id="rules-for-or">Rules for <strong>OR</strong></h3>
+<div class="arithmatex">\[
+\begin{array}{c}
+\mathsf{Introduction}\\[9ex]
+\begin{prooftree}
+\AXC{$P$}
+\RightLabel{$\;\vee Ir$}
+\UIC{$P \vee Q$}
+\end{prooftree}
+\;\;
+\begin{prooftree}
+\AXC{$Q$}
+\RightLabel{$\;\vee I\ell$}
+\UIC{$P \vee Q$}
+\end{prooftree}
+\end{array}
+\qquad
+\qquad
+\begin{array}{c}
+\mathsf{Elimination}\\[2ex]
+\begin{prooftree}
+\AXC{$A \vee B$}
+                 \AXC{$[A]_n$}
+                 \noLine
+                 \UIC{$\vdots$}
+                 \noLine
+                 \UIC{$P$}
+                                  \AXC{$[B]_n$}
+                                  \noLine
+                                  \UIC{$\vdots$}
+                                  \noLine
+                                  \UIC{$P$}
+                 \RightLabel{$\;{\vee}E_n$}
+                 \TIC{$P$}
+\end{prooftree}
+\end{array}
+\]</div>
+<p>The elimination rule for <span class="arithmatex">\(\vee\)</span> looks complex but comes from the
+following simple scenario:</p>
+<ul>
+<li>You know that <span class="arithmatex">\(A \vee B\)</span> is true (but not which is true, or if both are)</li>
+<li>You want to prove <span class="arithmatex">\(P\)</span></li>
+<li>You can prove <span class="arithmatex">\(P\)</span> by assuming <span class="arithmatex">\(A\)</span> is true</li>
+<li>You can prove <span class="arithmatex">\(P\)</span> by assuming <span class="arithmatex">\(B\)</span> is true</li>
+<li>Then you are entitled to conclude that <span class="arithmatex">\(P\)</span> holds and discharge the temporary assumptions
+about <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>.</li>
+</ul>
+<h3 id="rules-for-not">Rules for <strong>NOT</strong></h3>
+<div class="arithmatex">\[
+\begin{array}{c}
+\mathsf{Introduction}\\[2ex]
+\begin{prooftree}
+\AXC{$[A]_{n}$}
+\noLine
+\UIC{$\vdots$}
+\noLine
+\UIC{$P \wedge \neg P$}
+\RightLabel{$\; \neg I_{n}$}
+\UIC{$\neg A$}
+\end{prooftree}
+\end{array}
+\qquad
+\qquad
+\qquad
+\qquad
+\qquad
+\qquad
+\begin{array}{c}
+\mathsf{Elimination}\\[2ex]
+\begin{prooftree}
+\AXC{$[\neg A]_{n}$}
+\noLine
+\UIC{$\vdots$}
+\noLine
+\UIC{$P \wedge \neg P$}
+\RightLabel{$\; \neg E_{n}$}
+\UIC{$A$}
+\end{prooftree}
+\end{array}
+\]</div>
+<p>The idea behind both the introduction rule and the elimination rule shown above, is the reasoning
+strategy known as <strong>reductio ad absurdum</strong> in which an
+assumption must be rejected because it leads to a contradiction,
+or, in other words, an absurdity.</p>
+<p>In the introduction rule we start off with an assumption that <span class="arithmatex">\(A\)</span> is true, and
+derive a contradiction, so we conclude <span class="arithmatex">\(A\)</span> is false and we
+can discharge the assumption <span class="arithmatex">\(A\)</span>.
+In the elimination rule
+we start off with an assumption that <span class="arithmatex">\(A\)</span> is false, and
+derive a contradiction, so we conclude <span class="arithmatex">\(A\)</span> is true and we
+can discharge the assumption <span class="arithmatex">\(\neg A\)</span>.</p>
+<h3 id="rules-for-implies">Rules for <strong>IMPLIES</strong></h3>
+<div class="arithmatex">\[
+\begin{array}{c}
+\mathsf{Introduction}\\[2ex]
+\begin{prooftree}
+\AXC{$[P]_{n}$}
+\noLine
+\UIC{$\vdots$}
+\noLine
+\UIC{$Q$}
+\RightLabel{$\; {\to} I_{n}$}
+\UIC{$P \to Q$}
+\end{prooftree}
+\end{array}
+\qquad
+\qquad
+\qquad
+\qquad
+\qquad
+\qquad
+\begin{array}{c}
+\mathsf{Elimination}\\[9ex]
+\begin{prooftree}
+\AXC{$P$}
+\AXC{$P \to Q$}
+\RightLabel{$\; {\to}E$}
+\BIC{$Q$}
+\end{prooftree}
+\end{array}
+\]</div>
+<p>The elimination rule for <span class="arithmatex">\(\to\)</span> is the rule we met in Lesson 1 under the name
+<em>modus ponens</em>. The introduction rule allows us to assume that <span class="arithmatex">\(P\)</span> is true and
+argue why <span class="arithmatex">\(Q\)</span> must then be true, and from that to conclude that <span class="arithmatex">\(P \to Q\)</span> holds
+without the assumption <span class="arithmatex">\(P\)</span> which is discharged.</p>
+<h2 id="the-introductory-examples-in-complete-detail">The introductory examples in complete detail</h2>
+<h3 id="example-1_1">Example 1</h3>
+<p>Returning now to the example at the start of this lesson, we can now present it
+in the form below in which each step is labelled by the rule which justifies the step.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[R]_1$}
+             \AXC{$[R]_1$}
+             \AXC{$R \to S$}
+             \RightLabel{$\; {\to}E$}
+             \BIC{$S$}
+                                      \AXC{$S \to \neg R$}
+                                      \RightLabel{$\; {\to}E$}
+                        \BIC{$\neg R$}
+      \RightLabel{$\; {\wedge}I$}
+      \BIC{$R \wedge \neg R$}
+      \RightLabel{$\; {\neg}I_1$}
+      \UIC{$\neg R$}
+\end{prooftree}
+\]</div>
+<p>In a natural deduction proof, every step needs to be justified by one of the rules.</p>
+<h3 id="example-2_1">Example 2</h3>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$S \vee \neg S$}
+                         \AXC{$[\neg S]$}    \AXC{$[R]$} \AXC{$R \to S$}
+                                                   \RightLabel{$\;{\to} E$}
+                                                   \BIC{$S$}
+                                    \RightLabel{$\;{\wedge} I$}               
+                                    \BIC{$S \wedge \neg S$}
+                                    \RightLabel{$\;{\neg} I$}
+                                    \UIC{$\neg R$}                      \AXC{$[S]$} \AXC{$S \to \neg R$}
+                                                                                 \RightLabel{$\;{\to} E$}
+                                                                                 \BIC{$\neg R$}
+                                     \RightLabel{$\;{\vee} E$}
+                                     \TIC{$\neg R$}                                                 
+\end{prooftree}
+\]</div>
+<h3 id="example-3_1">Example 3</h3>
+<p>This is left as an exercise for you.
+Go back to the example and check that you can see which rule is
+being used at each stage.</p>
+<h2 id="more-examples-of-natural-deduction-proofs">More examples of natural deduction proofs</h2>
+<h3 id="example-4-anything-follows-from-a-contradiction">Example 4: anything follows from a contradiction</h3>
+<p>Here are two proofs that <span class="arithmatex">\(\quad A, \; \neg A \vdash B\)</span></p>
+<p>Notice in both proofs the assumption <span class="arithmatex">\(\neg B\)</span>, the negation of the desired conclusion,
+is introduced into a conjunction, is then immediately eliminated, and is discharged at the end.
+We do not actually need the assumption of <span class="arithmatex">\(\neg B\)</span> to derive the contradiction <span class="arithmatex">\(A \wedge \neg A\)</span>,
+but these examples are instructive in showing how the rules work as tools for manipulating formulas.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+                            \AXC{$A$}
+                            \AXC{$[\neg B]_1$}
+                            \RightLabel{$\; {\wedge} I$}
+                            \BIC{$A \wedge \neg B$}
+                            \RightLabel{$\; {\wedge} Er$}
+                            \UIC{$A$}
+                                  \AXC{$\neg A$}                      
+             \RightLabel{$\; {\wedge} I$}
+             \BIC{$A \wedge \neg A$}
+             \RightLabel{$\; {\neg} E_1$}
+             \UIC{$B$}
+\end{prooftree}
+\qquad
+\qquad
+\begin{prooftree}
+\AXC{$A$}
+\AXC{$\neg A$}
+\RightLabel{$\; {\wedge} I$}
+\BIC{$A \wedge \neg A$}
+                       \AXC{$[\neg B]_1$}
+              \RightLabel{$\; {\wedge} I$}
+              \BIC{$(A \wedge \neg A) \wedge \neg B$}
+              \RightLabel{$\; {\wedge} Er$}
+              \UIC{$A \wedge \neg A$}
+              \RightLabel{$\; {\neg} E_1$}
+              \UIC{$B$}
+\end{prooftree}
+\]</div>
+<p>These examples have been includes as it is easy to see how they fit the pattern
+of the rule <span class="arithmatex">\({\neg}E\)</span> where you can see the conclusion <span class="arithmatex">\(B\)</span> together with the discharged
+assumption <span class="arithmatex">\(\neg B\)</span>.</p>
+<p>However, the rule <span class="arithmatex">\({\neg}E\)</span> allows you to use an assumption such as <span class="arithmatex">\(\neg B\)</span>
+any number of times, including zero.
+The same holds for the discharge of assumptions in other rules.
+This means that we can have the following proof that <span class="arithmatex">\(A, \; \neg A \vdash B\)</span>.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$A$}      \AXC{$\neg A$}                      
+         \RightLabel{$\; {\wedge} I$}
+         \BIC{$A \wedge \neg A$}
+         \RightLabel{$\; {\neg} E$}
+         \UIC{$B$}
+\end{prooftree}
+\]</div>
+<h3 id="example-5">Example 5</h3>
+<p>Proof that <span class="arithmatex">\(\quad A \vee B, \; \neg A \vdash B\)</span></p>
+<p>Here the proof in the previous example appears as part of the larger proof.</p>
+<p>In this example we assume we have both <span class="arithmatex">\(A \vee B\)</span> and <span class="arithmatex">\(\neg A\)</span>
+then argue that <span class="arithmatex">\(B\)</span> must hold. The pattern of the argument is
+that since <span class="arithmatex">\(A\)</span> or <span class="arithmatex">\(B\)</span> we can consider these two cases separately.
+In the case that <span class="arithmatex">\(A\)</span> holds, then because we are assuming <span class="arithmatex">\(\neg A\)</span>
+we have a contradiction from which anything can be derived. In particular we can derive <span class="arithmatex">\(B\)</span>.
+In the second of the two cases we immediately have that <span class="arithmatex">\(B\)</span> holds.
+Since we have analysed both cases and found <span class="arithmatex">\(B\)</span> in each case, we know <span class="arithmatex">\(B\)</span> holds
+without any temporary assumption about which of the two cases holds.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$A \vee B$}
+         \AXC{$[A]_1$}      \AXC{$\neg A$}              
+             \RightLabel{$\; {\wedge} I$}
+             \BIC{$A \wedge \neg A$}
+             \RightLabel{$\; {\neg} E$}
+             \UIC{$B$}
+                                                   \AXC{$[B]_1$}
+                            \RightLabel{$\; {\vee} E_1$}  
+                            \TIC{$B$}                     
+\end{prooftree}
+\]</div>
+<h3 id="example-6">Example 6</h3>
+<p>Proof that <span class="arithmatex">\(\quad A \to B, \neg B \vdash \neg A\)</span></p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[A]_1$}       \AXC{$A \to B$}
+       \RightLabel{$\; {\to} E$}
+                \BIC{$B$}                  \AXC{$\neg B$}
+                    \RightLabel{$\; {\wedge} I$}
+                    \BIC{$B \wedge \neg B$}
+                    \RightLabel{$\; {\neg} I_1$}
+                    \UIC{$\neg A$}            
+\end{prooftree}
+\]</div>
+<p>You should be able to take this example and demonstrate the principle of reasoning by contraposition.
+This is the principle that <span class="arithmatex">\(A \to B\)</span> and <span class="arithmatex">\(\neg B \to \neg A\)</span> are equivalent statements.
+In terms of proofs this means demonstrating both
+<span class="arithmatex">\(A \to B \vdash \neg B \to \neg A\)</span>    and   <span class="arithmatex">\(\neg B \to \neg A \vdash A \to  B\)</span>.</p>
+<h3 id="negated-disjunction-examples-7-and-8">Negated disjunction examples: 7 and 8</h3>
+<p>Proof that <span class="arithmatex">\(\quad \neg (A \vee B) \vdash \neg A\)</span></p>
+<p>The strategy here should be familiar from previous examples.
+We want to conclude <span class="arithmatex">\(\neg A\)</span>, so we assume <span class="arithmatex">\(A\)</span> and manage to show that this leads
+to a contradiction.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[A]_1$}
+\RightLabel{$\; {\vee} Ir$}
+\UIC{$A \vee B$}
+                     \AXC{$\neg(A \vee B)$}
+                     \RightLabel{$\; {\wedge} I$}
+             \BIC{$(A \vee B) \wedge \neg ( A \vee B)$}
+             \RightLabel{$\; \neg I_1$}
+             \UIC{$\neg A$}
+\end{prooftree}
+\]</div>
+<p>The fact that from <span class="arithmatex">\(\neg(A \vee B)\)</span>
+we can deduce <span class="arithmatex">\(\neg A\)</span> is useful in some proofs we build later.
+To avoid having to write the whole proof again, we will call the derived rule
+<span class="arithmatex">\({\neg}{\vee}Er\)</span>. Written in the same format as the fundamental rules it looks like this:</p>
+<div class="arithmatex">\[\begin{prooftree}
+\AXC{$\neg(A \vee B)$}
+\RightLabel{$\;\;{\neg}{\vee}Er$}
+\UIC{$\neg A$}
+\end{prooftree}
+\]</div>
+<p>Proof that <span class="arithmatex">\(\quad \neg (A \vee B) \vdash \neg B\)</span></p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[B]_1$}
+\RightLabel{$\; {\vee} I\ell$}
+\UIC{$A \vee B$}
+                     \AXC{$\neg(A \vee B)$}
+                     \RightLabel{$\; {\wedge} I$}
+             \BIC{$(A \vee B) \wedge \neg ( A \vee B)$}
+             \RightLabel{$\; \neg I_1$}
+             \UIC{$\neg B$}
+\end{prooftree}
+\]</div>
+<p>Just as in the previous example, we can make a derived rule from this so that it can be reused
+easily.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$\neg(A \vee B)$}
+\RightLabel{$\;\;{\neg}{\vee}E\ell$}
+\UIC{$\neg B$}
+\end{prooftree}
+\]</div>
+<h3 id="example-9-double-negation-elimination">Example 9: double negation elimination</h3>
+<p>Proof that <span class="arithmatex">\(\quad \neg \neg A \vdash A, \quad\)</span><br />
+In this case the proof as it might be written in a less symbolic way is shown alongside.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[\neg A]_1$} \AXC{$\neg \neg A$}       
+       \RightLabel{$\;\;{\wedge}I$}
+       \BIC{$\neg A \wedge \neg \neg A$}
+       \RightLabel{$\;\;{\neg}E_1$}
+       \UIC{$A$}
+\end{prooftree}
+\qquad
+\begin{array}{l}
+\mathsf{We~ are~ given}\; \neg \neg A,\; \mathsf{suppose~ also~ that~ }\neg A.\\
+\mathsf{Then~ we~ have~ both}\; \neg A\; \mathsf{and} \;\neg \neg A.\\
+\mathsf{That~ is~ a~ contradiction;~ so} \; \neg A\; \mathsf{cannot~ hold,}\\
+\mathsf{ and~ we~ must~ have~} A.
+\end{array}
+\]</div>
+<div class="arithmatex">\[
+\begin{array}{l}
+\mathsf{This~ makes~ another~ useful~ derived~ rule.}\\
+\mathsf{It~ is~ called~ Double~ Negation~ Elimination,}\\
+\mathsf{which~ we~ abbreviate~ as~ DNE.}
+\end{array}
+\qquad
+\begin{prooftree}
+\AXC{$\neg \neg A$}
+\RightLabel{$\;\;\mathsf{DNE}$}
+\UIC{$A$}
+\end{prooftree}
+\]</div>
+<h3 id="example-10-double-negation-introduction">Example 10: double negation introduction</h3>
+<p>Proof that <span class="arithmatex">\(\quad A \vdash \neg \neg A \quad\)</span>
+This is not as much use in practice as the elimination of double negation (<span class="arithmatex">\(\mathsf{DNE}\)</span>).
+However, you should notice how
+the proof of the ability to introduce double negation has a very similar structure.
+In this case we use the negation introduction rule (<span class="arithmatex">\({\neg}I\)</span>); to establish
+<span class="arithmatex">\(\mathsf{DNE}\)</span> we used negation elimination (<span class="arithmatex">\({\neg}E\)</span>).</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$A$}              \AXC{$[\neg A]_1$}
+       \RightLabel{$\;\;{\wedge}I$}
+       \BIC{$ A \wedge \neg A$}
+       \RightLabel{$\;\;{\neg}I_1$}
+       \UIC{$\neg \neg A$}
+\end{prooftree}
+\qquad
+\begin{array}{l}
+\mathsf{We~ are~ given}\; A,\; \mathsf{suppose~ also~ that~ }\neg A.\\
+\mathsf{Then~ we~ have~ both}\;  A\; \mathsf{and} \;\neg A.\\
+\mathsf{That~ is~ a~ contradiction;~ so} \; \neg A\; \mathsf{cannot~ hold,}\\
+\mathsf{ and~ we~ must~ have~} \neg \neg A.
+\end{array}
+\]</div>
+<h3 id="example-11-excluded-middle-em">Example 11: excluded middle (EM)</h3>
+<p>Proof that <span class="arithmatex">\(\quad \vdash A \vee \neg A\)</span></p>
+<p>Excluded middle is so called because it expresses the idea that a logical
+statement is either true or its negation is true, and there is no possibility in the middle between
+these extremes. Excluded middle is sometimes called by the Latin name
+<strong>tertium non datur</strong>, which means that there is no third option.</p>
+<p>The idea behind the proof is to use contradiction.
+We assume that <span class="arithmatex">\(\neg(A \vee \neg A)\)</span> holds.
+We then use the earlier proofs which gave the
+derived rules <span class="arithmatex">\({\neg}{\vee}Er\)</span> and <span class="arithmatex">\({\neg}{\vee}E\ell\)</span>.
+These allow us to deduce both <span class="arithmatex">\(\neg A\)</span> and <span class="arithmatex">\(\neg \neg A\)</span>.
+This is a contradiction: both <span class="arithmatex">\(\neg A\)</span> and its negation.
+So our original assumption is impossible and we conclude that
+<span class="arithmatex">\(A \vee \neg A\)</span> holds.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$[\neg(A \vee \neg A)]_1$}
+\RightLabel{$\;\;{\neg}{\vee}Er$}
+\UIC{$\neg A$}                    \AXC{$[\neg(A \vee \neg A)]_1$}  
+                                  \RightLabel{$\;\;{\neg}{\vee}E\ell$}
+                                  \UIC{$ \neg \neg A$}
+            \RightLabel{$\;\;{\wedge}I$}
+            \BIC{$\neg A \wedge \neg \neg A$}
+            \RightLabel{$\;\;{\neg}E_1$}
+            \UIC{$A \vee \neg A$}
+\end{prooftree}
+\]</div>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Below are some suggestions for further practice in constructing natural deduction proofs.</p>
+<p>Solutions will be provided for all of these in Unit 4. If you have any questions before then, you can raise them in this week's webinar. In some cases there may be alternative solutions that are equally correct, so do not assume that if your answer is different then it is wrong.</p>
+<p>In each case you should construct a proof using the rules including labels for all steps so that you say which rule has been used and which assumptions (if any) have been discharged.</p>
+<ol>
+<li><span class="arithmatex">\(\vdash A \to A\)</span>.</li>
+<li><span class="arithmatex">\(B \vdash A \to B\)</span>.</li>
+<li><span class="arithmatex">\(\vdash B \to (A \to B\)</span>).</li>
+<li>These two to prove are already suggested in lesson 2 example 6: <span class="arithmatex">\(A \to B \vdash \neg B \to \neg A\)</span> and <span class="arithmatex">\(\neg B \to \neg A \vdash A \to B\)</span>.</li>
+<li><span class="arithmatex">\((A \to B) \to A \vdash B \to A\)</span>.</li>
+<li><span class="arithmatex">\(A \wedge B \vdash A \to B\)</span>.</li>
+<li><span class="arithmatex">\((A \to B) \to C \vdash A \to (B \to C)\)</span>.</li>
+<li><span class="arithmatex">\(A \vee B \vdash (A \to B) \vee (B \to A)\)</span>.</li>
+<li><span class="arithmatex">\(A \wedge B \vdash (A \to B) \wedge (B \to A)\)</span>.</li>
+<li><span class="arithmatex">\(\neg A \vdash A \to B\)</span>.</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03_01_Intro/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 1 What are proofs
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03_02Add_ND_FirstOrder/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 3 Natural deduction (FOL)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

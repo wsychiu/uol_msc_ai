@@ -1,0 +1,1578 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 4 Resolution (propositional) - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#propositional-resolution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 4 Resolution (propositional)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../03_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 4 Resolution (propositional)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 4 Resolution (propositional)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-resolution" class="md-nav__link">
+    Introduction to resolution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+    <nav class="md-nav" aria-label="Clauses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#horn-clauses-and-prolog" class="md-nav__link">
+    Horn clauses and prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-resolution" class="md-nav__link">
+    Clausal resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjunctive-normal-form" class="md-nav__link">
+    Conjunctive normal form
+  </a>
+  
+    <nav class="md-nav" aria-label="Conjunctive normal form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form" class="md-nav__link">
+    Clausal form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-refutation-procedure" class="md-nav__link">
+    Resolution refutation procedure
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolution refutation procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-the-resolution-rule" class="md-nav__link">
+    Properties of the resolution rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-resolution-refutation" class="md-nav__link">
+    Properties of resolution refutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-in-resolution-refutation" class="md-nav__link">
+    Examples in resolution refutation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-resolution" class="md-nav__link">
+    Introduction to resolution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    Literals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clauses" class="md-nav__link">
+    Clauses
+  </a>
+  
+    <nav class="md-nav" aria-label="Clauses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#horn-clauses-and-prolog" class="md-nav__link">
+    Horn clauses and prolog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-resolution" class="md-nav__link">
+    Clausal resolution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conjunctive-normal-form" class="md-nav__link">
+    Conjunctive normal form
+  </a>
+  
+    <nav class="md-nav" aria-label="Conjunctive normal form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form" class="md-nav__link">
+    Clausal form
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-refutation-procedure" class="md-nav__link">
+    Resolution refutation procedure
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolution refutation procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-the-resolution-rule" class="md-nav__link">
+    Properties of the resolution rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-resolution-refutation" class="md-nav__link">
+    Properties of resolution refutation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-in-resolution-refutation" class="md-nav__link">
+    Examples in resolution refutation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="propositional-resolution">Propositional resolution</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>
+<p>convert questions about deduction in propositional logic into clausal form so that resolution can be applied</p>
+</li>
+<li>
+<p>identify all possible ways to resolve one clause with another</p>
+</li>
+<li>
+<p>carry out the resolution refutation procedure on a given set of clauses.</p>
+</li>
+</ul>
+</div>
+<h2 id="introduction-to-resolution">Introduction to resolution</h2>
+<iframe title="The resolution rule" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/9714ffec98fc4857ba2efcf6ce3b18001d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26107460_4" target="_blank">Download transcript (PDF).</a></p>
+<h2 id="literals">Literals</h2>
+<p>A <strong>literal</strong> is a wff which is either an atom (an atomic proposition) or the negation of
+an atom.</p>
+<p>Atoms are also called <strong>positive literals</strong> and negated
+atoms are called <strong>negative literals</strong>.  </p>
+<p>This does not mean literals have to be a single letter. The wff <span class="arithmatex">\(\mathit{tuesday} \vee \mathit{friday}\)</span> contains two literals.</p>
+<div class="admonition question">
+<p class="admonition-title">Examples</p>
+<p>Which of the following wffs are positive literals, which are negative literals, and which are not literals?</p>
+<ol>
+<li><span class="arithmatex">\(a \vee b\)</span>       </li>
+<li><span class="arithmatex">\(a\)</span></li>
+<li><span class="arithmatex">\(\neg \neg b\)</span>  </li>
+<li><span class="arithmatex">\(a \to \neg b\)</span></li>
+<li><span class="arithmatex">\(\neg b\)</span>   </li>
+<li><span class="arithmatex">\(b\)</span></li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answers</summary><ol>
+<li><span class="arithmatex">\(a \vee b\)</span>   &nbsp; &nbsp; Not a literal    </li>
+<li><span class="arithmatex">\(a\)</span> &nbsp; &nbsp;A positive literal</li>
+<li><span class="arithmatex">\(\neg \neg b\)</span>  &nbsp; &nbsp;Not a literal (only allowed a single <span class="arithmatex">\(\neg\)</span> in a negative literal)</li>
+<li><span class="arithmatex">\(a \to \neg b\)</span> &nbsp; &nbsp;Not a literal</li>
+<li><span class="arithmatex">\(\neg b\)</span>   &nbsp; &nbsp;A negative literal</li>
+<li><span class="arithmatex">\(b\)</span> &nbsp; &nbsp;A positive literal</li>
+</ol>
+</details>
+<h2 id="clauses">Clauses</h2>
+<p>A <strong>clause</strong> is a set of literals. There are lots of different notations, but clauses will be denoted with square brackets. For example <span class="arithmatex">\([a, \neg a, b]\)</span> and <span class="arithmatex">\([a, \neg b]\)</span> are clauses.</p>
+<p>The reason for not writing these sets with { and } is that we later need sets of clauses and we will use { and } for those.</p>
+<p>A clause is used to stand for the disjunction of its elements. For example the clause <span class="arithmatex">\([a, \neg b]\)</span> is a useful way of referring to both the equivalent (but different) wffs <span class="arithmatex">\(a \vee \neg b\)</span> and <span class="arithmatex">\(\neg b \vee a\)</span>. The clause <span class="arithmatex">\([a, b, c]\)</span> refers to several different wffs including <span class="arithmatex">\(a \vee (b \vee c)\)</span>, and <span class="arithmatex">\((a \vee b) \vee c\)</span>, and <span class="arithmatex">\(b \vee (a \vee c)\)</span>.</p>
+<p>The empty clause, <span class="arithmatex">\([\,]\)</span> is allowed and is equivalent to false.</p>
+<h3 id="horn-clauses-and-prolog">Horn clauses and prolog</h3>
+<p>Horn clauses are clauses with at most one positive literal.
+In the table below, since <span class="arithmatex">\(A \to B\)</span> is equivalent to <span class="arithmatex">\(\neg A \vee B\)</span>, the Horn clauses on the left can be expressed as the wffs in the second column. Their Prolog expression appears in the third column.</p>
+<div class="arithmatex">\[
+\begin{array}{l|l|l|l}
+\mathsf{Horn ~clause}&amp; \mathsf{wff}&amp; \mathsf{Prolog~ expression }     &amp; \mathsf{this~is~a}\\
+\hline
+a \vee \neg b &amp; b \to a &amp; \texttt{ a :- b.} &amp; \mathsf{rule}\\
+\hline
+a &amp; \mathsf{true} \to a &amp; \texttt{ a.} &amp; \mathsf{fact}\\
+\hline
+\neg b \vee \neg a \vee c &amp; (b \wedge a ) \to c &amp; \texttt{ c :- b, a.} &amp; \mathsf{rule}\\
+\hline
+\neg a &amp; a \to \mathsf{false} &amp; \texttt{ :- a. } &amp; \mathsf{goal}\\
+\hline
+\end{array}
+\]</div>
+<p>Prolog implements resolution refutation.</p>
+<p>E.g. try to prove the goal <span class="arithmatex">\(a\)</span> from statements <span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(b \to a\)</span>.</p>
+<p>b.</p>
+<p>a :- b.</p>
+<p>:- a.</p>
+<p>You can put that in one file, but more usually you would have a file
+with the statements:</p>
+<p>b.</p>
+<p>a :- b.</p>
+<p>and then at the interactive prompt ?- type a</p>
+<h3 id="clausal-resolution">Clausal resolution</h3>
+<p>Resolution is an inference rule that lies at the heart of Prolog and
+many other systems for automating deduction. Here we give the
+propositional case of resolution.</p>
+<p>The following rule is applicable when <span class="arithmatex">\(\alpha\)</span> is an atom, and <span class="arithmatex">\(\Sigma_1\)</span> and <span class="arithmatex">\(\Sigma_2\)</span> are clauses.</p>
+<div class="arithmatex">\[
+\frac{[\alpha] \cup \Sigma_{1} \quad[\neg \alpha] \cup \Sigma_{2}}{\Sigma_{1} \cup \Sigma_{2}} \text { resolution }
+\]</div>
+<p>The atom <span class="arithmatex">\(\alpha\)</span> is called the <strong>atom resolved upon</strong> and the clause
+<span class="arithmatex">\(\Sigma_1 \cup \Sigma_2\)</span> is the <strong>resolvent</strong> of the clauses <span class="arithmatex">\([\alpha]\cup \Sigma_1\)</span> and <span class="arithmatex">\([\neg \alpha] \cup
+\Sigma_2\)</span>.</p>
+<div class="admonition question">
+<p class="admonition-title">Examples</p>
+<p>Where possible, carry out resolution on these pairs of clauses.</p>
+<ol>
+<li><span class="arithmatex">\([a, b]\)</span> and <span class="arithmatex">\([\neg b, c]\)</span></li>
+<li><span class="arithmatex">\([a]\)</span> and <span class="arithmatex">\([\neg a, b]\)</span></li>
+<li><span class="arithmatex">\([a, b, c, d]\)</span> and <span class="arithmatex">\([\neg a, b, e]\)</span></li>
+<li><span class="arithmatex">\([a, b, \neg c]\)</span> and <span class="arithmatex">\([a, \neg b, c, d]\)</span></li>
+<li><span class="arithmatex">\([a]\)</span> and <span class="arithmatex">\([\neg a]\)</span></li>
+<li><span class="arithmatex">\([a, \neg a]\)</span> and <span class="arithmatex">\([a, \neg a]\)</span></li>
+<li><span class="arithmatex">\([a, \neg b]\)</span> and <span class="arithmatex">\([b, \neg a]\)</span></li>
+</ol>
+</div>
+<details class="question"><summary>Select to reveal answers</summary><ol>
+<li>
+<p><span class="arithmatex">\([a,c]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\([b]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\([b,c,d,e]\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\([a,c,\neg c, d]\)</span> and <span class="arithmatex">\([a,b,\neg b, d]\)</span> can be obtained.</p>
+</li>
+<li>
+<p><span class="arithmatex">\([\;]\)</span></p>
+</li>
+<li>
+<p>Nothing new can be obtained. You just get <span class="arithmatex">\([a, \neg a]\)</span> again.</p>
+</li>
+<li>
+<p><span class="arithmatex">\([a,\neg a]\)</span> and <span class="arithmatex">\([b, \neg b]\)</span> are obtained</p>
+</li>
+</ol>
+</details>
+<h3 id="conjunctive-normal-form">Conjunctive normal form</h3>
+<iframe title="Clausal form (propositional case)" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/16848858ea40478aa52804dfb5269e4e1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26107492_4" target="_blank">Download transcript (PDF).</a></p>
+<p>Conjunctive Normal Form Resolution applies only to clauses. A clause is
+essentially a disjunction of literals, but not all wffs are of this
+form. What about <span class="arithmatex">\(a \to b\)</span> or <span class="arithmatex">\(a \vee (b \wedge \neg a)\)</span>? In fact every
+wff can be converted to an equivalent conjunction of clauses. This
+format is called CNF (Conjunctive Normal Form).</p>
+<p>Recall: equivalent means that in any given interpretation the two wffs will get the same truth value.</p>
+<h4 id="clausal-form">Clausal form</h4>
+<p>We saw CNF in unit 1 already, so we can translate a set of formulas into <strong>clausal form</strong>.</p>
+<p>We write</p>
+<div class="arithmatex">\[
+(a \vee b) \wedge (c \vee d) \wedge (a \vee d \vee e)
+\]</div>
+<p>in the form</p>
+<div class="arithmatex">\[
+\{\; [a, b],\;  [c, d],\;  [a,  d, e]\;\}
+\]</div>
+<p>We can use a set of sets like this to represent any propositional formula in a convenient
+form.</p>
+<p>The innermost sets are treated as disjunctions of their elements, the whole is treated as the conjunction of its elements.</p>
+<p><span class="arithmatex">\([\;]\)</span> (empty disjunction) represents false, and</p>
+<p><span class="arithmatex">\(\{\;\}\)</span> (empty conjunction) represents true, and</p>
+<p><span class="arithmatex">\(\{\;[\;]\;\}\)</span> is a non-empty conjunction representing false.</p>
+<h2 id="resolution-refutation-procedure">Resolution refutation procedure</h2>
+<iframe title="Resolution refutation procedure" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/e4e7bc0ac8544542a9becee27535eee51d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26106075_4" target="_blank">Download transcript (PDF).</a></p>
+<p>Given a finite set of wffs <span class="arithmatex">\(\Delta\)</span> and a wff <span class="arithmatex">\(f\)</span> carry out this
+procedure:</p>
+<ol>
+<li>
+<p>Convert <span class="arithmatex">\(\Delta\)</span> to CNF, giving a set of clauses, <span class="arithmatex">\(\Phi\)</span>.</p>
+</li>
+<li>
+<p>Convert the negation of <span class="arithmatex">\(f\)</span> to CNF giving <span class="arithmatex">\(\Psi\)</span>.</p>
+</li>
+<li>
+<p>Let <span class="arithmatex">\(\Gamma = \Phi \cup \Psi\)</span></p>
+</li>
+<li>
+<p>Iteratively apply resolution to the clauses in <span class="arithmatex">\(\Gamma\)</span> adding the
+    resolvents to <span class="arithmatex">\(\Gamma\)</span>.</p>
+</li>
+</ol>
+<p>Continue until no more resolution is possible or until the empty clause is a resolvent.</p>
+<h3 id="properties-of-the-resolution-rule">Properties of the resolution rule</h3>
+<p>Resolution is <strong>sound</strong> but not <strong>complete</strong> in the following sense:</p>
+<p>The statement 'resolution is sound' means that if we have any set
+<span class="arithmatex">\(\Delta\)</span> of clauses and we use the resolution rule to build a proof of a
+clause <span class="arithmatex">\(f\)</span> from <span class="arithmatex">\(\Delta\)</span> then <span class="arithmatex">\(\Delta\)</span> will logically entail <span class="arithmatex">\(f\)</span>.</p>
+<p>To justify the soundness of resolution, it's sufficient to show that if
+<span class="arithmatex">\([\alpha] \cup \Sigma_1\)</span> and <span class="arithmatex">\([\neg \alpha] \cup
+\Sigma_2\)</span> are true in some interpretation, then <span class="arithmatex">\(\Sigma_1 \cup
+\Sigma_2\)</span> is also true in that interpretation.</p>
+<p>The resolution rule is not complete as <span class="arithmatex">\(a \wedge b\)</span> logically entails
+<span class="arithmatex">\(a \vee b\)</span> but we cannot take the clauses <span class="arithmatex">\([a], [b]\)</span> and generate the
+clause <span class="arithmatex">\([a, b]\)</span> by resolution.</p>
+<h3 id="properties-of-resolution-refutation">Properties of resolution refutation</h3>
+<p>The properties of resolution refutation are:</p>
+<ul>
+<li>
+<p>If <span class="arithmatex">\(\Delta\)</span> logically entails <span class="arithmatex">\(f\)</span>, then the procedure will generate
+    the empty clause.
+    This property is <em>the completeness of resolution refutation</em>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\Delta\)</span> doesn't logically entail <span class="arithmatex">\(f\)</span> then the procedure will
+    terminate without producing the empty clause.</p>
+</li>
+</ul>
+<p>See example <span class="arithmatex">\(\Delta=\{a \wedge b\}\)</span>, and <span class="arithmatex">\(f=a \vee b\)</span> to understand the distinction between resolution rule alone and
+the resolution refutation procedure.</p>
+<h3 id="examples-in-resolution-refutation">Examples in resolution refutation</h3>
+<p>Now you can try the resolution refutation procedure with the examples below:</p>
+<p>Remember <span class="arithmatex">\(\Delta\)</span> is a set of formulas (a set of wffs), not a set of clauses, and <span class="arithmatex">\(f\)</span> is also an arbitrary
+formula.</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\Delta = \{a \wedge b\}\)</span>, and <span class="arithmatex">\(f = a \vee b\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta = \{a \to (b \vee c), a, \neg b\}\)</span>, and <span class="arithmatex">\(f = c\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta = \{a \vee b\}\)</span>, and <span class="arithmatex">\(f = a \wedge b\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta = \{ \}\)</span>, and <span class="arithmatex">\(f = a \to a\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta = \{a \to b, b \to \neg a\}\)</span>, and <span class="arithmatex">\(f = a \wedge \neg
+    a\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta = \{a \wedge \neg b, b \to c\}\)</span>, and <span class="arithmatex">\(f = c\)</span>.</p>
+</li>
+</ol>
+<details class="question"><summary>Select to reveal answer to example 1</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; nothing to do here <span class="arithmatex">\(a \wedge b\)</span> is already a conjunction of
+    disjunctions of literals.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as clauses: <span class="arithmatex">\(\{[a],[b]\}\)</span></p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(a \vee b\)</span> to <span class="arithmatex">\(\neg(a \vee b)\)</span></p>
+</li>
+<li>
+<p>put into CNF: <span class="arithmatex">\(\neg a \wedge  \neg b\)</span>. As clauses: <span class="arithmatex">\(\{[\neg a], [\neg b]\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[a],[b], [\neg a], [\neg b]\}\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([\neg a], [a]\)</span> yields <span class="arithmatex">\([\;]\)</span> empty clause</p>
+</li>
+<li>
+<p>Result makes sense: if both <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> hold, then at least one of them does</p>
+</li>
+</ul>
+</details>
+<details class="question"><summary>Select to reveal answer to example 2</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; we need to replace <span class="arithmatex">\(a \to (b \vee c)\)</span> by <span class="arithmatex">\(\neg a \vee b \vee c\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as clauses: <span class="arithmatex">\(\{[\neg a, b, c], [a], [\neg b]\}\)</span></p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(c\)</span> to <span class="arithmatex">\(\neg c\)</span></p>
+</li>
+<li>
+<p>put into CNF and express as  clauses: <span class="arithmatex">\(\{[\neg c]\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[\neg a, b, c], [a], [\neg b], [\neg c]\}\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([\neg a, b, c], [a]\)</span> yields <span class="arithmatex">\([b, c]\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([b, c], [\neg b]\)</span> yields <span class="arithmatex">\([c]\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([c], [\neg c]\)</span> yields <span class="arithmatex">\([\;]\)</span></p>
+</li>
+<li>
+<p>Result makes sense: if  <span class="arithmatex">\(a\)</span> implies <span class="arithmatex">\(b\)</span> or <span class="arithmatex">\(c\)</span> but <span class="arithmatex">\(b\)</span> does not hold, then <span class="arithmatex">\(c\)</span> must.</p>
+</li>
+</ul>
+</details>
+<details class="question"><summary>Select to reveal answer to example 3</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; nothing to do this time         </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as clauses: <span class="arithmatex">\(\{[a, b]\}\)</span>    </p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(a \wedge b\)</span> to <span class="arithmatex">\(\neg (a \wedge b)\)</span>    </p>
+</li>
+<li>
+<p>put into CNF and express as  clauses: <span class="arithmatex">\(\{[\neg a, \neg b]\}\)</span>    </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[a, b], [\neg a, \neg b]\}\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([a, b], [\neg a, \neg b]\)</span> yields <span class="arithmatex">\([b, \neg b]\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([a, b], [\neg a, \neg b]\)</span> yields <span class="arithmatex">\([a, \neg a]\)</span></p>
+</li>
+<li>
+<p>We end up with a set of clauses: <span class="arithmatex">\([a, b], [\neg a, \neg b], [b, \neg b], [a, \neg a]\)</span>
+        and nothing further can be generated. We conclude that <span class="arithmatex">\(a \vee b\)</span> does not entail <span class="arithmatex">\(a \wedge b\)</span>.</p>
+</li>
+<li>
+<p>Result makes sense: if  we only know <span class="arithmatex">\(a\)</span> or  <span class="arithmatex">\(b\)</span> then there is no reason why
+        we must then know that both <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>.</p>
+</li>
+</ul>
+</details>
+<details class="question"><summary>Select to reveal answer to example 4</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; nothing to do this time as it is the empty set of formulas.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as a set of clauses: <span class="arithmatex">\(\{\;\}\)</span>. There are no clauses. Do not confuse this with having the empty clause.</p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(a \to a\)</span> to <span class="arithmatex">\(\neg (a \to a)\)</span></p>
+</li>
+<li>
+<p>put into CNF: <span class="arithmatex">\(a \wedge \neg a\)</span> and express as  clauses: <span class="arithmatex">\(\{[a],  [\neg a]\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[a],  [\neg a]\}\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([a], [\neg a]\)</span> yields <span class="arithmatex">\([\;]\)</span></p>
+</li>
+<li>
+<p>We got the empty clause, so the empty set of formulas entails <span class="arithmatex">\(a \to a\)</span></p>
+</li>
+<li>
+<p>Result makes sense: <span class="arithmatex">\(a \to a\)</span> is a tautology. It always holds and we need not
+        make any assumptions to ensure it holds.</p>
+</li>
+</ul>
+</details>
+<details class="question"><summary>Select to reveal answer to example 5</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; <span class="arithmatex">\(a \to  b\)</span> is <span class="arithmatex">\(\neg a \vee b\)</span>; <span class="arithmatex">\(b \to \neg a\)</span> is
+<span class="arithmatex">\(\neg b \vee \neg a\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as clauses: <span class="arithmatex">\(\{[\neg a, b],[\neg b, \neg a]\}\)</span></p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(a \wedge \neg a\)</span> to <span class="arithmatex">\(\neg(a \wedge \neg a)\)</span></p>
+</li>
+<li>
+<p>put into CNF: <span class="arithmatex">\(\neg a \vee  a\)</span>. As clauses: <span class="arithmatex">\(\{[\neg a, a]\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[\neg a, b],[\neg b, \neg a], [\neg a, a]\}\)</span></p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([\neg b, \neg a], [\neg a, a]\)</span> yields <span class="arithmatex">\([\neg b, \neg a]\)</span>
+(nothing new)</p>
+</li>
+<li>
+<p>Resolve <span class="arithmatex">\([\neg a, b], [\neg b, \neg a]\)</span> yields <span class="arithmatex">\([\neg a]\)</span></p>
+</li>
+<li>
+<p>Nothing further can be generated: conclude not entailed</p>
+</li>
+<li>
+<p>This is what we expect: <span class="arithmatex">\(\Delta\)</span> is satisfiable (put <span class="arithmatex">\(a\)</span> false) but
+<span class="arithmatex">\(a \wedge \neg a\)</span> is a contradiction.</p>
+</li>
+</ul>
+</details>
+<details class="question"><summary>Select to reveal answer to example 6</summary><ul>
+<li>
+<p>CNF for <span class="arithmatex">\(\Delta\)</span>; <span class="arithmatex">\(a \wedge \neg b\)</span> is in CNF; <span class="arithmatex">\(b \to c\)</span> is <span class="arithmatex">\(\neg b \vee c\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Delta\)</span> as clauses: <span class="arithmatex">\(\{[a],[\neg b], [\neg b, c]\}\)</span></p>
+</li>
+<li>
+<p>negate <span class="arithmatex">\(c\)</span> to <span class="arithmatex">\(\neg c\)</span>; as clauses: <span class="arithmatex">\(\{[\neg c]\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Gamma = \{[a],[\neg b], [\neg b, c], [\neg c]\}\)</span></p>
+</li>
+<li>
+<p>can only resolve <span class="arithmatex">\([\neg b, c]\)</span> against <span class="arithmatex">\([\neg c]\)</span></p>
+</li>
+<li>
+<p>we get <span class="arithmatex">\(\{[a],[\neg b], [\neg b, c], [\neg c]\}\)</span> and can go no further</p>
+</li>
+<li>
+<p>Conclude: formula is not entailed.</p>
+</li>
+</ul>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 4, you can test your knowledge in a formative exercise.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit 3 Lesson 4'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03_02Add_ND_FirstOrder/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 3 Natural deduction (FOL)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../03_04_FirstOrderResolution/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 5 Resolution (FOL)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

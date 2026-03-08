@@ -1,0 +1,1488 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 4 Tableau method for FOL - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-4-the-tableau-method" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 4 Tableau method for FOL
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../02_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 4 Tableau method for FOL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 4 Tableau method for FOL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-key-features" class="md-nav__link">
+    Overview of key features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau-method-for-propositional-logic" class="md-nav__link">
+    Tableau method for propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tableau-method-for-first-order-logic" class="md-nav__link">
+    The Tableau method for first order logic
+  </a>
+  
+    <nav class="md-nav" aria-label="The Tableau method for first order logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-existential-quantifier-rule" class="md-nav__link">
+    The existential quantifier rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-universal-quantifier-rule" class="md-nav__link">
+    The universal quantifier rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-key-features" class="md-nav__link">
+    Overview of key features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tableau-method-for-propositional-logic" class="md-nav__link">
+    Tableau method for propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tableau-method-for-first-order-logic" class="md-nav__link">
+    The Tableau method for first order logic
+  </a>
+  
+    <nav class="md-nav" aria-label="The Tableau method for first order logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-existential-quantifier-rule" class="md-nav__link">
+    The existential quantifier rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-universal-quantifier-rule" class="md-nav__link">
+    The universal quantifier rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-4-the-tableau-method">Lesson 4: The tableau method</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning Outcomes</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>Use the tableau method to determine if a formula <span class="arithmatex">\(\varphi\)</span> is satisfiable,
+  and, if so, find a model for it.</li>
+<li>Use the tableau method to determine whether a claimed logical implication
+  <span class="arithmatex">\(\alpha_1, \ldots, \alpha_n \vDash \beta\)</span> holds.</li>
+<li>Explain the key capabilities and limitations of the tableau method.</li>
+</ul>
+<p>You will learn first how to do these for propositional logic, and then for
+first order logic.</p>
+</div>
+<h2 id="overview-of-key-features">Overview of key features</h2>
+<ul>
+<li>The tableau method is a method for determining logical entailment</li>
+<li>Versions of the technique work for propositional logic, first order logic, as well as description logics as used in the Semantic Web,
+          and other modal logics, etc, etc</li>
+<li>It's a <strong>refutation</strong> method: to show <span class="arithmatex">\(\Gamma \vDash \alpha\)</span> we show <span class="arithmatex">\(\Gamma \cup \{\neg \alpha\}\)</span> unsatisfiable.</li>
+<li>Suitable for implementation</li>
+<li>Gives <strong>Decision Procedure</strong> for propositional logic
+         and <strong>Semi-Decision Procedure</strong> for first order logic</li>
+</ul>
+<p>The idea is indicated by this diagram. This shows five stages in which a tree is constructed
+by growing downwards from the root.</p>
+<details class="info"><summary>Select for full text description</summary><p>This diagram shows five stages in which a tree is constructed by growing downwards from the root.</p>
+<p>The first stage has three nodes aligned vertically.</p>
+<p>The second stage has four nodes aligned vertically and the first node has a green tick beside it.</p>
+<p>The third stage has four nodes aligned vertically but the fourth node branches downwards to the left and right into two separate nodes. The first and seconds nodes have green ticks beside them.</p>
+<p>The fourth stage has four nodes aligned vertically. The fourth node branches off into a fifth and sixth node, both of which branch off again to make a further four nodes. The first, second and third nodes have green ticks beside them.</p>
+<p>The fifth stage has four nodes aligned vertically, all of which have green ticks beside them. The fourth node branches off to nodes on the left- and right-hand side. Secondary branches split off from these nodes. Each of these has three further vertically aligned nodes growing downwards, forming four more branches of nodes in total. The nodes at the bottom of the second and third of these branches has a red cross underneath.</p>
+</details>
+<p>Nodes are labelled by formulas of the logic.
+At each stage nodes are processed to generate new nodes (formulas).
+The tree may branch as a result of this processing.
+When a node has been used as much as possible to generate new nodes
+a tick, <span class="arithmatex">\(\checkmark\)</span>, (shown green in the diagram) is added to denote this.
+When it is impossible to extend a path any further it is said to be <strong>closed</strong>
+and this is shown in the diagram by a red cross (<span class="arithmatex">\(\times\)</span>).</p>
+<p>We are interested in paths from the root to leaves.
+Each path, as it grows, is an attempt to find a way to make all the
+formulas on the path satisfiable. The attempts to do this proceed by
+reducing the task of making complicated formulas satisfiable to sub-tasks of making
+simpler formulas satisfiable.
+If a path gets closed, this means that particular attempt to make all the formulas on it satisfiable
+has failed. If all paths get closed then there is no way to make all the formulas we started with satisfiable.
+If some path is open (not closed) but we cannot develop the path any further then we have found
+a way to make all the formulas we started with satisfiable.</p>
+<p>In the case of first order logic, but not in propositional logic,
+it is possible that the process of growing the tree does not terminate.</p>
+<h2 id="tableau-method-for-propositional-logic">Tableau method for propositional logic</h2>
+<p>The tableau method for propositional logic is best understood by seeing how
+the trees are constructed. There is a series of videos to show this.</p>
+<ol>
+<li>
+<p>In this video the idea of the tableau method is introduced with two simple examples. The key thing in this video
+is: how to use the method to find ways of making a propositional formula satisfiable.
+ <br />
+<iframe title="Tableau method part 1" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/2727274493394783bd67bd435aaf1c931d" allowfullscreen msallowfullscreen
+    allow="fullscreen"></iframe>
+</p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25939192_4" target="_blank">Download transcript (PDF).</a></p>
+</li>
+<li>
+<p>In this video we see how to determine whether a propositional formula is a tautology. The key thing in this video
+is: how to use the method to show <span class="arithmatex">\(\varphi\)</span> is a tautology by
+showing that <span class="arithmatex">\(\neg \varphi\)</span> is unsatisfiable.
+ <br />
+<iframe title="Tableau method part 2" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/62bf7a79ffa749af97dc59ffd90aaf171d" allowfullscreen msallowfullscreen
+    allow="fullscreen"></iframe>
+</p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25939193_4" target="_blank">Download transcript (PDF).</a></p>
+</li>
+<li>
+<p>In this video we see another example of determining whether a propositional formula is a tautology.
+The key thing in this video is: trying  to show <span class="arithmatex">\(\varphi\)</span> is a tautology but concluding it is not because
+<span class="arithmatex">\(\neg \varphi\)</span> is  not unsatisfiable.
+ <br />
+<iframe title="Tableau method part 3" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/7dd414685a28463a9f5d004d2151ca541d" allowfullscreen msallowfullscreen
+    allow="fullscreen"></iframe>
+</p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25939194_4" target="_blank">Download transcript (PDF).</a></p>
+</li>
+<li>
+<p>In this video we see the full set of rules for dealing with propositional tableau.</p>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$A \vee B$}
+\UIC{$A \mid B$}
+\end{prooftree}
+\qquad \quad
+\begin{prooftree}
+\AXC{$\neg(A \vee B)$}
+\UIC{$\begin{array}{c}\neg A\\ \neg B\end{array}$}
+\end{prooftree}
+\qquad\quad
+\begin{prooftree}
+\AXC{$A \wedge B$}
+\UIC{$\begin{array}{c}A\\ B\end{array}$}
+\end{prooftree}
+\qquad\quad
+\begin{prooftree}
+\AXC{$\neg(A \wedge B)$}
+\UIC{$\neg  A \mid  \neg B$}
+\end{prooftree}
+\]</div>
+<div class="arithmatex">\[
+\begin{prooftree}
+\AXC{$A \to B$}
+\UIC{$\neg A \mid B$}
+\end{prooftree}
+\qquad \quad
+\begin{prooftree}
+\AXC{$\neg(A \to B)$}
+\UIC{$\begin{array}{c}A\\ \neg B\end{array}$}
+\end{prooftree}
+\qquad\quad
+\begin{prooftree}
+\AXC{$\neg \neg A$}
+\UIC{$A$}
+\end{prooftree}
+\]</div>
+<p><iframe title="Tableau method part 4" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/54ffb1866c964174b3961d62dcc6f9461d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25939195_4" target="_blank">Download transcript (PDF).</a></p>
+</li>
+<li>
+<p>In this video we see how to determine whether a logical entailment (also called a logical implication)
+holds or not. This is demonstrated with the following example.</p>
+<div class="arithmatex">\[\mathsf{Does~ this~ entailment~ hold?~}\quad
+  A \rightarrow B, B \rightarrow C \vDash A \rightarrow C\]</div>
+<p>Three stages in the tree developed in the video are shown in the next image.</p>
+<details class="info"><summary>Select for full text description</summary><p>Three tableau derivation trees. From left to right we have the following trees.</p>
+<p><strong>First tree description</strong></p>
+<p>Line one: A implies B. Formula followed by a green flag.</p>
+<p>Line two: B implies C.</p>
+<p>Line three: it is not the case that, open bracket, A implies C, closed bracket.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong> Line four: it is not the case that A.</p>
+<p><strong>Right branch description</strong> Line four: B.</p>
+<p><strong>Second tree description</strong></p>
+<p>Line one: A implies B. Formula followed by a green flag.</p>
+<p>Line two: B implies C. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that, open bracket, A implies C, closed bracket.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong> Line four: it is not the case that A.</p>
+<p>From this point the left branch splits into two branches, the left-left branch and the left-right branch</p>
+<p><strong>Left-left branch description</strong> Line five: it is not the case that B.</p>
+<p><strong>Left-right branch description</strong> Line five: C.</p>
+<p><strong>Right branch description</strong> Line four: B.</p>
+<p>From this point the right branch splits into two branches, the right-left branch and the right-right branch</p>
+<p><strong>Right-left branch description</strong> Line five: it is not the case that B. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right-right branch description</strong> Line five: C.</p>
+<p><strong>Third tree description</strong></p>
+<p>Line one: A implies B. Formula followed by a green flag.</p>
+<p>Line two: B implies C. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that, open bracket, A implies C, closed bracket. Formula followed by a green flag.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong> Line four: it is not the case that A.</p>
+<p>From this point the left branch splits into two branches, the left-left branch and the left-right branch</p>
+<p><strong>Left-left branch description</strong></p>
+<p>Line five: it is not the case that B.</p>
+<p>Line six: A.</p>
+<p>Line seven: It is not the case that C. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Left-right branch description</strong></p>
+<p>Line five: C.</p>
+<p>Line six: A.</p>
+<p>Line seven: It is not the case that C. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right branch description</strong></p>
+<p>Line four: B.</p>
+<p>From this point the right branch splits into two branches, the right-left branch and the right-right branch</p>
+<p><strong>Right-left branch description</strong> Line five: it is not the case that B. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right-right branch description</strong></p>
+<p>Line five: C.</p>
+<p>Line six: A.</p>
+<p>Line seven: It is not the case that C. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+</details>
+<p><iframe title="Tableau method part 5" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/3114ffa6fa42458d9cdcd79b4581af951d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-25939196_4" target="_blank">Download transcript (PDF).</a></p>
+</li>
+</ol>
+<p>After you have watched the videos, try the following exercises.</p>
+<div class="admonition exercises">
+<p class="admonition-title">Exercises</p>
+<p>Use the Tableau method to determine whether these entailments are valid.</p>
+<ol>
+<li><span class="arithmatex">\(A \rightarrow B \vDash \neg B \rightarrow \neg A\)</span></li>
+<li><span class="arithmatex">\(\vDash B \rightarrow B\)</span></li>
+<li><span class="arithmatex">\(A \rightarrow B, \neg B \rightarrow C \vDash C \rightarrow A\)</span></li>
+<li><span class="arithmatex">\(A \rightarrow (B \rightarrow C), (A \rightarrow B) \rightarrow B \vDash (A \rightarrow B) \rightarrow C\)</span></li>
+<li><span class="arithmatex">\(A \wedge \neg A \vDash (B \rightarrow C) \rightarrow (C \rightarrow B)\)</span></li>
+</ol>
+</div>
+<h2 id="the-tableau-method-for-first-order-logic">The Tableau method for first order logic</h2>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>
+<p>The basic idea is the same as in the propositional case:</p>
+<ul>
+<li>construct a tree by processing nodes to add new parts to the tree,</li>
+<li>If all paths become closed then the initial sentences are unsatisfiable.</li>
+</ul>
+</li>
+<li>
+<p>For first order logic there are two new rules: for <span class="arithmatex">\(\forall\)</span> and for <span class="arithmatex">\(\exists\)</span>.</p>
+</li>
+<li>
+<p>Nodes of the form <span class="arithmatex">\(\forall x \; \Phi\)</span> never get marked as finished with
+  &mdash; they can continue adding new parts to the tree and this
+  can lead to infinite trees.</p>
+</li>
+<li>
+<p>If the initial sentences are unsatisfiable then the process terminates with
+  all paths closed. But a satisfiable set of sentences
+  may lead to a tree that grows indefinitely.</p>
+</li>
+</ul>
+<h3 id="the-existential-quantifier-rule">The existential quantifier rule</h3>
+<p>Suppose we have a node labelled <span class="arithmatex">\(\exists x \, \Phi\)</span> where <span class="arithmatex">\(x\)</span> is free in <span class="arithmatex">\(\Phi\)</span>,
+and suppose that the node is on an open  path containing constants <span class="arithmatex">\(c_1, c_2, \ldots, c_n\)</span>.</p>
+<p>Then we:</p>
+<ol>
+<li>
+<p>add a new node labelled by <span class="arithmatex">\(\Phi [ x / c_{n+1} ]\)</span> where <span class="arithmatex">\(c_{n+1}\)</span> is a new constant
+not in <span class="arithmatex">\(\{c_1, c_2, \ldots, c_n\}\)</span>, and</p>
+</li>
+<li>
+<p>mark the node labelled <span class="arithmatex">\(\exists x \, \Phi\)</span> as used.</p>
+</li>
+</ol>
+<p>Note that a node of the form <span class="arithmatex">\(\neg \exists x \Phi\)</span> generates a new one labelled <span class="arithmatex">\(\forall x \neg \Phi\)</span>
+which is then dealt with by the <span class="arithmatex">\(\forall\)</span> rule (see later).</p>
+<div class="admonition example">
+<p class="admonition-title">Example for <span class="arithmatex">\(\exists\)</span> rule</p>
+<p>Determine whether
+<span class="arithmatex">\(\vDash \exists x P(x,a) \rightarrow \forall x P(a,x)\)</span> (where <span class="arithmatex">\(a\)</span> is a constant).   </p>
+<p>The image below shows three stages in the construction of the tree.</p>
+<details class="info"><summary>Select for full text description</summary><p>Three tableau derivation trees. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants. From left to right we have the following trees.</p>
+<p><strong>First tree description.</strong></p>
+<p>Line one: it is not the case that, open bracket, exists x such that P, open bracket x comma a, closed brackets, implies that for all x, P, open bracket, a comma x, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: exists x such that P, open bracket, x comma a, closed bracket.
+Line three: it is not the case that for all x, P, open bracket, a comma x, closed bracket.</p>
+<p><strong>Second tree description.</strong></p>
+<p>Line one: it is not the case that, open bracket, exists x such that P, open bracket, x comma a, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: exists x such that P, open bracket, x comma a, closed bracket. Formula followed by a green flag.
+Line three: it is not the case that for all x, P, open bracket, a comma x, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: P, open bracket, b comma a.
+Line five: exists x such that it is not the case that P, open bracket, a comma x.</p>
+<p><strong>Third tree description.</strong></p>
+<p>Line one: it is not the case that, open bracket, exists x such that P, open bracket, x comma a, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: exists x such that P, open bracket, x comma a, closed bracket. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that for all x, P, open bracket, a comma x, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: P, open bracket, b comma a.</p>
+<p>Line five: exists x such that it is not the case that P, open bracket, a comma x. Formula followed by a green flag.</p>
+<p>Line six: it is not the case that P, open bracket, a comma c.</p>
+</details>
+<div class="arithmatex">\[
+\begin{array}{ccccc}
+ \mathsf{Stage 1} &amp;  \qquad &amp;
+\mathsf{Stage 2} &amp;  \quad &amp;
+\mathsf{Stage 3} \\[1ex]
+\mathsf{The~ formula~ at~ the~ top} &amp;&amp;
+\mathsf{From~} \exists x P(x,a) \mathsf{~we} &amp;&amp;\mathsf{From~} \exists x \neg P(a,x) \mathsf{~we}  \\
+\mathsf{has~ the~ form~} \neg (A \to B).&amp;&amp; \mathsf{introduce~ constant~} b,&amp;&amp; \mathsf{introduce~ constant~} c,\\
+\mathsf{Treat~ just~ as~ in~ the~} &amp;&amp; \mathsf{and~ add~ node~} P(b,a). &amp; &amp; \quad\mathsf{and~ add~ node~} \neg P(a,c).\quad\\
+\mathsf{propositional~ case.}&amp;&amp;\mathsf{Expand~} \neg \forall \ldots \mathsf{~to~} \exists \neg \ldots &amp;&amp;\\
+\end{array}
+\]</div>
+<p>After stage 3, the tree cannot be expanded further but has an open path.</p>
+<p>This means the sentence
+<span class="arithmatex">\({\neg (\exists x P(x,a) \rightarrow \forall x P(a, x))}\)</span>
+is satisfiable. The path shows one way to satisfy the sentence. We can have the domain
+<span class="arithmatex">\(\{1, 2, 3\}\)</span> and interpret the constants <span class="arithmatex">\(a, b, c\)</span> as <span class="arithmatex">\(1, 2, 3\)</span> respectively,
+and interpret <span class="arithmatex">\(P\)</span> as <span class="arithmatex">\(\{(2,1)\}\)</span>.</p>
+</div>
+<h3 id="the-universal-quantifier-rule">The universal quantifier rule</h3>
+<p>Suppose we have a node labelled <span class="arithmatex">\(\forall x \, \Phi\)</span> where <span class="arithmatex">\(x\)</span> is free in <span class="arithmatex">\(\Phi\)</span>,
+and suppose that the node is on an open path containing constants <span class="arithmatex">\(c_1, c_2, \ldots, c_n\)</span>.
+If there are no constants on the path then we introduce a new one (ok because domain must be non-empty).</p>
+<p>Then we:     </p>
+<ul>
+<li>add every one of the sentences <span class="arithmatex">\(\Phi [x/c_i]\)</span> for <span class="arithmatex">\(i = 1, 2, \ldots, n\)</span>
+  to the end of the path (unless it is already on the path).</li>
+</ul>
+<p>Note that a node of the form <span class="arithmatex">\(\neg \forall x \Phi\)</span> generates a new one labelled <span class="arithmatex">\(\exists x \neg \Phi\)</span>
+which is then dealt with by the <span class="arithmatex">\(\exists\)</span> rule (see earlier).</p>
+<div class="admonition example">
+<p class="admonition-title">Example for <span class="arithmatex">\(\forall\)</span> rule</p>
+<p>Showing that
+<span class="arithmatex">\(\vDash \exists x \forall y P(x,y) \rightarrow \forall y \exists x P(x,y)\)</span></p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau derivation tree. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that, open bracket, exists x such that for all y P, open bracket, x comma y, closed bracket, implies that for all y exists x such that P, open bracket, x comma y, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: exists x such that for all y, P, open bracket, x comma y, closed bracket. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that for all y exists x such that P, open bracket, x comma y, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: for all y, P, open bracket, a comma y. Formula labelled as number 1.</p>
+<p>Line five: P, open bracket, a comma a. Formula followed by writing “from 1”, i.e. the formula in line five follows from the formula labelled as number 1.</p>
+<p>Line six: exists y such that it is not the case that exists x such that P, open bracket, x comma y, closed bracket. Formula followed by a green flag.</p>
+<p>Line seven: it is not the case that exists x such that P, open bracket, x comma b, closed bracket. Formula followed by a green flag.</p>
+<p>Line eight: for all x it is not the case that P, open bracket, x comma b, closed bracket. Formula labelled as number 2.</p>
+<p>Line nine: P, open bracket, a comma b, closed bracket. Formula followed by writing “from 1”.</p>
+<p>Line ten: it is not the case that P, open bracket, a comma b, closed bracket. Formula followed by writing “from 2”. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+</details>
+</div>
+<h3 id="examples">Examples</h3>
+<p>In each of the following examples the tree has been drawn out for you.
+You should make sure you understand how each step has been made.</p>
+<div class="admonition example">
+<p class="admonition-title">Example 1. <span class="arithmatex">\(\vDash \exists y \forall x P(x,y)\)</span></p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau derivation tree. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that exists y such that for all x, P open bracket, x comma y, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: for all y it is not the case that for all x, P, open bracket, x comma y, closed bracket.  </p>
+<p>Line three: it is not the case that for all x, P, open bracket, x comma a. Formula followed by a green flag.</p>
+<p>Line four: exists x such that it is not the case that P, open bracket, x comma a, closed bracket. Formula followed by a green flag.</p>
+<p>Line five: it is not the case that P, open bracket, b comma a, closed bracket.</p>
+<p>Line six: it is not the case that for all x, P, open bracket, x comma b, closed bracket. Formula followed by a green flag. Line seven: exists x such that it is not the case that P, open bracket, x comma b, closed bracket. Formula followed by a green flag.</p>
+<p>Line eight: it is not the case that P, open bracket, b comma c, closed bracket. Formula followed by three vertical dots.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 2. <span class="arithmatex">\(\vDash \forall y \exists x P(x,y)\rightarrow \exists x \forall y P(x,y)\)</span>.</p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau derivation tree. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that, open bracket, for all y exists x such that P, open bracket, x comma y, closed bracket, implies that exists x such that for all y, P, open bracket, x comma y, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: for all y exists x such that P, open bracket, x comma y, closed bracket. Formula labelled as number 1.</p>
+<p>Line three: it is not the case that exists x such that for all y, P, open bracket, x comma y, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: for all x exists y such that it is not the case that P, open bracket, x comma y, closed bracket. Formula labelled as number 2.</p>
+<p>Line five: exists x such that P, open bracket, x comma a, closed bracket. Formula followed by a green flag and by the writing “from 1”.</p>
+<p>Line six: P, open bracket, b comma a, closed bracket.</p>
+<p>Line seven: exists y such that it is not the case that P, open bracket, a comma y, closed bracket. Formula followed by a green flag and by the writing “from 2”.</p>
+<p>Line eight: it is not the case that P, open bracket, a comma c, closed bracket. Formula followed by three vertical dots.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 3. <span class="arithmatex">\(\vDash \exists x (Q(x) \vee R(x)) \rightarrow (\exists x Q(x) \vee \exists x R(x))\)</span></p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau tree derivation. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that, open bracket, exists x such that, open bracket, Q, open bracket, x, closed bracket, or R, open bracket, x, closed bracket, closed bracket, implies that, open bracket, exists x such that Q, open bracket, x, closed bracket, or exists x such that R, open bracket, x, closed bracket, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line two: exists x such that, open bracket, Q, open bracket, x, closed bracket, or R, open bracket, x, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that, open bracket, exists x such that Q, open bracket, x, closed bracket, or exists x such that R, open bracket, x, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: Q, open bracket, a, closed bracket, or R, open bracket, a, closed bracket. Formula followed by a green flag.</p>
+<p>Line five: it is not the case that exists x such that Q, open bracket, x, closed bracket. Formula followed by a green flag.</p>
+<p>Line six: it is not the case that exists x such that R, open bracket, x, closed bracket. Formula followed by a green flag.</p>
+<p>Line seven: for all x it is not the case that Q, open bracket, x, closed bracket. Line eight: for all x it is not the case that R, open bracket, x, closed bracket.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong></p>
+<p>Line nine-left branch: Q, open bracket, a, closed bracket.</p>
+<p>Line ten-left branch: it is not the case that Q, open bracket, a, closed bracket.</p>
+<p>A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right branch description</strong></p>
+<p>Line nine-right branch: R, open bracket, a, closed bracket.</p>
+<p>Line ten-right branch: it is not the case that R, open bracket, a, closed bracket.</p>
+<p>A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 4. <span class="arithmatex">\(\vDash \exists x (Q(x) \wedge R(x)) \rightarrow (\exists x Q(x) \wedge \exists x R(x))\)</span></p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau derivation tree. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that, open bracket, exists x such that, open bracket, Q, open bracket, x, closed bracket, and R, open bracket, x, closed bracket, closed bracket, implies that, open bracket, exists x such that Q, open bracket, x, closed bracket, and exists x such that R, open bracket, x, closed bracket, closed bracket, closed bracket.</p>
+<p>Line two: exists x such that, open bracket, Q, open bracket, x, closed bracket, and R, open bracket, x, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that, open bracket, exists x such that Q, open bracket, x, closed bracket, and exists x such that R, open bracket, x, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: Q, open bracket, a, closed bracket, and R, open bracket, a, closed bracket. Formula followed by a green flag.</p>
+<p>Line five: Q, open bracket, a, closed bracket.</p>
+<p>Line six: R, open bracket, a, closed bracket.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong></p>
+<p>Line seven-left branch: it is not the case that exists x such that Q, open bracket, x, closed bracket. Formula followed by a green flag.</p>
+<p>Line eight-left branch: for all x it is not the case that Q, open bracket, x, closed bracket.</p>
+<p>Line nine-left branch: it is not the case that Q, open bracket, a, closed bracket. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right branch description</strong></p>
+<p>Line seven-right branch: it is not the case that exists x such that R, open bracket, x, closed bracket. Formula followed by a green flag.</p>
+<p>Line eight-right branch: for all x it is not the case that R, open bracket, x, closed bracket.</p>
+<p>Line nine-right branch: it is not the case that R, open bracket, a, closed bracket. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example 5. <span class="arithmatex">\(\vDash (\exists x Q(x) \wedge \exists x R(x)) \rightarrow \exists x (Q(x) \wedge R(x))\)</span></p>
+<details class="info"><summary>Select for full text description</summary><p>One tableau derivation tree. Capital letter P is a binary predicate, capital letters Q and R are unary predicates, lower case letters x and y are variables, and lower case letters a, b and c are constants.</p>
+<p>Line one: it is not the case that, open bracket, open bracket, exists x such that Q, open bracket, x, closed bracket, and exists x such that R, open bracket, x, closed bracket, closed bracket, implies that exists x such that, open bracket, Q, open bracket, x, closed bracket, and R, open bracket, x, closed bracket, closed bracket, closed bracket.</p>
+<p>Line two: exists x such that Q, open bracket, x, closed bracket, and exists x such that R, open bracket, x, closed bracket. Formula followed by a green flag.</p>
+<p>Line three: it is not the case that exists x such that, open bracket, Q, open bracket, x, closed bracket, and R, open bracket, x closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>Line four: exists x such that Q, open bracket, x, closed bracket. Formula followed by green flag.</p>
+<p>Line five: exists x such that R, open bracket, x, closed bracket. Formula followed by green flag.</p>
+<p>Line six: Q, open bracket, a, closed bracket.</p>
+<p>Line seven: R, open bracket, b, closed bracket.</p>
+<p>Line eight: for all x it is not the case that, open bracket, Q, open bracket, x, closed bracket, and R, open bracket, x, closed bracket, closed bracket.</p>
+<p>Line nine: it is not the case that, open bracket, Q, open bracket, a, closed bracket, and R, open bracket, a, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>From this point the tableau derivation tree splits into two branches, the left branch and the right branch.</p>
+<p><strong>Left branch description</strong></p>
+<p>Line ten-left branch: it is not the case that Q, open bracket, a, closed bracket. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+<p><strong>Right branch description</strong></p>
+<p>Line ten-right branch: it is not the case that R, open bracket, a, closed bracket.</p>
+<p>Line eleven-right branch: it is not the case that, open bracket, Q, open bracket, b, closed bracket, and R, open bracket, b, closed bracket, closed bracket. Formula followed by a green flag.</p>
+<p>From this point the right branch of the tableau derivation tree splits into two branches, the left-right branch and the right-right branch.</p>
+<p><strong>Left-right branch description</strong></p>
+<p>Line twelve-left-right branch: it is not the case that Q, open bracket, b, closed bracket.</p>
+<p>Line twelve-right-right branch: it is not the case that R, open bracket, b, closed bracket. A red cross is displayed beneath the formula, i.e. a contradiction is reached.</p>
+</details>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../002_03_Representation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 3 FOL applied to representation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../002_05_Tools/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 5 Tools for FOL
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

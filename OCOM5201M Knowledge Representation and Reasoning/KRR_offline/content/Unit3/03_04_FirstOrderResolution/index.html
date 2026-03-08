@@ -1,0 +1,2125 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 5 Resolution (FOL) - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#first-order-resolution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 5 Resolution (FOL)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../03_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 5 Resolution (FOL)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 5 Resolution (FOL)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-in-first-order-logic" class="md-nav__link">
+    Resolution in first order logic
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolution in first order logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-complication-with-first-order-resolution" class="md-nav__link">
+    What's the complication with first order resolution?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-to-clausal-form-first-order-case" class="md-nav__link">
+    Conversion to clausal form: first order case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminating-existentials-skolemization" class="md-nav__link">
+    Eliminating existentials: Skolemization
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminating existentials: Skolemization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skolem-function-example" class="md-nav__link">
+    Skolem function example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form-example-1" class="md-nav__link">
+    Clausal form: Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form-example-2" class="md-nav__link">
+    Clausal form: Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substitutions" class="md-nav__link">
+    Substitutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-substitutions-examples" class="md-nav__link">
+    Applying substitutions: Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-substitutions" class="md-nav__link">
+    Composing substitutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Composing substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#composing-substitutions-example" class="md-nav__link">
+    Composing substitutions: Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-refutation-process" class="md-nav__link">
+    The refutation process
+  </a>
+  
+    <nav class="md-nav" aria-label="The refutation process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-order-resolution_1" class="md-nav__link">
+    First order resolution
+  </a>
+  
+    <nav class="md-nav" aria-label="First order resolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-answers-by-adding-a-new-predicate" class="md-nav__link">
+    Getting answers by adding a new predicate
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting answers by adding a new predicate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-the-need-to-rename-variables" class="md-nav__link">
+    Note the need to rename variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unification" class="md-nav__link">
+    Unification
+  </a>
+  
+    <nav class="md-nav" aria-label="Unification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#most-general-unifiers" class="md-nav__link">
+    Most general unifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mgu-definition" class="md-nav__link">
+    MGU: definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mgu-algorithm" class="md-nav__link">
+    MGU algorithm:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-1" class="md-nav__link">
+    Unification example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-2" class="md-nav__link">
+    Unification example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-3" class="md-nav__link">
+    Unification example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-rule" class="md-nav__link">
+    Factoring rule
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factoring" class="md-nav__link">
+    Factoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-in-first-order-logic" class="md-nav__link">
+    Resolution in first order logic
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolution in first order logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-complication-with-first-order-resolution" class="md-nav__link">
+    What's the complication with first order resolution?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-to-clausal-form-first-order-case" class="md-nav__link">
+    Conversion to clausal form: first order case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminating-existentials-skolemization" class="md-nav__link">
+    Eliminating existentials: Skolemization
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminating existentials: Skolemization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skolem-function-example" class="md-nav__link">
+    Skolem function example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form-example-1" class="md-nav__link">
+    Clausal form: Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clausal-form-example-2" class="md-nav__link">
+    Clausal form: Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#substitutions" class="md-nav__link">
+    Substitutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applying-substitutions-examples" class="md-nav__link">
+    Applying substitutions: Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-substitutions" class="md-nav__link">
+    Composing substitutions
+  </a>
+  
+    <nav class="md-nav" aria-label="Composing substitutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#composing-substitutions-example" class="md-nav__link">
+    Composing substitutions: Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-refutation-process" class="md-nav__link">
+    The refutation process
+  </a>
+  
+    <nav class="md-nav" aria-label="The refutation process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-order-resolution_1" class="md-nav__link">
+    First order resolution
+  </a>
+  
+    <nav class="md-nav" aria-label="First order resolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-answers-by-adding-a-new-predicate" class="md-nav__link">
+    Getting answers by adding a new predicate
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting answers by adding a new predicate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-the-need-to-rename-variables" class="md-nav__link">
+    Note the need to rename variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unification" class="md-nav__link">
+    Unification
+  </a>
+  
+    <nav class="md-nav" aria-label="Unification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#most-general-unifiers" class="md-nav__link">
+    Most general unifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mgu-definition" class="md-nav__link">
+    MGU: definition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mgu-algorithm" class="md-nav__link">
+    MGU algorithm:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-1" class="md-nav__link">
+    Unification example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-2" class="md-nav__link">
+    Unification example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unification-example-3" class="md-nav__link">
+    Unification example 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#factoring-rule" class="md-nav__link">
+    Factoring rule
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factoring" class="md-nav__link">
+    Factoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Factoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="first-order-resolution">First order resolution</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>
+<p>convert first order formulas to clausal form, including the use of Skolem functions and Skolem constants</p>
+</li>
+<li>
+<p>manipulate substitutions including applying them to formulas and composing substitutions with each other</p>
+</li>
+<li>
+<p>find most general unifiers when they exist and identify the two situations ("clash" and "cyclic") when unification is impossible</p>
+</li>
+<li>
+<p>carry out resolution refutation in first order logic.</p>
+</li>
+</ul>
+</div>
+<h2 id="resolution-in-first-order-logic">Resolution in first order logic</h2>
+<iframe title="Clausal form (first order case) part 1" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/6e08002543174915ad71c6705bc479aa1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26106076_4" target="_blank">Download transcript (PDF).</a></p>
+<p><strong>Example:</strong></p>
+<p>Can an algorithm tell if <span class="arithmatex">\(\exists x \; \exists y \;(Y(x) \wedge L(x,y) \wedge \neg Y(y))\)</span> is a logical consequence of
+<span class="arithmatex">\(L(b,h),\;\; L(h,d),\;\; Y(b),\;\; \neg Y(d)\)</span>?</p>
+<p>Resolution works very much as before:</p>
+<ul>
+<li>
+<p>Convert knowledge base and negated query to clauses</p>
+</li>
+<li>
+<p>Keep resolving until get empty clause or cannot continue</p>
+</li>
+</ul>
+<h3 id="whats-the-complication-with-first-order-resolution">What's the complication with first order resolution?</h3>
+<p>We will get clauses like this:</p>
+<div class="arithmatex">\[
+\{[\mathit{Likes}(x,\mathit{theDonut})],\;[\neg\mathit{Likes}(\mathit{bart},y)]\}
+\]</div>
+<p>The <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> are treated as universally quantified here.</p>
+<p>Informally: everyone likes the donut and Bart does not like anything.</p>
+<p>We get a contradiction from</p>
+<div class="arithmatex">\[
+\{[\mathit{Likes}(\mathit{bart},\mathit{theDonut})],\;[\neg\mathit{Likes}(\mathit{bart},\mathit{theDonut})]\}
+\]</div>
+<p>This generates the empty clause as before. But how do we find what needs to be substituted for <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>? This process of making formulas the same is called unification.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Key ideas</p>
+<ul>
+<li>
+<p>Conversion of first order formulas to clausal form</p>
+<ul>
+<li>Skolemisation (dealing with existentials in clausifying)</li>
+</ul>
+</li>
+<li>
+<p>Resolving clauses</p>
+<ul>
+<li>
+<p>Unification (needed to make clauses match)</p>
+<ul>
+<li>
+<p>Substitutions (needed to do unification)</p>
+</li>
+<li>
+<p>Most general unifiers (the best ones)</p>
+</li>
+<li>
+<p>Unification algorithm</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Resolution (basically as in propositional case)</p>
+</li>
+<li>
+<p>Factoring (extra rule needed in 1<sup>st</sup> order case)</p>
+</li>
+<li>
+<p>Refutation - adding negation of query to knowledge base and looking for contradiction</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="conversion-to-clausal-form-first-order-case">Conversion to clausal form: first order case</h3>
+<ol>
+<li>
+<p>Eliminate <span class="arithmatex">\(\to\)</span> (as before)</p>
+</li>
+<li>
+<p>Move <span class="arithmatex">\(\neg\)</span> inwards (as before)</p>
+<ul>
+<li><span class="arithmatex">\(\neg \forall x\; \alpha\)</span> rewrites to <span class="arithmatex">\(\exists x \;\neg \alpha\)</span></li>
+<li><span class="arithmatex">\(\neg \exists x\; \alpha\)</span> rewrites to <span class="arithmatex">\(\forall x \;\neg \alpha\)</span></li>
+</ul>
+</li>
+<li>
+<p>Eliminate remaining existentials (see later)</p>
+</li>
+<li>
+<p>Rename variables so <span class="arithmatex">\(v\)</span> different for each <span class="arithmatex">\(\forall v\)</span> (standardise
+apart)</p>
+</li>
+<li>
+<p>Move <span class="arithmatex">\(\forall\)</span>s to front -- same occurrences will be bound by each
+<span class="arithmatex">\(\forall\)</span></p>
+</li>
+<li>
+<p>Distribute <span class="arithmatex">\(\wedge\)</span> over <span class="arithmatex">\(\vee\)</span> (as before)</p>
+</li>
+</ol>
+<p>Finally, rename variables so different clauses have different variables</p>
+<h3 id="eliminating-existentials-skolemization">Eliminating existentials: Skolemization</h3>
+<p><strong>Idea:</strong> Replace <span class="arithmatex">\(\exists x\; P(x)\)</span> by <span class="arithmatex">\(P(c)\)</span>, where <span class="arithmatex">\(c\)</span> is a new constant.</p>
+<p>The constant symbol <span class="arithmatex">\(c\)</span> is a name for the thing with property <span class="arithmatex">\(P\)</span> whose
+existence is asserted in <span class="arithmatex">\(\exists x\; P(x)\)</span>.</p>
+<p>Think about <span class="arithmatex">\(\forall w\; \exists x \; x &gt; w\)</span> when talking about numbers
+<span class="arithmatex">\(0, 1, 2, \ldots\)</span>. We cannot replace <span class="arithmatex">\(x\)</span> by a constant, because there is
+no number that is greater than all numbers. The <span class="arithmatex">\(x\)</span> claimed to exist has
+to depend on <span class="arithmatex">\(w\)</span>, so we need a function of <span class="arithmatex">\(w\)</span> not a constant.</p>
+<p>In general, if <span class="arithmatex">\(x_1, \ldots, x_n\)</span> are the universally quantified variables
+with scope including <span class="arithmatex">\(\exists x \;\alpha\)</span>, then replace all the
+occurrences of <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\exists x \;\alpha\)</span> by <span class="arithmatex">\(f(x_1,\ldots, x_n)\)</span>,
+where <span class="arithmatex">\(f\)</span> is a new function symbol (one not already occurring
+elsewhere).</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\forall x \exists y \; \mathit{Loves}(x,y)\)</span> skolemizes to
+    <span class="arithmatex">\(\forall x\; \mathit{Loves}(x,f(x))\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists y \forall x\; \mathit{Loves}(x,y)\)</span> skolemizes to
+    <span class="arithmatex">\(\forall x\; \mathit{Loves}(x,c)\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(c\)</span> and <span class="arithmatex">\(f\)</span> are called skolem constants/functions</p>
+</li>
+</ul>
+<p><strong>Skolemization doesn't preserve logical equivalence</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\exists x \;P(x)\)</span> isn't logically equivalent to <span class="arithmatex">\(P(c)\)</span>. In the former case, interpretation of <span class="arithmatex">\(c\)</span> doesn't matter.</p>
+</li>
+<li>
+<p>Skolemization does preserve satisfiability. All we need is to preserve satisfiability for refutation
+    completeness.</p>
+</li>
+</ul>
+<h4 id="skolem-function-example">Skolem function example</h4>
+<p>In an example like</p>
+<div class="arithmatex">\[
+\forall w\; \exists x\; \forall y \; \exists z \; (Q(w,x) \to Q(y,z))
+\]</div>
+<p>the thing called <span class="arithmatex">\(x\)</span> that is claimed to exist can depend on <span class="arithmatex">\(w\)</span>, and the thing called <span class="arithmatex">\(z\)</span> that is claimed to exist can depend both on <span class="arithmatex">\(w\)</span> and on <span class="arithmatex">\(y\)</span>.</p>
+<p>Here we need to introduce a unary Skolem function to eliminate the
+<span class="arithmatex">\(\exists x\)</span> and a binary Skolem function to eliminate the <span class="arithmatex">\(\exists z\)</span>.</p>
+<p>If we introduce new function symbols <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> for these we get</p>
+<div class="arithmatex">\[
+\forall w\; \forall y \; (Q(w,f(w)) \to Q(y,g(w,y))).
+\]</div>
+<p>Skolemization can be done on any formula. In producing clausal form we make use of it at a particular stage in the process.</p>
+<h3 id="clausal-form-example-1">Clausal form: Example 1</h3>
+<p>Put into clausal form</p>
+<div class="arithmatex">\[
+\forall x\; (\mathit{Person}(x) \to \exists y\; (\mathit{Rat}(y) \wedge \mathit{CloseTo}(y,x)))
+\]</div>
+<ol>
+<li>Eliminate <span class="arithmatex">\(\to\)</span> <span class="arithmatex">\(\forall x\; (\neg \mathit{Person}(x) \vee \exists y\; (\mathit{Rat}(y) \wedge \mathit{CloseTo}(y,x)))\)</span>   </li>
+<li>Move <span class="arithmatex">\(\neg\)</span> inwards. (nothing to do here)</li>
+<li>Eliminate remaining existentials
+   <span class="arithmatex">\(\forall x\; (\neg \mathit{Person}(x) \vee  (\mathit{Rat}(\mathit{rc}(x)) \wedge \mathit{CloseTo}(\mathit{rc}(x),x)))\)</span>
+   where <span class="arithmatex">\(\mathit{rc}\)</span> is a Skolem function,
+   and we think of <span class="arithmatex">\(\mathit{rc}(x)\)</span> as being <em>the rat for person <span class="arithmatex">\(x\)</span></em>.</li>
+<li>Rename variables (nothing to do here)</li>
+<li>Move <span class="arithmatex">\(\forall\)</span>s to front (nothing to do here).
+After this stage it isn't necessary to write the <span class="arithmatex">\(\forall\)</span>s any more.</li>
+<li>Distribute <span class="arithmatex">\(\wedge\)</span> over <span class="arithmatex">\(\vee\)</span>
+   <span class="arithmatex">\((\neg \mathit{Person}(x)  \vee  \mathit{Rat}(\mathit{rc}(x)))
+                              \; \wedge \;
+                              (\neg \mathit{Person}(x)  \vee  \mathit{CloseTo}(\mathit{rc}(x),x)))\)</span></li>
+</ol>
+<p>Write as set of clauses:</p>
+<div class="arithmatex">\[
+\{\quad [\neg \mathit{Person}(x),\;   \mathit{Rat}(\mathit{rc}(x))],\quad
+          [\neg \mathit{Person}(x),\;   \mathit{CloseTo}(\mathit{rc}(x),x)] \quad\}
+                    \]</div>
+<p>Note this is equivalent to</p>
+<div class="arithmatex">\[\{\quad [\neg \mathit{Person}(x),\;   \mathit{Rat}(\mathit{rc}(x))],\quad
+          [\neg \mathit{Person}(y),\;   \mathit{CloseTo}(\mathit{rc}(y),y)] \quad\}
+                    \]</div>
+<p>since <span class="arithmatex">\(\forall x\; (P(x) \wedge Q(x))\)</span> is equivalent to <span class="arithmatex">\((\forall x\; P(x)) \wedge (\forall x\; Q(x))\)</span></p>
+<h3 id="clausal-form-example-2">Clausal form: Example 2</h3>
+<p>The following video talks through this example.</p>
+<iframe title="Clausal form (first order case) part 2" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/22f02592c8d34201a2ce45602613421f1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26108535_4" target="_blank">Download transcript (PDF).</a></p>
+<p>Put into clausal form:</p>
+<div class="arithmatex">\[
+(\forall y\; P(y)) \vee (\exists x\; (P(x) \wedge \neg( Q(x) \vee \exists y \; \forall z\; (P(y) \wedge Q(z)))))
+\]</div>
+<p>The process is explained step by step in the video.
+The steps are also repeated here:</p>
+<ol>
+<li>
+<p>Eliminate <span class="arithmatex">\(\to\)</span>. (nothing to do here)</p>
+</li>
+<li>
+<p>Move <span class="arithmatex">\(\neg\)</span> inwards. (I'll go slowly, one step at a time)</p>
+<ul>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee (\exists x\; (P(x) \wedge ( \neg Q(x) \wedge \neg \exists y \; \forall z\; (P(y) \wedge Q(z)))))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee
+   (\exists x\; (P(x) \wedge ( \neg Q(x) \wedge  \forall y \;\neg \forall z\; (P(y) \wedge Q(z)))))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee
+   (\exists x\; (P(x) \wedge ( \neg Q(x) \wedge  \forall y \; \exists z\; \neg (P(y) \wedge Q(z)))))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee
+   (\exists x\; (P(x) \wedge ( \neg Q(x) \wedge  \forall y \; \exists z\;  (\neg P(y) \vee \neg Q(z)))))\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Eliminate remaining existentials</p>
+<ul>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee (P(c) \wedge ( \neg Q(c) \wedge  \forall y \; \exists z\;  (\neg P(y) \vee \neg Q(z))))\)</span>
+   where <span class="arithmatex">\(c\)</span> is a Skolem constant</p>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall y\; P(y)) \vee (P(c) \wedge ( \neg Q(c) \wedge  \forall y \;  (\neg P(y) \vee \neg Q(f(y)))))\)</span>
+   where <span class="arithmatex">\(f\)</span> is a Skolem function</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Rename variables.</p>
+<ul>
+<li><span class="arithmatex">\((\forall w\; P(w)) \vee
+   (P(c) \wedge ( \neg Q(c) \wedge  \forall y \;  (\neg P(y) \vee \neg Q(f(y)))))\)</span></li>
+</ul>
+</li>
+<li>
+<p>Move <span class="arithmatex">\(\forall\)</span>s to front.</p>
+<ul>
+<li><span class="arithmatex">\(\forall w\; \forall y\;(P(w) \vee(P(c) \wedge(\neg Q(c) \wedge(\neg P(y) \vee \neg Q(f(y))))))\)</span></li>
+<li>After this stage it is not necessary to write the <span class="arithmatex">\(\forall\)</span>s any more, because we know where they would go (order is irrelevant).</li>
+<li>
+<p><span class="arithmatex">\(P(w) \vee(P(c) \wedge(\neg Q(c) \wedge(\neg P(y) \vee \neg Q(f(y)))))\)</span></p>
+</li>
+<li>
+<p>We have got this far: <span class="arithmatex">\(P(w) \vee(P(c) \wedge(\neg Q(c) \wedge(\neg P(y) \vee \neg Q(f(y)))))\)</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Distribute <span class="arithmatex">\(\wedge\)</span> over <span class="arithmatex">\(\vee\)</span></p>
+</li>
+</ol>
+<p>Lets introduce some temporary notation</p>
+<div class="arithmatex">\[
+\begin{array}{@{}c@{}cc@{}ccccccccccc@{}c@{}}
+P(w) &amp;   \vee &amp;     ( &amp; P(c) &amp;  \wedge &amp;  ( &amp; \neg Q(c) &amp; \wedge  &amp; ( &amp; \neg P(y) &amp;  \vee &amp;  \neg Q(f(y)) &amp;  )  &amp;   )&amp;      )\\[1ex]
+A    &amp;   \vee &amp;     ( &amp; B    &amp;  \wedge &amp;  ( &amp; C         &amp; \wedge  &amp; ( &amp; D         &amp;  \vee &amp; E             &amp;  )  &amp;   ) &amp;     )
+\end{array}
+\]</div>
+<p>Working on this we get:</p>
+<div class="arithmatex">\[
+\begin{array}{ccccccccccccccccccc}
+( &amp; A &amp; \vee &amp; B &amp; ) &amp; \wedge &amp; ( &amp; A &amp; \vee  &amp;  ( &amp; C         &amp; \wedge  &amp; ( &amp; D         &amp;  \vee &amp; E             &amp;  )    &amp;   ) &amp;     )
+\end{array}
+\]</div>
+<p>and then</p>
+<div class="arithmatex">\[
+\begin{array}{ccccccccccccccccccc}
+( &amp; A &amp; \vee &amp; B &amp; ) &amp; \wedge &amp; ( &amp; A &amp; \vee  &amp;  C &amp; )         &amp; \wedge  &amp; ( &amp; A         &amp;  \vee &amp; D             &amp;  \vee &amp;   E &amp;     )
+\end{array}
+\]</div>
+<p>and back to the actual expressions</p>
+<div class="arithmatex">\[
+(  P(w)   \vee   P(c)  )  \quad \wedge \quad (  P(w) \vee \neg Q(c))     \quad \wedge \quad(  P(w)  \vee  \neg P(y) \vee  \neg Q(f(y)) )
+\]</div>
+<p>We have now got to:</p>
+<div class="arithmatex">\[
+(  P(w)   \vee   P(c)  )  \quad \wedge \quad (  P(w) \vee \neg Q(c))     \quad \wedge \quad(  P(w)  \vee  \neg P(y) \vee  \neg Q(f(y)) )
+\]</div>
+<p>Finally we write as a set of clauses:</p>
+<div class="arithmatex">\[
+\{ \quad
+   [  P(w) ,\;   P(c) ], \quad
+   [  P(w) ,\;  \neg Q(c)   ], \quad
+   [  P(w) ,\;  \neg P(y),\;  \neg Q(f(y))] \quad \}
+     \]</div>
+<p>Rename variables so different clauses have different variables</p>
+<p>Answer:</p>
+<div class="arithmatex">\[
+\{ \quad
+   [  P(w) ,\;   P(c) ], \quad
+   [  P(x) ,\;  \neg Q(c)   ], \quad
+   [  P(z) ,\;  \neg P(y),\;  \neg Q(f(y))] \quad \}.
+     \]</div>
+<h2 id="substitutions">Substitutions</h2>
+<iframe title="Substitutions part 1" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/3be96a6c6cef41938861978e5d64084e1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26108543_4" target="_blank">Download transcript (PDF).</a></p>
+<ul>
+<li>
+<p>A substitution is a finite set of pairs <span class="arithmatex">\(\{x_1/t_1,\ldots,x_n/t_n\}\)</span>
+    where the <span class="arithmatex">\(x_i\)</span> are distinct variables and the <span class="arithmatex">\(t_i\)</span> are arbitrary
+    terms.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\theta\)</span> is a substitution and <span class="arithmatex">\(\rho\)</span> is a literal, then
+    <span class="arithmatex">\(\theta \rho\)</span> is the literal that results from simultaneously
+    replacing each <span class="arithmatex">\(x_i\)</span> in <span class="arithmatex">\(\rho\)</span> by <span class="arithmatex">\(t_i\)</span>.</p>
+</li>
+<li>
+<p>E.g. if <span class="arithmatex">\(\theta  = \{x/a, y/k(x,b,z)\}\)</span> and <span class="arithmatex">\(\rho = P(x,z,g(x,y))\)</span>
+    then <span class="arithmatex">\(\theta \rho = P(a,z,g(a,k(x,b,z)))\)</span>.</p>
+</li>
+<li>
+<p>Similarly if <span class="arithmatex">\(\rho\)</span> is a clause, or a term.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\rho\)</span> is an <strong>instance</strong> of <span class="arithmatex">\(\rho'\)</span> if for some <span class="arithmatex">\(\theta\)</span> we have
+    <span class="arithmatex">\(\theta \rho'  = \rho\)</span>.</p>
+</li>
+<li>
+<p>Convention here: <span class="arithmatex">\(u, v, w, x, y, z\)</span> variables; <span class="arithmatex">\(a, b, c, d\)</span> constant
+    symbols; <span class="arithmatex">\(f,g,h,k\)</span> function symbols usually; <span class="arithmatex">\(P, Q,R\)</span> predicate
+    symbols</p>
+</li>
+<li>
+<p>Lots of different notations exist for substitutions e.g <span class="arithmatex">\(a/x\)</span>
+    instead of <span class="arithmatex">\(x/a\)</span>. Some people write <span class="arithmatex">\(\rho \theta\)</span> instead of
+    <span class="arithmatex">\(\theta \rho\)</span>.</p>
+</li>
+</ul>
+<h3 id="applying-substitutions-examples">Applying substitutions: Examples</h3>
+<p><span class="arithmatex">\(a, b\)</span> are constant symbols, <span class="arithmatex">\(x, y, z\)</span> are variables.</p>
+<div class="arithmatex">\[
+\begin{array}{lc}
+\text { 1. } &amp; \{x / f(y), y / f(z), z / f(x)\} \quad Q(x, y, z) \\
+\text { answer } &amp; Q(f(y), f(z), f(x)) \\
+\text { 2. } &amp; \{y / f(z), z / f(x)\} \quad P(x) \\
+\text { answer } &amp; P(x) \\
+\text { 3. } &amp; \{x / f(y), y / f(z), z / f(x)\} \quad Q(a, f(a), g(a, b)) \\
+\text { answer } &amp; Q(a, f(a), g(a, b)) \\
+\text { 4. } &amp; \{x / f(f(x))\} \quad P(f(x)) \\
+\text { answer } &amp; P(f(f(f(x))))
+\end{array}
+\]</div>
+<h3 id="composing-substitutions">Composing substitutions</h3>
+<iframe title="Substitutions part 2" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/9b234f8826164d5ab0deee07b6db84f11d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26108546_4" target="_blank">Download transcript (PDF).</a></p>
+<p>If <span class="arithmatex">\(\theta\)</span>, <span class="arithmatex">\(\varphi\)</span> are substitutions and <span class="arithmatex">\(\theta = \{x_1 / t_1, \ldots, x_n / t_n\}\)</span> then</p>
+<div class="arithmatex">\[
+\varphi \theta  = \{x_1 / (\varphi t_1  ), \ldots, x_n / (\varphi t_n )\} \cup \{v_1 / (\varphi v_1 ), \ldots, v_m /(\varphi v_m)\}
+\]</div>
+<p><span class="arithmatex">\(\{v_1, \ldots, v_m\}\)</span> being all variables <span class="arithmatex">\(v\)</span> where <span class="arithmatex">\(\theta v= v\)</span> and <span class="arithmatex">\(\varphi v \neq v\)</span>.  </p>
+<h4 id="composing-substitutions-example">Composing substitutions: Example</h4>
+<p><span class="arithmatex">\(\{y / f(z), x / a\} \quad \{x / f(y)\}  =   \{x / f(f(z)), y /f(z)\}\)</span>
+ </p>
+<p><span class="arithmatex">\(\{y/b\} \quad \{x / a\} =  \{x/a, y/b\}\)</span></p>
+<p><span class="arithmatex">\(\{y / x\}\quad \{x / y\}   =  \{x/x, y/x\} = \{y/x\}\)</span>  </p>
+<p><span class="arithmatex">\(\{x/y\} \quad \{y/x\}  =  \{x/y\}\)</span></p>
+<p><span class="arithmatex">\(\{z / f(x)\} \quad \{x / f(y), y / f(z)\}   =    \{ x/f(y), y/f(f(x)), z/ f(x)\}\)</span></p>
+<p><span class="arithmatex">\(\{x / f(y), y / f(x)\} \quad \{x / f(y), y / f(x)\}  =   \{x / f(f(x)), y / f(f(y))\}\)</span></p>
+<p><span class="arithmatex">\(\{z/x, x/y\} \quad \{x / y, y/z\}  =  \{x/y, y/x, z/x\}\)</span>  </p>
+<h2 id="the-refutation-process">The refutation process</h2>
+<h3 id="first-order-resolution_1">First order resolution</h3>
+<iframe title="Resolution refutation procedure (first order case)" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/b1ec80672f4842618c2733b694b633bd1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26104671_4" target="_blank">Download transcript (PDF).</a></p>
+<ul>
+<li>
+<p>Given two clauses:</p>
+<p><span class="arithmatex">\(c_1 \cup [\rho_1] \quad c_2 \cup [\neg \rho_2]\)</span></p>
+<p>rename variables so the two clauses share no variables</p>
+<p>let <span class="arithmatex">\(\theta\)</span> be a substitution such that <span class="arithmatex">\(\theta \rho_1 =  \theta \rho_2\)</span></p>
+<p>we say: <span class="arithmatex">\(\theta\)</span> <strong>unifies</strong> <span class="arithmatex">\(\rho_1\)</span> and <span class="arithmatex">\(\rho_2\)</span></p>
+<p>and that: <span class="arithmatex">\(\theta\)</span> is a <strong>unifier</strong> of <span class="arithmatex">\(\rho_1\)</span> and <span class="arithmatex">\(\rho_2\)</span></p>
+<p>Binary resolvent is <span class="arithmatex">\(\theta (c_1 \cup c_2)\)</span>. Result of resolving.</p>
+</li>
+<li>
+<p>Sound and refutation complete</p>
+<p>(if add one more rule -- see later: factoring)</p>
+<p>note: equality needs some special treatment beyond what will fit here.</p>
+</li>
+</ul>
+<h4 id="example">Example</h4>
+<div class="arithmatex">\[
+\exists x\; \exists  y \;( \mathit{Yellow}(x) \wedge \mathit{Likes}(x,y)
+  \wedge \neg \mathit{Yellow}(y))
+    \]</div>
+<p>Is this a logical consequence of these?</p>
+<div class="arithmatex">\[\begin{array}{c}
+\mathit{Likes}(\mathit{bart},\mathit{homer}),\quad
+\mathit{Likes}(\mathit{homer},\mathit{theDonut}),\\[1ex]
+\mathit{Yellow}(\mathit{bart}),\quad
+\neg\mathit{Yellow}(\mathit{theDonut}).\end{array}
+\]</div>
+<p>Simplifying the notation, we ask whether</p>
+<div class="arithmatex">\[
+\exists x \; \exists y \;(Y(x) \wedge L(x,y) \wedge \neg Y(y))
+\]</div>
+<p>is a logical consequence of <span class="arithmatex">\(L(b,h),\;\; L(h,d),\;\; Y(b),\;\; \neg Y(d)\)</span>.</p>
+<p>The answer is 'yes', but we cannot be certain what <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> are. There are 2 cases depending on the interpretation of <span class="arithmatex">\(Y(h)\)</span>.</p>
+<p>The knowledge base (KB) we have is this:</p>
+<div class="arithmatex">\[\{
+\quad
+[Y(b)],
+\quad
+[L(b,h)],
+\quad
+[\neg Y(x),\; Y(y),\; \neg L(x,y)],
+\quad
+[L(h,d)],
+\quad
+[\neg Y(d)]
+\quad
+\}.
+\]</div>
+<p>The query we are asking with respect to the knowledge base is this:</p>
+<div class="arithmatex">\[
+\exists x \exists y\;
+(Y(x) \wedge \neg Y(y) \wedge L(x,y)).
+\]</div>
+<p>When the query is negated and put into clausal form we get:</p>
+<div class="arithmatex">\[
+[\; \neg Y(x),\; Y(y), \neg L(x,y)\;].
+\]</div>
+<p>The resolution process is shown in this diagram:</p>
+<p><img alt="image" src="../images/resolutionExample.png" /></p>
+<details class="info"><summary>Select for full text description</summary><p><strong>Line one:</strong> open curly bracket, open square bracket, upper case Y, open rounded bracket, lower case b, closed rounded bracket, closed square bracket, (end of first formula), comma, open square bracket, upper case L, open rounded bracket, lower case b, comma, lower case h, closed rounded bracket, closed square bracket, (end of second formula), comma, open square bracket, it is not the case that upper case Y, open rounded bracket, lower case x closed rounded bracket, comma, upper case Y, open rounded bracket, lower case y, closed rounded bracket, comma, it is not the case that upper case L, open rounded bracket, lower case x, comma, lower case y, closed rounded bracket, closed square bracket, (end of third formula), comma, open square bracket, upper case L, open rounded bracket, lower case h, comma, lower case d, closed rounded bracket, closed square bracket, (end of fourth formula,) comma, open square bracket, it is not the case that upper case Y, open rounded bracket, lower case d, closed rounded bracket, closed square bracket, (end of fifth formula) closed curly bracket. A black line leaves the first formula displayed in line one to reach formula open square bracket, upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed rounded bracket, in line four. Two black lines leave the second and third formulae displayed in line one respectively, to reach the formula open square bracket, it is not the case that upper case Y, open rounded bracket, lower case b, closed rounded bracket, comma, upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket, in line three. Two black lines leave the third and fourth formulae displayed in line one to reach the formula open square bracket, it is not the case that upper case Y, open rounded bracket, lower case h, closed rounded bracket, comma, upper case Y, open rounded bracket, lower case d, closed rounded bracket, closed square bracket, in line three. A black line leaves the fifth formula displayed in line one to reach the formula open square bracket it is not the case that Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket in line three.</p>
+<p><strong>Line two:</strong> open curly bracket lower case x, slash, lower case b, comma, lower case y, slash, lower case h, closed curly bracket. This writing is displayed in the space formed by the second and third black lines described in line one. Open curly bracket lower case x, slash, lower case h, comma, lower case y, comma, lower case d, closed curly bracket. This writing is displayed in the space formed by the fourth and fifth black lines described in line one.</p>
+<p><strong>Line three:</strong> open square bracket, it is not the case that, upper case Y, open rounded bracket, lower case b, closed rounded bracket, comma, upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket (end of first formula). Open square bracket, it is not the case that, upper case Y, open rounded bracket, lower case h, closed rounded bracket, comma, upper case Y, open rounded bracket, lower case d, closed rounded bracket, closed square bracket (end of second formula). There is a black line leaving the first formula displayed in line three and reaching the formula open square bracket, upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket, in line four. There is a black line leaving the second formula displayed in line three and reaching the formula open square bracket, it is not the case that upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket, in line four.</p>
+<p><strong>Line four:</strong> open square bracket, upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket (end of first formula). It is not the case that upper case Y, open rounded bracket, lower case h, closed rounded bracket, closed square bracket (end of second formula). There are two black lines leaving the first and second formulae displayed in line four, and reaching the writing open square bracket, closed square bracket, in line five.</p>
+<p><strong>Line five:</strong> Open square bracket, empty space, closed square bracket.</p>
+</details>
+<h3 id="getting-answers-by-adding-a-new-predicate">Getting answers by adding a new predicate</h3>
+<p>Each derivation generates one answer.</p>
+<p>KB: <span class="arithmatex">\(\{[P(a)],[P(b)],[\neg P(x), \neg P(y), Q(x,y)]\}\)</span></p>
+<p>Query <span class="arithmatex">\(\exists u\; \exists v\; Q(u,v)\)</span></p>
+<p>clausal form: <span class="arithmatex">\([A(u,v), \neg Q(u,v)]\)</span> <span class="arithmatex">\(A\)</span> is the answer predicate</p>
+<p>Answers:</p>
+<p><span class="arithmatex">\(\{u/a, v/a\}, \quad \{u/b, v/a\}, \quad \{u/a, v/b\}, \quad \{u/b, v/b\}\)</span></p>
+<p>In this case we would not be trying to generate <span class="arithmatex">\([\;]\)</span>, but a clause
+containing only answer predicates.</p>
+<p>In the previous example the query <span class="arithmatex">\([\neg Y(x), Y(y), \neg L(x,y), A(x,y)]\)</span> generates not <span class="arithmatex">\([\;]\)</span> but <span class="arithmatex">\([A(b,h), A(h,d)]\)</span>.</p>
+<h4 id="note-the-need-to-rename-variables">Note the need to rename variables</h4>
+<p>Consider KB:</p>
+<div class="arithmatex">\[
+\{[P(x),Q(x,y)],[\neg P(a),R(y,y)],[\neg Q(a,b)], [\neg R(c,c)]\}
+\]</div>
+<p>If we don't rename variables apart, resolvent of first two clauses is: <span class="arithmatex">\([Q(a,y),R(y,y)]\)</span></p>
+<p>resolve this with <span class="arithmatex">\([\neg Q(a,b)]\)</span> to get <span class="arithmatex">\([R(b,b)]\)</span> - dead end.</p>
+<p>If we rename first clause to <span class="arithmatex">\([P(x), Q(x,z)]\)</span> then resolvent of first two clauses is: <span class="arithmatex">\([Q(a,z),R(y,y)]\)</span></p>
+<p>resolve this with <span class="arithmatex">\([\neg Q(a,b)]\)</span> to get <span class="arithmatex">\([R(y,y)]\)</span></p>
+<p>can now resolve with 3<sup>rd</sup> clause to get <span class="arithmatex">\([\; ]\)</span></p>
+<h2 id="unification">Unification</h2>
+<h3 id="most-general-unifiers">Most general unifiers</h3>
+<iframe title="Unification" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/86d98992b83c4907add6a0dc9e49f6bb1d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26104672_4" target="_blank">Download transcript (PDF).</a></p>
+<p>Keep search as general as possible and don't commit to choices before you have to. This is a very general AI maxim.</p>
+<p>Consider two clauses containing literals</p>
+<div class="arithmatex">\[
+P(g(x),f(x),z) \qquad \neg P(y,f(w),a)
+\]</div>
+<p>Unifiers: <span class="arithmatex">\(\begin{array}{ll}
+  \theta_1: &amp; \{x/b, y/g(b), z/a, w/b\}\\
+  \theta_2: &amp; \{x/f(z), y/g(f(z)), z/a, w/f(z)\}\\[1ex]
+\end{array}\)</span></p>
+<p>If proof fails with <span class="arithmatex">\(\theta_1\)</span> then we will need to try <span class="arithmatex">\(\theta_2\)</span></p>
+<p>Both are overly specific. We don't yet need to commit to value for <span class="arithmatex">\(x\)</span></p>
+<p><span class="arithmatex">\(\theta_3:  \{y/g(w),z/a,x/w\}\)</span></p>
+<p>Most general unifier (MGU)</p>
+<h3 id="mgu-definition">MGU: definition</h3>
+<p><span class="arithmatex">\(\theta\)</span> is an MGU of <span class="arithmatex">\(c_1\)</span> and <span class="arithmatex">\(c_2\)</span> iff for any other unifier <span class="arithmatex">\(\theta_1\)</span> of <span class="arithmatex">\(c_1\)</span> and <span class="arithmatex">\(c_2\)</span>, then there exists
+<span class="arithmatex">\(\theta_2\)</span> s.t. <span class="arithmatex">\(\theta_1 = \theta_2 \theta\)</span></p>
+<p><span class="arithmatex">\(\theta_2 \theta\)</span> is the substitution s.t. <span class="arithmatex">\((\theta_2 \theta) c  = \theta_2(\theta c)\)</span> (apply <span class="arithmatex">\(\theta\)</span> then
+<span class="arithmatex">\(\theta_2\)</span>)</p>
+<p><strong>Note:</strong> MGUs are not necessarily unique: <span class="arithmatex">\(\theta_4 = \{y/g(w),z/a,w/x\}\)</span> is
+also an MGU. They are  <strong>unique up to renaming</strong>,
+which means that: when applied they yield expressions which can be transformed one into
+another by renaming variables consistently.</p>
+<p>Advantage: can limit applications of resolution to those which have MGUs
+as unifiers.</p>
+<p>Sometimes need an extra inference rule: factoring (see later).</p>
+<h3 id="mgu-algorithm">MGU algorithm:</h3>
+<p><strong>To find MGU of <span class="arithmatex">\(\rho_1\)</span> and <span class="arithmatex">\(\rho_2\)</span></strong></p>
+<ol>
+<li>
+<p>Start with <span class="arithmatex">\(\theta = \{\;\}\)</span></p>
+</li>
+<li>
+<p>Exit if <span class="arithmatex">\(\rho_1 = \rho_2\)</span>.</p>
+</li>
+<li>
+<p>Otherwise get the disagreement set, <span class="arithmatex">\(DS\)</span>, which is the pair of terms
+    at the first place where the two literals or terms disagree.</p>
+</li>
+<li>
+<p>Find var <span class="arithmatex">\(v \in DS\)</span>, &amp; term <span class="arithmatex">\(t \in DS\)</span> not containing <span class="arithmatex">\(v\)</span>; if not,
+    fail.</p>
+</li>
+<li>
+<p>Otherwise set <span class="arithmatex">\(\theta\)</span> to <span class="arithmatex">\(\{v/t\} \; \theta\)</span> , and <span class="arithmatex">\(\rho_i\)</span> to
+    <span class="arithmatex">\(\{v/t\} \; \rho_i\)</span>; go to step 2.</p>
+</li>
+</ol>
+<p>Runs in <span class="arithmatex">\(O(n^2)\)</span> time, but complicated linear time algorithm exists.</p>
+<p>Obvious generalisation to unify set <span class="arithmatex">\(\{\rho_1, \rho_2, \ldots\}\)</span>.</p>
+<h3 id="unification-example-1">Unification example 1</h3>
+<p><span class="arithmatex">\(\rho_{1}=g(f(x), g(x, y)) \quad \rho_{2}=g(z, g(f(a), b))\)</span></p>
+<p>In this example, and the following ones, the numbers are there to show a sequence of steps.
+There is not intended to be any correspondence with the numbering of the steps in the
+general MGU algorithm.</p>
+<ol>
+<li>
+<p>Put <span class="arithmatex">\(\theta = \{\;\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\rho_1 \neq \rho_2\)</span> so we go on</p>
+</li>
+<li>
+<p><span class="arithmatex">\(DS = \{z, f(x)\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(v = z\)</span> and <span class="arithmatex">\(t = f(x)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\theta = \{z/f(x)\}\)</span>, <span class="arithmatex">\(\rho_1 = g(f(x), g(x,y))\)</span>,
+<span class="arithmatex">\(\rho_2 = g(f(x), g(f(a),b))\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\rho_1  \neq \rho_2\)</span> so we go on</p>
+</li>
+<li>
+<p><span class="arithmatex">\(DS = \{x, f(a)\},\quad\)</span>  <span class="arithmatex">\(v = x\)</span> and <span class="arithmatex">\(t = f(a)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\theta =  \{x/f(a)\} \quad \{z/f(x)\}= \{z/f(f(a)), x/f(a)\}\)</span>,
+<span class="arithmatex">\(\rho_1 = g(f(f(a)), g(f(a), y))\)</span>, <span class="arithmatex">\(\rho_2 = g(f(f(a)), g(f(a),b))\)</span>
+Once more round and we get <span class="arithmatex">\(\theta = \{z/f(f(a)), x/f(a), y/b\}\)</span></p>
+</li>
+</ol>
+<h3 id="unification-example-2">Unification example 2</h3>
+<p><span class="arithmatex">\(\rho_{1}=g(x, g(x, y)) \quad \rho_{2}=g(f(y), g(y, z))\)</span></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(DS = \{x, f(y)\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(v = x\)</span> and <span class="arithmatex">\(t = f(y)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\theta = \{x/f(y)\}\)</span>, <span class="arithmatex">\(\rho_1 = g(f(y), g(f(y), y))\)</span>,
+<span class="arithmatex">\(\rho_2 = g(f(y), g(y,    z))\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(DS = \{y, f(y)\}\)</span></p>
+</li>
+<li>
+<p>Cannot find <span class="arithmatex">\(v, t \in DS\)</span> where <span class="arithmatex">\(v\)</span> does not occur in <span class="arithmatex">\(t\)</span>.
+Give up. No MGU. Reason: 'Cyclic'.</p>
+</li>
+</ol>
+<p>You can see that <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(f(y)\)</span> cannot be unified. Since we have to
+substitute the same thing for both <span class="arithmatex">\(y\)</span>s we can never make them the same
+(unless you allow infinitely many <span class="arithmatex">\(f\)</span>s, which we don't).</p>
+<h3 id="unification-example-3">Unification example 3</h3>
+<p><span class="arithmatex">\(\rho_{1}=g(x, g(x, y)) \quad \rho_{2}=g(f(y), g(a, z))\)</span></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(DS = \{x, f(y)\}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(v = x\)</span> and <span class="arithmatex">\(t = f(y)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\theta = \{x/f(y)\}\)</span>, <span class="arithmatex">\(\rho_1 = g(f(y), g(f(y), y))\)</span>,
+<span class="arithmatex">\(\rho_2 = g(f(y), g(a,    z))\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(DS = \{a, f(y)\}\)</span></p>
+</li>
+<li>
+<p>No element of <span class="arithmatex">\(DS\)</span> is a variable. Cannot find <span class="arithmatex">\(v\in DS\)</span>.</p>
+</li>
+</ol>
+<p>Give up. No MGU. Reason: 'Clash'.</p>
+<p>The terms <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(f(y)\)</span> cannot be unified.</p>
+<p>As <span class="arithmatex">\(a\)</span> is a constant symbol it is not changed by any substitution.</p>
+<h2 id="factoring-rule">Factoring rule</h2>
+<iframe title="Factoring rule" width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="https://mymedia.leeds.ac.uk/Mediasite/Play/7e7a127378bc451ea91daf2e6d48d7711d" allowfullscreen msallowfullscreen
+ allow="fullscreen"></iframe>
+
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26104673_4" target="_blank">Download transcript (PDF).</a></p>
+<p>Need an additional inference rule.</p>
+<p>KB: <span class="arithmatex">\(\quad \{\;[P(x_1),Q(x_2)],\; [\neg P(y_1),Q(y_2)],\; [P(u_1),\neg Q(u_2)]\;\}\)</span></p>
+<p>Query clausal form: <span class="arithmatex">\([\neg P(v_1),\neg Q(v_2)]\)</span></p>
+<p><strong>Attempted Proof:</strong></p>
+<p><span class="arithmatex">\([P(x_1),Q(x_2)], [\neg P(y_1),Q(y_2)]\)</span> resolve to give <span class="arithmatex">\([Q(x_2),Q(y_2)]\)</span></p>
+<p><span class="arithmatex">\([P(x_1),Q(x_2)], [P(u_1),\neg Q(u_2)]\)</span> resolve to give <span class="arithmatex">\([P(x_1),P(u_1)]\)</span></p>
+<p>Problem: can't generate unit clauses</p>
+<h3 id="factoring">Factoring</h3>
+<p>Given clause <span class="arithmatex">\(c_1 \cup c_2\)</span>, where <span class="arithmatex">\(|c_2| &gt; 1\)</span> and <span class="arithmatex">\(\theta\)</span> is an MGU of
+<span class="arithmatex">\(c_2\)</span></p>
+<p>Infer <span class="arithmatex">\(\theta (c_1 \cup c_2)\)</span></p>
+<h4 id="example-1">Example 1</h4>
+<p>From
+<span class="arithmatex">\([\mathit{Likes}(\mathit{sam}, x),\; \mathit{Likes}(y, \mathit{bananas})]\)</span></p>
+<p>infer <span class="arithmatex">\([\mathit{Likes}(\mathit{sam}, \mathit{bananas})]\)</span></p>
+<h4 id="example-2">Example 2</h4>
+<p><span class="arithmatex">\([R(x,a,c),R(b,x,z), R(x,b,d)]\)</span> has one factor:</p>
+<p><span class="arithmatex">\([R(x,a,c)] \cup [R(b,x,z), R(x,b,d)]\)</span></p>
+<p>We can infer <span class="arithmatex">\([R(b,a,c),R(b,b,d)]\)</span></p>
+<p>MGU used to find least instantiated instance</p>
+<p>KB: <span class="arithmatex">\(\quad \{\;[P(x_1),Q(x_2)],\; [\neg P(y_1),Q(y_2)],\; [P(u_1),\neg Q(u_2)]\;\}\)</span></p>
+<p>Query clausal form: <span class="arithmatex">\([\neg P(v_1),\neg Q(v_2)]\)</span></p>
+<p>Can now produce refutation</p>
+<p><span class="arithmatex">\([Q(x_2), Q(y_2)]\)</span> factors to <span class="arithmatex">\([Q(x_2)]\)</span></p>
+<p><span class="arithmatex">\([P(x_1),P(u_1)]\)</span> factors to <span class="arithmatex">\([P(x_1)]\)</span></p>
+<p><span class="arithmatex">\([Q(x_2)], [\neg P(v_1), \neg Q(v_2)]\)</span> resolve to give <span class="arithmatex">\([\neg P(v_1)]\)</span></p>
+<p><span class="arithmatex">\([P(x_1)], [\neg P(v_1)]\)</span> resolve to give <span class="arithmatex">\([ \;]\)</span></p>
+<p>Can infer empty clause even though no unit clauses initially.</p>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 5, you can test your knowledge in a formative exercise.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit 3 Lesson 5'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../03_03_PropositionalResolution/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 4 Resolution (propositional)
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../Unit4/04_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 4
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

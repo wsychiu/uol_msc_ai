@@ -1,0 +1,2041 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 1 Ontology - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ontology" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 1 Ontology
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../04_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 1 Ontology
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 1 Ontology
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-basic-ideas" class="md-nav__link">
+    1.1 Basic ideas
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Basic ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-what-is-an-ontology" class="md-nav__link">
+    1.1.1 What is an ontology?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-classes" class="md-nav__link">
+    1.1.2 Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.2 Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-hierarchy" class="md-nav__link">
+    1.1.2.1 Hierarchy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-individuals" class="md-nav__link">
+    1.1.3 Individuals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-relationships" class="md-nav__link">
+    1.1.4 Relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-open-world-and-closed-world" class="md-nav__link">
+    1.1.5 Open world and closed world
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-ontologies-are-not-static" class="md-nav__link">
+    1.1.6 Ontologies are not static
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-example-ontologies" class="md-nav__link">
+    1.2 Example ontologies
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Example ontologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-pizza-ontology" class="md-nav__link">
+    1.2.1 Pizza ontology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-snomed-ct" class="md-nav__link">
+    1.2.2 SNOMED CT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-ontology-lookup-service" class="md-nav__link">
+    1.2.3 Ontology lookup service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-cidoc-crm" class="md-nav__link">
+    1.2.4 CIDOC CRM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-foaf-friend-of-a-friend" class="md-nav__link">
+    1.2.5 FOAF: Friend of a friend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-representing-ontologies" class="md-nav__link">
+    1.3 Representing ontologies
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Representing ontologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-rdf" class="md-nav__link">
+    1.3.1 RDF
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.1 RDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311-overview" class="md-nav__link">
+    1.3.1.1 Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-data-structures" class="md-nav__link">
+    1.3.1.2 Data structures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-resource-locators" class="md-nav__link">
+    1.3.1.3 Resource locators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1314-triples" class="md-nav__link">
+    1.3.1.4 Triples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315-concrete-syntax" class="md-nav__link">
+    1.3.1.5 Concrete syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316-blank-nodes" class="md-nav__link">
+    1.3.1.6 Blank nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1317-other-rdf-features" class="md-nav__link">
+    1.3.1.7 Other RDF features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1318-namespace-examples" class="md-nav__link">
+    1.3.1.8 Namespace examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-description-logic" class="md-nav__link">
+    1.3.2 Description logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-basic-ideas" class="md-nav__link">
+    1.1 Basic ideas
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Basic ideas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-what-is-an-ontology" class="md-nav__link">
+    1.1.1 What is an ontology?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-classes" class="md-nav__link">
+    1.1.2 Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1.2 Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-hierarchy" class="md-nav__link">
+    1.1.2.1 Hierarchy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-individuals" class="md-nav__link">
+    1.1.3 Individuals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-relationships" class="md-nav__link">
+    1.1.4 Relationships
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-open-world-and-closed-world" class="md-nav__link">
+    1.1.5 Open world and closed world
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-ontologies-are-not-static" class="md-nav__link">
+    1.1.6 Ontologies are not static
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-example-ontologies" class="md-nav__link">
+    1.2 Example ontologies
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Example ontologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-pizza-ontology" class="md-nav__link">
+    1.2.1 Pizza ontology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-snomed-ct" class="md-nav__link">
+    1.2.2 SNOMED CT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-ontology-lookup-service" class="md-nav__link">
+    1.2.3 Ontology lookup service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#124-cidoc-crm" class="md-nav__link">
+    1.2.4 CIDOC CRM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#125-foaf-friend-of-a-friend" class="md-nav__link">
+    1.2.5 FOAF: Friend of a friend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-representing-ontologies" class="md-nav__link">
+    1.3 Representing ontologies
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Representing ontologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-rdf" class="md-nav__link">
+    1.3.1 RDF
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3.1 RDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1311-overview" class="md-nav__link">
+    1.3.1.1 Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1312-data-structures" class="md-nav__link">
+    1.3.1.2 Data structures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1313-resource-locators" class="md-nav__link">
+    1.3.1.3 Resource locators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1314-triples" class="md-nav__link">
+    1.3.1.4 Triples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1315-concrete-syntax" class="md-nav__link">
+    1.3.1.5 Concrete syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1316-blank-nodes" class="md-nav__link">
+    1.3.1.6 Blank nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1317-other-rdf-features" class="md-nav__link">
+    1.3.1.7 Other RDF features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1318-namespace-examples" class="md-nav__link">
+    1.3.1.8 Namespace examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-description-logic" class="md-nav__link">
+    1.3.2 Description logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ontology">Ontology</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>Understand what is meant by an ontology.</li>
+<li>Find examples of ontologies, for example using the "ontology lookup service".</li>
+<li>Describe the difference between the "open world assumption" and the "closed world assumption" in the context of databases and ontologies.</li>
+<li>Write simple examples in RDF to express relationships between entities.</li>
+</ul>
+</div>
+<h2 id="11-basic-ideas">1.1 Basic ideas</h2>
+<h3 id="111-what-is-an-ontology">1.1.1 What is an ontology?</h3>
+<p><strong>Ontologies</strong> provide a way of modelling an area of interest.
+For example, the Pizza ontology</p>
+<ul>
+<li>which you can access <a href="https://protege.stanford.edu/ontologies/pizza/pizza.owl" target="_blank">as an OWL file</a></li>
+<li>or which you can read about <a href="http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf" target="_blank">in a helpful tutorial for Prot&eacute;g&eacute;</a></li>
+</ul>
+<p>gives a way of describing pizzas and pizza toppings, as well as describing how
+certain types of pizza must have particular toppings. It is recommended that you
+read the  pizza tutorial in conjunction with the material on Lesson 3 of this unit.</p>
+<p>While pizza may be a very specific aspect of the known universe, ontologies
+can be much wider in scope. The top level of the SUMO ontology, as presented
+in <a href="https://www.ontologyportal.org/professional/FOIS.pdf" target="_blank">(Niles and Pease, 2001)</a> has the following structure:</p>
+<ul>
+<li>Entity<ul>
+<li>Physical  <ul>
+<li>Object  <ul>
+<li>SelfConnectedObject    <ul>
+<li>ContinuousObject</li>
+<li>CorpuscularObject</li>
+</ul>
+</li>
+<li>Collection</li>
+</ul>
+</li>
+<li>Process    </li>
+</ul>
+</li>
+<li>Abstract<ul>
+<li>SetClass<ul>
+<li>Relation</li>
+</ul>
+</li>
+<li>Proposition</li>
+<li>Quantity<ul>
+<li>Number</li>
+<li>PhysicalQuantity</li>
+</ul>
+</li>
+<li>Attribute    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This provides one way of classifying almost everything.
+The idea is that any thing, or any entity, whatsoever, falls into one of the two
+classes consisting of physical things and of abstract things, and will then fall
+into some subclass.</p>
+<p>You can read the paper by Niles and Pease to understand some of the motivation behind the development
+of SUMO (Suggested Upper Merged Ontology). The paper also gives some general background
+about the need for this type of ontology.</p>
+<p>The top level of SUMO as described above is only part of the ontology.
+There you have a <strong>taxonomy</strong>. That is, a classification of things into different
+types of thing. Ontologies, including SUMO, provide much more than just a taxonomy.</p>
+<p>From a computer science perspective:</p>
+<ul>
+<li>
+<p>An ontology defines a common vocabulary for people who need to share information in a domain.   </p>
+</li>
+<li>
+<p>It includes machine-interpretable definitions of basic concepts in the domain and relations among them.</p>
+</li>
+</ul>
+<p>Motivations to develop an ontology include the need to:</p>
+<ul>
+<li>Share common understanding of the structure of information among people or software agents.</li>
+<li>Make domain knowledge explicit and reusable.</li>
+<li>Compare domains, applications, contexts.</li>
+<li>Facilitate collaboration.</li>
+<li>Provide a model to study a domain.</li>
+</ul>
+<p>An ontology includes:</p>
+<ul>
+<li>Classes (concepts, kinds, types, sorts of thing)</li>
+<li>Relationships (properties, roles)</li>
+<li>Instances (individuals)</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Beware</p>
+<p>Names are not standard.
+For example, description logic talks about <strong>roles</strong> rather than <strong>properties</strong>.
+Some properties may be called <strong>attributes</strong>.</p>
+</div>
+<p>In an ontology, as well as saying what the classes and instances and relationships are, we often:</p>
+<ul>
+<li>Say that an individual belongs to a class: <br />
+   e.g. <em>Dumbo is an Elephant</em>.   </li>
+<li>Say that one class is a subclass of another:<br />
+   e.g. <em>An Elephant is an Animal</em>.    </li>
+<li>Define new classes out of existing ones and relationships: <br />
+   e.g. <em>The class of Students studying more than 6 modules</em>.    </li>
+<li>State features that relationships have: <br />
+   e.g. <em>If A is married to B then B is married to A</em>.</li>
+<li>Use various kinds of logic to state axioms about how the aspects of the world
+described by the ontology behave.</li>
+</ul>
+<p><strong>Classes</strong> and <strong>relationships</strong> are key aspects of any ontology. However,
+to determine appropriate classes and relationships depends on the
+application area and usually is hard. In the pizza ontology there is a class
+called <strong>AmericanaPizza.</strong> In other places this might be called an example of a <strong>type</strong>
+of pizza, or a <strong>kind</strong> of pizza. An example of a relationship in the pizza world
+could be the relationship between a pizza and a topping where that pizza has that
+particular topping.</p>
+<p>In addition, ontologies generally have <strong>instances</strong> or <strong>individuals</strong>
+but these need not correspond to individual things in the real world.</p>
+<p>You could have vanilla as an instance of a class <strong>Flavour</strong>, and mean that
+vanilla was a particular type of flavour. But you could alternatively have
+<strong>Vanilla</strong> as a class, where the instances in that class are different vanilla flavoured things. Being an individual in an ontology is not something inherent in the idea or thing itself &ndash; it depends
+on what the purpose of the ontology is.</p>
+<p>Ontologies can be represented and manipulated using:</p>
+<ul>
+<li>
+<p>Languages such as:</p>
+<ul>
+<li><strong>RDF</strong> (Resource Description Framework), a way of representing knowledge
+in triples which can form graphs or networks.</li>
+<li><strong>OWL</strong> (Web Ontology Language), a more expressive language than RDF,
+based on description logic.</li>
+<li><strong>SPARQL</strong> (SPARQL Protocol And RDF Query Language),
+a query language for RDF data that is similar to SQL.</li>
+</ul>
+</li>
+<li>
+<p>Software such as:</p>
+<ul>
+<li>Prot&eacute;g&eacute; which we use in Lesson 3 of unit 4 (this unit).</li>
+</ul>
+</li>
+</ul>
+<h3 id="112-classes">1.1.2 Classes</h3>
+<p>An ontology has <strong>classes</strong>:  </p>
+<ul>
+<li>Classes (also called concepts) can be seen as answers to the question
+<em>what kind of a thing is this?</em></li>
+<li>Conventionally classes are singular names e.g <strong>Animal</strong> not <strong>Animals</strong>. Classes can be thought of as collections of individuals, but we stick to singular names.
+We think of a class <strong>Animal</strong> as consisting of animals, but the name of the class
+is <strong>Animal</strong> and not <strong>Animals</strong>.</li>
+<li>Classes define the main concepts in the domain.</li>
+</ul>
+<h4 id="1121-hierarchy">1.1.2.1 Hierarchy</h4>
+<p>Classes have <strong>hierarchy</strong>.</p>
+<p>Based on their place in the hierarchy, a class can be:  </p>
+<ul>
+<li>Superclass (parent) of another class.</li>
+<li>Subclass (child) of another class.</li>
+</ul>
+<p>Every subclass inherits the characteristics of its superclass in the domain.</p>
+<p>Multiple inheritance is usually allowed. For example, there can be a class
+<strong>SeaPlane</strong> which is a subclass of both <strong>Plane</strong> and <strong>WaterBorneVehicle</strong> although neither
+of these two classes is a subclass of the other one.</p>
+<h3 id="113-individuals">1.1.3 Individuals</h3>
+<p>Ontologies usually have <strong>individuals</strong> also called <strong>instances</strong>.
+These are the specific objects we will see in our world (e.g. in a database including the data from the world).
+Every individual belongs to <strong>at least one class</strong>.</p>
+<p>Individuals <strong>inherit the attributes</strong> of their class(es),
+and have specific values (this is what differentiates them from other individuals in the class).</p>
+<p>What is an individual can depend on the purpose of the ontology. It is not something that
+is inherent in a thing on its own.</p>
+<p>We can ask: are the following individuals?    </p>
+<ul>
+<li>
+<p>The Lego model of Hogwarts?</p>
+</li>
+<li>
+<p>The book <em>Jane Eyre</em> by Charlotte Bronte?</p>
+</li>
+</ul>
+<p>This is not entirely straightforward.
+These are not physical things you can point at in the world.
+You can point at a particular copy of a book, or a particular example
+of a Lego model. But when we say 'Charlotte Bronte wrote Jane Eyre' we
+are not talking about specific physical examples of the book but something more
+abstract.</p>
+<p>A class will be a collection of some individuals, but it is possible that
+individuals are not physical things; maybe we can think of them as collections
+(e.g. copies of a book) but only in a way that we do
+not want to model in the particular ontology.</p>
+<ul>
+<li>
+<p>The text of a book could be an individual in one ontology belonging to a class of works by the author.</p>
+</li>
+<li>
+<p>A different ontology might have all physical copies of the same text as individuals in one class;
+another ontology might have different editions as individuals.</p>
+</li>
+<li>
+<p>You have to think very carefully about the purpose of the model (the ontology) to answer questions
+about what should be modelled as an individual, or as a class, or as a relationship, etc.</p>
+</li>
+</ul>
+<h3 id="114-relationships">1.1.4 Relationships</h3>
+<p>Ontologies have <strong>relationships</strong>.
+There are lots of words that some people use to mean the same as relationship,
+and which other people use to mean something different. Three that we will see are:</p>
+<ul>
+<li>Properties</li>
+<li>Roles</li>
+<li>Attributes</li>
+</ul>
+<p>The modelling of a domain into classes and relationships is essentially the
+same as the conceptual modelling process of finding entities and relationships
+as an early state in relational database design. So the kind of relationships
+we might have in an ontology might be called things like:</p>
+<ul>
+<li><strong>ParentOf</strong> (a relationship that may hold between two people)</li>
+<li><strong>IngredientOf</strong> (a relationship between an ingredient and a dish)</li>
+<li><strong>YearsOld</strong> (a relationship between a tree and a number)</li>
+</ul>
+<p>In <strong>OWL</strong> (the ontology language in Prot&eacute;g&eacute;) relationships are called properties
+and are
+divided into those:    </p>
+<ul>
+<li>between individuals (object properties), or</li>
+<li>relating an individual to a value (datatype properties, elsewhere often called attributes).</li>
+</ul>
+<p>Relationships:    </p>
+<ul>
+<li>
+<p>allow us to define classes (e.g. all individuals having certain properties),</p>
+</li>
+<li>
+<p>specify the main attributes (by naming them and defining restrictions) which each individual in the class should have,</p>
+</li>
+<li>
+<p>allow us to define links between classes,</p>
+</li>
+<li>
+<p>can specify the link between two classes by naming it and defining restrictions.</p>
+</li>
+</ul>
+<p><strong>Beware:</strong>
+<em>is a</em> is typically a relationship NOT between individuals
+but between an individual and a class or between classes.
+This is an important part of an ontology, but is not the kind
+of relationship we are thinking of here. When we say
+<em>an elephant is a mammal</em> we are expressing a sub-class relationship
+in the class hierarchy.  It can be confusing because
+in English we use exactly the same two words (<em>is a</em>) to express
+class membership for an individual.
+Saying that an individual belongs to a class is completely different from both:</p>
+<ul>
+<li>relating two individuals to each other, and</li>
+<li>relating one class to another.</li>
+</ul>
+<p>Some care is needed in disentangling what is meant.
+For example, assuming <strong>Mother</strong> and <strong>Parent</strong> are classes:    </p>
+<ul>
+<li>Alice is a mother (individual is related to class).</li>
+<li>Alice is a parent (individual is related to class).</li>
+<li>Alice is a parent of Bill (relation between individuals).</li>
+<li>Alice is the mother of Bill (relation between individuals).</li>
+<li>The mother of Bill is Alice (relation between individuals).</li>
+<li>A mother is a parent (this means all mothers are parents, not some individual mother).</li>
+<li>A lion is on the loose (this means some individual lion, not all lions).</li>
+<li>Mothers are parents (this means all mothers are parents).</li>
+</ul>
+<h3 id="115-open-world-and-closed-world">1.1.5 Open world and closed world</h3>
+<p>Given the following facts and nothing else:</p>
+<ul>
+<li>mod2345 is a <strong>Level2Module</strong></li>
+<li>mod3678 is a <strong>Level3Module</strong></li>
+<li>Ammar is a member of staff who teaches on mod2345</li>
+<li>Vania is a member of staff who teaches on mod3678 and mod2345</li>
+</ul>
+<p>Does Ammar belong to the class of staff who ONLY teach <strong>Level2Modules</strong>?</p>
+<p>In working with ontologies we use the open world assumption and not the
+closed world assumption.
+The following two sentences have been paraphrased from the <a href="http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf" target="_blank">Pizza tutorial</a>:</p>
+<blockquote>
+<p>The open world assumption means that we cannot assume something does not
+exist until it is
+explicitly stated that it does not exist.</p>
+<p>In other words, because something hasn't been stated to be true, it cannot
+be assumed to be false &mdash; it is assumed that
+'the knowledge just hasn't been added to the knowledge base'.</p>
+</blockquote>
+<p>Under the open world assumption, we cannot conclude Ammar only teaches <strong>Level2Modules</strong>.</p>
+<p>Ontologies typically work with the open world assumption. This is like first order logic, and most mathematical logics including propositional logic and description logic.</p>
+<p>Relational databases typically use the closed world assumption.</p>
+<p>For example, consider a table like this:</p>
+<div class="arithmatex">\[
+\begin{array}{|l|l|}
+\hline
+\mathsf{Name} &amp; \mathsf{Type}\\
+\hline
+\mathsf{Felix} &amp; \mathsf{cat}\\
+\mathsf{Spot} &amp; \mathsf{dog} \\
+\hline
+\end{array}
+\]</div>
+<p>Given the query "is Spot a cat?" we would expect the answer "no".</p>
+<p>The "closed world assumption" is so called because it is assumed that all the facts about the world being modelled are present in the database.</p>
+<p>If we ask whether Spot is a cat, we see there is no row in the table which says that Spot is a cat, and we assume that if Spot were a cat then it would be recorded.</p>
+<p>This is just like the way Prolog treats negation. The table could be represented in Prolog as:</p>
+<div class="highlight"><pre><span></span><code>cat(Felix).
+
+dog(Spot).
+</code></pre></div>
+<p>and the query:</p>
+<div class="highlight"><pre><span></span><code>?- cat(Spot).
+</code></pre></div>
+<p>will get a negative answer.</p>
+<p>But the query:</p>
+<div class="highlight"><pre><span></span><code> ?- not(cat(Spot)).
+</code></pre></div>
+<p>will succeed.</p>
+<p>The distinction between the open and closed world assumptions is important.</p>
+<p>It is not a question of which is right or wrong; there are different ways of interpreting data and we need to be aware of this.</p>
+<h3 id="116-ontologies-are-not-static">1.1.6 Ontologies are not static</h3>
+<p>Ontologies, databases, knowledge bases, etc all change over time. Individuals that are of interest may change (e.g. students leave, people die, new people come in), and relationships between individuals may change (e.g. people become friends, know new people).</p>
+<p>But a different kind of change is that new classes may be needed (e.g. ontologist hears of egg-laying mammals), and new relationships may be needed (e.g. civil partnerships distinct from marriage).</p>
+<p>The processes of maintaining large ontologies is complex, as with any kind of engineering
+structure such as a large software system. The world the structure was invented for changes
+in multiple ways and adjusting to these changes without causing additional problems
+is a major challenge.</p>
+<h2 id="12-example-ontologies">1.2 Example ontologies</h2>
+<p>Listed below are only a few instructive examples. You should also see if you can find
+ontologies related to any domains that are of particular interest to you.
+Of course, finding ontologies on the internet does not mean they are necessarily
+good examples and some may have many flaws. The ones listed below are certainly good quality examples,
+although experts may disagree about parts of them.</p>
+<h3 id="121-pizza-ontology">1.2.1 Pizza ontology</h3>
+<p>We met this one earlier, but you can learn a lot from studying this example:</p>
+<ul>
+<li>which you can access <a href="https://protege.stanford.edu/ontologies/pizza/pizza.owl" target="_blank">as an OWL file</a>,</li>
+<li>or which you can read about <a href="http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf" target="_blank">in a helpful tutorial for Prot&eacute;g&eacute;</a>.</li>
+</ul>
+<h3 id="122-snomed-ct">1.2.2 SNOMED CT</h3>
+<p>In the medical domain <a href="https:////digital.nhs.uk/services/terminology-and-classifications/snomed-ct" target="_blank">SNOMED CT</a>
+is used by the NHS in the UK. In the link just given it
+is stated to be:</p>
+<blockquote>
+<p>' &hellip; a structured clinical vocabulary for use in an electronic health record.
+It is the most comprehensive and precise clinical health terminology product in the world.'</p>
+</blockquote>
+<p>SNOMED CT provides a large ontology of concepts and relationships used to ensure that
+electronic health data can be interpreted in a consistent way.</p>
+<h3 id="123-ontology-lookup-service">1.2.3 Ontology lookup service</h3>
+<p>A collection of different ontologies can be found at <a href="https://www.ebi.ac.uk/ontology-lookup/" target="_blank">Ontologies from European Bioinformatics Institute</a>.</p>
+<p>Including among over 270 ontologies these ones are four that you could study:</p>
+<ul>
+<li>
+<p><a href="https://www.ebi.ac.uk/ols/ontologies/bfo" target="_blank">Basic Formal Ontology</a>.</p>
+</li>
+<li>
+<p><a href="https://www.ebi.ac.uk/ols/ontologies/bspo" target="_blank">Biological Spatial Ontology</a>.</p>
+</li>
+<li>
+<p><a href="https://www.ebi.ac.uk/ols/ontologies/doid" target="_blank">Human Disease Ontology</a>.</p>
+</li>
+<li>
+<p><a href="https://www.ebi.ac.uk/ols/ontologies/iao" target="_blank">Information Artifact Ontology</a>.</p>
+</li>
+</ul>
+<h3 id="124-cidoc-crm">1.2.4 CIDOC CRM</h3>
+<p><a href="https://cidoc-crm.org/" target="_blank">CIDOC CRM</a> is a base ontology and a number of extensions
+for cultural heritage data. For example, works of art, culturally significant
+buildings, objects in museums, musical scores, and much else.
+It is stated at <a href="https://cidoc-crm.org/" target="_blank">cidoc-crm.org</a> that:</p>
+<blockquote>
+<p>'The CIDOC Conceptual Reference Model (CRM) is a theoretical and practical tool
+for information integration in the field of cultural heritage.
+It can help researchers, administrators and the public explore complex questions
+with regards to our past across diverse and dispersed datasets.
+The CIDOC CRM achieves this by providing definitions and a formal structure for
+describing the implicit and explicit concepts and relationships used in cultural
+heritage documentation and of general interest for the querying and exploration of such data.
+Such models are also known as formal ontologies.
+These formal descriptions allow the integration of data from multiple sources
+in a software and schema agnostic fashion.'</p>
+</blockquote>
+<p>You should read some of the detailed documentation provided for CIDOC CRM
+as this provides helpful examples of the wide range of entities that it deals with.</p>
+<h3 id="125-foaf-friend-of-a-friend">1.2.5 FOAF: Friend of a friend</h3>
+<p>Although not as widely used as it was expected to be when it originated in 2000,
+this is an example that is often mentioned in literature about RDF
+and the semantic web.
+<strong>FOAF</strong> is a simple ontology for describing people and relationships to things such as
+a name, an email address, and other people that one person knows.
+The formal description is documented at <a href="http://xmlns.com/foaf/0.1/" target="_blank">xmlns.com/foaf/0.1/</a>.
+This also contains easy to understand background about the semantic web and the motivation for FOAF.</p>
+<h2 id="13-representing-ontologies">1.3 Representing ontologies</h2>
+<h3 id="131-rdf">1.3.1 RDF</h3>
+<h4 id="1311-overview">1.3.1.1 Overview</h4>
+<p>The Resource Description Framework (RDF) is a framework for representing
+information on the Web. RDF is extensively used in providing <strong>linked data</strong>.
+As a very brief overview:</p>
+<ul>
+<li>RDF allows the representation of data about resources on the Web,
+and also about physical things in the real world, as well as about abstract
+ideas.</li>
+<li>You can start by thinking of RDF as a way of describing individual things
+and their relationships. For example, saying that a given person is the
+author of a particular web page.</li>
+<li>RDF makes descriptions like that out of <strong>triples</strong>, which you can visualise
+as being an arrow linking one end point to another.
+In the example of someone being the author
+of a web page, the two end points are (representations of) the person and the
+web page. The link between them is the relationship 'is-the-author-of'.</li>
+<li>A large collection of data is then a large network of nodes and links where
+every one of the links is the middle part of an RDF triple.</li>
+<li>But RDF and its friends are not just a way of representing data
+about individual things. By using <strong>RDFS (RDF Schema)</strong> it is possible not just
+to assert an 'is-the-author-of' relationship between two entities, but also
+to assert that  'is-the-author-of' has a 'domain' relationship to a class 'Person',
+and a 'range' relationship to a class 'Webpage'. In this way the things used to
+relate individuals also appear as entities themselves that can be linked.</li>
+<li>
+<p><strong>Namespaces</strong> are used as a way of making RDF more readable for humans.
+For example,</p>
+<div class="highlight"><pre><span></span><code>     @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+</code></pre></div>
+<p>declares <tt>foaf</tt> to refer to a location so that it is possible to write
+  <tt>foaf:Person</tt> to mean the class <tt>Person</tt> in the sense of the
+  given prefix, instead of what may be meant by <tt>Person</tt> elsewhere.</p>
+</li>
+</ul>
+<h4 id="1312-data-structures">1.3.1.2 Data structures</h4>
+<p>The following is taken from <a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank">https://www.w3.org/TR/rdf11-concepts/</a>:</p>
+<blockquote>
+<p>[there is] an abstract syntax (a data model) which serves to link all
+RDF-based languages and specifications.
+The abstract syntax has two key data structures:</p>
+<ol>
+<li>
+<p>RDF graphs are sets of subject-predicate-object triples,
+where the elements may be     </p>
+<ol>
+<li>IRIs,</li>
+<li>blank nodes, or</li>
+<li>datatyped literals.    </li>
+</ol>
+<p>They are used to express descriptions of resources.       </p>
+</li>
+<li>
+<p>RDF datasets are used to organize collections of RDF graphs, and
+comprise a default graph and zero or more named graphs.</p>
+</li>
+</ol>
+</blockquote>
+<p>The basic picture to have of a triple is this:</p>
+<p><img alt="Fig 4.1.1. A diagram of a basic triple. Please see the full text description below." src="../images/04_02_rdf_triple.png" /></p>
+<p><strong>Fig 4.2.1.</strong> A diagram of a basic triple. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.1.1.</summary><p>This diagram is an RDF graph with two nodes (Subject and Object) and a triple connecting them (Predicate).    </p>
+</details>
+<h4 id="1313-resource-locators">1.3.1.3 Resource locators</h4>
+<ul>
+<li>
+<p><strong>URL</strong> (Uniform Resource Locator). It means a
+Web Resource address, including protocol
+    e.g. HTTP, like these: <u>http://www.leeds.ac.uk/</u>; <u>http://webprod3.leeds.ac.uk/catalogue/dynprogrammes.asp?Y=201920&amp;P=BSC-COMP-X</u></p>
+</li>
+<li>
+<p><strong>URI</strong> (Uniform Resource Indicator), includes URLs
+  and resources having no location e.g. urn:isbn:0451450523 (a book)
+  Could be a way of referring to a real world thing (e.g. a person).</p>
+</li>
+<li>
+<p><strong>IRI</strong> (Internationalized Resource Indicator), like URI but allows unicode.</p>
+</li>
+</ul>
+<p>As <a href="https://www.w3.org/2001/tag/doc/identify" target="_blank">https://www.w3.org/2001/tag/doc/identify</a>
+says:</p>
+<p>[RFC2396] is clear that:
+"A resource can be anything that has identity”.
+RDF provides the ability to described resources by their relationship to one
+another which leads to the notion of existentially qualified resources.
+For example, there exists a person whose internet mailbox is identified by
+the URI mailto:timbl@w3.org. This identifies the person of Tim Berners-Lee by
+reference to the URI of his internet mailbox without it being necessary to
+assign a URI to identify the concept of the person Tim Berners-Lee.</p>
+<p>URIs are Not Unique. Although the resource identified by a URI should be consistent, it does not
+follow that different URIs must always refer to different resources. It is perfectly reasonable for a resource to be
+identified by several different URIs.</p>
+<p><a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank">https://www.w3.org/TR/rdf11-concepts/</a> says:
+Any IRI or literal denotes something in the world (the ”universe of discourse”). These things are called resources. Anything can be a resource, including physical things, documents, abstract concepts, numbers and strings.</p>
+<p>Asserting an RDF triple says that some relationship, indicated by the predicate, holds between the resources denoted by the subject and object. This statement corresponding to an RDF triple is known as an RDF statement. The predicate itself is an IRI and denotes a property, that is, a resource that can be thought of as a binary relation.</p>
+<p>Unlike IRIs and literals, blank nodes do not identify specific resources. Statements involving blank nodes say that something with the given relationships exists, without explicitly naming it.</p>
+<h4 id="1314-triples">1.3.1.4 Triples</h4>
+<p>Triples connect a resource with a resource or with a literal:</p>
+<p><img alt="Fig 4.1.2. A diagram of a triple with a resource. Please see the full text description below." src="../images/04_02_triple_resource1.png" /></p>
+<p><strong>Fig 4.2.2.</strong> A diagram of a triple with a resource. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.1.2.</summary><p>This diagram is an RDF graph with two nodes (Resource and Resource) and a triple (Property) connecting them.    </p>
+</details>
+<p><img alt="Fig 4.1.3. A diagram of a triple with a literal. Please see the full text description below." src="../images/04_02_triple_resource2.png" /></p>
+<p><strong>Fig 4.1.3.</strong> A diagram of a triple with a literal. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.1.3.</summary><p>This diagram is an RDF graph with two nodes (Resource and Literal) and a triple (Property) connecting them.</p>
+</details>
+<h4 id="1315-concrete-syntax">1.3.1.5 Concrete syntax</h4>
+<p>Here is some RDF (XML syntax):</p>
+<div class="highlight"><pre><span></span><code>&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+xmlns:ht=&quot;http://example.com/hotels/ht#&quot;&gt;
+
+&lt;rdf:Description
+       rdf:about=&quot;http://www.the-queens.com/rdf&quot;&gt;
+       &lt;ht:name xml:lang=&quot;en&quot;&gt;QueensHotel&lt;/ht:name&gt;
+       &lt;ht:starRating
+         rdf:resource=&quot;http://example.com/hotel_rates&quot;&gt;&lt;/ht:starRating&gt;
+&lt;/rdf:Description&gt;
+
+&lt;rdf:Description
+    rdf:about=&quot;some other hotel &quot;&gt;
+       &lt;ht:name&gt;name of other hotel&lt;/ht:name&gt;
+       &lt;ht:numberOfRooms&gt;105&lt;/ht:numberOfRooms&gt;
+&lt;/rdf:Description&gt;
+
+&lt;/rdf:RDF&gt;
+</code></pre></div>
+<p>You can validate it at <a href="https://www.w3.org/RDF/Validator/" target="_blank">https://www.w3.org/RDF/Validator/</a>.</p>
+<ul>
+<li><strong>XML</strong> is the recommended standard, but XML is not that easy for humans.</li>
+<li><strong>Turtle</strong> is an often seen syntax.</li>
+<li>The name Turtle comes from “Terse RDF Triple Language”.</li>
+</ul>
+<p>Turtle example here:</p>
+<div class="highlight"><pre><span></span><code>@prefix ex: &lt;http://example.com/&gt; .
+    ex:person01 ex:name &quot;fred&quot; .
+</code></pre></div>
+<p>but in XML this is more like:</p>
+<div class="highlight"><pre><span></span><code>&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+         xmlns:ex=&quot;http://example.com/&quot; &gt;
+    &lt;rdf:Description  rdf:about=&quot;http://example.com/person01&quot;&gt;
+        &lt;ex:name&gt;fred&lt;/ex:name&gt;
+    &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</code></pre></div>
+<h4 id="1316-blank-nodes">1.3.1.6 Blank nodes</h4>
+<p>Saying ‘Manchester is between Liverpool and Leeds’ is not a binary relation,
+but it can be expressed as two triples by introducing a “blank node” in RDF:</p>
+<div class="highlight"><pre><span></span><code>&lt;rdf:RDF xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+         xmlns:ex=&quot;http://example.org/data#&quot;&gt;
+
+&lt;rdf:Description rdf:about=&quot;http://example.org/manchester&quot;&gt;
+    &lt;ex:between rdf:nodeID=&quot;b&quot;/&gt;
+&lt;/rdf:Description&gt;
+
+&lt;rdf:Description rdf:nodeID=&quot;b&quot; &gt;
+    &lt;ex:end rdf:resource=&quot;http://example.org/leeds&quot;/&gt;
+    &lt;ex:end rdf:resource=&quot;http://example.org/liverpool&quot;/&gt;
+&lt;/rdf:Description&gt;
+
+&lt;/rdf:RDF&gt;
+</code></pre></div>
+<p>or in Turtle:</p>
+<div class="highlight"><pre><span></span><code>@prefix ex: &lt;http://example.org/data#&gt; .
+
+&lt;http://example.org/manchester&gt; ex:between _:b .
+   _:b ex:end &lt;http://example.org/liverpool&gt; .
+   _:b ex:end &lt;http://example.org/leeds&gt; .
+</code></pre></div>
+<p>Alternatively, without an explicit blank node:</p>
+<div class="highlight"><pre><span></span><code>@prefix ex: &lt;http://example.org/data#&gt; .
+
+&lt;http://example.org/manchester&gt;
+    ex:between
+      [ ex:end &lt;http://example.org/leeds&gt; ,
+              &lt;http://example.org/liverpool&gt; ] .
+</code></pre></div>
+<h4 id="1317-other-rdf-features">1.3.1.7 Other RDF features</h4>
+<p>RDF has containers (including sequences and bags).</p>
+<p>Containers Turtle Syntax Sequence Example:     </p>
+<div class="highlight"><pre><span></span><code>@prefix mod: &lt;http://www.example.com/module#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#
+
+&lt;http://www.example.com/module/SemanticTech&gt;
+    mod:delivery [ a        rdf:Seq ;
+                   rdf:_1   &quot;Lecture01&quot; ;
+                   rdf:_2   &quot;Lecture02&quot; ;
+                   rdf:_3   &quot;Lecture03&quot; ;
+                   rdf:_4   &quot;Lecture04&quot;
+                 ] .
+</code></pre></div>
+<p>You can describe properties of RDF in RDF:</p>
+<div class="highlight"><pre><span></span><code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#
+@prefix ex: &lt;http://example.com/rdf-example/&gt;.
+
+ex:saying rdf:type rdf:Statement;
+          rdf:subject ex:fish;
+          rdf:predicate ex:likes; rdf:object ex:water.
+          rdf:type rdf:type rdf:Property.
+</code></pre></div>
+<p>rdfs (rdf schema) allows more complex statements.
+For example:</p>
+<ul>
+<li>
+<p><tt>rdfs:domain</tt>             <br />
+For saying that a predicate has a certain class as its domain.  </p>
+</li>
+<li>
+<p><tt>rdfs:range</tt>   <br />
+For saying that a predicate has a certain class as its range.  </p>
+</li>
+<li>
+<p><tt>rdfs:subClassOf</tt>        <br />
+For saying that one class is a sub-class of another.  </p>
+</li>
+</ul>
+<h4 id="1318-namespace-examples">1.3.1.8 Namespace examples</h4>
+<p>These also provide examples of how RDF and RDFS are used</p>
+<ul>
+<li>
+<p>Dublin Core – vocabulary for describing generic metadata</p>
+<div class="highlight"><pre><span></span><code>dc : &lt;http://purl.org/dc/elements/1.1/&gt;
+dcterms : &lt;http://purl.org/dc/terms/&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Geonames – describes geographical features</p>
+<div class="highlight"><pre><span></span><code>geonames : &lt;http://www.geonames.org/ontology#&gt;
+</code></pre></div>
+</li>
+<li>
+<p>Friend of a Friend – people and connections</p>
+<div class="highlight"><pre><span></span><code>foaf : &lt;http://xmlns.com/foaf/0.1/&gt;
+</code></pre></div>
+</li>
+</ul>
+<h3 id="132-description-logic">1.3.2 Description logic</h3>
+<p>The features of RDF and RDFS are limited in how much they are able to say
+about the entities they describe. Although we can describe classes
+<strong>Person*</strong> and <strong>Cat</strong> and <strong>Fish</strong> and build up an ontology with relationships such as
+<strong>owns</strong> and <strong>likesToEat</strong> as well as individual cats and people, we cannot say
+that the classes <strong>Person</strong> and <strong>Cat</strong> are disjoint. That is, we cannot express
+the constraint that no individual can be a person and a cat just using the
+mechanisms in RDF and RDFS.</p>
+<p>We have already seen that first order logic allows such things to be expressed
+in ways such as:</p>
+<div class="arithmatex">\[
+\forall x \, (\mathit{Cat}(x) \to \neg \mathit{Person}(x)).
+\]</div>
+<p>General first order logic is highly expressive, but is not practical
+for efficient reasoning tasks (and indeed some tasks can be impossible rather than inefficient).
+Description logic, which we meet in the next lesson, is much more
+expressive than RDF and RDFS, but still less expressive that first order logic.
+In general, the choice of a logic for knowledge representation involves a trade-off
+between expressive power and the ability to perform reasoning tasks efficiently.
+Description logic is designed to allow efficient reasoning for ontologies, but
+this means it cannot be as expressive as first order logic.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                About Unit 4
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04_03_DescriptionLogic/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 2 Description Logic
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

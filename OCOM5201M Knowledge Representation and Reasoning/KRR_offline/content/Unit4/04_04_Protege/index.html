@@ -1,0 +1,1622 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 3 Protege - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#protg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 3 Protege
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../04_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 3 Protege
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 3 Protege
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-protg-550" class="md-nav__link">
+    Installing Prot&eacute;g&eacute; 5.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-ontology" class="md-nav__link">
+    Creating an ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-some-classes" class="md-nav__link">
+    Create some classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-properties" class="md-nav__link">
+    Adding properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-properties" class="md-nav__link">
+    Characteristics of properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-reasoner" class="md-nav__link">
+    Using the reasoner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-classes" class="md-nav__link">
+    Defined classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-individuals" class="md-nav__link">
+    Adding individuals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inconsistency" class="md-nav__link">
+    Inconsistency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disjoint-classes" class="md-nav__link">
+    Disjoint classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-world-reasoning" class="md-nav__link">
+    Open world reasoning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-work-on-protg" class="md-nav__link">
+    Further work on Prot&eacute;g&eacute;
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-protg-550" class="md-nav__link">
+    Installing Prot&eacute;g&eacute; 5.5.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-ontology" class="md-nav__link">
+    Creating an ontology
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating an ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-some-classes" class="md-nav__link">
+    Create some classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-properties" class="md-nav__link">
+    Adding properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-properties" class="md-nav__link">
+    Characteristics of properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-reasoner" class="md-nav__link">
+    Using the reasoner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-classes" class="md-nav__link">
+    Defined classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-individuals" class="md-nav__link">
+    Adding individuals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inconsistency" class="md-nav__link">
+    Inconsistency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disjoint-classes" class="md-nav__link">
+    Disjoint classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-world-reasoning" class="md-nav__link">
+    Open world reasoning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-work-on-protg" class="md-nav__link">
+    Further work on Prot&eacute;g&eacute;
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="protg">Prot&eacute;g&eacute;</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p><strong>After completing this lesson you should be able to:</strong></p>
+<ul>
+<li>Use the Prot&eacute;g&eacute; software for defining a class hierarchy.</li>
+<li>Use Prot&eacute;g&eacute; to define properties and their characteristics.</li>
+<li>Use a reasoner with Prot&eacute;g&eacute; to compute inferences.</li>
+<li>Explain the difference between  open world reasoning and closed world reasoning in the context of Prot&eacute;g&eacute;.</li>
+</ul>
+</div>
+<h2 id="installing-protg-550">Installing Prot&eacute;g&eacute; 5.5.0</h2>
+<p>It is straightforward to install the latest version of Prot&eacute;g&eacute;
+on your own computer.
+At <a href="http://protegeproject.github.io/protege/" target="_blank">http://protegeproject.github.io/protege/</a>
+you will find all the instructions you need.</p>
+<h2 id="creating-an-ontology">Creating an ontology</h2>
+<p>On starting Prot&eacute;g&eacute; you will see something like this:
+<img alt="Fig 4.3.1. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen01.png" /></p>
+<p><strong>Fig 4.3.1.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.1.</summary><p>This screenshot shows what the Protégé application window looks like when you open it up. The panel on the upper left has the <strong>Active ontology</strong> tab open. The panel on the upper right is for <strong>Ontology metrics</strong>. The panel on the bottom has the <strong>Ontology imports</strong> tab open.</p>
+</details>
+<p>Note that the top half of the window has several tabs, including:</p>
+<ul>
+<li>Active ontology,</li>
+<li>Entities,</li>
+<li>Classes,</li>
+<li>Individuals by class.</li>
+</ul>
+<p>Make sure the <strong>Active ontology</strong> tab is selected and by clicking on the <strong>+</strong> sign
+next to <strong>Annotations</strong> add a suitable annotation:
+<img alt="Fig 4.3.2. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen02.png" /></p>
+<p><strong>Fig 4.3.2.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot Fig 4.3.2.</summary><p>This screenshot shows the <strong>Create Annotation</strong> window that opens after you select the plus icon next to <strong>Annotations</strong>. Here you can add a suitable annotation in the text box on the right hand side.</p>
+</details>
+<h3 id="create-some-classes">Create some classes</h3>
+<ul>
+<li>Select the <strong>Classes</strong> tab which should bring up the <strong>Class hierarchy</strong>.
+<img alt="Fig 4.3.3. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen03.png" /></li>
+</ul>
+<p><strong>Fig 4.3.3.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.3.</summary><p>This screenshot has the <strong>Classes</strong> tab open. There are two <strong>Class hierarchy</strong> panels on the left-hand side. On the upper right is the <strong>Annotations</strong> panel and below this is the <strong>Description</strong> panel.</p>
+</details>
+<ul>
+<li>
+<p>Select <strong>Thing</strong> (the top element of the hierarchy).</p>
+</li>
+<li>
+<p>Select the <strong>Add-subclass</strong> icon just above <strong>Thing</strong>
+and add a new class:     <br />
+<img alt="Fig 4.3.4. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen04.png" /></p>
+</li>
+</ul>
+<p><strong>Fig 4.3.4.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.4.</summary><p>This screenshot shows what happens after you select <strong>Thing</strong>, the top element of the hierarchy, and then select the <strong>Add sub-class</strong> icon above <strong>Thing</strong> and add a new sub-class. A <strong>Create a new Class</strong> panel pops up with a text box to enter a new Class name.</p>
+</details>
+<ul>
+<li>
+<p>Prot&eacute;g&eacute; provides a very flexible interface in which you
+are able to control the arrangement of individual windows. Windows can be
+split horizontally or vertically as well as floated off separately from the main
+window. Some of this flexibility can be confusing for beginners, but you are encouraged to explore the
+various features.</p>
+</li>
+<li>
+<p>Add further classes through adding sibling classes and subclasses so that you
+arrive at the following (but do not worry if the ordering of siblings is different).</p>
+</li>
+</ul>
+<p><img alt="Fig 4.3.5. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen05.png" /></p>
+<p><strong>Fig 4.3.5.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.5.</summary><p>This screenshot shows the <strong>Class hierarchy</strong> panel and the class hierarchy after numerous sibling classes and sub classes have been added.</p>
+</details>
+<p>The hierarchy shown is:</p>
+<ul>
+<li>owl:Thing<ul>
+<li>BeautifulThing</li>
+<li>UsefulThing</li>
+<li>Building<ul>
+<li>House<ul>
+<li>PuristHouse</li>
+<li>GoodHouse</li>
+<li>ValuableHouse</li>
+</ul>
+</li>
+<li>Station</li>
+<li>School.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="adding-properties">Adding properties</h3>
+<p>Informally we want to say the following:</p>
+<ul>
+<li>A valuable house is one which is near a school and a station.</li>
+<li>A good house is one in which everything is useful or beautiful.</li>
+<li>A purist house is one in which everything is useful and beautiful.</li>
+</ul>
+<p>Beware of the language here. If we say something is close to a school <strong>and</strong> a station
+we generally expect the school and the station to be different things. We certainly would not
+insist that they have to be the same thing. If we say everything is useful <strong>and</strong> beautiful we do mean
+that any single thing is both useful and also beautiful.  </p>
+<p>Instead of the <strong>Classes</strong> tab, you need to select the <strong>Entities</strong> tab.
+When you do this and select the top item in the <strong>Object property hierarchy</strong>,
+<strong>owl:topObjectProperty</strong>, you should see this:</p>
+<p><img alt="Fig 4.3.6. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen06.png" /></p>
+<p><strong>Fig 4.3.6.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.6.</summary><p>This screenshot shows the <strong>Entities</strong> tab open. On the left-hand side the <strong>Object properties</strong> panel is open and the top item in the object property hierarchy, <strong>owl:topObjectProperty</strong>, is selected. On the right-hand side there are four further panels open in this view. At the top is the <strong>Domains and ranges</strong> panel. In the centre is the <strong>Annotations</strong> panel. At the bottom the <strong>Characteristics</strong> and <strong>Description</strong> panels are side by side.    </p>
+</details>
+<p>Note that in this view you can see the seven characteristics functional,
+inverse functional, transitive, etc, which we studied earlier.
+There are various kinds of property in OWL. Here we use object properties
+which correspond to roles in description logic relating individuals to individuals.</p>
+<p>You can  create a new sub-property by clicking on the leftmost of the
+three icons which you can see here.</p>
+<p><img alt="Fig 4.3.7. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen07.png" />  </p>
+<p><strong>Fig 4.3.7.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.7.</summary><p>This screenshot shows the <strong>Entities</strong> tab open, focusing on the <strong>Object properties</strong> panel. There are three icons on the panel toolbar. The icon on the far left, <strong>Add sub property</strong>, should be selected.</p>
+</details>
+<p>Create the two properties <strong>isInside</strong> and <strong>isCloseTo</strong>, which are siblings of each other.
+<img alt="Fig 4.3.8. A screenshot of the prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen08.png" /></p>
+<p><strong>Fig 4.3.8.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.8.</summary><p>This screenshot focuses on the <strong>Object properties</strong> panel. After selecting the <strong>add sub-property</strong> icon, two sub-properties, <strong>isInside</strong> and <strong>isCloseTo</strong>, have been added. These are siblings in the hierarchy under <strong>owl:topObjectProperty</strong>.  </p>
+</details>
+<h3 id="characteristics-of-properties">Characteristics of properties</h3>
+<p>Next we want to define the property contains as being inverse to <strong>isInside</strong>.
+The idea is that <span class="arithmatex">\(x\)</span> <strong>isInside</strong> <span class="arithmatex">\(y\)</span> is the same as <span class="arithmatex">\(y\)</span> contains <span class="arithmatex">\(x\)</span>.</p>
+<ul>
+<li>Select
+ <strong>isInside</strong> and click on the <strong>+</strong> sign next to <strong>Inverse Of</strong>.</li>
+<li>You can then create the contains property which is the inverse of <strong>isInside</strong>.
+<img alt="Fig 4.3.9. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen09.png" /></li>
+</ul>
+<p><strong>Fig 4.3.9.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.9.</summary><p>This screenshot shows the window that is displayed when the sub-property <strong>isInside</strong> is selected. The <strong>+</strong> icon next to <strong>InverseOf</strong> in the <strong>Description</strong> panel on the lower right-hand side is also selected. You can then create the <strong>contains</strong> property which is the inverse of <strong>isInside</strong>.</p>
+</details>
+<ul>
+<li>Tick the appropriate boxes to make <strong>isInside</strong> and <strong>contains both</strong> transitive.</li>
+<li>Should <strong>isCloseTo</strong> be transitive? No -- can you see why?</li>
+<li>Let's make <strong>isCloseTo</strong> symmetric:    <br />
+<img alt="Fig 4.3.10. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen10.png" /></li>
+</ul>
+<p><strong>Fig 4.3.10.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.10.</summary><p>This screenshot shows the <strong>Characteristics</strong> and <strong>Description</strong> window when the property <strong>isCloseTo</strong> is selected. The checkbox <strong>Symmetric</strong> in the <strong>Characteristics</strong> panel has been selected.</p>
+</details>
+<h3 id="using-the-reasoner">Using the reasoner</h3>
+<p>If the <strong>isCloseTo</strong> property is symmetric, it must be its own inverse.
+Use the reasoner to check this. The way this appears may be different
+depending on which operating system you are using.      </p>
+<p><img alt="Fig 4.3.11. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen11.png" /></p>
+<p><strong>Fig 4.3.11.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.11.</summary><p>This screenshot shows the drop down <strong>Reasoner</strong> menu on the Protégé application. Use the reasoner to check whether the <strong>isCloseTo</strong> property that is symmetric is its own inverse. To do this select <strong>Start reasoner</strong> if this is the first time you’ve used reasoner. If it’s not the first time select <strong>Synchronize reasoner</strong>.</p>
+</details>
+<p>The first time you use the reasoner you need to select <strong>Start Reasoner</strong>;
+subsequently it will be <strong>Synchronise Reasoner</strong>.</p>
+<p>After using the reasoner you may need to click again on <strong>isCloseTo</strong> in the hierarchy
+before you get to this:</p>
+<p><img alt="Fig 4.3.12. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen12.png" /></p>
+<p><strong>Fig 4.3.12.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.12.</summary><p>This screenshot shows the <strong>isCloseTo</strong> property in the <strong>Object properties</strong> selected after using the reasoner. The <strong>Object properties</strong> panel is on the left-hand side and there are four panels on the right-hand side: <strong>Domains and ranges</strong> is at the top, <strong>Annotations</strong> in the centre, with the <strong>Characteristics* and **Description</strong> panels below, side by side.       </p>
+</details>
+<p>The key part is here:     <br />
+<img alt="Fig 4.3.13. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen13.png" />  </p>
+<p><strong>Fig 4.3.13.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.13.</summary><p>This screenshot shows a close-up of the <strong>Description</strong> panel after running the reasoner. The reasoner has deduced that <strong>isCloseTo</strong> is inverse of itself. If selected the <strong>?</strong> icon on the right-hand side reveals an explanation.     </p>
+</details>
+<p>The reasoner has deduced that <strong>isCloseTo</strong> is inverse to itself.
+If you click on the <strong>?</strong> you will get an explanation of the reasoning behind
+the deduction. In this case the explanation is very short.</p>
+<h3 id="restrictions">Restrictions</h3>
+<p>Next we want to say that a valuable house must be close to a school.</p>
+<p>This means the class <strong>ValuableHouse</strong> is a subclass, as follows if we use
+the notation of description logic:</p>
+<div class="arithmatex">\[\mathsf{ValuableHouse} \sqsubseteq \exists \mathsf{closeTo} . \mathsf{School}\]</div>
+<ul>
+<li>In Prot&eacute;g&eacute; you need to go back to the <strong>Classes</strong> tab and select
+<strong>ValuableHouse</strong> from the class hierarchy.</li>
+<li>Now click on the <em>+</em> where it says <strong>SubClass Of</strong>. In the hierarchy
+we have already ensured that:</li>
+</ul>
+<div class="arithmatex">\[\mathsf{ValuableHouse} \sqsubseteq \mathsf{House}\]</div>
+<p>but we are about to add another subclass relationship.      <br />
+<img alt="Fig 4.3.14. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen14.png" /></p>
+<p><strong>Fig 4.3.14.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.14.</summary><p>This screenshot shows the <strong>Class hierarchy</strong> tab with <strong>ValuableHouse</strong> selected on the left-hand side. On the right-hand side is the <strong>Description</strong> panel. Select the <strong>+</strong> icon next to <strong>SubClass Of</strong> to add a new subclass relationship.</p>
+</details>
+<ul>
+<li>Select the <strong>Object restriction creator</strong> in the window that pops up.</li>
+<li>The <strong>Restricted property</strong> should be <strong>isCloseTo</strong>.</li>
+<li>The <strong>Restriction filler</strong> should be <strong>School</strong>.</li>
+<li>
+<p>The <strong>Restriction type</strong> should be <strong>Some (existential)</strong>.  <br />
+<img alt="Fig 4.3.15. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen15.png" /></p>
+<p><strong>Fig 4.3.15.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.15.</summary><p>This screenshot shows the window that pops up after selecting the <strong>+</strong> icon next to <strong>SubClass Of</strong> on the <strong>Description</strong> panel. Select the <strong>Object restriction creator</strong> panel. This brings up the <strong>Restricted property</strong> panel on the left and the <strong>Restriction filler</strong> panel on the right-hand side. <strong>isCloseTo</strong> should be selected as the <strong>Restricted</strong> property and <strong>School</strong> as the <strong>Restriction filler</strong>. Below this the <strong>Restriction type</strong> selection should be <strong>Some (existential)</strong>.</p>
+</details>
+</li>
+<li>
+<p>Note that <strong>isCloseTo some School</strong> is really just an alternative syntax.
+for: <span class="arithmatex">\(\exists\, \mathsf{isCloseTo} . \mathsf{School}\)</span></p>
+<p><img alt="Fig 4.3.16. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen16.png" /></p>
+<p><strong>Fig 4.3.16.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.16.</summary><p>This screenshot shows a close-up of the <strong>Description</strong> panel when the property <strong>ValuableHouse</strong> is selected and after the existential property <strong>isCloseTo</strong>, restriction fillers <strong>School</strong> and existential type <strong>some</strong> have been added in the <strong>Object restriction creator</strong> window.</p>
+</details>
+</li>
+<li>
+<p>Add the other existential restriction:  <br />
+<strong>isCloseTo some Station</strong> in a similar way so you have:   </p>
+<p><img alt="Fig 4.3.17. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen17.png" /></p>
+<p><strong>Fig 4.3.17.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.17.</summary><p>This screenshot shows a close-up of the <strong>Description</strong> panel when the property <strong>ValuableHouse</strong> is selected and after the existential property <strong>isCloseTo</strong>, restriction fillers <strong>School</strong> and <strong>Station</strong>, and existential type <strong>some</strong> have been added in the <strong>Object restriction creator</strong> window.</p>
+</details>
+</li>
+<li>
+<p>Now create a new class which is sibling to valuable house called <strong>ExpensiveHouse</strong>.</p>
+</li>
+<li>
+<p>Specify that it is a subclass of:     </p>
+<div class="arithmatex">\[\exists \, \mathsf{isCloseTo} . (\mathsf{School} \sqcap \mathsf{Station})\]</div>
+<p>This time, use the <strong>Class expression editor</strong>, instead of the <strong>Object restriction creator</strong>,
+ to enter the appropriate text to achieve this.  </p>
+<p><img alt="Fig 4.3.18. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen18.png" /></p>
+<p><strong>Fig 4.3.18.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.18.</summary><p>This screenshot shows the <strong>Class expression editor</strong> of a new class <strong>ExpensiveHouse</strong>. Enter <strong>isCloseTo some (School and Station)</strong> into the <strong>Class expression editor</strong>.</p>
+</details>
+</li>
+</ul>
+<h3 id="defined-classes">Defined classes</h3>
+<p>So far our use of restriction types has asserted that:</p>
+<div class="arithmatex">\[\mathsf{ValuableHouse} \sqsubseteq \mathsf{House} \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{School}) \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{Station})\]</div>
+<p>and</p>
+<div class="arithmatex">\[\mathsf{ExpensiveHouse} \sqsubseteq \mathsf{House} \sqcap \exists \, \mathsf{isCloseTo} . (\mathsf{School} \sqcap \mathsf{Station})\]</div>
+<p>This does not mean that every expensive house is a valuable house, even though:</p>
+<div class="arithmatex">\[\exists \, \mathsf{isCloseTo} . (\mathsf{School} \sqcap \mathsf{Station}) \sqsubseteq
+(\exists\, \mathsf{isCloseTo} . \mathsf{School}) \sqcap
+(\exists\, \mathsf{isCloseTo} . \mathsf{Station})\]</div>
+<p>It is certainly the case that:</p>
+<div class="arithmatex">\[\mathsf{ExpensiveHouse} \sqsubseteq  \mathsf{House} \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{School}) \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{Station})\]</div>
+<p>but we have not said that:</p>
+<div class="arithmatex">\[\mathsf{House} \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{School}) \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{Station}) \sqsubseteq  \mathsf{ValuableHouse} \]</div>
+<p>In this case we can do that by asserting the equivalence:</p>
+<div class="arithmatex">\[\mathsf{ValuableHouse} \equiv   \mathsf{House} \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{School}) \sqcap (\exists\, \mathsf{isCloseTo} . \mathsf{Station})\]</div>
+<p>This asserts that <span class="arithmatex">\(\mathsf{ValuableHouse}\)</span> can be defined in terms of other classes.</p>
+<ul>
+<li>Back in Prot&eacute;g&eacute;, from <strong>Edit</strong> in the top menu, you can select
+<strong>Convert to defined class</strong> from the drop down menu.</li>
+</ul>
+<p><img alt="Fig 4.3.19. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen19.png" /></p>
+<p><strong>Fig 4.3.19.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.19.</summary><p>This screenshot shows the drop down <strong>Edit</strong> menu of the Protégé application. There is a <strong>Convert to defined class</strong> option in this menu. This option 'converts the superclasses of the selected class to an equivalent class'. In the screenshot <strong>ValuableHouse</strong> is the class selected in the <strong>Class hierarchy</strong> menu.</p>
+</details>
+<ul>
+<li>Also make <strong>ExpensiveHouse</strong> into a defined class.</li>
+<li>
+<p>The hierarchy looks like this now:      </p>
+<p><img alt="Fig 4.3.20. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen20.png" />  </p>
+<p><strong>Fig 4.3.20.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.20.</summary><p>This screenshot shows the <strong>Class hierarchy</strong> panel when <strong>ExpensiveHouse</strong> is selected. The <strong>Description</strong> panel is adjacent to it. <strong>ExpensiveHouse</strong> and <strong>ValuableHouse</strong> have been converted to defined classes. This is indicated by three horizontal bars in the dot next to the property name.</p>
+</details>
+</li>
+<li>
+<p>Now, what happens if we synchronise the reasoner?      </p>
+<p><img alt="Fig 4.3.21. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen21.png" />   </p>
+<p><strong>Fig 4.3.21.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.21.</summary><p>This screenshot shows the <strong>Class hierarchy (inferred)</strong> panel after the reasoner has been synchronised. <strong>ExpensiveHouse</strong> is now a subproperty of <strong>ValuableHouse</strong>, which is selected.</p>
+</details>
+<p>Note we are looking at the <em>inferred</em> hierarchy here.</p>
+</li>
+</ul>
+<h3 id="adding-individuals">Adding individuals</h3>
+<ul>
+<li>
+<p>Going now to the <strong>Individuals</strong> tab, it should be clear enough what you need to do to
+create three individuals with properties as follows:      </p>
+<ol>
+<li><span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span>: this is a <span class="arithmatex">\(\mathsf{House}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{Red\_House}\)</span>: this is a <span class="arithmatex">\(\mathsf{School}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{Red\_House}\)</span>: this is a <span class="arithmatex">\(\mathsf{School}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{West\_Avenue}\)</span>: this is a <span class="arithmatex">\(\mathsf{Station}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span> is close to <span class="arithmatex">\(\mathsf{Red\_House}\)</span></li>
+<li><span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span> is close to <span class="arithmatex">\(\mathsf{West\_Avenue}\)</span></li>
+</ol>
+</li>
+</ul>
+<p><img alt="Fig 4.3.22. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen23.png" />  </p>
+<p><strong>Fig 4.3.22</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.22.</summary><p>This screenshot shows the <strong>Individuals by class</strong> tab and shows you how to create an individual. In this case the individual is <strong>42_Acacia_Avenue</strong>, with the properties this is a <strong>House</strong>, <strong>isCloseTo Red_House</strong> and <strong>isCloseTo West_Avenue</strong>.
+In the upper left-hand corner is the <strong>Class hierarchy</strong> panel where <strong>House</strong> is selected. Below this is the <strong>Direct instances</strong> panel with <strong>42_Acacia_Avenue</strong> selected. On the upper right-hand side is the <strong>Annotations</strong> panel. Below this are two panels alongside each other: the <strong>Descriptions</strong> panel is on the left-hand side and the <strong>Object property assertions panel is on the right-hand side. In the **Object property assertions</strong> panel there are two assertions: <strong>isCloseTo Red_House</strong> and <strong>isCloseTo West_Avenue</strong>.</p>
+</details>
+<ul>
+<li>
+<p>The <strong>Object property assertions</strong> you need to make appear in the bottom right
+of the screen shot <strong>Fig 4.3.22</strong>.</p>
+</li>
+<li>
+<p>Now synchronise the reasoner to see that <strong>42_Acacia_Avenue</strong> is a valuable house, and
+by clicking on the <strong>?</strong>, by this inference, you can get the following explanation:</p>
+</li>
+</ul>
+<p><img alt="Fig 4.3.23. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen24.png" />  </p>
+<p><strong>Fig 4.3.23.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.23.</summary><p>This screenshot shows you the explanation after selecting the question mark in the reasoner after synchronising <strong>42_Acacia_Avenue</strong>. The options <strong>Show regular justifications</strong> and <strong>All justifications</strong> are selected. The following is displayed as the explanation:</p>
+<ul>
+<li>42_Acacia_Avenue Type House</li>
+<li>42_Acacia_Avenue isCloseTo Red_House</li>
+<li>42_Acacia_Avenue isCloseTo West_Avenue</li>
+<li>Red_House Type School</li>
+<li>West_Avenue Type Station</li>
+<li>ValuableHouse EquivalentTo House and (isCloseTo some School) and (isCloseTo some Station).</li>
+</ul>
+</details>
+<h2 id="inconsistency">Inconsistency</h2>
+<p>One of the values of reasoning for ontologies is to be able to detect
+when you have created an individual with contradictory properties.
+It is possible in Prot&eacute;g&eacute; to state that a class is empty
+without the ontology actually being inconsistent. Although this makes sense
+logically, it is unlikely to be intended in practical ontology construction.
+You can try the following experiment and see how Prot&eacute;g&eacute; highlights
+the empty class in the class hierachy.</p>
+<ol>
+<li>Create a new class <span class="arithmatex">\(\mathsf{Unicorn}\)</span>.</li>
+<li>Assert that this class is equivalent to <span class="arithmatex">\(\mathsf{owl{:}Nothing}\)</span>. Note that
+class names are case-sensitive, so be careful not to try <span class="arithmatex">\(\mathsf{owl{:}nothing}\)</span> etc.</li>
+<li>You should be able to run the reasoner without any fundamental objections
+appearing.</li>
+<li>Now create an individual of the class <span class="arithmatex">\(\mathsf{Unicorn}\)</span>. You will need a name
+for your unicorn.</li>
+<li>
+<p>Synchronise the reasoner, and you should get:</p>
+<p><img alt="Fig 4.3.24. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen26.png" /></p>
+<p><strong>Fig 4.3.24.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.24.</summary><p>This screenshot shows an inconsistency message after the reasoner has been synchronised for an individual of the class <strong>Unicorn</strong>.
+  The first part of the message says: Your ontology is inconsistent which means that the OWL reasoner will no longer be able to provide any useful information about the ontology.
+  Three options are then provided:</p>
+<ul>
+<li>'Click the Explain button to try the Protégé explanation facility.''</li>
+<li>'If you think you know what the problem is, click Cancel to fix the ontology yourself.''</li>
+<li>'Some reasoners come with command line tools that will provide complete explanations for inconsistent ontologies.''</li>
+</ul>
+<p>There are two buttons below this, <strong>Cancel</strong> and <strong>Explain.</strong></p>
+</details>
+</li>
+</ol>
+<p>We have tried to say that there are no unicorns and that there is an individual
+unicorn. Prot&eacute;g&eacute; alerts us to this inconsistency.
+In this case we deliberately introduced the inconsistency, but in creating
+complex ontologies such problems can occur and would make the ontology useless
+if not corrected.</p>
+<h2 id="disjoint-classes">Disjoint classes</h2>
+<p>In the <span class="arithmatex">\(\mathsf{Building}\)</span> example above there were classes
+<span class="arithmatex">\(\mathsf{Station}\)</span> and <span class="arithmatex">\(\mathsf{School}\)</span>. If we want to say
+that nothing is both a school and a station,
+Prot&eacute;g&eacute; provides a way to do this via the
+Description pane for one of the classes.
+Click on the <strong>+*</strong> next to <strong>Disjoint With</strong> in the <strong>Description</strong> pane for
+a class and you can assert that the class is disjoint from another class.
+If you do this, while
+keeping the defined class <span class="arithmatex">\(\mathsf{ExpensiveHouse}\)</span>:</p>
+<div class="arithmatex">\[\mathsf{ExpensiveHouse} \equiv \mathsf{House} \sqcap \exists \, \mathsf{isCloseTo} . (\mathsf{School} \sqcap \mathsf{Station})\]</div>
+<p>then you will find that the reasoner objects to this as <span class="arithmatex">\(\mathsf{ExpensiveHouse}\)</span> must be empty.</p>
+<p>In developing an ontology for an area where knowledge is not fixed, it can happen that
+classes are initially correctly described as disjoint but as more knowledge is
+acquired the ontology needs to be updated. Imagine the development of an ontology
+where classes <span class="arithmatex">\(\mathsf{EggLayingAnimal}\)</span> and <span class="arithmatex">\(\mathsf{Mammal}\)</span>
+were designated disjoint by someone unfamiliar with the platypus and other inhabitants of the
+intersection of these two classes. On being introduced to one of these examples, our imaginary
+ontologist would need to remove the disjointness requirement and maybe create a new class:</p>
+<div class="arithmatex">\[\mathsf{Monotreme} \equiv \mathsf{Mammal} \sqcap \mathsf{EggLayingAnimal}\]</div>
+<h2 id="open-world-reasoning">Open world reasoning</h2>
+<ol>
+<li>
+<p>Continue to develop the ontology so that the classes <span class="arithmatex">\(\mathsf{GoodHouse}\)</span> and <span class="arithmatex">\(\mathsf{PuristHouse}\)</span>
+have these definitions.</p>
+<div class="arithmatex">\[\mathsf{GoodHouse} \equiv \mathsf{House} \sqcap \forall\, \mathsf{contains} . (\mathsf{UsefulThing} \sqcup \mathsf{BeautifulThing})\]</div>
+<div class="arithmatex">\[\mathsf{PuristHouse} \equiv \mathsf{House} \sqcap \forall\, \mathsf{contains} . (\mathsf{UsefulThing} \sqcap \mathsf{BeautifulThing})\]</div>
+<p>You can do this using the method shown earlier, or you can type directly
+in the <strong>Class expression editor</strong> which comes up if you click on the <strong>+</strong>
+next to <strong>Equivalent To</strong> in the <strong>Description</strong> pane like this:</p>
+<p><img alt="Fig 4.3.25. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen25.png" /></p>
+<p><strong>Fig 4.3.25.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.25.</summary><p>This screenshot shows the <strong>Class expression editor</strong> if you select the <strong>+</strong> icon next to <strong>Equivalent To</strong> in the <strong>Description</strong> panel. The <strong>Class expression editor</strong> contains <strong>House and (contains only (UsefulThing and BeautifulThing))</strong>  </p>
+</details>
+</li>
+<li>
+<p>Check that the reasoner deduces:</p>
+<div class="arithmatex">\[\mathsf{PuristHouse} \sqsubseteq \mathsf{GoodHouse}\]</div>
+<p>Remember that you have to inspect the inferred class hierarchy
+not the asserted one to see this.    </p>
+</li>
+<li>
+<p>Introduce some individual items which <span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span> contains.
+For example: a piano, a dishwasher, a cat, a cactus, etc.
+Say that some of these are useful/beautiful or neither according to taste.</p>
+<p>It is optional in this exercise to follow William Morris who wrote <a href="https://www.marxists.org/archive/morris/works/1882/hopes/chapters/chapter3.htm" target="_blank">Hopes and Fears for Art, 1882</a>
+     <em>'Now unless we are musical, and need a piano
+ (in which case, as far as beauty is concerned, we are in a bad way) &hellip;'</em></p>
+</li>
+<li>
+<p>You are encouraged to play with different choices of things in 42 Acacia Avenue
+and the classes to which they belong. You can see if the inferred hierarchy changes
+depending on these choices. To take a concrete example, suppose that:</p>
+<ul>
+<li><span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span> contains a cat which is a <span class="arithmatex">\(\mathsf{BeautifulThing}\)</span>,
+and also contains a piano which is a <span class="arithmatex">\(\mathsf{UsefulThing}\)</span>,
+and we make no other assertions at all about individuals in that house.</li>
+</ul>
+<p>The only things we have said are in the house are either beautiful or
+useful. Does <span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span> get assigned to the
+class:    </p>
+<div class="arithmatex">\[\mathsf{GoodHouse} \equiv \mathsf{House} \sqcap \forall\, \mathsf{contains} . (\mathsf{UsefulThing} \sqcup \mathsf{BeautifulThing})\]</div>
+<p>by the reasoner?</p>
+<p>You should find that the answer is <em>'no'</em>. Because of the open world reasoning
+used in Prot&eacute;g&eacute; and in ontologies based on description logic,
+this is what is expected to happen.
+This is because the possibility remains open that there are objects lurking
+in the house which are neither useful nor beautiful but which are not recorded
+in the ontology.</p>
+<p>Next we see one way to assert that the house contains
+nothing other than  a cat and a piano.</p>
+</li>
+<li>
+<p>Create one new class called  <span class="arithmatex">\(\mathsf{42Contents}\)</span>.
+The idea is that instances of this class are just the things inside
+<span class="arithmatex">\(\mathsf{42\_Acacia\_Avenue}\)</span>.
+You can just make this a  subclass of <span class="arithmatex">\(\mathsf{owl{:}Thing}\)</span>
+and not a subclass of any of the other classes in the ontology.</p>
+<p>Using the <strong>Class Expression Editor</strong> assert that
+<span class="arithmatex">\(\mathsf{42Contents}\)</span> is equivalent to two classes:</p>
+<p><img alt="Fig 4.3.26. A screenshot of the Prot&eacute;g&amp;eacute application. Please see the full text description below." src="../images/04_04_screen27.png" />  </p>
+<p><strong>Fig 4.3.26.</strong> A screenshot of the Protégé application window. Please see the full text description below.</p>
+<details class="info"><summary>Select for full text description of screenshot 4.3.26.</summary><p>This screenshot shows the <strong>Description</strong> panel for the class <strong>42Contents</strong> after using the <strong>Class expression editor</strong>. Two classes that are equivalent to <strong>42Contents</strong> are displayed: <strong>isInside some {42_Acacia_Avenue}</strong> and <strong>{cat, piano}</strong>.</p>
+</details>
+<p>We have thus ensured that:</p>
+<div class="arithmatex">\[\{\mathsf{cat},\, \mathsf{piano}\} \equiv \exists\, \mathsf{isInside} .  \{\mathsf{42\_Acacia\_Avenue}\}.\]</div>
+<p>We have used <strong>Enumerated Classes</strong> which allow us to create a class consisting only of specified individuals.</p>
+</li>
+<li>
+<p>The reasoner can now deduce that 42 Acacia Avenue belongs to <span class="arithmatex">\(\mathsf{GoodHouse}\)</span>.</p>
+</li>
+</ol>
+<h2 id="further-work-on-protg">Further work on Prot&eacute;g&eacute;</h2>
+<p>This part of the lesson has only introduced the most basic features of
+ontology construction. To learn more about Prot&eacute;g&eacute; you should
+consult the well-known pizza ontology example described <a href="http://mowl-power.cs.man.ac.uk/protegeowltutorial/resources/ProtegeOWLTutorialP4_v1_3.pdf" target="_blank">in this document.</a>
+You will find much of the first 50 or 60 pages covers issues similar to the
+ones already seen in this lesson. Beyond that are some useful new techniques for
+expressing knowledge in Prot&eacute;g&eacute; that we have not seen.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04_03_DescriptionLogic/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 2 Description Logic
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../04_05_DL_Reasoning/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 4 Reasoning in DL
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

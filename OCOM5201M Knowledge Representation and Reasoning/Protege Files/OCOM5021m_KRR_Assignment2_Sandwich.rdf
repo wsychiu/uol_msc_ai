@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich/"
+     xml:base="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasLayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasLayer">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isLayerOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasTopBreadSlice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasTopBreadSlice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isIngredientOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isLayerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#isLayerOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Ingredient"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Cheese -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Ingredient">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Layer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Layer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Layer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Sandwich"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Meat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#OpenSandwich -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#OpenSandwich">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasLayer"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Layer"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasTopBreadSlice"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Sandwich -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Sandwich"/>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#TripleDeckerSandwich -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#TripleDeckerSandwich">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasIngredient"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasLayer"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Layer"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#hasTopBreadSlice"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Bread"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Vegetable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Cheese"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Meat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich#Vegetable"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

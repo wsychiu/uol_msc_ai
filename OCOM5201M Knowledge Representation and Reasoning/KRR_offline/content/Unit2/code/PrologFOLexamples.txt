@@ -1,0 +1,13 @@
+triangle(t1).
+triangle(t2).
+square(s1).
+square(s2).
+touches(t1,s1).
+inside(t1,s1).
+inside(t2,s1).
+t(X) :- triangle(X).
+s(X) :- square(X).
+
+ok(X) :- t(X),s(Y),inside(X,Y).
+bad(X) :- \+ ok(X).
+satisfied :- \+ bad(_).

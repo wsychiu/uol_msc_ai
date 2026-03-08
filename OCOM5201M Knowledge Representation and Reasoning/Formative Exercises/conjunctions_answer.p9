@@ -1,0 +1,46 @@
+
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+% Above line is not true, but it does need to be there!
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  clear(auto).
+  clear(auto_setup).
+  clear(auto_limits).
+  clear(auto_denials).
+  clear(auto_inference).
+  clear(auto_process).
+  assign(eq_defs, pass).
+  assign(max_seconds, 10).
+  assign(max_weight, 2147483647).
+  assign(sos_limit, -1).
+  clear(predicate_elim).
+  set(binary_resolution).
+  set(paramodulation).
+  set(factor).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+
+isConjunctionOf(Gamma, Alpha, Beta).
+
+- (satisfiable(Alpha) & satisfiable(Beta) & satisfiable(Gamma)).
+
+(satisfiable(Alpha) & satisfiable(Beta)) | (satisfiable(Beta) & satisfiable(Gamma)) | (satisfiable(Alpha) & satisfiable(Gamma)).
+
+all x all y all z ((isConjunctionOf(x,y,z) & - (satisfiable(y) & satisfiable(z))) -> - satisfiable(x)).
+
+
+end_of_list.
+
+formulas(goals).
+
+satisfiable(Alpha) & satisfiable(Beta).
+
+
+end_of_list.

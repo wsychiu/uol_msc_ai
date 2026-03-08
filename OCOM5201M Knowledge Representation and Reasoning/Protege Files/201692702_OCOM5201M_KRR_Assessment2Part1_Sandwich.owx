@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich">
+    <Prefix name="" IRI="http://www.semanticweb.org/wesle/ontologies/2023/5/OCOM5201M_KRR_Assignment2_Sandwich/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Bread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Filling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ingredient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Layer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TripleDeckerSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegetable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLayer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTopBreadSlice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLayerOf"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#OpenSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasIngredient"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Bread"/>
+                    <Class IRI="#Filling"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasLayer"/>
+                <Class IRI="#Layer"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="#hasTopBreadSlice"/>
+                <Class IRI="#Bread"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TripleDeckerSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasIngredient"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Bread"/>
+                    <Class IRI="#Filling"/>
+                </ObjectUnionOf>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="3">
+                <ObjectProperty IRI="#hasLayer"/>
+                <Class IRI="#Layer"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasTopBreadSlice"/>
+                <Class IRI="#Bread"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Bread"/>
+        <Class IRI="#Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cheese"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Filling"/>
+        <Class IRI="#Ingredient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#Bread"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Layer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#Filling"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Layer"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <ObjectUnionOf>
+                <Class IRI="#Bread"/>
+                <Class IRI="#Filling"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meat"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegetable"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Bread"/>
+        <Class IRI="#Filling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Cheese"/>
+        <Class IRI="#Meat"/>
+        <Class IRI="#Vegetable"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Ingredient"/>
+        <Class IRI="#Layer"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Layer"/>
+        <Class IRI="#Sandwich"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTopBreadSlice"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasLayer"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasTopBreadSlice"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isLayerOf"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasLayer"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasTopBreadSlice"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isIngredientOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isLayerOf"/>
+    </IrreflexiveObjectProperty>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasLayer"/>
+        <ObjectProperty IRI="#isLayerOf"/>
+    </DisjointObjectProperties>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+

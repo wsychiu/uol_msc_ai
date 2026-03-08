@@ -1,0 +1,8 @@
+formulas(assumptions).   % synonym for formulas(sos).
+  - awake -> asleep.
+  awake.
+end_of_list.
+
+formulas(goals).         % to be negated and placed in the sos list
+  - asleep.
+end_of_list.

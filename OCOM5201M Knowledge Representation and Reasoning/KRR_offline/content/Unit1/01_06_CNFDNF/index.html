@@ -1,0 +1,1854 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 5 CNF and DNF - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-5-cnf-and-dnf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 5 CNF and DNF
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 5 CNF and DNF
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 5 CNF and DNF
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#literals-elementary-sums-and-products" class="md-nav__link">
+    Literals, elementary sums and products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-equivalent-cnf-and-dnf-for-formulas" class="md-nav__link">
+    Finding equivalent CNF and DNF for formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding equivalent CNF and DNF for formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-for-cnf" class="md-nav__link">
+    Method for CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-for-dnf" class="md-nav__link">
+    Method for DNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principal-dnf-and-cnf" class="md-nav__link">
+    Principal DNF and CNF
+  </a>
+  
+    <nav class="md-nav" aria-label="Principal DNF and CNF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-find-the-principal-dnf" class="md-nav__link">
+    To find the principal DNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-find-principal-cnf" class="md-nav__link">
+    To find principal CNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-summary-of-the-definitions-in-cnf-and-dnf" class="md-nav__link">
+    A summary of the definitions in CNF and DNF
+  </a>
+  
+    <nav class="md-nav" aria-label="A summary of the definitions in CNF and DNF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementary-sum" class="md-nav__link">
+    Elementary sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementary-product" class="md-nav__link">
+    Elementary product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnf" class="md-nav__link">
+    CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dnf" class="md-nav__link">
+    DNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxterm" class="md-nav__link">
+    Maxterm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minterm" class="md-nav__link">
+    Minterm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-cnf" class="md-nav__link">
+    Principal CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-dnf" class="md-nav__link">
+    Principal DNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-16-principal-cnf-and-dnf-formulas-in-two-variables" class="md-nav__link">
+    The 16 principal CNF and DNF formulas in two variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#literals-elementary-sums-and-products" class="md-nav__link">
+    Literals, elementary sums and products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-equivalent-cnf-and-dnf-for-formulas" class="md-nav__link">
+    Finding equivalent CNF and DNF for formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding equivalent CNF and DNF for formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-for-cnf" class="md-nav__link">
+    Method for CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-for-dnf" class="md-nav__link">
+    Method for DNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principal-dnf-and-cnf" class="md-nav__link">
+    Principal DNF and CNF
+  </a>
+  
+    <nav class="md-nav" aria-label="Principal DNF and CNF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to-find-the-principal-dnf" class="md-nav__link">
+    To find the principal DNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-find-principal-cnf" class="md-nav__link">
+    To find principal CNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-summary-of-the-definitions-in-cnf-and-dnf" class="md-nav__link">
+    A summary of the definitions in CNF and DNF
+  </a>
+  
+    <nav class="md-nav" aria-label="A summary of the definitions in CNF and DNF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elementary-sum" class="md-nav__link">
+    Elementary sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementary-product" class="md-nav__link">
+    Elementary product
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnf" class="md-nav__link">
+    CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dnf" class="md-nav__link">
+    DNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxterm" class="md-nav__link">
+    Maxterm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minterm" class="md-nav__link">
+    Minterm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-cnf" class="md-nav__link">
+    Principal CNF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-dnf" class="md-nav__link">
+    Principal DNF
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-16-principal-cnf-and-dnf-formulas-in-two-variables" class="md-nav__link">
+    The 16 principal CNF and DNF formulas in two variables
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-5-cnf-and-dnf">Lesson 5: CNF and DNF</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>recognise whether a formula is in CNF or DNF or both or neither</li>
+<li>convert a given propositional formula into CNF by using the rewrite rules
+given in the lesson</li>
+<li>convert a given propositional formula into DNF by using the rewrite rules
+given in the lesson</li>
+<li>convert a given propositional formula into both principal CNF and
+principal DNF.</li>
+</ul>
+</div>
+<p>Any propositional formula will be logically equivalent to many different
+formulas. For example, <span class="arithmatex">\(p \vee \neg q\)</span> is equivalent to <span class="arithmatex">\(\neg (\neg p \wedge q)\)</span>
+as well as to <span class="arithmatex">\((p \wedge \neg q) \vee (p \wedge q) \vee (\neg p \wedge \neg q)\)</span>
+as well as to <span class="arithmatex">\((\neg q \vee p) \wedge (\neg q \vee q)\)</span>.    </p>
+<p>In automated reasoning it is often useful to use formulas which have a special
+format. Two of these formats are introduced here: the Conjunctive Normal Form (CNF)
+and the Disjunctive Normal Form (DNF). Although we will only use the CNF in
+detail later, it is instructive to understand how CNF and DNF are conceptually,
+in an informal sense, 'mirror images' of each other. This duality could be
+discussed in a precise formal way, but we do not need it in this module.</p>
+<h2 id="literals-elementary-sums-and-products">Literals, elementary sums and products</h2>
+<p>We use the following terminology:</p>
+<ul>
+<li>A variable or the negation of a variable is called a <strong>literal</strong>.</li>
+<li>A formula that is a conjunction
+of literals is called an <strong>elementary product</strong>. For example <span class="arithmatex">\(p \wedge q \wedge \neg p\)</span> is an
+elementary product. More examples are <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(p \wedge \neg p\)</span>.</li>
+<li>A formula that is a disjunction
+of literals is called an <strong>elementary sum</strong>. For example <span class="arithmatex">\(p \vee q \vee \neg p\)</span> is an
+elementary sum. More examples are <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(p \vee \neg p\)</span>.</li>
+</ul>
+<p>Note that from now we do not usually need to distinguish equivalent formulas
+which just have disjunctions bracketed in different ways.
+For example: <span class="arithmatex">\(p \vee (q \vee \neg p)\)</span> and <span class="arithmatex">\((p \vee q) \vee \neg p\)</span>.
+We allow ourselves to write <span class="arithmatex">\(p \vee q \vee \neg p\)</span> instead, and similarly for
+conjunctions.</p>
+<p>We introduce the following <strong>normal forms</strong>, which are special formats or 'shapes'
+that a formula may have. A formula may have both or neither of these two forms,
+or it can have just one of them.</p>
+<ul>
+<li>A formula is said to be in <strong>conjunctive normal form</strong>
+if it is a conjunction of elementary sums.</li>
+<li>A formula is said to be in <strong>disjunctive normal form</strong>
+if it is a disjunction of elementary products.</li>
+<li>We often abbreviate these to <strong>CNF</strong> and <strong>DNF</strong> respectively.</li>
+</ul>
+<div class="admonition examples">
+<p class="admonition-title">Examples</p>
+<ul>
+<li><span class="arithmatex">\((p \vee q \vee \neg q) \wedge (p \vee \neg r) \wedge (r \vee q)\)</span> is in conjunctive normal form</li>
+<li><span class="arithmatex">\((p \wedge q \wedge \neg q) \vee (p \wedge \neg r) \vee (r \wedge q)\)</span> is in disjunctive normal form</li>
+<li><span class="arithmatex">\((p \vee (q \wedge r)) \wedge (q \vee p) \wedge (p \vee \neg q)\)</span> is not in CNF nor in DNF</li>
+<li><span class="arithmatex">\(p \vee \neg p \vee p \vee \neg p\)</span> is both in CNF and DNF</li>
+<li><span class="arithmatex">\(p \to q\)</span> is not in CNF or DNF, but it is equivalent to <span class="arithmatex">\(\neg p \vee q\)</span> which is both.</li>
+</ul>
+</div>
+<h2 id="finding-equivalent-cnf-and-dnf-for-formulas">Finding equivalent CNF and DNF for formulas</h2>
+<p>Every formula is equivalent to one formula in CNF and also to one formula in DNF.
+In fact there will be many different possible
+CNF or DNF equivalents for a formula.</p>
+<h3 id="method-for-cnf">Method for CNF</h3>
+<p>The method to find an equivalent CNF for any formula
+is to apply the following rewrite rules:</p>
+<ol>
+<li><span class="arithmatex">\(p \to q\)</span> is replaced by <span class="arithmatex">\(\neg p \vee q\)</span></li>
+<li><span class="arithmatex">\(\neg(p \vee q)\)</span> is replaced by <span class="arithmatex">\(\neg p \wedge \neg q\)</span></li>
+<li><span class="arithmatex">\(\neg(p \wedge q)\)</span> is replaced by <span class="arithmatex">\(\neg p \vee \neg q\)</span></li>
+<li><span class="arithmatex">\(\neg \neg p\)</span> is replaced by <span class="arithmatex">\(p\)</span>.</li>
+<li><span class="arithmatex">\(p \vee (q \wedge r)\)</span> is replaced by <span class="arithmatex">\((p \vee q) \wedge (p \vee r)\)</span>.</li>
+<li><span class="arithmatex">\((p \wedge q) \vee r\)</span> is replaced by <span class="arithmatex">\((p \vee r) \wedge (q \vee r)\)</span>.</li>
+</ol>
+<p>The rules are applied in the order (1) then ((2) and (3)) then  (4) then ((5) and (6))</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>To find a CNF for <span class="arithmatex">\(p \to (\neg(q \to \neg r) \wedge s)\)</span> we can use these steps:</p>
+<p><span class="arithmatex">\(\begin{array}{l}
+p \to (\neg(q \to \neg r) \wedge s)
+&amp; \mathsf{Starting~ formula}\\[1ex]
+\neg p \vee (\neg(q \to \neg r) \wedge s)
+&amp; \mathsf{using~ rule~ 1.}\\[1ex]
+\neg p \vee (\neg(\neg q \vee \neg r) \wedge s)
+&amp; \mathsf{using~ rule~ 1.}\\[1ex]
+\neg p \vee ((\neg\neg q \wedge \neg \neg r) \wedge s)
+&amp; \mathsf{using~ rule~ 2.}\\[1ex]
+\neg p \vee ( (q \wedge  r) \wedge s)
+&amp; \mathsf{using~ rule~ 4~ twice.}\\[1ex]
+(\neg p \vee (q \wedge  r)) \wedge (\neg p \vee s)
+&amp; \mathsf{using~ rule~ 5.}\\[1ex]
+((\neg p \vee q) \wedge  (\neg p \vee r)) \wedge (\neg p \vee s)
+&amp; \mathsf{using~ rule~ 5~ again.}\\[1ex]
+(\neg p \vee q) \wedge  (\neg p \vee r) \wedge (\neg p \vee s)
+&amp; \mathsf{just~ removing~ unnecessary~ parentheses.}\\[1ex]
+\end{array}\)</span></p>
+</div>
+<h3 id="method-for-dnf">Method for DNF</h3>
+<p>The method to find an equivalent DNF for any formula
+is to apply the following rewrite rules:</p>
+<ol>
+<li><span class="arithmatex">\(p \to q\)</span> is replaced by <span class="arithmatex">\(\neg p \vee q\)</span></li>
+<li><span class="arithmatex">\(\neg(p \vee q)\)</span> is replaced by <span class="arithmatex">\(\neg p \wedge \neg q\)</span></li>
+<li><span class="arithmatex">\(\neg \neg p\)</span> is replaced by <span class="arithmatex">\(p\)</span>.</li>
+<li><span class="arithmatex">\(p \wedge (q \vee r)\)</span> is replaced by <span class="arithmatex">\((p \wedge q) \vee (p \wedge r)\)</span>.</li>
+<li><span class="arithmatex">\((p \vee q) \wedge r\)</span> is replaced by <span class="arithmatex">\((p \wedge r) \vee (q \wedge r)\)</span>.</li>
+</ol>
+<p>The rules are applied in the order (1) then ((2) and (3)) then  (4) then ((5) and (6))</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>To find a DNF for <span class="arithmatex">\(p \to ((q \to \neg r) \wedge s)\)</span>
+we can follow these steps.     </p>
+<p>You should check you can tell which rule
+is used at each step.</p>
+<p><span class="arithmatex">\(\begin{array}{l}
+p \to ((q \to \neg r) \wedge s)\\[1ex]
+\neg p \vee ((q \to \neg r) \wedge s)\\[1ex]
+\neg p \vee ((\neg q \vee \neg r) \wedge s)\\[1ex]
+\neg p \vee ( (\neg q \wedge s) \vee (\neg r \wedge s))\\[1ex]
+\neg p \vee  (\neg q \wedge s) \vee (\neg r \wedge s)\\
+\end{array}\)</span></p>
+</div>
+<h2 id="principal-dnf-and-cnf">Principal DNF and CNF</h2>
+<p>In general there are lots of different formulas
+in DNF which are all logically equivalent to a given formula.
+The same is true of CNF.
+To get an essentially unique normal form, we need to use the
+principal DNF or principal CNF.
+These are <em>'essentially unique'</em> in the sense that they only differ in the
+ordering of the elementary sums or products involved.</p>
+<h3 id="to-find-the-principal-dnf">To find the principal DNF</h3>
+<p>These examples show that a given formula
+can have many logical equivalents in DNF.</p>
+<div class="admonition examples">
+<p class="admonition-title">Examples</p>
+<p>All these four DNF are equivalent to each other</p>
+<p><span class="arithmatex">\(\begin{array}{l}
+p \vee (q \wedge r) \vee \neg r\\[1ex]
+(p \wedge q \wedge r) \vee
+(p \wedge \neg q \wedge r) \vee
+(p \wedge q \wedge \neg r) \vee
+(p \wedge \neg q \wedge \neg r) \vee
+(q \wedge r) \vee \neg r\\[1ex]
+(p \wedge \neg q \wedge r)  \vee
+(q \wedge r) \vee \neg r\\[1ex]
+p \vee (p \wedge q \wedge r) \vee (\neg p \wedge q \wedge r)\vee \neg r
+\end{array}\)</span></p>
+</div>
+<p>It is possible to find a DNF which is essentially unique for any formula.
+This is called the <strong>principal DNF</strong> and is easy to understand if we think about the
+connection between the conjunctions appearing and the rows in a truth table.</p>
+<p>A DNF for a formula tells us which rows in its truth table give the result true.
+For <span class="arithmatex">\(\neg p \vee  (\neg q \wedge s) \vee (\neg r \wedge s)\)</span>
+we can see that a row in the table will give <span class="arithmatex">\(T\)</span> when</p>
+<ol>
+<li><span class="arithmatex">\(p\)</span> is <span class="arithmatex">\(F\)</span>, or</li>
+<li><span class="arithmatex">\(q\)</span> is <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(s\)</span> is <span class="arithmatex">\(T\)</span>, or</li>
+<li><span class="arithmatex">\(r\)</span> is <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(s\)</span> is <span class="arithmatex">\(T\)</span>.</li>
+</ol>
+<p>We can express this diagrammatically; rows of other forms have <span class="arithmatex">\(F\)</span> in final column.</p>
+<p><span class="arithmatex">\(\begin{array}{|c|c|c|c|c|}
+\hline
+p&amp;q&amp;r&amp;s&amp;\neg p \vee  (\neg q \wedge s) \vee (\neg r \wedge s)\\
+\hline
+F &amp; ? &amp; ? &amp; ? &amp; T\\
+\hline
+?&amp;F&amp;?&amp;T&amp;T\\
+\hline
+?&amp;?&amp;F&amp;T&amp;T\\
+\hline
+\end{array}\)</span></p>
+<p>In this example none of the conjunctions involves all of the four variables in the formula.
+We can see that if it did then it would correspond to a unique row in the truth table.
+For example, <span class="arithmatex">\(p \wedge \neg q \wedge r \wedge \neg s\)</span> corresponds to the row in which
+<span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(r\)</span> are assigned <span class="arithmatex">\(T\)</span> and in which <span class="arithmatex">\(q\)</span> and <span class="arithmatex">\(s\)</span> are assigned <span class="arithmatex">\(F\)</span>.
+The principal DNF for a formula is just the disjunction of all the conjunctions involving all the
+variables for which the corresponding row in the truth table has <span class="arithmatex">\(T\)</span> as its result.</p>
+<p>Finding principal DNF of <span class="arithmatex">\((p \to q) \to r\)</span>
+from the truth table.</p>
+<p><span class="arithmatex">\(\begin{array}{cr|c|c|c|c|c|l}
+&amp;&amp;p &amp; q &amp; r &amp; p \to q &amp; (p \to q) \to r\\
+\hline
+p \wedge q \wedge r &amp; \Longrightarrow &amp; T &amp; T &amp; T &amp; T       &amp; T &amp; \Longleftarrow \\
+                                            &amp;&amp; T &amp; T &amp; F &amp; T       &amp; F &amp;\\
+p \wedge \neg q \wedge r &amp; \Longrightarrow &amp; T &amp; F &amp; T &amp; F       &amp; T &amp;\Longleftarrow \\
+p \wedge \neg q \wedge \neg r &amp; \Longrightarrow &amp; T &amp; F &amp; F &amp; F       &amp; T &amp;\Longleftarrow \\
+\neg p \wedge q \wedge r &amp; \Longrightarrow &amp; F &amp; T &amp; T &amp; T       &amp; T &amp;\Longleftarrow \\
+                                            &amp;&amp; F &amp; T &amp; F &amp; T       &amp; F &amp;\\
+\neg p \wedge \neg q \wedge r &amp; \Longrightarrow &amp; F &amp; F &amp; T &amp; T       &amp; T &amp;\Longleftarrow \\
+&amp;&amp;F &amp; F &amp; F &amp; T       &amp; F &amp;\\
+\hline
+\end{array}\)</span></p>
+<p>The answer of the following formula:</p>
+<div class="arithmatex">\[
+(p \wedge q \wedge r) \vee
+(p \wedge \neg q \wedge r) \vee
+(p \wedge \neg q \wedge \neg r) \vee
+(\neg p \wedge q \wedge r) \vee
+(\neg p \wedge \neg q \wedge r).\]</div>
+<p>Writing out the full truth table is not the only way to find the principal DNF.
+We can work from a DNF which is not principal which we obtained by rewriting the formula.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Find the principal DNF of <span class="arithmatex">\((p \to q) \to r\)</span>
+without using a truth table.</p>
+<p>First we find a DNF by rewriting:
+<span class="arithmatex">\(\left\{\begin{array}{l}
+(p \to q) \to r \\[1ex]
+\neg (p \to q) \vee r \\[1ex]
+\neg (\neg p \vee q) \vee r \\[1ex]
+(\neg \neg p \wedge \neg q) \vee r \\[1ex]
+( p \wedge \neg q) \vee r
+\end{array}\right.\)</span></p>
+<p>Second: we expand each of the conjunctions so it becomes a disjunction of conjunctions where all the variables
+appear in each conjunction.</p>
+<p><span class="arithmatex">\(( p \wedge \neg q)\)</span> becomes <span class="arithmatex">\(( p \wedge \neg q \wedge r)\vee ( p \wedge \neg q \wedge \neg r)\)</span></p>
+<p><span class="arithmatex">\(r\)</span> becomes <span class="arithmatex">\((p \wedge q \wedge r) \vee (\neg p \wedge q \wedge r) \vee (p \wedge \neg q \wedge r)
+\vee (\neg p \wedge \neg q \wedge r)\)</span></p>
+<p>The second step could alternatively be done by rewriting <span class="arithmatex">\(( p \wedge \neg q)\)</span> to <span class="arithmatex">\(( p \wedge \neg q) \wedge (r \vee \neg r)\)</span>
+and rewriting <span class="arithmatex">\(r\)</span> to <span class="arithmatex">\((p \vee \neg p) \wedge (q \vee \neg q) \wedge r\)</span> and then rewriting to DNF using the distributive laws.</p>
+<p>Third: write down the terms we have, throwing out any duplicates:</p>
+<p><span class="arithmatex">\(( p \wedge \neg q \wedge r)\vee ( p \wedge \neg q \wedge \neg r) \vee
+(p \wedge q \wedge r) \vee (\neg p \wedge q \wedge r)
+\vee (\neg p \wedge \neg q \wedge r)\)</span></p>
+</div>
+<p>Observe that the principal DNF of a tautology involving <span class="arithmatex">\(n\)</span> variables will have <span class="arithmatex">\(2^n\)</span> conjunctions, as we have to pick out
+every row in the truth table. But the principal DNF of a contradiction would want to pick out none of the rows, so
+we will just allow <span class="arithmatex">\(F\)</span> as a principal DNF. It is correct to think of a disjunction of no terms as false, but if you find the idea
+confusing it's not important here.
+In any case, it is difficult to denote an empty disjunction by an empty space,
+so allowing <span class="arithmatex">\(F\)</span> as a formula itself is convenient.</p>
+<h3 id="to-find-principal-cnf">To find principal CNF</h3>
+<p>It is a similar but dual  story for the principal CNF.
+The idea can be summarised as follows, but the example shows how it works.</p>
+<p>Principal DNF:</p>
+<ul>
+<li>Find all the
+values of variables for which  the formula can <em>be true</em>, and say <em>at least one</em> of these must happen</li>
+</ul>
+<p>Principal CNF:</p>
+<ul>
+<li>Find all the
+values of variables for which the formula can <em>be false</em>, and say <em>none</em> of these must happen.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Find the principal CNF of <span class="arithmatex">\((p \to q) \to r\)</span>
+from the truth table.</p>
+<div class="arithmatex">\[\begin{array}{cr|c|c|c|c|c|l}
+&amp;&amp;p &amp; q &amp; r &amp; p \to q &amp; (p \to q) \to r\\
+\hline
+&amp; &amp; T &amp; T &amp; T &amp; T       &amp; T &amp;   \\
+\neg p \vee \neg q \vee r &amp;\Longrightarrow &amp; T &amp; T &amp; F &amp; T       &amp; F &amp; \Longleftarrow \text{ to get $T$ avoid this row} \\
+&amp;&amp; T &amp; F &amp; T &amp; F       &amp; T &amp; \\
+&amp;&amp; T &amp; F &amp; F &amp; F       &amp; T &amp;  \\
+&amp;&amp; F &amp; T &amp; T &amp; T       &amp; T &amp;  \\
+ p \vee \neg q \vee r &amp;\Longrightarrow &amp; F &amp; T &amp; F &amp; T       &amp; F &amp; \Longleftarrow \text{ to get $T$ avoid this row} \\
+&amp;&amp; F &amp; F &amp; T &amp; T       &amp; T &amp; \\
+ p \vee  q \vee r &amp;\Longrightarrow &amp;F &amp; F &amp; F &amp; T       &amp; F &amp; \Longleftarrow \text{ to get $T$ avoid this row} \\
+\hline
+\end{array}\]</div>
+<p>The answer is
+<span class="arithmatex">\((\neg p \vee \neg q \vee r) \wedge
+(p \vee \neg q \vee r ) \wedge
+(p \vee  q \vee r)\)</span></p>
+<p>Note that, for example, <span class="arithmatex">\((\neg p \vee \neg q \vee r)\)</span> is true for the values of the variables in every row <em>except</em>
+the one indicated. When this one conjunction is true we must have values of variables not corresponding to this false row.
+All the three conjunctions are true if and only if we have values of variables corresponding to none of the true rows.</p>
+</div>
+<p>Just as for principal DNF you don't need to construct the truth table; you can take any CNF and add in extra variables.</p>
+<p>Observe that the principal CNF of a contradiction involving <span class="arithmatex">\(n\)</span> variables will have <span class="arithmatex">\(2^n\)</span> disjunctions, as we have to avoid
+every row in the truth table. But the principal CNF of a tautology would want to avoid none of the rows, so
+we will just allow <span class="arithmatex">\(T\)</span> as a principal CNF. It is correct to think of a conjunction of no terms as true, but if you find the idea
+confusing it's not important here.</p>
+<h2 id="a-summary-of-the-definitions-in-cnf-and-dnf">A summary of the definitions in CNF and DNF</h2>
+<p>This summary is also available as a separate PDF document which highlights  the way the concepts come in dual pairs. The summary includes the notions of <strong>minterm</strong> and <strong>maxterm</strong> which were not used above.</p>
+<p><a href="../pdf-files/cdnf.pdf" target="_blank" class="md-button" download>Download PDF</a></p>
+<h3 id="elementary-sum">Elementary sum</h3>
+<p>A propositional logic formula is
+an  <strong>elementary sum</strong> iff</p>
+<ol>
+<li>it is a single literal, or</li>
+<li>it consists of two or more literals like this:
+<span class="arithmatex">\(\ell_1 \vee \ell_2 \vee \cdots \vee \ell_m\)</span></li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span></li>
+<li><span class="arithmatex">\(\neg p\)</span></li>
+<li><span class="arithmatex">\(p \vee p\)</span></li>
+<li><span class="arithmatex">\(p \vee q \vee \neg p \vee q\)</span></li>
+<li><span class="arithmatex">\(p \vee \neg q \vee r\)</span></li>
+</ul>
+<h3 id="elementary-product">Elementary product</h3>
+<p>A propositional logic formula is
+an  <strong>elementary product</strong> iff</p>
+<ol>
+<li>it is a single literal, or</li>
+<li>it consists of two or more literals like this:
+<span class="arithmatex">\(\ell_1 \wedge \ell_2 \wedge \cdots \wedge \ell_m\)</span></li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span></li>
+<li><span class="arithmatex">\(\neg p\)</span></li>
+<li><span class="arithmatex">\(p \wedge p\)</span></li>
+<li><span class="arithmatex">\(p \wedge q \wedge \neg p \wedge q\)</span></li>
+<li><span class="arithmatex">\(p \wedge \neg q \wedge r\)</span></li>
+</ul>
+<h3 id="cnf">CNF</h3>
+<p>A formula is in CNF iff</p>
+<ol>
+<li>if is <span class="arithmatex">\(T\)</span> (true), or</li>
+<li>it is one elementary sum, or</li>
+<li>it consists of two or more elementary sums like this
+<span class="arithmatex">\(e_1 \wedge e_2 \wedge \cdots \wedge e_m\)</span></li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(T\)</span> (by 1)</li>
+<li><span class="arithmatex">\(p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(\neg p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(p \vee p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(p \vee q \vee \neg p \vee q\)</span> (by 2)</li>
+<li><span class="arithmatex">\((p \vee \neg q \vee r) \wedge (p \vee q \vee \neg p)\)</span> (by 3)</li>
+</ul>
+<h3 id="dnf">DNF</h3>
+<p>A  formula is in DNF iff</p>
+<ol>
+<li>if is <span class="arithmatex">\(F\)</span> (false), or</li>
+<li>it is one elementary product, or</li>
+<li>it consists of two or more elementary products like this:\
+<span class="arithmatex">\(e_1 \vee e_2 \vee \cdots \vee e_m\)</span></li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(F\)</span> (by 1)</li>
+<li><span class="arithmatex">\(p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(\neg p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(p \wedge p\)</span> (by 2)</li>
+<li><span class="arithmatex">\(p \vee q \vee \neg p \vee q\)</span> (by 3)</li>
+<li><span class="arithmatex">\((p \wedge \neg q \wedge r) \vee (p \wedge q \wedge \neg p)\)</span> (by 3)</li>
+</ul>
+<h3 id="maxterm">Maxterm</h3>
+<p>An elementary sum is
+a  <strong>maxterm over a given set of variables</strong> iff
+it uses every variable in the set exactly once.</p>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(\neg p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(p \vee q\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\(p \vee q \vee \neg r\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<p>Non-Examples</p>
+<ul>
+<li><span class="arithmatex">\(\neg p\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\(p \vee \neg q\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<h3 id="minterm">Minterm</h3>
+<p>An elementary product is
+a  <strong>minterm over a given set of variables</strong> iff
+it uses every variable in the set exactly once.</p>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(\neg p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(p \wedge q\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\(p \wedge q \wedge \neg r\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<p>Non-Examples</p>
+<ul>
+<li><span class="arithmatex">\(\neg p\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\(p \wedge \neg q\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<h3 id="principal-cnf">Principal CNF</h3>
+<p>A formula is in principal CNF
+over a set of variables iff</p>
+<ol>
+<li>if is in CNF, and</li>
+<li>every elementary sum
+ is a maxterm (over the set)</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(T\)</span></li>
+<li><span class="arithmatex">\(p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(p \vee q\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\((p \vee q) \wedge (\neg p \vee q)\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\((p \vee \neg q \vee r) \wedge (p \vee q \vee \neg p)\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<h3 id="principal-dnf">Principal DNF</h3>
+<p>A formula is in principal DNF
+over a set of variables iff</p>
+<ol>
+<li>if is in DNF, and</li>
+<li>every elementary product
+ is a minterm (over the set)</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><span class="arithmatex">\(F\)</span></li>
+<li><span class="arithmatex">\(p\)</span> over <span class="arithmatex">\(\{p\}\)</span></li>
+<li><span class="arithmatex">\(p \wedge q\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\((p \wedge q) \vee (\neg p \wedge q)\)</span> over <span class="arithmatex">\(\{p,q\}\)</span></li>
+<li><span class="arithmatex">\((p \wedge \neg q \wedge r) \vee (p \wedge q \wedge \neg p)\)</span> over <span class="arithmatex">\(\{p,q,r\}\)</span></li>
+</ul>
+<h2 id="the-16-principal-cnf-and-dnf-formulas-in-two-variables">The 16 principal CNF and DNF formulas in two variables</h2>
+<p>Here is a list of all the 16 principal CNF and all the principal DNF formulas
+in two variables, <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>.
+There is one formula of each kind for each of the 16 possible truth tables in two variables.</p>
+<p>For each of the 16 cases the truth table for the formula is given in an
+abbreviated format. In the following example the abbreviated format is shown
+alongside the more usual tabular form, with the final column showing the
+truth value associated to the given input values for <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span>.</p>
+<p>The notation involving <span class="arithmatex">\(\mapsto\)</span> is one way of describing a function.
+A truth table with two propositional variables spacifies a function
+where the inputs are the pairs of truth values and the result of the function
+is the value given in the final column.
+Sometimes the arrow  <span class="arithmatex">\(\mapsto\)</span> is pronounced "goes to" or "maps to".</p>
+<div class="arithmatex">\[
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto F  &amp; FT \mapsto F  &amp; FF \mapsto T
+\end{array}
+\qquad \qquad
+\begin{array}{|c|c|c|}
+\hline
+p &amp; q &amp; \; \\
+\hline
+T &amp; T &amp; T \\
+T &amp; F &amp; F \\
+F &amp; T &amp; F \\
+F &amp; F &amp; T \\
+\hline
+\end{array}
+\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc} TT \mapsto T &amp; TF \mapsto T  &amp; FT \mapsto T  &amp; FF \mapsto T \end{array}\\[1ex]
+\mathsf{PCNF} &amp; T \\
+\mathsf{PDNF} &amp;  (p\wedge q) \vee (p\wedge \neg q) \vee (\neg p\wedge q) \vee  (\neg p\wedge \neg q)   
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc} TT \mapsto F &amp; TF \mapsto F  &amp; FT \mapsto F  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF} &amp;  
+(\neg p\vee \neg q) \wedge (\neg p\vee  q) \wedge ( p\vee \neg q) \wedge   (p\vee  q) \\
+\mathsf{PDNF} &amp;  F
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto T  &amp; FT \mapsto T  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;  p\vee  q  \\
+\mathsf{PDNF}&amp;   (p\wedge q) \vee (p\wedge \neg q) \vee (\neg p\wedge q)     
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[  
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto F  &amp; FT \mapsto F  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   (\neg p\vee \neg q) \wedge (\neg p\vee  q) \wedge ( p\vee \neg q)   \\
+\mathsf{PDNF}&amp;   \neg p \wedge \neg q      
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto T  &amp; FT \mapsto F  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;  p\vee  \neg q   \\
+\mathsf{PDNF}&amp;   (p\wedge q) \vee (p\wedge \neg q) \vee (\neg p\wedge \neg q)      
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto F  &amp; FT \mapsto T  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   (\neg p\vee \neg q) \wedge (\neg p\vee  q) \wedge ( p\vee  q)   \\
+\mathsf{PDNF}&amp;   \neg p \wedge  q
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}TT \mapsto T &amp; TF \mapsto F  &amp; FT \mapsto T  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;  \neg p\vee  q  \\
+\mathsf{PDNF}&amp;   (p\wedge q) \vee (\neg p\wedge q) \vee (\neg p\wedge \neg q)      
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto T  &amp; FT \mapsto F  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   (\neg p\vee \neg q) \wedge (p\vee \neg  q) \wedge (   p\vee   q)   \\
+\mathsf{PDNF}&amp;   p \wedge  \neg q
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}TT \mapsto F &amp; TF \mapsto T  &amp; FT \mapsto T  &amp; FF \mapsto T \end{array}  \\[1ex]
+\mathsf{PCNF}&amp;  \neg p\vee \neg q   \\
+\mathsf{PDNF}&amp;   (p\wedge \neg q) \vee (\neg p\wedge q) \vee (\neg p\wedge \neg q)     
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto F  &amp; FT \mapsto F  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   (\neg p\vee  q) \wedge (p\vee \neg  q) \wedge ( p\vee q)   \\
+\mathsf{PDNF}&amp;   p \wedge  q
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto T  &amp; FT \mapsto F  &amp; FF \mapsto F \end{array}  \\[1ex]
+\mathsf{PCNF}&amp;  ( p\vee \neg q) \wedge (p \vee q)   \\
+\mathsf{PDNF}&amp;   (p\wedge  q) \vee ( p\wedge \neg q)    
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto F  &amp; FT \mapsto T  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   (\neg p\vee  \neg q) \wedge (\neg p\vee  q)   \\
+\mathsf{PDNF}&amp;   (\neg p \wedge  q) \vee (\neg p \wedge \neg q)
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto T  &amp; FT \mapsto F  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;  (\neg p \vee \neg q) \wedge ( p\vee \neg q)  \\
+\mathsf{PDNF}&amp;   (p\wedge \neg  q) \vee ( \neg p\wedge \neg q)  
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto T &amp; TF \mapsto F  &amp; FT \mapsto T  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   ( p\vee  \neg q) \wedge (\neg p\vee \neg q)   \\
+\mathsf{PDNF}&amp;   ( p \wedge  q) \vee (\neg p \wedge  q)
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}TT \mapsto T &amp; TF \mapsto F  &amp; FT \mapsto F  &amp; FF \mapsto T \end{array} \\[1ex]
+\mathsf{PCNF}&amp;  (\neg p \vee q) \wedge ( p\vee \neg q)  \\
+\mathsf{PDNF}&amp;   (p\wedge   q) \vee ( \neg p\wedge \neg q)  
+\end{array}\]</div>
+<hr />
+<div class="arithmatex">\[
+\begin{array}{rc}
+\mathsf{Truth~ table}
+&amp;
+\begin{array}{cccc}
+TT \mapsto F &amp; TF \mapsto T  &amp; FT \mapsto T  &amp; FF \mapsto F \end{array} \\[1ex]
+\mathsf{PCNF}&amp;   ( \neg p \vee  \neg q) \wedge (p\vee  q)   \\
+\mathsf{PDNF}&amp;   ( p \wedge \neg q) \vee (\neg p \wedge  q)
+\end{array}\]</div>
+<hr />
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 5, you can test your knowledge in a formative exercise about CNF and DNF formulas.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-1 Lesson 5'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01_05_AutomatingLogic/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 4 Automating logic
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../Unit2/02_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 2
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

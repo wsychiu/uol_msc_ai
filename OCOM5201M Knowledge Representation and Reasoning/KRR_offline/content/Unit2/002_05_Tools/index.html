@@ -1,0 +1,1551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 5 Tools for FOL - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tools-for-first-order-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 5 Tools for FOL
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../02_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 5 Tools for FOL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 5 Tools for FOL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prover9" class="md-nav__link">
+    Prover9
+  </a>
+  
+    <nav class="md-nav" aria-label="Prover9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-constants" class="md-nav__link">
+    Variables and constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-family-relationships" class="md-nav__link">
+    Example with family relationships
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mace4" class="md-nav__link">
+    Mace4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prolog-and-how-its-different" class="md-nav__link">
+    Prolog and how it's different.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prover9" class="md-nav__link">
+    Prover9
+  </a>
+  
+    <nav class="md-nav" aria-label="Prover9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-constants" class="md-nav__link">
+    Variables and constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-with-family-relationships" class="md-nav__link">
+    Example with family relationships
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mace4" class="md-nav__link">
+    Mace4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prolog-and-how-its-different" class="md-nav__link">
+    Prolog and how it's different.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="tools-for-first-order-logic">Tools for first order logic</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes</p>
+<p>After completing this lesson you will be able to:</p>
+<ul>
+<li>use Prover9 and Mace4 to explore consequences and models of
+first order theories</li>
+<li>use Prolog to represent things</li>
+<li>explain different purposes of these tools for different tasks</li>
+</ul>
+</div>
+<p>In this lesson we look at three tools for first order logic:</p>
+<ul>
+<li>Prover9</li>
+<li>Mace4</li>
+<li>Prolog</li>
+</ul>
+<p>We have already seen Prover9 and Prolog in the context of propositional logic.
+Prover9 is a powerful theorem prover for first order logic. Mace4 works with
+Prover9 and can be used to search for models of first order theories.
+The logic behind Prolog is not general first order logic, but works with a restricted
+type of formulas called Horn clauses.
+Working with Prolog is often very different from Prover9 and they are designed for different purposes.</p>
+<p>If you need to revisit the instructions for accessing Prover9 and Prolog, you can find them in Unit 1 lesson 4.</p>
+<h2 id="prover9">Prover9</h2>
+<h3 id="variables-and-constants">Variables and constants</h3>
+<p>You've seen the basic usage of Prover9 for the propositional case.
+Now we extend this to first order logic.</p>
+<p>The logical connectives we already know are:  <br />
+<tt>&amp;</tt> for conjunction, <span class="arithmatex">\(\wedge\)</span>   <br />
+<tt>|</tt> for disjunction, <span class="arithmatex">\(\vee\)</span>  <br />
+<tt>-</tt> for negation, <span class="arithmatex">\(\neg\)</span>  <br />
+<tt>-&gt;</tt>  for implication, <span class="arithmatex">\(\to\)</span>  <br />
+<tt>&lt;-&gt;</tt> for bi-implication, <span class="arithmatex">\(\leftrightarrow\)</span>.    </p>
+<p>The quantifiers are <tt>exists</tt> and <tt>all</tt>.
+Equality between individuals is just <tt>=</tt>.
+Optionally, you can write <tt>!=</tt> for not equal,
+for example <tt>x != y</tt> instead of  <tt>-(x = y)</tt>.</p>
+<p>There are some ways that Prover9 tells the difference between
+variables and constant symbols that can be confusing.
+The defaults can be changed, but we will always use Prover9 with the
+following behaviour. This is what will be assumed in any assessments and exercises
+using Prover9, so it is recommended that you always keep to this.</p>
+<p>If you put (as an assumption)</p>
+<div class="highlight"><pre><span></span><code>person(alfred).
+</code></pre></div>
+<p>Prover9 sees <tt>alfred</tt> as a constant.
+However, if you put (as an assumption)</p>
+<div class="highlight"><pre><span></span><code>person(xavier).
+</code></pre></div>
+<p>Prover9 sees <tt>xavier</tt> as a variable without explicit quantification.
+Yet,
+if you put (as an assumption)</p>
+<div class="highlight"><pre><span></span><code>person(Xavier).
+</code></pre></div>
+<p>Prover9 sees <tt>Xavier</tt> as a constant.
+The default behaviour of Prover9 is that
+any name beginning with a lower case letter u, v, w, x, y, z is a variable.
+All upper case letters that can syntactically be constants are treated as such.
+This all makes sense for some of the ways Prover9 is used, but can be extremely
+confusing if you are not expecting it.</p>
+<p>When there is explicit quantification, anything can be a variable.
+For example, if you write</p>
+<div class="highlight"><pre><span></span><code>exists alfred person(alfred).
+</code></pre></div>
+<p>that statement has exactly the same effect as   </p>
+<div class="highlight"><pre><span></span><code>exists x person(x).
+</code></pre></div>
+<p>That is, the <tt>alfred</tt> is a variable because it is quantified.</p>
+<h3 id="example-with-family-relationships">Example with family relationships</h3>
+<p>For a simple example we can create an input file (which I refer to as  <tt>fam2</tt> later in the
+example) with these assumptions.</p>
+<div class="highlight"><pre><span></span><code>formulas(assumptions).
+
+male(albert).
+female(betty).
+female(delores).
+
+parent(albert, delores).
+parent(betty, delores).
+
+all p all d (daughter(p,d) &lt;-&gt; parent(p,d) &amp; female(d)).
+
+% The idea is that d is the daughter of p if and only if
+% p is a parent of d, and d is female. This makes a definition
+% of the daughter predicate in terms of other predicates.
+
+all c exists p1 exists p2 (parent(p1, c) &amp; parent(p2,c) &amp; p1 != p2).
+
+% The idea is that every child c has two different parents.
+% Beware: this really means at least two parents. This formula does
+% nothing to stop people having three or more parents.
+
+end_of_list.
+</code></pre></div>
+<p>Note that there are comments in the example. These can be especially useful to
+clarify the intended meaning or usage of predicates.
+In this case if we simply have a predicate <tt>daughter(x,y)</tt>,
+with no careful choice of variable names and no explanation it might be
+unclear whether we intend <tt>x</tt> is the daughter of <tt>y</tt>,
+or <tt>x</tt> has  daughter <tt>y</tt>. Arguably, the predicate name
+<tt>hasDaughter</tt> would have been a better choice here to distinguish
+it from <tt>daughterOf</tt>.</p>
+<p>If you add to those assumptions the goal</p>
+<div class="highlight"><pre><span></span><code>formulas(goals).
+
+daughter(albert, delores).
+
+end_of_list.
+</code></pre></div>
+<p>and run prover9 you should see something like this:</p>
+<div class="highlight"><pre><span></span><code>scsjgs@vm-ocom5201m:~$ prover9 &lt; fam2 &gt; fam2p9out
+-------- Proof 1 --------
+
+SEARCH FAILED
+
+------ process 4837 exit (sos_empty) ------
+</code></pre></div>
+<p>If you examine the output file you can see that it actually finds one proof
+but reports failure because it is trying to find another proof.
+This is another potentially confusing behaviour that is not useful
+for the way Prover9 is being used in this module. In this case  Prover9 is
+trying to do more than we
+need it to.</p>
+<p>To avoid getting this you need to add a line</p>
+<div class="highlight"><pre><span></span><code>clear(auto_denials).
+</code></pre></div>
+<p>at the start of the input file.</p>
+<p>To continue with the example, we can try some different goals instead
+of <tt>daughter(albert, delores).</tt> If you try</p>
+<div class="highlight"><pre><span></span><code>albert != betty.
+</code></pre></div>
+<p>or if you try</p>
+<div class="highlight"><pre><span></span><code>albert = betty.
+</code></pre></div>
+<p>You will find neither can be proved. In first order logic an interpretation
+is allowed to use the same element of the domain as the meaning of different
+constant symbols.
+To say that these constants denote different individuals we can include
+<tt>albert != betty.</tt> as an assumption.</p>
+<p>It is also important to bear in mind that an interpretation is allowed to have
+elements in the domain that are not named by constants.
+So we can add a statement that there are not more than three people
+in the assumptions.
+In the following example, this has been added together with an assumption
+that if <tt>p</tt> is a parent of <tt>c</tt>
+then <tt>c</tt> is not a parent of <tt>c</tt>.</p>
+<div class="highlight"><pre><span></span><code>male(albert).
+female(betty).
+female(delores).
+
+parent(albert, delores).
+parent(betty, delores).
+
+all p all d (daughter(p,d) &lt;-&gt; parent(p,d) &amp; female(d)).
+
+% The idea is that d is the daughter of p if and only if
+% p is a parent of d, and d is female. This makes a definition
+% of the daughter predicate in terms of other predicates.
+
+all c exists p1 exists p2 (parent(p1, c) &amp; parent(p2,c) &amp; p1 != p2).
+
+% The idea is that every child c has two different parents.
+% Beware: this really means at least two parents. This formula does
+% nothing to stop people having three or more parents.
+
+all c all p (parent(p,c) -&gt; -parent(c,p)).
+
+all p (p = albert | p = betty | p = delores).
+</code></pre></div>
+<p>If you use these assumptions and then try the goal  </p>
+<div class="highlight"><pre><span></span><code>albert != betty.
+</code></pre></div>
+<p>you should find it is successfully proved.
+However, the theory we have now created is actually of no practical use, as
+you will see if you try the goal</p>
+<div class="highlight"><pre><span></span><code>albert = betty.
+</code></pre></div>
+<p>This goal will also succeed. So apparently <tt>albert</tt> and
+<tt>betty</tt> are simultaneously the same and not the same. You would find that
+the contradiction</p>
+<div class="highlight"><pre><span></span><code>(albert != betty) &amp; (albert = betty).
+</code></pre></div>
+<p>is proved without difficulty too. What has happened is that the theory
+we constructed (the set of assumptions we used) is <strong>inconsistent</strong>.
+There is no way that all the assumptions can be true together.
+You can figure out why that is  by asking yourself:
+<em>'who are the parents of <tt>albert</tt>?'</em>.</p>
+<p>To explore the models of a set of assumptions (when they are not inconsistent)
+you can use the tool Mace4 that comes with Prover9.
+You can use Mace4 to look at finite interpretations of first order theories.
+This can be a very useful way to explore the possible meanings of sets
+ of assumptions.</p>
+<h2 id="mace4">Mace4</h2>
+<p>You can enter formulas as we have done already
+and get Mace4 to search for models or interpretations of these.
+To get started create an input file with assumptions but
+with no goals as follows.</p>
+<div class="highlight"><pre><span></span><code>formulas(assumptions).
+
+  male(albert).
+  female(betty).
+  female(delores).
+
+  parent(albert, delores).
+  parent(betty, delores).
+
+end_of_list.
+</code></pre></div>
+<p>If the input file is called <tt>fam1</tt> you can run mace4 on the input like this</p>
+<div class="highlight"><pre><span></span><code>scsjgs@vm-ocom5201m:~$ mace4 &lt; fam1 &gt; fam1m4out
+</code></pre></div>
+<p>On examining the output file, the part we are interested in is this</p>
+<div class="highlight"><pre><span></span><code>============================== DOMAIN SIZE 2 =========================
+
+============================== MODEL =================================
+
+interpretation( 2, [number=1, seconds=0], [
+
+        function(albert, [ 0 ]),
+
+        function(betty, [ 0 ]),
+
+        function(delores, [ 0 ]),
+
+        relation(female(_), [ 1, 0 ]),
+
+        relation(male(_), [ 1, 0 ]),
+
+        relation(parent(_,_), [
+               1, 0,
+               0, 0 ])
+]).
+
+============================== end of model ==========================
+</code></pre></div>
+<p>So how do we make sense of this? Mace4 has found an interpretation with a domain
+of size 2. It is using the domain <span class="arithmatex">\(\{0, 1\}\)</span>, and all three constants
+<tt>albert</tt>, <tt>betty</tt>, and <tt>delores</tt>, are interpreted
+as the same element, <span class="arithmatex">\(0\)</span>, in the domain.  The constants are described as functions
+because a function taking no inputs is the same as a constant.</p>
+<p>The interpretation of the unary predicate <tt>female</tt> can be understood
+as meaning a table like this, but only the part below the line is given explicitly.</p>
+<div class="highlight"><pre><span></span><code>  female :
+          0 1
+     --------
+          1 0
+</code></pre></div>
+<p>The meaning of <tt>0</tt> and <tt>1</tt> above and below the horizontal line
+is quite different. The numbers above the line refer to the domain elements.
+The numbers below the line are truth values, with <tt>0</tt> for <span class="arithmatex">\(\mathit{false}\)</span>
+and <tt>1</tt> for <span class="arithmatex">\(\mathit{true}\)</span>. The meaning  is that domain
+element <tt>0</tt> does satisfy the predicate, and that domain
+element <tt>1</tt> does not satisfy the predicate.</p>
+<p>The interpretation of  <tt>male</tt> is read in the same way. It tells us that in the
+particular interpretation the domain element <tt>0</tt> does
+satisfy the predicate <tt>male</tt> and domain element <tt>1</tt> does not.</p>
+<p>The interpretation of the  binary <tt>parent</tt> predicate is to be understood
+as follows.</p>
+<div class="arithmatex">\[
+\begin{array}{r|cc}
+    &amp; \mathtt{0} &amp; \mathtt{1} \\
+\hline
+\mathtt{0} &amp; \mathit{parent}(\mathtt{0},\mathtt{0}) &amp; \mathit{parent}(\mathtt{0},\mathtt{1}) \\[1ex]
+\mathtt{1} &amp; \mathit{parent}(\mathtt{1},\mathtt{0}) &amp; \mathit{parent}(\mathtt{1},\mathtt{1}) \\
+\end{array}
+\qquad \qquad
+\begin{array}{r|cc}
+    &amp; \mathtt{0} &amp; \mathtt{1} \\
+\hline
+\mathtt{0} &amp; \mathit{true} &amp; \mathit{false} \\[1ex]
+\mathtt{1} &amp; \mathit{false} &amp; \mathit{false} \\
+\end{array}
+\]</div>
+<p>This means  that <span class="arithmatex">\(\mathit{parent}(\mathtt{0},\mathtt{0})\)</span> is
+true, but the <span class="arithmatex">\(\mathit{parent}\)</span> predicate does not hold between any of the other
+three values for its two arguments. In the output file generated by Mace4 only the
+inner part of the table is given and you have to understand which of the
+four possibilities each of the entries refers to.</p>
+<p>In this interpretation all the constants <tt>albert</tt>, <tt>betty</tt>, and
+<tt>delores</tt> are interpreted as the same domain element.
+For this domain element both the predicates <tt>female</tt> and <tt>male</tt>
+hold, and this element is related to itself in the <tt>parent</tt> relation.
+This may not correspond to conventional expectations.</p>
+<p>For our next example of Mace4,  we use the same formulas as before.
+We also use a goal this time. Our input looks as follows.</p>
+<div class="highlight"><pre><span></span><code>formulas(assumptions).
+
+    male(albert).
+    female(betty).
+    female(delores).
+
+    parent(albert, delores).
+    parent(betty, delores).
+
+end_of_list.
+
+formulas(goals).
+
+    albert = betty | betty = delores | delores = albert.
+
+end_of_list.
+</code></pre></div>
+<p>As in the previous example, you run mace4 on the above input and get an output file.
+The important part of the output is where we see a model for a domain with three elements.</p>
+<div class="highlight"><pre><span></span><code>============================== DOMAIN SIZE 3 =========================
+
+============================== MODEL =================================
+
+interpretation( 3, [number=1, seconds=0], [
+
+        function(albert, [ 0 ]),
+
+        function(betty, [ 1 ]),
+
+        function(delores, [ 2 ]),
+
+        relation(female(_), [ 0, 1, 1 ]),
+
+        relation(male(_), [ 1, 0, 0 ]),
+
+        relation(parent(_,_), [
+               0, 0, 1,
+               0, 0, 1,
+               0, 0, 0 ])
+]).
+
+============================== end of model ==========================
+</code></pre></div>
+<p>Now the interpretation has the domain <span class="arithmatex">\(\{0, 1, 2\}\)</span>
+and the three constants are all interpreted as distinct elements.
+The reason for this different behaviour is that Mace4 searches for
+an interpretation in which the assumptions are all the satisfied,
+but the goal is <strong>not</strong> satisfied. In other words it searches for an interpretation
+which is a model of the assumptions, and which also provides a counterexample to the
+goal statement.</p>
+<p>In this model we see that both betty and delores are female and albert is male.
+Notice that this time the parent relation is not symmetrical so you have to be
+careful how to read the <span class="arithmatex">\(3 \times 3\)</span> array of truth values that is used to describe it.
+You are encouraged to draw a diagram to visualise the relation. This will have two arrows:
+an arrow from 0 to 3 and an arrow from 1 to 3. In this model albert and betty are both parents
+of delores.</p>
+<p>Now see what happens when you add the following formulas to the five
+assumptions used before, and keep the same goal statement.</p>
+<div class="highlight"><pre><span></span><code>all x all y (parent(x,y) -&gt; -parent(y,x)).
+
+all x exists y parent(y,x).
+</code></pre></div>
+<p>Now we are saying everyone has a parent and no one can be a parent of any of their own parents.</p>
+<p>The interpretation, or model,  you see is then this one.</p>
+<div class="highlight"><pre><span></span><code>interpretation( 4, [number=1, seconds=0], [
+
+        function(albert, [ 0 ]),
+
+        function(betty, [ 1 ]),
+
+        function(delores, [ 2 ]),
+
+        function(f1(_), [ 1, 3, 0, 0 ]),
+
+        relation(female(_), [ 0, 1, 1, 0 ]),
+
+        relation(male(_), [ 1, 0, 0, 0 ]),
+
+        relation(parent(_,_), [
+               0, 0, 1, 1,
+               1, 0, 1, 0,
+               0, 0, 0, 0,
+               0, 1, 0, 0 ])
+]).
+</code></pre></div>
+<p>The new feature we see here is the <strong>Skolem function</strong> <tt>f1</tt>.
+We will explain more about Skolem functions, which are named after
+<a href="https://mathshistory.st-andrews.ac.uk/Biographies/Skolem" target="_blank">Thoraf Skolem</a>,
+when we see how Prover9 constructs proofs in Unit 3.</p>
+<p>The statement</p>
+<div class="highlight"><pre><span></span><code>all x exists y parent(y,x).
+</code></pre></div>
+<p>says that every element <tt>x</tt> of the domain must have an associated
+element <tt>y</tt> such that the <tt>parent</tt> relation holds between
+<tt>y</tt> and <tt>x</tt>. To justify that an interpretation
+satisfies this assumption, it would be necessary to have a way of
+exhibiting the <tt>y</tt> associated to any given <tt>x</tt>.
+Exhibiting this is the same as providing a function which given
+<tt>x</tt> as input provides the <tt>y</tt> as the output.</p>
+<p>The table here shows an expanded view of the rather terse format that Mace4
+gives you.</p>
+<div class="highlight"><pre><span></span><code>f1 :
+        0 1 2 3
+   ------------
+        1 3 0 0
+</code></pre></div>
+<p>The table exhibits the function with the input values listed above the line and
+the corresponding outputs underneath.</p>
+<details class="info"><summary>Select for full text description</summary><p>This diagram is the visualisation of the parent relation between four numbers: 0, 1, 2 and 3.</p>
+<p>The numbers are contained within the sketch of a rectangle and are connected by pointing arrows. The pointing arrows indicate parent relations. 0 in the centre of the diagram towards the rectangle’s top side is the parent of 3 to the left and of 2 to the right. 3 on the left-hand side is the parent of 1 which is positioned below 0. 1 is the parent of 0 and 2 to the right.</p>
+</details>
+<p>Clearly this interpretation has some features that the <span class="arithmatex">\(\mathit{parent}\)</span>
+relation in the real world does not have.
+You are strongly encouraged to think about how it might be possible to fix these issues.
+Can you stop someone being their own great grandparent? Can you stop someone being
+both a parent and a grandparent of someone?
+Explore these issues using Mace4 and Prover9.</p>
+<h2 id="prolog-and-how-its-different">Prolog and how it's different.</h2>
+<p>We saw some simple examples of Prolog and how to use it in unit 1.
+Prolog can do a great deal more than those simple examples showed.
+In particular, Prolog includes the ability to</p>
+<ul>
+<li>have variables,</li>
+<li>have terms that refer to individual things, and</li>
+<li>manipulate lists using pattern matching.</li>
+</ul>
+<p>The presence of variables and terms is very like first order logic,
+but there are three key issues to be aware of.</p>
+<ol>
+<li>Prolog only deals with formulas that constitute a subset of full
+first order logic. The formulas Prolog allows are called <strong>Horn clauses</strong>.</li>
+<li>Although Horn clauses are a subset of first order logic, the semantics
+used in Prolog for statements is different in general from standard first order logic.<ul>
+<li>One issue here is the difference between the <strong>closed world assumption</strong>
+  used in Prolog, and the <strong>open world assumption</strong> used in
+  standard mathematical logic.</li>
+<li>The treatment of negation is also very different. Prolog has a semantics of
+<em>'not'</em> called <strong>negation as failure</strong>.</li>
+</ul>
+</li>
+<li>Prolog gives a computational interpretation to logic so that a conjunction
+of goals to be satisfied is treated in a particular order. Taken together with
+other features of Prolog this allows  <span class="arithmatex">\(\alpha \wedge \beta\)</span> to have a completely
+different meaning from <span class="arithmatex">\(\beta \wedge \alpha\)</span>.</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p><strong>Now you have finished lessons 4 and 5, you can test your knowledge in a series of formative exercises.</strong></p>
+<p>Use the Tableau method  to investigate the following. This means you should
+see whether the stated entailment holds by drawing up a suitable tableau.
+When the entailment does not hold you should find a model that demonstrates this.
+That is, something where the left hand side of the <span class="arithmatex">\(\vDash\)</span> is true and the right
+hand side is false.</p>
+<p>Your tableau will start with the formula on the left together with the negation of the one
+on the right as the first things in the tree.</p>
+<ol>
+<li><span class="arithmatex">\((\exists x \; P(x)) \wedge (\exists x\; Q(x)) \vDash \exists x \; (P(x)) \wedge Q(x))\)</span></li>
+<li><span class="arithmatex">\((\exists x \; P(x)) \wedge (\exists y\; Q(y)) \vDash \exists x \exists y\; (P(x)) \wedge Q(y))\)</span></li>
+<li><span class="arithmatex">\(\forall x \forall y\; (R(x,y) \vee S(x,y)) \vDash (\forall x \forall y\; R(x,y)) \vee (\forall x \forall y\; S(x,y))\)</span>  </li>
+<li><span class="arithmatex">\(\forall x \forall y\; (R(x,x) \vee S(y,y)) \vDash (\forall x \forall y\; R(x,x)) \vee (\forall x \forall y\; S(y,y))\)</span>     </li>
+<li><span class="arithmatex">\((\forall x \forall y\; R(x,x)) \vee (\forall x \forall y\; S(y,y)) \vDash \forall x \forall y\; (R(x,x) \vee S(y,y))\)</span>    </li>
+<li><span class="arithmatex">\((\forall x \forall y\; R(x,y)) \vee (\forall x \forall y\; S(x,y)) \vDash \forall x \forall y\; (R(x,y) \vee S(x,y))\)</span></li>
+</ol>
+<p>You can draw the tableau by hand and any questions about them can be shared in the Minerva discussion forum for this unit.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>In lesson 5 we saw how to use Mace 4 to find models which satisfied certain
+assumptions and which failed to satisfy a goal formula.</p>
+<p>You can use this approach to find models for all the examples from the previous exercise, where
+the stated entailment fails to hold. That is: find a model where the left hand
+side of the <span class="arithmatex">\(\vDash\)</span> is true and the right
+hand side is false.</p>
+<p>To avoid problems if no model can be found you can include a time limit in your input:</p>
+<div class="highlight"><pre><span></span><code>    if(Mace4).   % Options for Mace4
+      assign(max_seconds, 10).
+    end_if.
+
+    formulas(assumptions).
+
+    %% Formula on left of turnstile goes here
+
+    end_of_list.
+
+    formulas(goals).
+
+    %% Formula on right of turnstile goes here
+
+    end_of_list.
+</code></pre></div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise: assessment preparation</p>
+<p>This final set of exercises continue the idea of representation (as we saw in Lesson 3). They will also help to prepare you for Assessment 1, as it will follow the same submission process.</p>
+<p>First, download and follow these <a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26367206_4" target="_blank">instructions</a>.</p>
+<p>You will also need to download the following files:</p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26365111_4" target="_blank">conjunctions.p9</a></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26365112_4" target="_blank">fruit.p9</a></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26365113_4" target="_blank">goose.p9</a></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26365114_4" target="_blank">grandparents.p9</a></p>
+<p><a href="https://minerva.leeds.ac.uk/bbcswebdav/xid-26365115_4" target="_blank">squaring.p9</a></p>
+<p>Finally, you will need to submit to Gradescope. Do this by returning to Minerva, and using the side bar to navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit2 Prover9'</strong> and submit.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../002_04_Tableau/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 4 Tableau method for FOL
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../Unit3/03_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 3
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

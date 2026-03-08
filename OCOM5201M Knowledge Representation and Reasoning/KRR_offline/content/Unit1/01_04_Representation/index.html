@@ -1,0 +1,1832 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 3 Representation - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-3-representation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 3 Representation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../01_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 3 Representation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 3 Representation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-representation-as-specifying-states" class="md-nav__link">
+    Knowledge representation as specifying states
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-representation-and-natural-language" class="md-nav__link">
+    Knowledge representation and natural language
+  </a>
+  
+    <nav class="md-nav" aria-label="Knowledge representation and natural language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-word-or" class="md-nav__link">
+    The word 'or'.
+  </a>
+  
+    <nav class="md-nav" aria-label="The word 'or'.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-threats-or-instructions" class="md-nav__link">
+    Hidden threats or instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-order-of-things-commutativity" class="md-nav__link">
+    The order of things (commutativity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-use-of-either-neither-nor" class="md-nav__link">
+    The use of 'either', 'neither', 'nor'.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-and" class="md-nav__link">
+    The word 'and'
+  </a>
+  
+    <nav class="md-nav" aria-label="The word 'and'">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-order-of-things-commutativity_1" class="md-nav__link">
+    The order of things (commutativity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-with-possibility" class="md-nav__link">
+    Interaction with possibility
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-use-of-if-then" class="md-nav__link">
+    The use of 'if &mdash; then &mdash;'.
+  </a>
+  
+    <nav class="md-nav" aria-label="The use of 'if &mdash; then &mdash;'.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sometimes-means-if-and-only-if" class="md-nav__link">
+    Sometimes means '&mdash; if and only if &mdash;'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-antecedent-is-false" class="md-nav__link">
+    When the antecedent is false
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-not" class="md-nav__link">
+    The word 'not'.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-but" class="md-nav__link">
+    The word 'but'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-unless" class="md-nav__link">
+    The word 'unless'
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-extended-example" class="md-nav__link">
+    An extended example
+  </a>
+  
+    <nav class="md-nav" aria-label="An extended example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    The scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-informal-argument" class="md-nav__link">
+    An informal argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-representation-as-specifying-states" class="md-nav__link">
+    Knowledge representation as specifying states
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knowledge-representation-and-natural-language" class="md-nav__link">
+    Knowledge representation and natural language
+  </a>
+  
+    <nav class="md-nav" aria-label="Knowledge representation and natural language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-word-or" class="md-nav__link">
+    The word 'or'.
+  </a>
+  
+    <nav class="md-nav" aria-label="The word 'or'.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hidden-threats-or-instructions" class="md-nav__link">
+    Hidden threats or instructions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-order-of-things-commutativity" class="md-nav__link">
+    The order of things (commutativity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-use-of-either-neither-nor" class="md-nav__link">
+    The use of 'either', 'neither', 'nor'.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-and" class="md-nav__link">
+    The word 'and'
+  </a>
+  
+    <nav class="md-nav" aria-label="The word 'and'">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-order-of-things-commutativity_1" class="md-nav__link">
+    The order of things (commutativity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-with-possibility" class="md-nav__link">
+    Interaction with possibility
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-use-of-if-then" class="md-nav__link">
+    The use of 'if &mdash; then &mdash;'.
+  </a>
+  
+    <nav class="md-nav" aria-label="The use of 'if &mdash; then &mdash;'.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sometimes-means-if-and-only-if" class="md-nav__link">
+    Sometimes means '&mdash; if and only if &mdash;'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-antecedent-is-false" class="md-nav__link">
+    When the antecedent is false
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-not" class="md-nav__link">
+    The word 'not'.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-but" class="md-nav__link">
+    The word 'but'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-word-unless" class="md-nav__link">
+    The word 'unless'
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-extended-example" class="md-nav__link">
+    An extended example
+  </a>
+  
+    <nav class="md-nav" aria-label="An extended example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    The scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#an-informal-argument" class="md-nav__link">
+    An informal argument
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-3-representation">Lesson 3: Representation</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>In this lesson we study the use of propositional logic in knowledge
+representation. After this lesson you should be able to:</p>
+<ul>
+<li>construct representations in propositional logic for knowledge
+expressed in natural language (in English),</li>
+<li>check that your representations are justifiable by using the idea
+of a state space described by the truth values the propositions are allowed
+to take,</li>
+<li>identify reasons why some sentences in natural language may be
+impossible to represent fully using propositional logic.</li>
+</ul>
+</div>
+<h2 id="knowledge-representation-as-specifying-states">Knowledge representation as specifying states</h2>
+<p>Propositional logic can be used to represent knowledge about the world.
+To do this you need to:</p>
+<ul>
+<li>identify one or more atomic propositions that describe the world,
+in the sense that knowing whether each proposition is true or false
+gives relevant information about the world.
+You can think of all the different possibilities as a <em>state space</em>
+&ndash; a set of different states that the world could be in.</li>
+<li>decide what combinations of truth values for these atomic propositions
+correspond to the states that need to be picked out</li>
+<li>describe the states that are to be picked out by giving one or more
+formulas which are true only in the case that the world is in one of the
+desired states.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Suppose I want to represent the knowledge that</p>
+<p><em>If it is Tuesday then I always travel to Leeds, but
+I never travel to Leeds on other days</em></p>
+<p>We could use two atomic propositions:</p>
+<ul>
+<li><em>It is Tuesday today</em></li>
+<li><em>I travel to Leeds today</em></li>
+</ul>
+<p>and consider the four possible states that the world might have:</p>
+<div class="arithmatex">\[
+\begin{array}{l|cc|}
+             &amp; \mathit{tuesdayToday} &amp; \mathit{leedsToday}\\[1ex]
+\hline
+\mathsf{State~ 1} &amp;  \mathit{True} &amp;   \mathit{True} \\[1ex]
+\mathsf{State~ 2} &amp;  \mathit{True} &amp;   \mathit{False} \\[1ex]
+\mathsf{State~ 3} &amp;  \mathit{False} &amp;   \mathit{True} \\[1ex]
+\mathsf{State~ 4} &amp;  \mathit{False} &amp;   \mathit{False} \\[1ex]
+\hline
+\end{array}\]</div>
+<p>In this case State 1 and State 4 are allowed by the given knowledge
+and State 2 and State 3 are excluded.
+One formula which is true in just the allowed cases is</p>
+<p><span class="arithmatex">\(\qquad \mathit{tuesdayToday} \leftrightarrow \mathit{leedsToday}\)</span>.</p>
+</div>
+<p>In the example above, the task of representing the knowledge present in the
+statement was given in the context of using propositional logic
+and being given two specific propositions to use. Several scenarios we meet
+later have a similar form, with a particular logic being specified as well
+as some basic components to use. In real-world examples the task of
+knowledge representation is often  much less tightly
+controlled. This can be like just being asked to represent the knowledge expressed
+in the statement <em>'If it is Tuesday then I always travel to Leeds, but
+I never travel to Leeds on other days'</em>, without
+any specification of the formalism to be used.</p>
+<p>One danger to be aware of in writing a logical formula to represent
+knowledge is to
+make sure you are not just writing a formula that is true in the states
+you want to select. It also needs to be false in the states you want to exclude.
+In the case of the above example,
+<span class="arithmatex">\(\mathit{tuesdayToday} \to \mathit{leedsToday}\)</span>
+will be true in all the selected states, but it is also true in State 3
+which should be excluded.</p>
+<p>This way of thinking of representing knowledge as selecting states gives
+you a way of checking whether a formula you write does represent what you intend.
+Sometimes the process of representation is talked about as if you need to 'translate'
+from natural language to formal logic. It is not always a helpful analogy to think of
+translating from one natural language to another, because in that case
+you do not have such an effective means of checking your answers for yourself.</p>
+<h2 id="knowledge-representation-and-natural-language">Knowledge representation and natural language</h2>
+<p>In some knowledge representation tasks you may not need to
+think explicitly about a state space and which states are
+to be included and which excluded. You may, especially
+with some practice, be able to work more quickly from
+the form of the language used to express the knowledge.
+This can be risky unless you are careful to avoid all the ways
+that natural language can be ambiguous, and can also use
+the same words as appear in formal logic but with very different meanings.
+When dealing with tricky cases it may help to check how the formal logic
+is constraining what is allowed in possible interpretations.</p>
+<p>In this section we look at some of the ways natural language and
+propositional logic fail to match up.</p>
+<h3 id="the-word-or">The word 'or'.</h3>
+<h4 id="hidden-threats-or-instructions">Hidden threats or instructions</h4>
+<p>Saying <em>'Do X or Y will happen'</em>
+is common in situations like
+<em>'Find the documents by Monday or you will lose your job'</em>
+or like
+<em>'Tidy your bedroom or you cannot go out to play'</em>.
+We might be tempted to follow the form of the English and
+translate these like this:</p>
+<div class="arithmatex">\[\mathit{findDocuments} \vee \mathit{loseJob},\]</div>
+<div class="arithmatex">\[\mathit{tidyRoom} \vee \neg \mathit{canPlay}.\]</div>
+<p>This misses two things:</p>
+<ol>
+<li>The statements have an aspect that is a proposition, but there is also
+    a threat or instruction that propositional logic cannot model.</li>
+<li>
+<p>Even just taking the propositional element, if the documents are found but
+   the person still loses their job, this is entirely consistent with the statement.   </p>
+<p>If the child does tidy their bedroom, but is not allowed to play, the
+ statement is perfectly true.</p>
+</li>
+</ol>
+<p>To avoid the second problem we need to
+think about what states can be described by the atomic propositions
+we are seeking to pick out. If we do this we see that we need to
+specify:</p>
+<div class="arithmatex">\[(\mathit{findDocuments} \wedge \neg \mathit{loseJob})
+  \vee
+  (\neg \mathit{findDocuments} \wedge \mathit{loseJob}),\]</div>
+<p>or equally well:</p>
+<div class="arithmatex">\[(\mathit{findDocuments} \vee \mathit{loseJob})
+  \wedge
+  \neg ( \mathit{findDocuments} \wedge \mathit{loseJob}).\]</div>
+<p>Of course, it is possible that the context is that the person is going to
+lose their job whether the documents are found or not. In that case the
+knowledge to be modelled is different and a different proposition is needed.</p>
+<h4 id="the-order-of-things-commutativity">The order of things (commutativity)</h4>
+<p>In propositional logic <span class="arithmatex">\(A \vee B\)</span> means exactly the same as <span class="arithmatex">\(B \vee A\)</span>.
+In algebraic terms we would say that <span class="arithmatex">\(\vee\)</span> is a <strong>commutative</strong> operation.
+But language is not like that. In examples like the following, the two versions
+may not have exactly the same sense. This is often because the meaning is not purely
+about truth values, but also includes expectations or hopes about which of two options
+is the more likely or the more desired.</p>
+<ol>
+<li>
+<ul>
+<li><em>'Enter your 27 digit security code, or apply to have your permissions reset'</em></li>
+<li><em>'Apply to have your permissions reset, or enter your 27 digit security code'</em></li>
+</ul>
+</li>
+<li>
+<ul>
+<li><em>'I will see you tomorrow, or sometime next year'</em></li>
+<li><em>'I will see you sometime next year, or tomorrow'</em></li>
+</ul>
+</li>
+</ol>
+<h4 id="the-use-of-either-neither-nor">The use of 'either', 'neither', 'nor'.</h4>
+<p>The word 'either' is often used to indicate an exclusive or. For
+example</p>
+<ul>
+<li><em>'you can either have X or Y'</em></li>
+</ul>
+<p>very often means that you cannot have both X and Y. In modelling
+such statements you need to pay attention to the intended meaning.</p>
+<p>The use of <em>'neither &mdash; nor &mdash;'</em> is always to indicate a
+negated disjunction. For example</p>
+<ul>
+<li><em>'Neither Monday nor Tuesday is possible'</em></li>
+</ul>
+<p>could be modelled using atomic propositions</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{mondayPossible}\)</span> meaning <em>'Monday is possible'</em></li>
+<li><span class="arithmatex">\(\mathit{tuesdayPossible}\)</span> meaning <em>'Tuesday is possible'</em></li>
+</ul>
+<p>as</p>
+<div class="arithmatex">\[ \neg (\mathit{mondayPossible} \vee \mathit{tuesdayPossible}).\]</div>
+<h3 id="the-word-and">The word 'and'</h3>
+<p>Just as with 'or', it is important to be aware of the limitations of propositional
+logic to model the complexity of what we say in natural language.</p>
+<h4 id="the-order-of-things-commutativity_1">The order of things (commutativity)</h4>
+<p>Compare these two statements:</p>
+<ul>
+<li><em>'I bought a kilo of flour and made bread'</em>,</li>
+<li><em>'I made bread and bought a kilo of flour'</em></li>
+</ul>
+<p>or these two:</p>
+<ul>
+<li><em>'I got a new phone yesterday and I spent ages talking to my friends'</em>,</li>
+<li><em>'I spent ages talking to my friends and I got a new phone yesterday'</em>.</li>
+</ul>
+<p>Notice how the two statements do not have quite the same sense.
+Often the word 'and' is used to convey a sequence of events; one thing happening
+after another thing. Sometimes, as in the above examples, this suggests a causal connection
+between the things.</p>
+<p>In propositional logic the connective <span class="arithmatex">\(\wedge\)</span> has none of these properties.
+A formula <span class="arithmatex">\(A \wedge B\)</span> always has the same truth value as <span class="arithmatex">\(B \wedge A\)</span>,
+and there is no way of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> sharing some context or meaning between them.</p>
+<h4 id="interaction-with-possibility">Interaction with possibility</h4>
+<p>Imagine a scenario where it is possible to get a train from Leeds to London,
+and it is also possible to get a train from Leeds to Edinburgh, but it is not possible
+to get a single train from Leeds that goes both to London and to Edinburgh.
+In this case the propositions</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{possibleLondon}\)</span> meaning <em>'It is possible to get a train to London'</em>, and</li>
+<li><span class="arithmatex">\(\mathit{possibleEdinburgh}\)</span> meaning <em>'It is possible to get a train to Edinburgh'</em></li>
+</ul>
+<p>can be combined into <span class="arithmatex">\(\mathit{possibleLondon} \wedge \mathit{possibleEdinburgh}\)</span>.
+This compound proposition means it is possible to get a train from Leeds to London,
+and it is also possible to get a train from Leeds to Edinburgh. However, there is no way of combining
+these two propositions to convey the knowledge that no single train leaving Leeds goes both to London and to Edinburgh.</p>
+<p>Here we see the way that propositional logic is a very limited
+means of modelling. Later in the module we will see how this particular
+example is straightforward to represent in a modal logic, where the
+notion of possibility is handled as part of the logic.</p>
+<p>As with earlier examples, you need to be careful about what exactly the
+knowledge present in natural language really is. This is frequently unclear, sometimes
+deliberately so. You may need to guess what people probably mean.</p>
+<ul>
+<li><em>'There are trains to London and Edinburgh from here'</em></li>
+<li><em>'There are benefits in failing and succeeding'</em></li>
+<li><em>'There are trains to London and to Edinburgh from here'</em></li>
+<li><em>'There are benefits in failing and in succeeding'</em></li>
+</ul>
+<h3 id="the-use-of-if-then">The use of 'if &mdash; then &mdash;'.</h3>
+<p>The <span class="arithmatex">\(\to\)</span>  connective can be most confusing because it only models a
+few of the situations where we use 'if &mdash; then &mdash;'
+in everyday language.</p>
+<h4 id="sometimes-means-if-and-only-if">Sometimes means '&mdash; if and only if &mdash;'</h4>
+<p>We saw the following idea expressed using 'or' earlier.</p>
+<blockquote>
+<p>If you don't find the documents by Monday then you will lose your job.</p>
+</blockquote>
+<p>You might expect this to be modelled by
+<span class="arithmatex">\(\neg \mathit{findDocuments} \to \mathit{loseJob}\)</span>.
+The problem there is if the documents are found then the person probably expects
+that they will not lose their job. But this is not present in the formal
+logical statement at all. Without any further information it is most likely
+that the following is what the statement expresses.</p>
+<div class="arithmatex">\[
+\neg \mathit{findDocuments} \leftrightarrow \mathit{loseJob}.
+\]</div>
+<p>Here the statement in natural language has the form <span class="arithmatex">\(A \to B\)</span> but the intention
+is not that statement, but both than one and <span class="arithmatex">\(B \to A\)</span>. The statement
+<span class="arithmatex">\(B \to A\)</span> is the <strong>converse</strong> of the statement <span class="arithmatex">\(A \to B\)</span>.</p>
+<h4 id="when-the-antecedent-is-false">When the antecedent is false</h4>
+<p>In a compound proposition of the form <span class="arithmatex">\(A \to B\)</span>,
+the proposition <span class="arithmatex">\(A\)</span> is called the <strong>antecedent</strong> and the
+proposition <span class="arithmatex">\(B\)</span> is called the <strong>consequent</strong>.
+The truth table tells us that when the antecedent is false,
+the statement as a whole is true. This happens whatever the
+consequent is, and it does not matter whether it is true or false.</p>
+<p>Even when we accept that propositional logic is a very crude means of
+modelling the complexity of what people say and mean, there
+can still be some potentially confusing examples. Consider this one, about
+the number of letters in the word 'Leeds'. For the purpose of this example,
+there are actually 5 letters in the word; you can say 'character' if you prefer.</p>
+<ul>
+<li><em>If 'Leeds' has 3 letters then 'Leeds' has 6 letters.</em></li>
+</ul>
+<p>We can model this with atomic propositions:</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{hasThree}\)</span> meaning <em>the word 'Leeds' has 3 letters</em>, and</li>
+<li><span class="arithmatex">\(\mathit{hasSix}\)</span> meaning <em>the word 'Leeds' has 6 letters</em>.</li>
+</ul>
+<p>We can agree that both <span class="arithmatex">\(\mathit{hasThree}\)</span> and <span class="arithmatex">\(\mathit{hasSix}\)</span>
+are false statements. So it must be the case that</p>
+<div class="arithmatex">\[
+\mathit{hasThree} \to \mathit{hasSix}
+\]</div>
+<p>is true.</p>
+<div class="admonition puzzle">
+<p class="admonition-title">Something to think about</p>
+<p>It is correct, given the setting above, that</p>
+<ul>
+<li><em>If 'Leeds' has 3 letters then 'Leeds' has 6 letters.</em></li>
+</ul>
+<p>is true when modelled, in the above way, in propositional logic.</p>
+<p>But, can you explain where the fault is in the following arguments
+that this cannot possibly be right? The arguments should be considered
+separately from each other.</p>
+<ol>
+<li>We all know that if any word has 3 letters than the word cannot have
+   6 letters. This is true for any word at all, so it must be true
+   for the word 'Leeds'. This is impossible in combination with the
+   given statement.</li>
+<li>
+<p>Thinking in terms of states (as suggested at the start of this lesson)
+   we know that both <span class="arithmatex">\(\mathit{hasThree}\)</span> and <span class="arithmatex">\(\mathit{hasSix}\)</span>
+   are false propositions. To represent this knowledge it cannot be
+   correct to say <span class="arithmatex">\(\mathit{hasThree} \to \mathit{hasSix}\)</span> is true, because
+   this happens in situations other than the actual ones.<br />
+    This is shown in the following table.             </p>
+<div class="arithmatex">\[\begin{array}{l|cc|cc|}
+                  &amp; \mathit{hasThree} &amp; \mathit{hasSix} &amp; \mathsf{Actually?} &amp; \mathit{hasThree} \to \mathit{hasSix}\\[1ex]
+     \hline
+     \mathsf{State~ 1} &amp;  \mathit{True} &amp;   \mathit{True} &amp; \mathsf{NO} &amp; \mathit{True}\\[1ex]
+     \mathsf{State~ 2} &amp;  \mathit{True} &amp;   \mathit{False}&amp; \mathsf{NO} &amp; \mathit{False} \\[1ex]
+     \mathsf{State~ 3} &amp;  \mathit{False} &amp;   \mathit{True}&amp; \mathsf{NO} &amp; \mathit{True} \\[1ex]
+     \mathsf{State~ 4} &amp;  \mathit{False} &amp;   \mathit{False}&amp; \mathsf{YES} &amp; \mathit{True} \\[1ex]
+     \hline
+     \end{array}
+     \]</div>
+</li>
+</ol>
+</div>
+<details class="puzzle"><summary>Reveal answers</summary><ol>
+<li>The argument here depends on making a connection between the two statements which it is simply impossible to make in propositional logic. There is no way in propositional logic to model the idea that both propositions are talking about the same thing (the same word). Each is either true or false, and any compound proposition has a truth value which depends only on the raw truth values of the atomic propositions. So the fallacy in the argument lies in thinking that the propositions in formal logic are carrying much more of their informal meaning  expressed in words than they actually are.</li>
+</ol>
+<p>Propositional logic
+is unable to detect any difference between the given scenario and the following one.</p>
+<ul>
+<li><span class="arithmatex">\(\mathit{hasThree}\)</span> meaning <em>the word 'Bradford' has 3 letters</em>, and</li>
+<li><span class="arithmatex">\(\mathit{hasSix}\)</span> meaning <em>the word 'Leeds' has 6 letters</em>.</li>
+</ul>
+<p>We can agree that both <span class="arithmatex">\(\mathit{hasThree}\)</span> and <span class="arithmatex">\(\mathit{hasSix}\)</span> are false statements. So it must be the case that</p>
+<p><span class="arithmatex">\(\mathit{hasThree} \to \mathit{hasSix}\)</span></p>
+<p>is true.</p>
+<p>When we get to first order logic in unit 3 then we will be equipped to model connections between statements that talk about the same thing. For example, the idea that if a word has three letters than it cannot have six might be represented by</p>
+<p><span class="arithmatex">\(\forall x\, (\mathit{hasThree}(x) \to \neg \mathit{hasSix}(x)).\)</span></p>
+<ol>
+<li>The puzzle here is resolved by realizing that it was never claimed
+that <span class="arithmatex">\(\mathit{hasThree} \to \mathit{hasSix}\)</span> is modelling the fact that
+both <span class="arithmatex">\(\mathit{hasThree}\)</span> and <span class="arithmatex">\(\mathit{hasSix}\)</span> are false. To model that
+we could use <span class="arithmatex">\(\neg \mathit{hasThree} \wedge \neg \mathit{hasSix}\)</span>.</li>
+</ol>
+<p>This puzzle
+shows that it is necessary to be very careful about the purpose behind
+asserting or using any statement. It is correct to say that
+<span class="arithmatex">\(\mathit{hasThree} \to \mathit{hasSix}\)</span>
+is true given that both the atomic propositions are false. It is not correct to say that
+<span class="arithmatex">\(\mathit{hasThree} \to \mathit{hasSix}\)</span>
+models the falsity of both the atomic propositions.</p>
+</details>
+<h3 id="the-word-not">The word 'not'.</h3>
+<p>In interpreting <em>'not'</em>, be careful to distinguish
+formulas such as these two:</p>
+<div class="arithmatex">\[\neg (A \vee B) \quad \mathsf{or} \quad (\neg A) \vee (\neg B),\]</div>
+<p>and similarly for <span class="arithmatex">\(\wedge\)</span>.     </p>
+<p>For example</p>
+<ul>
+<li><em>'You can not have a pay rise or a holiday'</em></li>
+</ul>
+<p>is best represented by  </p>
+<div class="arithmatex">\[
+\neg (\mathit{payRise} \vee \mathit{holiday}).
+\]</div>
+<p>But</p>
+<ul>
+<li><em>'You can not fail this task and be more useful'</em></li>
+</ul>
+<p>is probably best represented by  </p>
+<div class="arithmatex">\[
+\neg \mathit{failTask} \wedge \mathit{beMoreUseful}.
+\]</div>
+<p>Whereas</p>
+<ul>
+<li><em>'You can not fail this task and continue working here'</em></li>
+</ul>
+<p>is probably best represented by  </p>
+<div class="arithmatex">\[
+\neg (\mathit{failTask} \wedge \mathit{continueWorking}).
+\]</div>
+<p>In these two cases it is essential to look beyond the form of the language
+and use knowledge about the most likely meaning.</p>
+<h3 id="the-word-but">The word 'but'</h3>
+<p>Very often <em>'but'</em> corresponds to <em>'and'</em>. More accurately, <em>'and'</em>
+is the closest we can get in propositional logic to the meaning.
+However, <em>'not'</em> can interact with <em>'but'</em> and <em>'and'</em> in different ways.
+For instance:</p>
+<ol>
+<li>
+<p><em>'I don't eat cheese but I like mushrooms'</em>
+<span class="arithmatex">\(\qquad\neg \mathit{eatCheese} \wedge \mathit{likeMushrooms}\)</span>    </p>
+</li>
+<li>
+<p><em>'The proposal is not legal and cheap'</em>
+<span class="arithmatex">\(\qquad \neg (\mathit{legalProposal} \wedge \mathit{cheapProposal})\)</span>   </p>
+<p>This could easily be different depending on the context:</p>
+<ul>
+<li>
+<p><em>'This is what we villains love to see. Your proposal is not legal and cheap'</em></p>
+<p>Arguably, in that case, it might be written without ambiguity using a comma:</p>
+<ul>
+<li><em>'&hellip; Your proposal is not legal, and cheap'</em></li>
+</ul>
+<p><span class="arithmatex">\((\neg \mathit{legalProposal}) \wedge \mathit{cheapProposal}\;\;\)</span> is the only
+interpretation then.</p>
+</li>
+</ul>
+<p>Adding context is another way ambiguity disappears:</p>
+<ul>
+<li>
+<p><em>'I asked for a cheap legal solution, Your proposal is not legal and cheap'</em></p>
+<p>The last sentence has to be <span class="arithmatex">\(\qquad \neg (\mathit{legalProposal} \wedge \mathit{cheapProposal})\)</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>'The proposal is not legal but cheap'</em>
+<span class="arithmatex">\(\qquad (\neg \mathit{legalProposal}) \wedge \mathit{cheapProposal}\)</span>    </p>
+<p>In this case the parentheses are not needed, but are added to emphasise the
+difference with the previous example.    </p>
+</li>
+<li>
+<p>Sometimes the addition of a small word can change the meaning.     </p>
+<ul>
+<li><em>'This is not a brief but complete account'</em>
+<span class="arithmatex">\(\quad \neg (\mathit{briefAccount} \wedge \mathit{completeAccount})\)</span></li>
+<li><em>'This is not a brief but a complete account'</em>
+<span class="arithmatex">\(\quad (\neg \mathit{briefAccount}) \wedge \mathit{completeAccount}\)</span></li>
+</ul>
+</li>
+</ol>
+<h3 id="the-word-unless">The word 'unless'</h3>
+<p>A phrase of the form <em>'<span class="arithmatex">\(\,\mathsf{X}\)</span> unless <span class="arithmatex">\(\mathsf{Y}\)</span>'</em>  is often represented in propositional logic
+by <span class="arithmatex">\(\neg \mathsf{Y} \to \mathsf{X}\)</span>.</p>
+<ul>
+<li><em>'I walk to work unless it is raining'</em> <span class="arithmatex">\(\qquad \neg \mathit{rain} \to \mathit{walk}\)</span></li>
+<li><em>'It is a hippo unless it's an elephant'</em> <span class="arithmatex">\(\qquad \neg \mathit{elephant} \to \mathit{hippo}\)</span></li>
+<li><em>'Unless it's an elephant, it's a hippo'</em> <span class="arithmatex">\(\qquad \neg \mathit{elephant} \to \mathit{hippo}\)</span></li>
+<li><em>'You cannot have a pay rise unless you work harder'</em> <span class="arithmatex">\(\;\; \neg \mathit{workHarder} \to \neg \mathit{payRise}\)</span></li>
+</ul>
+<p>In the last case it is not clear whether working harder would actually imply a pay rise.
+In some settings that might be part of the meaning and the whole sentence
+could be represented by
+<span class="arithmatex">\(\neg \mathit{workHarder} \leftrightarrow \neg \mathit{payRise}\)</span>
+or the logically eqivalent version:
+<span class="arithmatex">\(\mathit{workHarder} \leftrightarrow \mathit{payRise}\)</span>.
+However, this is not representing the idea that being given a pay rise will cause the person
+to work harder, and neither is it saying that working harder is causing them to get a pay rise.</p>
+<h2 id="an-extended-example">An extended example</h2>
+<!--       
+This material comes from:
+TEACHING/OldTeaching/COMP2611/2017-18/Lectures 2017-18/Lecture 06 2018
+-->
+
+<p>In this example we look at a more complex situation which is described
+in several sentences and brings in reasoning.</p>
+<p><img alt="1950s living room with hardwood floor and patterned wallpaper containing a chair, standing lap, TV stand and TV with a telephone, small clock and radio on top." src="../images/KRR_IMG_014.jpg" /></p>
+<h3 id="the-scenario">The scenario</h3>
+<p>Imagine a room with a light, a light switch and a TV.
+Consider the following propositions.</p>
+<div class="arithmatex">\[
+\begin{array}{|l|l|}
+\mathsf{Proposition~ Symbol} &amp; \mathsf{Meaning}\\
+\hline
+\mathit{tvOK} &amp; \mathsf{the~ TV~ is~ working}\\
+\mathit{power} &amp; \mathsf{there~ has~ not~ been~  a~ power~ cut}\\
+\mathit{lampLit} &amp; \mathsf{the~ lamp~ is~ lit}\\
+\mathit{harryAlone} &amp; \mathsf{Harry~ is~  alone~ in~ the~ room}\\
+\mathit{bulbDead} &amp; \mathsf{the~ light~ bulb~ in~ the~ lamp~ is~ dead}\\
+\mathit{switchOn} &amp; \mathsf{the~ lamp~ switch~ is~ on}\\
+\mathit{harryOff} &amp; \mathsf{Harry~ switched~  the~ lamp~ off}\\
+\hline
+\end{array}
+\]</div>
+<p>We can represent this knowledge about the world in general</p>
+<ul>
+<li>
+<p>If Harry is alone and  didn't switch the light off, it is still switched on.</p>
+<p><span class="arithmatex">\(\begin{equation}
+(\mathit{harryAlone} \wedge \neg \mathit{harryOff}) \to \mathit{switchOn}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>If the TV is working then there can't be a power cut.</p>
+<p><span class="arithmatex">\(\begin{equation}
+\mathit{tvOK} \to \mathit{power}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>If the lamp is not lit and it's switched on and there
+isn't a power cut  then  the light bulb is dead.</p>
+<p><span class="arithmatex">\(\begin{equation}
+(\neg \mathit{lampLit} \wedge \mathit{switchOn} \wedge \mathit{power})
+     \to \mathit{bulbDead}
+\end{equation}\)</span></p>
+</li>
+</ul>
+<p>Suppose we also know these facts about this particular scenario:</p>
+<ul>
+<li>
+<p>The TV is working.</p>
+<p><span class="arithmatex">\(\begin{equation}\mathit{tvOK}\end{equation}\)</span></p>
+</li>
+<li>
+<p>Harry didn't switch the lamp off.</p>
+<p><span class="arithmatex">\(\begin{equation}
+\neg \mathit{harryOff}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>Harry is alone in the room.</p>
+<p><span class="arithmatex">\(\begin{equation}
+\mathit{harryAlone}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>The lamp isn't lit.</p>
+<p><span class="arithmatex">\(\begin{equation}
+\neg \mathit{lampLit}
+\end{equation}\)</span></p>
+</li>
+</ul>
+<p>The question is:
+Must the bulb be dead? That is, can we be sure the following must be true?</p>
+<div class="arithmatex">\[\mathit{bulbDead}\]</div>
+<h3 id="an-informal-argument">An informal argument</h3>
+<p>We can argue as follows:</p>
+<ul>
+<li>
+<p>Because Harry is alone (6) and didn't switch the lamp off (5)
+we know from (1) that the lamp is switched on. So we know that:</p>
+<p><span class="arithmatex">\(\begin{equation}
+\mathit{switchOn}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>Because the TV's working (4) there cannot be a power cut by (2).
+So we know that:</p>
+<p><span class="arithmatex">\(\begin{equation}
+\mathit{power}
+\end{equation}\)</span></p>
+</li>
+<li>
+<p>Because the lamp is switched on (8)
+and it isn't lit (7) and we know from (9) that
+there isn't a power cut, it must be that the bulb's dead by (3).
+So we conclude that:</p>
+<p><span class="arithmatex">\(\begin{equation}
+\mathit{bulbDead}
+\end{equation}\)</span></p>
+</li>
+</ul>
+<div class="admonition next">
+<p class="admonition-title">Looking forward</p>
+<p>In the next lesson we look at two ways in which the propositions
+in this scenario can be represented in a system that can automatically
+carry out an argument and come to the conclusion that the bulb is dead.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 3, you can test your knowledge in a formative exercise about representation in propositional logic.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-1 Lesson 3'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../01_03_PropLogicIntro/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 2 Propositional logic
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../01_05_AutomatingLogic/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 4 Automating logic
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

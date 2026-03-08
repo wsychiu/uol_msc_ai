@@ -1,0 +1,1328 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 3 FOL applied to representation - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lesson-3-representation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 3 FOL applied to representation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../02_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 3 FOL applied to representation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 3 FOL applied to representation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shapes-scenarios" class="md-nav__link">
+    Shapes scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-quantifier-examples-about-types-of-shape-universal-case" class="md-nav__link">
+    Single quantifier examples about types of shape: universal case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-quantifier-examples-about-types-of-shape-existential-case" class="md-nav__link">
+    Single quantifier examples about types of shape: existential case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-combinations-of-quantifiers" class="md-nav__link">
+    Nested combinations of quantifiers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shapes-scenarios" class="md-nav__link">
+    Shapes scenarios
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-quantifier-examples-about-types-of-shape-universal-case" class="md-nav__link">
+    Single quantifier examples about types of shape: universal case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-quantifier-examples-about-types-of-shape-existential-case" class="md-nav__link">
+    Single quantifier examples about types of shape: existential case
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-combinations-of-quantifiers" class="md-nav__link">
+    Nested combinations of quantifiers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lesson-3-representation">Lesson 3: Representation</h1>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes for lesson 3</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>use first order logic to represent knowledge about
+various situations.</li>
+</ul>
+</div>
+<p>One of the challenges in using first order logic to represent knowledge, is that the knowledge is often described in
+natural language (English in our case) which can be ambiguous.
+We also see that sometimes exactly the same phrase in English has to be represented in
+the logic in quite different ways. This means that the process of writing logical
+expressions to represent knowledge is not a matter of translating English words into logic
+in a fixed way &ndash; you have to think about the meaning (sometimes the most likely
+of several meanings in the context).</p>
+<p>We will go through various examples.
+These examples involve geometric shapes and this type of example exists in various
+forms called "Tarski's world". You can experience <a href="https://courses.cs.washington.edu/courses/cse590d/03sp/tarski/tarski.html" target="_blank">an interactive version</a>. Note that this may not run in all browsers and you may need to download the example to run it with java. Although some links on the web page do not work, the java program itself works correctly. To be clear: this is an additional resource and you do not need to use it to understand the examples below.</p>
+<h2 id="shapes-scenarios">Shapes scenarios</h2>
+<p>We work with the following scenario, two examples of which are shown in the diagrams below. We are representing the arrangement of shapes in simple pictures, with the following constraints:</p>
+<ul>
+<li>A picture can contain any number of shapes greater than zero.</li>
+<li>Every shape in a picture is one of these kinds: a triangle, a circle, or a square.</li>
+<li>There can be any possible mixture of kinds in  a picture. For example, there can be shapes of every kind, or there
+might only be shapes of one kind.</li>
+<li>two shapes may touch each other, but not overlap</li>
+<li>one shape can be inside another, but when this happens nothing can be inside the innermost one</li>
+<li>the relationships inside and touching can only be true of different things.
+Nothing is inside itself and nothing touches itself.</li>
+</ul>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains two rectangles side by side, each of which contains an assortment of other shapes.</p>
+<p>The rectangle on the left-hand side contains a triangle pointing towards one o’clock surrounded by a large circle. The triangle and the large circle do not touch each others boundaries. The large circle is touching a smaller circle on its lower right-hand side, which is in turn touching the lower left-hand side of a large square which contains a smaller square within itself. The smaller square is not touching the boundaries of the larger square.</p>
+<p>The rectangle on the right-hand side contains a triangle floating on its own in the same position as the triangle described previously. A smaller circle floats below and to the right-hand side of the triangle. To the right of the circle is the lower left-hand corner of a larger square which contains a smaller triangle in the lower left and a circle, the same size as the one previously described, in the upper right-hand corner.</p>
+</details>
+<p>At first we are <em>not</em> going to represent these constraints themselves. We are assuming these constraints are given and then representing additional statements about pictures. We do this by going through a sequence of examples which get more complex as we go on.</p>
+<div class="arithmatex">\[
+\begin{array}{|llll|}
+\mathsf{Relation~ Symbol} &amp;\mathsf{Arity} &amp;\mathsf{Example} &amp;\mathsf{Meaning~ of~ example}\\
+\hline
+\mathit{circle}   &amp; 1   &amp;  \mathit{circle}(x)   &amp;  x  \mathsf{~ is~ a~ circle}  \\
+ \mathit{triangle}   &amp; 1   &amp;  \mathit{triangle}(x)   &amp;  x  \mathsf{~  is~ a~ triangle}  \\
+  \mathit{square}   &amp; 1   &amp;  \mathit{square}(x)   &amp;  x  \mathsf{~  is~ a~ square}  \\
+  \mathit{touches}   &amp; 2   &amp;  \mathit{touches}(x,y)   &amp;  x  \mathsf{~ touches~ }  y   \\
+  \mathit{inside}   &amp; 2   &amp;  \mathit{inside}(x,y)   &amp;  x  \mathsf{~   is~ inside~ }  y  \\
+\hline
+\end{array}
+\]</div>
+<p>We next take some formulas and take the domain of interpretation to be the set of all shapes
+in a picture. We look at whether the formulas are true in some or all of these interpretations given the
+constraints stated above.</p>
+<p>Note that being true in all these interpretations is not the same as being logically valid &ndash; being valid means
+being true in all possible interpretations including ones where something can be a triangle and a square at the same time.</p>
+<p><span class="arithmatex">\(\def\cl{\mathit{circle}}\)</span>
+<span class="arithmatex">\(\def\tl{\mathit{triangle}}\)</span>
+<span class="arithmatex">\(\def\sr{\mathit{square}}\)</span>
+<span class="arithmatex">\(\def\tch{\mathit{touches}}\)</span>
+<span class="arithmatex">\(\def\ins{\mathit{inside}}\)</span></p>
+<h2 id="single-quantifier-examples-about-types-of-shape-universal-case">Single quantifier examples about types of shape: universal case</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(\forall x\, \cl(x)\)</span></p>
+<p>This means every shape is a circle. This is true in interpretations 1 and 2, and false in 3 and 4.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) A large circle is placed towards the upper left-hand corner of this rectangle. This circle contains another circle half its size inside it. To the right-hand side are two more circles, one directly above the other with a gap in between.</p>
+<p>2) This rectangle contains a solitary small circle towards its lower edge, slightly left of centre.</p>
+<p>3) This rectangle is identical to rectangle one, except it contains a triangle on the far right-hand side, adjacent but not touching the two separate circles.</p>
+<p>4) This rectangle contains a triangle in the lower left-hand corner. Another larger triangle is located above it, slightly to the right and pointing towards one o’clock. On the right-hand side is a large square which contains a smaller triangle positioned slightly right of centre within it. None of the shapes are touching.</p>
+</details>
+<p>The formula <span class="arithmatex">\(\forall x\, \cl(x)\)</span> is straightforward, but we can add a negation sign to it in two different ways
+which it is important to distinguish.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\neg \forall x\, \cl(x)\)</span> will be true exactly when <span class="arithmatex">\(\forall x\, \cl(x)\)</span> is false and vice versa.
+This formula is true in interpretations 3 and 4, and false in 1 and 2. The formula
+<span class="arithmatex">\(\neg \forall x\, \cl(x)\)</span> means that not everything is a circle.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x\, \neg \cl(x)\)</span> which means no shape is a circle. This formula
+is true in interpretation 4, and false in 1, 2 and 3.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x\, (\tl(x) \vee \sr(x))\)</span> and  <span class="arithmatex">\((\forall x\, \tl(x))  \vee (\forall x\, \sr(x))\)</span></p>
+<p>These two formulas mean different things:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\forall x\, (\tl(x) \vee \sr(x))\)</span> means each shape is a triangle or a square. It is true in examples
+1 and 3 below, and false in 2 and 4.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall x\, \tl(x))  \vee (\forall x\, \sr(x))\)</span> means that all of the shapes are triangles or all of
+the shapes are squares. This is true for example 3 and false in 1, 2, and 4 of the following interpretations.  </p>
+</li>
+</ul>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) In this rectangle two equally-sized small squares are positioned in the lower left-hand corner side by side but with space in between. Above them is a triangle pointing towards one o’clock. To the right-hand side is a large square with a small triangle in its lower left-hand corner. None of the shapes are touching.</p>
+<p>2) This rectangle contains a small square in the lower left-hand corner. Above it and slightly to the right is a triangle pointing towards one o’clock. Back towards the lower edge is a small circle still slightly left of centre. To the right of the circle is the lower left-hand corner of a large square which contains a small triangle positioned towards its own lower left-hand corner. None of the shapes are touching</p>
+<p>3) This rectangle contains two large squares side by side. The square on the left contains a smaller square in its lower right-hand corner. The square on the right contains a smaller square centrally aligned but slightly more towards its top edge. None of the shapes are touching.</p>
+<p>4) This rectangle contains five equally-sized circles in a random grouping. None of them are touching.</p>
+</details>
+</li>
+<li>
+<p><span class="arithmatex">\((\forall x\, \tl(x))  \to (\forall x\, \sr(x))\)</span> and <span class="arithmatex">\(\forall x\, (\tl(x)  \to \sr(x))\)</span></p>
+<p>Here you need to remember the definition of when a formula <span class="arithmatex">\(\alpha \to \beta\)</span> is true.
+Such a formula is true whenever <span class="arithmatex">\(\alpha\)</span> is false, and it is also true whenever <span class="arithmatex">\(\beta\)</span> is true.
+The only case <span class="arithmatex">\(\alpha \to \beta\)</span> is false is when <span class="arithmatex">\(\alpha\)</span> is true and <span class="arithmatex">\(\beta\)</span> is false.    </p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) In this rectangle there is a square in the lower left-hand corner with a triangle inside it with space around it. Next to this square on the right there is a slightly smaller square. Above these two squares there is another square positioned more towards the top edge of the rectangle. To the right-hand side, positioned slightly below centre, there is a larger square which contains another smaller square aligned slightly to the left and above centre inside it. None of these shapes are touching.</p>
+<p>2) This rectangle contains triangles. In the upper left-hand corner is a medium-sized triangle pointing towards one o’clock. Below this in the bottom left-hand corner is a small triangle. Next to the small triangle is a medium-sized triangle pointing towards one o’clock with a smaller triangle inside it. The top corner of this triangle is pointing up and touching the side of the larger triangle it is placed inside. To the right of this, now on the rectangle’s right-hand side, is another small triangle, centrally aligned. Above it with space in between is another slightly larger triangle.</p>
+<p>3) This rectangle contains two squares near the left-hand edge, one on top of the other but with space in between. Alongside them with a gap in between is another square the same size. To the far right-hand side is a larger square with a smaller square, centrally aligned but slightly towards the top, inside it.</p>
+<p>4) This rectangle contains seven circles connected together. There are two circles next to each other in the lower left-hand corner. The next circle is to the upper right which has another circle stacked on top of it. Below and to the right there are two circles next to each other and another circle is stacked on top of the right-hand one at about one o’clock on its outer edge.</p>
+</details>
+<ul>
+<li>
+<p><span class="arithmatex">\((\forall x\, \tl(x))  \to (\forall x\, \sr(x))\)</span> is true in the interpretations 1, 3, and 4 above because
+<span class="arithmatex">\(\forall x\, \tl(x)\)</span> is false in each of these. In interpretation 3 there is another reason why <span class="arithmatex">\((\forall x\, \tl(x))  \to (\forall x\, \sr(x))\)</span>
+is true: because <span class="arithmatex">\(\forall x\, \sr(x)\)</span> is true there. In interpretation 2 the formula <span class="arithmatex">\((\forall x\, \tl(x))  \to (\forall x\, \sr(x))\)</span>
+is false because everything is a triangle but not everything is a square.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall x\, (\tl(x)  \to \sr(x))\)</span> is true in the interpretations 3 and 4, but false in both 1 and 2.
+In cases 3 and 4 the formula <span class="arithmatex">\(\tl(x)\)</span> is false for every possible <span class="arithmatex">\(x\)</span> in the domain, so <span class="arithmatex">\(\tl(x)  \to \sr(x)\)</span>
+is true for every element of the domain. In both 1 and 2 we can find an element of the domain
+for which <span class="arithmatex">\(\tl(x)\)</span> is true but <span class="arithmatex">\(\sr(x)\)</span> is false. In 1 there is only one such element; in 2 there are six.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="single-quantifier-examples-about-types-of-shape-existential-case">Single quantifier examples about types of shape: existential case</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(\exists x\, \cl(x)\)</span></p>
+<p>This means at least one shape is a circle. This is true for  interpretations 1, 2 and 3 below, and false in 4.    </p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) A large circle is placed towards the upper left-hand corner of this rectangle. This circle contains another circle half its size inside it. To the right-hand side are two more circles, one directly above the other with a gap in between.</p>
+<p>2) This rectangle contains a solitary small circle towards its lower edge, slightly left of centre.</p>
+<p>3) This rectangle is identical to rectangle one, except it contains a triangle on the far right-hand side, adjacent but not touching the two separate circles.</p>
+<p>4) This rectangle contains a triangle in the lower left-hand corner. Another larger triangle is located above it, slightly to the right and pointing towards one o’clock. On the right-hand side is a large square which contains a smaller triangle positioned slightly right of centre within it. None of the shapes are touching.</p>
+</details>
+<p>The formula <span class="arithmatex">\(\exists x\, \cl(x)\)</span> is straightforward, but we can add a negation sign to it in two different ways
+which it is important to distinguish.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\neg \exists x\, \cl(x)\)</span> will be true exactly when there is no circle in the picture.
+This formula is true in interpretation 4, and false in the others.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists x\, \neg \cl(x)\)</span> which means some shape is not a circle. This formula
+is true in interpretations 3 and 4, and false in 1 and 2.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists x\, (\tl(x) \wedge \sr(x))\)</span> and <span class="arithmatex">\((\exists x\, \tl(x))  \wedge (\exists x\, \sr(x))\)</span></p>
+<ul>
+<li>
+<p>The formula <span class="arithmatex">\(\exists x\, (\tl(x) \wedge \sr(x))\)</span> says that there is a shape which is both a triangle and a square.
+This will always be false for the interpretations we are considering.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((\exists x\, \tl(x))  \wedge (\exists x\, \sr(x))\)</span> means that there is a triangle and there is a square. This time there is no
+requirement that the triangle and the square have to be the same thing to make the formula true. In the interpretations shown below, this is
+true in 1, and false in the others.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) In this rectangle there is a square in the lower left-hand corner with a triangle in the middle with space around it. Next to this square on the left is another slightly smaller square. Above these squares towards the top edge but still on the left-hand side of the rectangle is another medium-sized square. To the right-hand side is a large square aligned just below centre. The large square has a smaller square aligned slightly to the left and above centre inside it. None of the shapes are touching.</p>
+<p>2) This rectangle contains a mixture of circles and triangles. In the lower left-hand corner is a circle, above which is a larger triangle pointing towards one o’clock. Next to the triangle on the left is a circle which has a smaller triangle directly below it. Towards the rectangle’s right-hand corner is a triangle the same size and pointing the same direction as the one in the top left-hand corner previously described. Above this towards the rectangle’s top edge and to the left is a medium-sized triangle pointing directly upwards. None of the shapes are touching.</p>
+<p>3) On the left-hand side of this rectangle there are two squares one above the other. To the left of them is another similarly sized square. To the right, now on the rectangle’s far right-hand side, is a larger square with another smaller square inside it, positioned just above centre. None of the shapes are touching.</p>
+<p>4) This rectangle contains a circle in the lower left-hand corner, one just left of centre towards the top edge, another just right of centre towards the bottom and a fourth placed above centre on the right-hand side. All the circles are the same size with plenty of space in between.</p>
+</details>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\((\exists x\, \tl(x))  \to (\exists x\, \sr(x))\)</span> and <span class="arithmatex">\(\exists x\, (\tl(x)  \to \sr(x))\)</span></p>
+<ul>
+<li>
+<p>The interaction between <span class="arithmatex">\(\exists\)</span> and <span class="arithmatex">\(\to\)</span> can be confusing. While it is not all logically
+wrong to write a formula of the shape <span class="arithmatex">\(\exists x \; (p(x) \to q(x))\)</span>, it is almost certainly not saying
+anything useful. The example here should help you understand what it does mean.</p>
+</li>
+<li>
+<p>The formula <span class="arithmatex">\((\exists x\, \tl(x))  \to (\exists x\, \sr(x))\)</span> captures the idea that if a picture
+has a triangle then it also has a square. This is true for pictures with no triangles at all, and it's true
+for any picture where there is both a square and a triangle. Otherwise it's false.
+This formula expresses a natural constraint where you can easily imagine the pictures for which it is true.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists x\, (\tl(x)  \to \sr(x))\)</span> looks similar to the other formula, but it is not nearly so obvious for which pictures it will be true.
+In the interpretations pictured below, this is true in 1, 2, and 3, but false in 4.
+In interpretation 4 the formula is false because it is impossible to find an element of the domain making <span class="arithmatex">\(\tl(x)  \to \sr(x)\)</span> true.
+In every case
+<span class="arithmatex">\(x\)</span> has to be a triangle and not a square.
+In the interpretations 1, 2 and 3, there is at least one value for  <span class="arithmatex">\(x\)</span> where
+the formula  is true. In interpretation 2 there is only one element making <span class="arithmatex">\(\tl(x)\)</span> false; in 1 and 3 there are several elements which are not triangles.</p>
+<details class="info"><summary>Select for full text description</summary><p>The diagram contains four equal-sized rectangles labelled one to four in two rows, each of which contains an assortment of other shapes.</p>
+<p>1) In this rectangle there is a square in the lower left-hand corner with a triangle floating inside it. Next to this square on the left is another slightly smaller square. Above these squares towards the top edge but still on the left-hand side of the rectangle is another medium-sized square. To the right-hand side is a large square aligned just below centre. The large square has a smaller square aligned slightly to the left and above centre inside it. None of the shapes are touching.</p>
+<p>2) This rectangle contains one circles and five triangles. In the lower left-hand corner is a circle, above which is a larger triangle pointing towards one o’clock. Next to the triangle on the left is a circle which has a smaller triangle below it. Towards the rectangle’s right-hand corner is a triangle the same size and pointing the same direction as the one in the top left-hand corner previously described. Above this towards the rectangle’s top edge and to the left is a medium-sized triangle pointing directly upwards. All of the shapes have space in between them.</p>
+<p>3) On the left-hand side of this rectangle there are two squares one above the other. To the left of them is another similarly sized square. To the right, now on the rectangle’s right-hand side, is a larger square with another smaller square inside it, positioned just above centre. None of the shapes are touching.</p>
+<p>4) This rectangle contains five triangles. There is a small triangle in the lower left-hand corner and a larger triangle above it, both pointing upwards. To the right of this is a small triangle and a larger triangle below, both of these are pointing downwards with. To the far right is a larger triangle pointing to one o’clock. None of the triangles are touching.</p>
+</details>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="nested-combinations-of-quantifiers">Nested combinations of quantifiers</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(\exists x\, \exists y\, \exists z\, (\tl(x) \wedge \tl(y) \wedge \tch(x,z) \wedge \tch(y,z))\)</span></p>
+<ul>
+<li>
+<p>This might appear to say that there are two triangles that both touch the same third shape.
+However, there is no requirement that the <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> are all different from each other.
+In first order logic it is possible that the same individual is referred to by two different
+variables. So the formula can be true where there is only one triangle, but that triangle touches
+some other shape. It is also possible that the formula is true because one triangle touches
+another triangle. In the interpretations 1 and 2 below the formula is true.</p>
+<details class="info"><summary>Select for full text description</summary><p>This diagram contains two equal-sized rectangles labelled one and two, each of which contains an assortment of other shapes.</p>
+<p>1) In this rectangle there is a large square on the left-hand side with two triangles, one smaller than the other, inside it. The two triangles are not touching each other, and they are not touching the square they are inside. To the upper right there is a smaller square with a very small triangle inside it, not touching the square. In the lower right-hand corner of the rectangle there is a small triangle which is touching the lower left-hand corner of a larger square. This square contains a triangle, one corner of which is touching the square’s right-hand edge.</p>
+<p>2) On the left-hand side of this rectangle there is a large square which has five equally-sized triangles inside it. Towards the top edge are two triangles spaced apart. Below this is a triangle pointing down. This is touching another triangle pointing up on its slanted edge. Adjacent but not touching this on the right is another triangle pointing upwards not touching anything. To the right is a smaller square that contains one triangle. This is pointing downwards and touching the square on its bottom edge, slightly right of center.</p>
+</details>
+</li>
+<li>
+<p>To say there are two different triangles that both touch something, we need to
+make this explicit. One way is like this:       <br />
+<span class="arithmatex">\(\begin{array}{l}  \;\\
+\exists x\, \exists y\, \exists z\,    \\  
+\quad(\tl(x) \wedge \tl(y) \wedge \tch(x,z) \wedge \tch(y,z)
+\wedge \neg (x = y)). \\ \;\\
+\end{array}\)</span>          <br />
+This formula is now only true in interpretation 1 above.          <br />
+<p>
+ If we need to say that <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> are all different from each other,
+then this can be expressed by <span class="arithmatex">\(\neg (x = y) \wedge \neg (y = z) \wedge \neg (z = x)\)</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(\exists x\, (\sr(x) \wedge \forall y\, (\tl(y) \to \ins(y,x)))\)</span>      </p>
+<p>This says that there is a particular square within which all the triangles can be found.
+ Sometimes statements such as <em>'every triangle is in a square'</em> can be ambiguous about whether
+ there is a single square containing every triangle, or alternatively, each triangle is inside
+ some square, but different triangles might be in different squares. <br />
+ When representing such situations it may be important to clarify what is meant, or to select the
+ more likely meaning in the given context.</p>
+<p>If a newspaper headline reads <em>'There is a rat within 20 feet of everybody'</em> it is most likely to mean
+ that for each person in the country it is possible to find a rat within 20 feet of them. It is not likely
+ to mean what it literally says: that one particular rat is so enormous as to be within 20 feet of everyone at once.
+ In this example if you take the English statement <em>'There is a rat &hellip; '</em> and try to translate word-for-word
+ into <span class="arithmatex">\(\exists x\,(\mathit{rat}(x) \wedge \ldots\)</span>, then the result is most unlikely to represent the intended meaning.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\forall y\, (\tl(y) \to \exists x\, (\sr(x) \wedge \ins(y,x)))\)</span></p>
+<p>This says that every triangle is inside some square, but this need not be the same square
+ for every triangle. It allows the possibility that all the triangles are in the same
+ square, or that each triangle is inside a different square. In the following interpretations,
+ this formula is true in 1, 2, and 4. In 4 it is true because there are no triangles.</p>
+</li>
+</ol>
+<details class="info"><summary>Select for full text description</summary><p>This diagram contains four equal-sized rectangles labelled one to four, each of which contains an assortment of other shapes.</p>
+<p>1) This rectangle contains a large square on the left-hand side. It has five equally-sized triangles inside it. Towards the top edge are two triangles spaced apart. Below the one on the left is another triangle pointing down. To the right and lower down is a triangle pointing up, and to the upper right of this is another triangle pointing up. There is space between all the triangles. To the square’s right is another smaller square. This square has a small circle inside it towards the top edge but not touching the sides.</p>
+<p>2) On the left-hand side of this rectangle there is a large square which has five equally-sized triangles inside it. Towards the top edge are two triangles spaced apart. Below this is a triangle pointing down. This is touching another triangle pointing up on its slanted edge. Adjacent to this on the right is another triangle pointing upwards not touching anything. To the right is a smaller square that contains one triangle. This is pointing downwards and touching the square on its bottom edge, slightly right of center.</p>
+<p>3) In this rectangle there is a large square on the left-hand side with two triangles, one smaller than the other, inside it. To the upper right there is a smaller square with a very small triangle inside it. In the lower right-hand corner of the rectangle there is a small triangle which is touching the lower left-hand corner of a larger square. This square contains a triangle, one corner of which is touching the square’s right-hand edge.</p>
+<p>4) This rectangle contains five circles. Towards the lower left-hand corner two circles are connected side by side. Slightly above with space in between, there are another two circles which are connected side by side as well. To the upper right, now towards the rectangle’s top edge slightly right of center, there is another circle isolated from the others.</p>
+</details>
+<p>In representing situations in logic it is important to be careful about the difference between
+     situations that might sound similar at first. For example, saying that every triangle in inside
+     some square is different to saying that every square has some triangle inside it. This latter
+     statement can be represented by
+     <span class="arithmatex">\(\forall x\, (\sr(x) \to \exists y\, (\tl(y) \wedge \ins(y,x)))\)</span>.     </p>
+<div class="admonition exercise">
+<p class="admonition-title">Exercise</p>
+<p>Draw four examples of interpretations that satisfy the following:</p>
+<ul>
+<li>Each interpretation has at least one shape.</li>
+<li>The four interpretations show all possible combinations of truth values for
+  the two formulas   <br />
+<span class="arithmatex">\(\begin{array}{l}
+     \forall y\, (\tl(y) \to \exists x\, (\sr(x) \wedge \ins(y,x))), \;\mathsf{and}\\
+     \forall x\, (\sr(x) \to \exists y\, (\tl(y) \wedge \ins(y,x))).
+     \end{array}\)</span></li>
+<li>The examples are minimal in the sense that removing any shapes would mean the above conditions are
+     no longer satisfied.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Formative exercise</p>
+<p>Now you have finished lesson 3, you can test your knowledge in a formative exercise.</p>
+<p>Return to Minerva, and using the side bar, navigate to 'Formative exercises'. From here you can select <strong>'Formative Unit-2 Lesson 3'</strong>, and attempt the questions.</p>
+<p>Please note that while this activity is in Gradescope, there is no grade associated with it.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../002_02_Semantics/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 2 Semantics of FOL
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../002_04_Tableau/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lesson 4 Tableau method for FOL
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

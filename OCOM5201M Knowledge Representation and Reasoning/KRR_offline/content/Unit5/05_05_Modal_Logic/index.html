@@ -1,0 +1,1699 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="Digital Education Service">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Lesson 3 Modal logic - Knowledge Representation and Reasoning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modal-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="../../../img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Lesson 3 Modal logic
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        VM Instructions
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../05_00_Lesson0/" class="md-tabs__link md-tabs__link--active">
+          Unit 5 Space and time
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      VM Instructions
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lesson 3 Modal logic
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Lesson 3 Modal logic
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-syntax-of-modal-logic" class="md-nav__link">
+    3.1 Syntax of modal logic
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Syntax of modal logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-the-language" class="md-nav__link">
+    3.1.1 The language
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-the-formulas" class="md-nav__link">
+    3.1.2 The formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.2 The formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3121-examples" class="md-nav__link">
+    3.1.2.1 Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-semantics" class="md-nav__link">
+    3.2 Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-informal-idea" class="md-nav__link">
+    3.2.1 Informal idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-formal-definition-of-semantics" class="md-nav__link">
+    3.2.2 Formal definition of semantics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-truth-satisfaction-and-validity" class="md-nav__link">
+    3.2.3 Truth, satisfaction and validity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-example-parents-children-and-grandchildren" class="md-nav__link">
+    3.3 Example (parents, children and grandchildren)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-exercises" class="md-nav__link">
+    3.4 Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-comparison-with-first-order-logic" class="md-nav__link">
+    3.5 Comparison with first order logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-more-than-one-accessibility-relation" class="md-nav__link">
+    3.6 More than one accessibility relation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-syntax-of-modal-logic" class="md-nav__link">
+    3.1 Syntax of modal logic
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Syntax of modal logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-the-language" class="md-nav__link">
+    3.1.1 The language
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-the-formulas" class="md-nav__link">
+    3.1.2 The formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1.2 The formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3121-examples" class="md-nav__link">
+    3.1.2.1 Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-semantics" class="md-nav__link">
+    3.2 Semantics
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-informal-idea" class="md-nav__link">
+    3.2.1 Informal idea
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-formal-definition-of-semantics" class="md-nav__link">
+    3.2.2 Formal definition of semantics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-truth-satisfaction-and-validity" class="md-nav__link">
+    3.2.3 Truth, satisfaction and validity
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-example-parents-children-and-grandchildren" class="md-nav__link">
+    3.3 Example (parents, children and grandchildren)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-exercises" class="md-nav__link">
+    3.4 Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-comparison-with-first-order-logic" class="md-nav__link">
+    3.5 Comparison with first order logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-more-than-one-accessibility-relation" class="md-nav__link">
+    3.6 More than one accessibility relation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="modal-logic">Modal logic</h1>
+<p><span class="arithmatex">\(\def\HA{\mathit{HoldsAt}}\)</span>
+<span class="arithmatex">\(\def\Past{\mathop {\mathbf{P}}}\)</span>
+<span class="arithmatex">\(\def\Future{\mathop {\mathbf{F}}}\)</span>
+<span class="arithmatex">\(\def\Going{\mathop {\mathbf{G}}}\)</span>
+<span class="arithmatex">\(\def\HasBeen{\mathop {\mathbf{H}}}\)</span>
+<span class="arithmatex">\(\def\mBox{\mathop{\Box}}\)</span>
+<span class="arithmatex">\(\def\mDiamond{\mathop{\Diamond}}\)</span>
+<span class="arithmatex">\(\def\leq{\leqslant}\)</span>
+<span class="arithmatex">\(\def\geq{\geqslant}\)</span>
+<span class="arithmatex">\(\def\phi{\varphi}\)</span></p>
+<div class="admonition success">
+<p class="admonition-title">Learning outcomes:</p>
+<p>After completing this lesson you should be able to:</p>
+<ul>
+<li>
+<p>Construct simple examples of frames and valuations for propositional modal logic.</p>
+</li>
+<li>
+<p>Evaluate the truth of modal logic formulas in a given interpretation.</p>
+</li>
+<li>
+<p>Explain how some expressions in description logic are essentially formulas in modal logic.</p>
+</li>
+<li>
+<p>Write first order formulas that correspond to modal logic formulas in some special cases where this is possible.</p>
+</li>
+</ul>
+</div>
+<h2 id="31-syntax-of-modal-logic">3.1 Syntax of modal logic</h2>
+<p>In this lesson, we will study <strong>propositional modal logic</strong>. There are various kinds of first order
+modal logics, but the propositional case is the most relevant here.
+Although it is called <strong>propositional</strong> it is capable of expressing
+some things that are not possible in ordinary propositional logic,
+and in some ways even beyond first order logic.</p>
+<p>Description logics are one example of modal logics being used in knowledge representation.
+Another example, we meet later in this unit are tense logics. These are logics for
+expressing things like:</p>
+<ul>
+<li>In the future there will be pelicans in the park.</li>
+<li>At every future time, the values of <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> in the program execution
+will be equal.</li>
+<li>At some point in the past people lived here and there was a canal but not a railway.</li>
+</ul>
+<p>We start with a simple form of modal logic that captures the main idea,
+but which is too simple to fit the way that description logics are examples of modal logic.</p>
+<h3 id="311-the-language">3.1.1 The language</h3>
+<p>A language for propositional modal logic consists of:</p>
+<ul>
+<li>
+<p>Propositional variables, that stand for atomic propositions
+just as in ordinary propositional logic</p>
+</li>
+<li>
+<p>Logical connectives as before:
+<span class="arithmatex">\(\quad \neg \quad \vee \quad \wedge \quad \to \quad \leftrightarrow\)</span></p>
+</li>
+<li>
+<p>Two additional logical symbols:</p>
+<ul>
+<li><span class="arithmatex">\(\Box\)</span>, called <strong>box</strong>, and</li>
+<li><span class="arithmatex">\(\lozenge\)</span>, called <strong>diamond</strong>.</li>
+</ul>
+</li>
+<li>
+<p>The usual parentheses to avoid ambiguity.</p>
+</li>
+</ul>
+<h3 id="312-the-formulas">3.1.2 The formulas</h3>
+<p>The formulas of modal logic are expressions that can be true or false.
+Unlike first order logic there are no terms in the language that can refer
+to individual things.</p>
+<p>The rules for construction of formulas are:</p>
+<ul>
+<li>
+<p>Every atomic proposition is a formula</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span> are formulas then the following are all formulas:</p>
+<div class="arithmatex">\[\neg \alpha \qquad \alpha \vee \beta \qquad \alpha \wedge \beta \qquad
+\alpha \to \beta \qquad \alpha \leftrightarrow \beta \qquad \Box \alpha \qquad
+\lozenge \alpha\]</div>
+</li>
+</ul>
+<p>Parentheses can be added as necessary.</p>
+<p>The precedence rules follow those of first order logic with the box and diamond
+having the same precedence that the quantifiers have there.</p>
+<h4 id="3121-examples">3.1.2.1 Examples</h4>
+<p>If <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span> are atomic propositions then the following are all examples
+of formulas in propositional modal logic:</p>
+<div class="arithmatex">\[
+\begin{array}{l}
+A\\[2ex]
+\neg B\\
+(A \to B) \leftrightarrow C\\[2ex]
+\Box A\\[2ex]
+\lozenge B\\[2ex]
+(\Box A) \vee \neg A\\[2ex]
+\Box (A \vee \neg A)\\[2ex]
+(\Box \lozenge \Box \lozenge \neg A) \wedge ((\Box \Box B) \to \lozenge (B \vee \Box C))
+\end{array}
+\]</div>
+<h2 id="32-semantics">3.2 Semantics</h2>
+<h3 id="321-informal-idea">3.2.1 Informal idea</h3>
+<p>In ordinary propositional logic, when we give the meaning of an atomic proposition
+we simply say whether it is true or false. In modal logic we can think of propositions
+not simply being true or false, but being true at some places and false at others.
+The idea of place here is not necessarily anything to do with space, it's more a
+way of thinking about how the semantics works. The 'places' might be different times,
+or objects in the world.</p>
+<p>The semantics for modal logic has two ingredients that go beyond semantics for propositional logic.
+These are:</p>
+<ul>
+<li>set, often denoted <span class="arithmatex">\(W\)</span>, which models the idea of "places" where propositions can
+be true, and</li>
+<li>a binary relation on <span class="arithmatex">\(W\)</span>, often denoted <span class="arithmatex">\(R\)</span>, so that <span class="arithmatex">\(R \subseteq W \times W\)</span>.</li>
+</ul>
+<div class="admonition context">
+<p class="admonition-title">Why use <span class="arithmatex">\(W\)</span>?</p>
+<p>The letter 'W' is chosen because the elements of the set are sometimes
+referred to as <strong>worlds</strong>. This comes from the philosophical history of modal logic
+where the logic was used to talk about statements being true in two senses:</p>
+<ul>
+<li>in all possible worlds, or</li>
+<li>in some possible worlds.</li>
+</ul>
+<p>For example, it could be claimed that <span class="arithmatex">\(2+2=4\)</span> is necessarily true (assuming the meanings
+  of the symbols involved) and could not possibly be otherwise. On the other hand we
+  can imagine a world in which the number <span class="arithmatex">\(4\)</span> is commonly denoted by a different symbol
+  (as of course it is in various cultures).</p>
+<p>In a lot of computer science applications, 'worlds' does not fit the context
+and they are instead called <strong>states</strong>.</p>
+</div>
+<p>Modal logic is similar to first order logic in having this set of entities,
+but in the modal logic we study (at first) there is no way to refer to individuals
+in this set.</p>
+<p>The relation, <span class="arithmatex">\(R\)</span>, is often called the <strong>accessibility relation</strong> and this
+models the idea that some of the 'places' are  accessible from a given 'place'.</p>
+<ul>
+<li>A simple example is if <span class="arithmatex">\(W\)</span> models a set of times, and the relation <span class="arithmatex">\(R\)</span> models a relation
+of being later among the times.</li>
+<li>The accessibility relation can also model
+a role as in description logic. For example, the 'worlds' might be people
+and the accessibility relation could model the idea of being a parent.</li>
+</ul>
+<p>In modal logic, unlike propositional logic and first order logic,
+there is a kind of local truth. That is, a formula can be true <strong>at one</strong>  particular world
+but it may not be true <strong>at all</strong> worlds.</p>
+<h3 id="322-formal-definition-of-semantics">3.2.2 Formal definition of semantics</h3>
+<p>Let's have the formal definition and then come back to some examples.</p>
+<p>Given a language as described above, an interpretation provides:</p>
+<ul>
+<li>
+<p><strong>frame</strong>, that is a pair <span class="arithmatex">\((W, R)\)</span> where</p>
+<ul>
+<li>a set <span class="arithmatex">\(W\)</span></li>
+<li>a binary relation <span class="arithmatex">\(R\subseteq W \times W\)</span>,</li>
+</ul>
+</li>
+<li>
+<p>a valuation <span class="arithmatex">\(V\)</span> which provides
+for each atomic  proposition,  <span class="arithmatex">\(p\)</span>, a subset of <span class="arithmatex">\(W\)</span>
+so <span class="arithmatex">\(V(p) \subseteq W\)</span>.</p>
+</li>
+</ul>
+<p>then the semantics is:</p>
+<div class="arithmatex">\[
+\begin{array}{lcl}
+\mathcal{M}, s \vDash p &amp; \mathsf{ iff } &amp; s \in V(p)\\
+\mathcal{M}, s \vDash \neg \alpha &amp; \mathsf{ iff } &amp; \mathcal{M}, s \nvDash \alpha\\
+\mathcal{M}, s \vDash \alpha \vee \beta &amp; \mathsf{ iff } &amp; \mathcal{M}, s \vDash \alpha
+    \mathsf{~or~ } \mathcal{M}, s \vDash \beta\\
+\mathcal{M}, s \vDash \alpha \wedge \beta &amp; \mathsf{ iff } &amp; \mathcal{M}, s \vDash \alpha
+    \mathsf{ ~and~ } \mathcal{M}, s \vDash \beta\\
+\mathcal{M}, s \vDash \alpha \to \beta &amp; \mathsf{ iff } &amp; \mathcal{M}, s \nvDash \alpha
+    \mathsf{~or ~} \mathcal{M}, s \vDash \beta\\
+\mathcal{M}, s \vDash \lozenge \alpha &amp; \mathsf{ iff } &amp; \mathsf{There~ exists~ }
+t \in W \mathsf{~such ~that~} R(s,t) \mathsf{~and~} \mathcal{M}, t \vDash  \alpha\\
+\mathcal{M}, s \vDash \Box \alpha &amp; \mathsf{ iff } &amp; \mathsf{For ~ every ~}
+t \in W \mathsf{~such~that~} R(s,t), \mathsf{~it~holds~that~} \mathcal{M}, t \vDash  \alpha\\
+\end{array}
+\]</div>
+<p>The key points to understand are that (for a given valuation):</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\lozenge p\)</span> is true at <span class="arithmatex">\(w\)</span>  when <span class="arithmatex">\(p\)</span> is true somewhere accessible from <span class="arithmatex">\(w\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Box p\)</span> is true at <span class="arithmatex">\(w\)</span>  when <span class="arithmatex">\(p\)</span> is true everywhere accessible from <span class="arithmatex">\(w\)</span></p>
+</li>
+</ul>
+<p>This means that:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\lozenge\)</span> has some similarities with <span class="arithmatex">\(\exists\)</span> in first order logic.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Box\)</span> has some similarities with <span class="arithmatex">\(\forall\)</span> in first order logic.</p>
+</li>
+</ul>
+<h3 id="323-truth-satisfaction-and-validity">3.2.3 Truth, satisfaction and validity</h3>
+<p>In ordinary propositional logic, we said a formula <span class="arithmatex">\(\phi\)</span>
+ was <strong>satisfiable</strong> if it was true under some valuation,
+ and <strong>valid</strong> if it was true under all valuations.</p>
+<p>In propositional modal logic, a formula <span class="arithmatex">\(\phi\)</span> can be:</p>
+<ul>
+<li>
+<p><strong>True</strong> at a particular world in a  frame <span class="arithmatex">\(F\)</span> under  valuation <span class="arithmatex">\(\mathcal{V}\)</span>.</p>
+</li>
+<li>
+<p>True at all worlds in a  frame <span class="arithmatex">\(F\)</span> under  valuation <span class="arithmatex">\(\mathcal{V}\)</span>
+  (<strong>satisfied</strong>  in <span class="arithmatex">\(F\)</span> by <span class="arithmatex">\(\mathcal{V}\)</span>).</p>
+</li>
+<li>
+<p>True at all worlds in a  frame <span class="arithmatex">\(F\)</span> under  all valuations
+ (<strong>valid</strong> in <span class="arithmatex">\(F\)</span>).</p>
+</li>
+<li>
+<p>Valid in all frames (<strong>universally valid</strong>).</p>
+</li>
+</ul>
+<p>In propositional modal logic, the notion of <strong>satisfiable</strong> (able to be true)
+for a formula <span class="arithmatex">\(\phi\)</span> could be confusing.
+In the above terminology able to be true and able to be satisfied are used
+in different ways. This means we may need to be careful to distinguish these
+cases.</p>
+<h2 id="33-example-parents-children-and-grandchildren">3.3 Example (parents, children and grandchildren)</h2>
+<p>In this example the states are modelling individual people,
+and the accessibility relation models one person being a parent of
+another.</p>
+<p>In the image below the states are drawn as small circles, and the accessibility relation
+is shown by drawing arrows.</p>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-0p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it have arrows pointing down to a child circle. The third parent circle in the middle has two arrows pointing downwards to two separate child circles.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle. This parent circle has two arrows pointing downwards to two separate child circles.</p>
+</details>
+<p>You can see that:</p>
+<ul>
+<li>There are three people who are grandparents at the top.</li>
+<li>There are four people who are parents but not grandparents.</li>
+<li>There are five people who are children but not parents at the bottom.</li>
+</ul>
+<p>The diagram provides a frame in which we are going to interpret formulas.
+Let's start with a single proposition <span class="arithmatex">\(p\)</span> and give a valuation by drawing
+circles around the states where <span class="arithmatex">\(p\)</span> is true. Look at the image below.</p>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-1p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children. Circles which are themselves circled indicate that the statement my age is less than 10 is true.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it have arrows pointing down to a circle that is circled. The third parent circle in the middle has two arrows pointing downwards to two separate child circles. The circle on the left of these is circled.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle. This parent circle has two arrows pointing downwards to two separate child circles, both of which are themselves circled.</p>
+</details>
+<p>In the image above there are four states where <span class="arithmatex">\(p\)</span> is true. To make it more concrete,
+let's say <span class="arithmatex">\(p\)</span> is modelling the statement:</p>
+<ul>
+<li>My age is less than 10.</li>
+</ul>
+<p>You can see how the truth of such a statement depends on who is saying it.
+That is, it is true in some states, or at some worlds, but not at others.</p>
+<p>What we do next is see how we can use modal logic to build formulas that
+model statements more complex than just the speaker being under 10 years old.</p>
+<p>Our first example is:</p>
+<ul>
+<li>I have a child whose age is less than 10.</li>
+</ul>
+<p>We can model this by <span class="arithmatex">\(\lozenge p\)</span>, and the next image shows where <span class="arithmatex">\(\lozenge p\)</span> holds.</p>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-2p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children. Circles which are themselves circled indicate that the statement I have a child whose age is less than 10 is true. In this diagram all the parent circles are circled.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it have arrows pointing down to a child circle. The third parent circle in the middle has two arrows pointing downwards to two separate child circles.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle. This parent circle has two arrows pointing downwards to two separate child circles.</p>
+</details>
+<p>Now what does <span class="arithmatex">\(\Box p\)</span> look like? This can be thought of as modelling:</p>
+<ul>
+<li>All of my children are under 10.</li>
+</ul>
+<p>But this can feel odd because the semantics of <span class="arithmatex">\(\Box\)</span> means that <span class="arithmatex">\(\Box p\)</span> will
+be true for anyone who has no children at all.
+So you may feel that it's better to say it is modelling:</p>
+<ul>
+<li>Either I have no children at all, or all the ones I do have are under 10.</li>
+</ul>
+<p>If we really wanted to model this:</p>
+<ul>
+<li>I have children and they are all under 10.</li>
+</ul>
+<p>We could use <span class="arithmatex">\((\lozenge p) \wedge \Box p\)</span>.
+But you have to remember that this is saying they have at least one child, not necessarily more than one.</p>
+<p>If all we wanted to say was "I have children" we would need <span class="arithmatex">\(\lozenge (p \vee \neg p)\)</span>. In terms of the pictures this is true
+wherever at least one arrow is leaving the state.</p>
+<p>The states where <span class="arithmatex">\(\Box p\)</span> is true are shown in the next image.
+You should be able to draw a different picture for <span class="arithmatex">\((\lozenge p) \wedge \Box p\)</span>
+yourself.</p>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-3p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children. Circles which are themselves circled indicate that the statement Either I have no children at all, or all the ones I do have are under 10 is true. In this diagram all the child circles and three of the parents circles are themselves circled.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it are both themselves circled and have arrows pointing down to a child circle. The third parent circle in the middle has two arrows pointing downwards to two separate child circles.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle which is itself circled. This parent circle has two arrows pointing downwards to two separate child circles.</p>
+</details>
+<p>You can see, following the discussion after the previous picture, that we can
+model related statements about grandchildren.</p>
+<ul>
+<li>I have some (at least one) grandchildren: <span class="arithmatex">\(\lozenge \lozenge (p \vee \neg p)\)</span></li>
+<li>I have grandchildren and they are all under 10:
+  <span class="arithmatex">\((\lozenge \lozenge p) \wedge \Box \Box p\)</span>.</li>
+</ul>
+<p>If we look at <span class="arithmatex">\(\Box \Box p\)</span> we get this next image. It is modelling the following statement:</p>
+<ul>
+<li>Either I have no grandchildren at all, or all the ones I do have are under 10.</li>
+</ul>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-4p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children. Circles which are themselves circled indicate that the statement Either I have no grandchildren at all, or all the ones I do have are under 10 is true.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This is the only circle in this diagram which is not itself circled. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it are both themselves circled and have arrows pointing down to a child circle. The third parent circle in the middle has two arrows pointing downwards to two separate child circles.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle which is itself circled. This parent circle has two arrows pointing downwards to two separate child circles.</p>
+</details>
+<p>For a final example, consider the formula <span class="arithmatex">\(\lozenge (p \vee \neg p) \to \lozenge p\)</span>.</p>
+<p>Because of the properties of <span class="arithmatex">\(\to\)</span> this formula holds:</p>
+<ul>
+<li>for any person with no children, and</li>
+<li>for any person who has a child under 10.</li>
+</ul>
+<p>We can interpret it as modelling:</p>
+<ul>
+<li>if I have a child then I have a child who is under 10.</li>
+</ul>
+<p><img alt="A state and accessibility relation diagram. Please see the full text description below." src="../images/05-modal-5p.png" /></p>
+<details class="info"><summary>Select for full text description of diagram.</summary><p>In this diagram circles model individual people and arrows the parental relationship between them. The circles at the top of the diagram model grandparents, the circles in the middle model parents and the circles at the bottom model children. Circles which are themselves circled indicate that the statement any person with no children, or any person who has a child under 10 is true. In this diagram all the parent and child circles are circled.</p>
+<p>At the top of the diagram on the left-hand side is a grandparent circle. This is the only circle in this diagram which is not itself circled. This circle has two downward arrows pointing at parent circles below. To the left of this is another parent circle that doesn’t have a grandparent. This circle and the one next to it are both themselves circled and have arrows pointing down to a child circle. The third parent circle in the middle has two arrows pointing downwards to two separate child circles.</p>
+<p>Back to the top of the diagram now on the right-hand side there are two grandparent circles. These each have an arrow pointing downwards to the same parent circle which is itself circled. This parent circle has two arrows pointing downwards to two separate child circles.</p>
+</details>
+<h2 id="34-exercises">3.4 Exercises</h2>
+<div class="admonition exercise">
+<p class="admonition-title">Universally valid formulas</p>
+<p>These formulas are all valid in any frame, whatever the accessibility relation,
+and whatever the valuations for the propositional variables.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\qquad p \vee \neg p\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad \lozenge \lozenge (p \vee \neg p) \to \lozenge (p \vee \neg p)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad \lozenge (p \vee \neg p) \vee \Box (p \wedge \neg p)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad \Box (p \to q) \to (\Box p \to \Box q)\)</span></p>
+</li>
+</ul>
+<p>To make sure you understand how modal logic works you should see if you
+can explain why each one has to be valid in all situations.</p>
+<p>You may find it helpful to think in terms of pictures with arrows like the ones
+drawn  above. In pictorial terms we can understand when certain formulas
+would be true at a particular state. Taking one step is to be understood
+as moving along one arrow in the accessibility relation. The accessibility relation
+is allowed to have loops, so taking one step might not lead anywhere new.</p>
+<ul>
+<li>From here you can take one step: <span class="arithmatex">\(\lozenge (p \vee \neg p)\)</span>.</li>
+<li>From here you can take two steps: <span class="arithmatex">\(\lozenge \lozenge (p \vee \neg p)\)</span>.</li>
+<li>From here you cannot go anywhere: <span class="arithmatex">\(\Box (p \wedge \neg p)\)</span>.</li>
+</ul>
+</div>
+<div class="admonition exercise">
+<p class="admonition-title">Formulas that cannot be true everywhere</p>
+<p>The following two formulas are not universally valid.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\qquad p \wedge \neg p\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad p \wedge \lozenge \neg p\)</span></p>
+</li>
+</ul>
+<p>The first formula is never going to be true at any state at all,
+however you choose a valuation for any frame.</p>
+<p>The second one is never going to be true at <strong>all</strong> states in any situation.</p>
+<ul>
+<li>
+<p>Can you explain why this must be so for <span class="arithmatex">\(p \wedge \lozenge \neg p\)</span>?</p>
+</li>
+<li>
+<p>Can you find a simple example of a frame and a valuation where <span class="arithmatex">\(p \wedge \lozenge \neg p\)</span> holds at some
+states but not others?</p>
+</li>
+<li>
+<p>Can you find an example of a frame where <span class="arithmatex">\(p \wedge \lozenge \neg p\)</span> is always false at all states
+under all possible valuations?</p>
+</li>
+</ul>
+</div>
+<div class="admonition exercise">
+<p class="admonition-title">Formulas that are valid in some but not all frames</p>
+<p>For each of the following formulas you should be able to:</p>
+<ul>
+<li>find examples of particular frames where the formula is valid. That means
+  true at every state and whatever the valuation is, and</li>
+<li>find examples of frames which do not have all those properties.</li>
+</ul>
+<p>In each case drawing simple examples can be helpful.</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(\qquad \lozenge \lozenge p \to \lozenge p\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad p \to \lozenge p\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\qquad \Box p\)</span></p>
+</li>
+</ul>
+</div>
+<h2 id="35-comparison-with-first-order-logic">3.5 Comparison with first order logic</h2>
+<p>In some cases modal logic and first order logic
+are just different ways of doing the same thing.
+In other cases there are significant differences in what
+can be represented in each.</p>
+<p>If we have a first order language with unary predicates
+<span class="arithmatex">\(\mathit{Red}\,\)</span> and <span class="arithmatex">\(\mathit{Green}\)</span> then in any interpretation
+we can say that certain formulas represent given statements.
+Here are some examples:</p>
+<ul>
+<li>
+<p>Something is red: <span class="arithmatex">\(\qquad \exists x \; \mathit{Red}(x)\)</span>.</p>
+</li>
+<li>
+<p>Everything is green: <span class="arithmatex">\(\qquad \forall x\; \mathit{Green}(x)\)</span>.</p>
+</li>
+<li>
+<p>Everything is either red or green: <span class="arithmatex">\(\qquad \forall x\; (\mathit{Green}(x) \vee \mathit{Red}(x))\)</span></p>
+</li>
+<li>
+<p>More than one thing is red:
+  <span class="arithmatex">\(\qquad \exists x \exists y \; (\mathit{Red}(x) \wedge \mathit{Red}(y) \wedge \neg (x = y))\)</span>.</p>
+</li>
+</ul>
+<p>With an additional binary predicate <span class="arithmatex">\(\mathit{atLeastAsBig}\)</span> we can express things like:</p>
+<ul>
+<li>Any red thing is at least as big as  all the green things:         </li>
+</ul>
+<p><span class="arithmatex">\(\qquad \forall x \forall y\;((\mathit{Green}(x) \wedge \mathit{Red}(y)) \to \mathit{atLeastAsBig}(y,x))\)</span></p>
+<ul>
+<li>'At least as big as' has the transitive property:     </li>
+</ul>
+<p><span class="arithmatex">\(\qquad \forall x \forall y \forall z\;((\mathit{atLeastAsBig}(x,y) \wedge \mathit{atLeastAsBig}(y,z)) \to \mathit{atLeastAsBig}(x,z))\)</span></p>
+<ul>
+<li>Everything is at least as big as itself:</li>
+</ul>
+<p><span class="arithmatex">\(\qquad \forall x\;  \mathit{atLeastAsBig}(x,x)\)</span></p>
+<p>To model similar things in a modal logic we can think of the states (or worlds) as the individual things.
+Instead of the first order unary predicate <span class="arithmatex">\(\mathit{Red}\,\)</span> we can use a proposition <span class="arithmatex">\(\mathit{Red}\)</span>.
+If this proposition holds at a particular state we can think of the state proclaiming "I am red".
+Similarly for being green.</p>
+<p>The idea that everything is green would correspond to the formula
+<span class="arithmatex">\(\mathit{Green}\)</span> being true at every state. But there is no formula in modal logic that will be true
+in an arbitrary interpretation if and only if there are two different red things.
+This is because in the modal logic we have described there is no way to talk explicitly about
+the states themselves. In first order logic, on the other hand, we have variables
+and constants that allow us to talk about the individuals in the domain of any interpretation.</p>
+<p>If we can make assumptions about the accessibility relation then more can be expressible.
+For example, suppose  we know the relation <span class="arithmatex">\(R\)</span> in a frame <span class="arithmatex">\((W,R)\)</span> is the universal relation,
+<span class="arithmatex">\(R = W \times W\)</span>, or everything is related to everything.
+In this case the statement "something is red" would correspond to <span class="arithmatex">\(\lozenge \mathit{Red}\)</span>
+being valid in that particular frame. However, we cannot write a formula in modal logic
+that forces the accessibility relation to be the universal relation.</p>
+<p>Modal logic is quite limited with respect to what can be said at the level of a particular
+interpretation. That is the problem of:  </p>
+<ul>
+<li>Given a frame and a valuation can you find a formula that is valid
+in that interpretation if and only if the frame has certain properties?</li>
+</ul>
+<p>It is known, for example, that you cannot write a formula that detects (by being valid or not)
+whether a given interpretation has a reflexive accessibility relation.
+On the other hand, if the valuation is not fixed, so we have a frame but not an interpretation,
+there is a simple formula which is valid under <strong>all</strong> valuations for that frame if and only if
+the frame has a reflexive accessibility relation. One formula that does this is <span class="arithmatex">\(p \to \lozenge p\)</span>.</p>
+<p>In a similar way to validity in a frame under all valuations being able to express reflexivity,
+other properties such as being transitive can be handled as well. It is known that this formula</p>
+<p><span class="arithmatex">\(\qquad \qquad \lozenge \lozenge p \to \lozenge p\)</span></p>
+<p>is valid under all interpretations in a given frame if and only if the accessibility relation <span class="arithmatex">\(R\)</span>
+is transitive. However, it is possible to find a particular valuation for a frame
+where <span class="arithmatex">\(R\)</span> is not transitive but the formula holds at all states in that valuation. This can be done
+with only three states.</p>
+<p>Going back to the example of <span class="arithmatex">\(\mathit{atLeastAsBig}\)</span> above:</p>
+<ul>
+<li>
+<p>In first order logic:</p>
+<ul>
+<li>we have a formula that is true in a given interpretation if
+   the 'at least as big' relation is reflexive:</li>
+<li><span class="arithmatex">\(\forall x\;  \mathit{atLeastAsBig}(x,x)\)</span></li>
+</ul>
+</li>
+<li>
+<p>In modal logic:</p>
+<ul>
+<li>we can model  the 'at least as big' relation as the accessibility relation, but</li>
+<li>it is impossible to write a formula that is true at all states in a given
+  interpretation if the 'at least as big' relation is reflexive.</li>
+</ul>
+</li>
+</ul>
+<p>Modal logic is still valuable in knowledge representation, but it is important
+to appreciate that there are a lot of subtleties when talking about the ability of different logics
+to express different kinds of statements.</p>
+<h2 id="36-more-than-one-accessibility-relation">3.6 More than one accessibility relation</h2>
+<p>Beyond the most basic modal logic you may have several different diamonds <span class="arithmatex">\(\langle i \rangle\)</span> (and their dual
+boxes <span class="arithmatex">\([ i ]\)</span>). The semantics then involves several accessibility relations on the same set of 'worlds'.</p>
+<p>There are two cases where this is important in this module:</p>
+<p>1) This is another perspective on description logic. In fact description logic is really just a different notation
+for a modal logic of this kind, as indicated by these comparisons.</p>
+<div class="arithmatex">\[
+\begin{array}{ccc}
+&amp;&amp;\\
+\langle \mathsf{hasChild} \rangle \, \mathsf{UnderTen} &amp; \qquad &amp; \exists \,\mathsf{hasChild} . \mathsf{UnderTen}\\[2ex]
+[ \mathsf{hasChild} ] \, \mathsf{UnderTen} &amp; \qquad &amp; \forall\, \mathsf{hasChild} . \mathsf{UnderTen}\end{array}
+\]</div>
+<p>2) In modelling time where you can have one relation relating a time to all future times, and
+another relation relating a time to all past times. We will explore this example further in the final unit.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../05_03_Time/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lesson 2 Time
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../Unit6/06_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 6
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascript/tablecontentsoverride.js"></script>
+      
+        <script src="../../../javascript/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

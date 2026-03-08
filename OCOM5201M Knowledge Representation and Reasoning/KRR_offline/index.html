@@ -1,0 +1,1141 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+        <meta name="author" content="Digital Education Service">
+
+      <link rel="shortcut icon" href="img/favicon.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.0.2">
+
+
+
+        <title>Knowledge Representation and Reasoning</title>
+
+
+
+      <link rel="stylesheet" href="assets/stylesheets/main.38780c08.min.css">
+
+
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f72e892.min.css">
+
+
+
+
+
+
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Inter",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+
+
+
+
+      <link rel="stylesheet" href="css/extra.css">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#set-up-instructions-for-virtual-machine-access" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+
+    <div id="versionIndicator"><b>Version:</b> 10.06.22a</div>
+    <img id="customlogo" src="img/logo.svg" alt="University of Leeds logo.">
+
+          </div>
+        </aside>
+
+    </div>
+
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="Knowledge Representation and Reasoning" class="md-header-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Knowledge Representation and Reasoning
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+
+              VM Instructions
+
+          </span>
+        </div>
+
+    </div>
+
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </nav>
+</header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+
+
+  <li class="md-tabs__item">
+
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        VM Instructions
+      </a>
+
+  </li>
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit1/01_00_Lesson0/" class="md-tabs__link">
+          Unit 1 Introducing KRR
+        </a>
+
+    </li>
+
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit2/02_00_Lesson0/" class="md-tabs__link">
+          Unit 2 First order logic
+        </a>
+
+    </li>
+
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit3/03_00_Lesson0/" class="md-tabs__link">
+          Unit 3 Proof
+        </a>
+
+    </li>
+
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit4/04_00_Lesson0/" class="md-tabs__link">
+          Unit 4 Ontology
+        </a>
+
+    </li>
+
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit5/05_00_Lesson0/" class="md-tabs__link">
+          Unit 5 Space and time
+        </a>
+
+    </li>
+
+
+
+
+
+
+    <li class="md-tabs__item">
+
+        <a href="content/Unit6/06_00_Lesson0/" class="md-tabs__link">
+          Unit 6 Modelling modal logic in Prolog
+        </a>
+
+    </li>
+
+
+
+    </ul>
+  </div>
+</nav>
+
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Knowledge Representation and Reasoning" class="md-nav__button md-logo" aria-label="Knowledge Representation and Reasoning">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Knowledge Representation and Reasoning
+  </label>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active">
+
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        VM Instructions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+    <a href="." class="md-nav__link md-nav__link--active">
+      VM Instructions
+    </a>
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#connecting-from-linuxmacos-systems" class="md-nav__link">
+    Connecting from Linux/MacOS systems
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#connecting-from-windows-systems" class="md-nav__link">
+    Connecting from Windows systems
+  </a>
+
+    <nav class="md-nav" aria-label="Connecting from Windows systems">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#installing-mobaxterm" class="md-nav__link">
+    Installing MobaXTerm
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-vm-via-mobaxterm" class="md-nav__link">
+    Connecting to the VM via MobaXTerm
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+    </ul>
+
+</nav>
+
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+
+    <label class="md-nav__link" for="nav-2">
+      Unit 1 Introducing KRR
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 1 Introducing KRR" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 1 Introducing KRR
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_00_Lesson0/" class="md-nav__link">
+      About Unit 1
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_01_Lesson1/" class="md-nav__link">
+      Lesson 1 Introducing KRR
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_03_PropLogicIntro/" class="md-nav__link">
+      Lesson 2 Propositional logic
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_04_Representation/" class="md-nav__link">
+      Lesson 3 Representation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_05_AutomatingLogic/" class="md-nav__link">
+      Lesson 4 Automating logic
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit1/01_06_CNFDNF/" class="md-nav__link">
+      Lesson 5 CNF and DNF
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+
+    <label class="md-nav__link" for="nav-3">
+      Unit 2 First order logic
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 2 First order logic" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 2 First order logic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/02_00_Lesson0/" class="md-nav__link">
+      About Unit 2
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/002_01_IntroSyntax/" class="md-nav__link">
+      Lesson 1 Introducing First Order Logic (FOL)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/002_02_Semantics/" class="md-nav__link">
+      Lesson 2 Semantics of FOL
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/002_03_Representation/" class="md-nav__link">
+      Lesson 3 FOL applied to representation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/002_04_Tableau/" class="md-nav__link">
+      Lesson 4 Tableau method for FOL
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit2/002_05_Tools/" class="md-nav__link">
+      Lesson 5 Tools for FOL
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+
+    <label class="md-nav__link" for="nav-4">
+      Unit 3 Proof
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 3 Proof" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 3 Proof
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_00_Lesson0/" class="md-nav__link">
+      About Unit 3
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_01_Intro/" class="md-nav__link">
+      Lesson 1 What are proofs
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_02_NaturalDeduction/" class="md-nav__link">
+      Lesson 2 Natural deduction (propositional)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_02Add_ND_FirstOrder/" class="md-nav__link">
+      Lesson 3 Natural deduction (FOL)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_03_PropositionalResolution/" class="md-nav__link">
+      Lesson 4 Resolution (propositional)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit3/03_04_FirstOrderResolution/" class="md-nav__link">
+      Lesson 5 Resolution (FOL)
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+
+    <label class="md-nav__link" for="nav-5">
+      Unit 4 Ontology
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 4 Ontology" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 4 Ontology
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit4/04_00_Lesson0/" class="md-nav__link">
+      About Unit 4
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit4/04_02_OntologyRDF/" class="md-nav__link">
+      Lesson 1 Ontology
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit4/04_03_DescriptionLogic/" class="md-nav__link">
+      Lesson 2 Description Logic
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit4/04_04_Protege/" class="md-nav__link">
+      Lesson 3 Protege
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit4/04_05_DL_Reasoning/" class="md-nav__link">
+      Lesson 4 Reasoning in DL
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+
+    <label class="md-nav__link" for="nav-6">
+      Unit 5 Space and time
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 5 Space and time" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 5 Space and time
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit5/05_00_Lesson0/" class="md-nav__link">
+      About Unit 5
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit5/05_02_Space/" class="md-nav__link">
+      Lesson 1 Space
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit5/05_03_Time/" class="md-nav__link">
+      Lesson 2 Time
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit5/05_05_Modal_Logic/" class="md-nav__link">
+      Lesson 3 Modal logic
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+
+    <label class="md-nav__link" for="nav-7">
+      Unit 6 Modelling modal logic in Prolog
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Unit 6 Modelling modal logic in Prolog" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Unit 6 Modelling modal logic in Prolog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit6/06_00_Lesson0/" class="md-nav__link">
+      About Unit 6
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit6/06_02_PrologIdeas/" class="md-nav__link">
+      Lesson 1 Prolog ideas you will need
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit6/06_03_ModellingModalLogicInProlog/" class="md-nav__link">
+      Lesson 2 Modelling modal logic in Prolog
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit6/06_04_Time/" class="md-nav__link">
+      Lesson 3 Time
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="content/Unit6/06_05_CheckingTheLanguageSyntax/" class="md-nav__link">
+      Lesson 4 Checking the language syntax
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#connecting-from-linuxmacos-systems" class="md-nav__link">
+    Connecting from Linux/MacOS systems
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#connecting-from-windows-systems" class="md-nav__link">
+    Connecting from Windows systems
+  </a>
+
+    <nav class="md-nav" aria-label="Connecting from Windows systems">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#installing-mobaxterm" class="md-nav__link">
+    Installing MobaXTerm
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-vm-via-mobaxterm" class="md-nav__link">
+    Connecting to the VM via MobaXTerm
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+
+
+
+                <h1 id="set-up-instructions-for-virtual-machine-access">Set-up instructions for virtual machine access</h1>
+<p>These instructions outline how to connect to a virtual machine (VM) for this module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This process will require you to use Duo, the University’s two-factor authentication service. You will need to make sure you have enrolled with Duo with your University account and will be required to use Duo to authenticate your access to the VM.</p>
+</div>
+<h2 id="connecting-from-linuxmacos-systems">Connecting from Linux/MacOS systems</h2>
+<ul>
+<li>Step 1: Open a terminal on your machine.</li>
+<li>Step 2: Create a directory called <code>.ssh</code> in your home directory (if one doesn’t already exist).</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ mkdir ~/.ssh
+</code></pre></div>
+<ul>
+<li>Step 3: Create a file named <strong><code>config</code></strong> within your <code>.ssh</code> directory.</li>
+<li>Step 4: Within this <code>config</code> file include the following contents (<strong>ensure that you replace all instances of <code>myusername</code> with your own University username</strong>).</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Host *.leeds.ac.uk !remote-access.leeds.ac.uk
+ProxyJump myusername@remote-access.leeds.ac.uk
+User &quot;myusername&quot;
+
+Host 20.108.153.48
+ProxyJump myusername@remote-access.leeds.ac.uk
+</code></pre></div>
+<ul>
+<li>Step 5:   Save this file.</li>
+<li>Step 6:   Run the following command in the terminal, again replacing <code>myusername</code> with your University username:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ ssh myusername@20.108.153.48
+</code></pre></div>
+<ul>
+<li>Step 7: You’ll then see the following message:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>The authenticity of host &#39;remote-access.leeds.ac.uk (129.11.78.165)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:RoIHn1BDSlh/WjGHEG73OFISe6H3q3iLuM4z6tGu29Q.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</code></pre></div>
+<ul>
+<li>Step 8: Input <code>yes</code> and then press enter.</li>
+<li>Step 9: You will then be asked a password. Input your <strong>University password</strong>.</li>
+<li>Step 10: Once you have entered your correct password, you will receive the Duo 2 factor authentication prompt as follows:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ ssh myusername@20.108.153.48
+Password:
+Duo two-factor login for myusername@20.108.153.48
+
+Enter a passcode or select one of the following options:
+
+ 1. Duo Push to +XX XXXX XXXXXXX
+ 2. SMS passcodes to +XX XXXX XXXXXX (next code starts with: 2)
+
+Passcode or option (1-2):
+</code></pre></div>
+<p>It will be simplest to just generate a passcode instead of using options 1 or 2. Therefore, use your Duo-registered device to generate a passcode and then input the passcode under the above prompt.</p>
+<ul>
+<li>Step 11: You will then see the following message:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>Warning: Permanently added &#39;20.108.153.48&#39; (ECDSA) to the list of known hosts.
+myusername@20.108.153.48&#39;s password:
+</code></pre></div>
+<ul>
+<li>Step 12: This time you will need to enter your password but this is <strong>NOT your University password</strong>. Instead this is a <strong>specific password generated for you</strong> to use this VM. This specific password will have been <strong>emailed to you</strong> with a subject of '<em>Knowledge Representation and Reasoning - Virtual Machine Access</em>'.</li>
+<li>Step 13: Once you have entered your password, you should then see success message of <code>Welcome to Ubuntu</code>. At the end you will see your command prompt now in green as:
+<div class="highlight"><pre><span></span><code>myusername@uol-ocom5201m-vm:~$
+</code></pre></div></li>
+<li>Step 14: It's recommended that you change your VM password once logged in for the first time. In order to do this type <code>passwd</code> and press enter. You will then be asked to enter your current password (supplied to you via email) and then enter your new chosen password.</li>
+<li>Step 15: Once you have finished with your VM session, type <code>logout</code> into the prompt and press enter. You’ll then be informed that the connection is closed.</li>
+<li>Step 16: When you wish to reaccess the VM, simply go to the terminal and enter <code>ssh myusername@20.108.153.48</code> (replacing <code>myusername</code> with your own University username). You will then need to <strong>repeat steps 9,10 and 12</strong> in order to log back into the VM.</li>
+</ul>
+<h2 id="connecting-from-windows-systems">Connecting from Windows systems</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Connecting from Windows requires the installation of an SSH client. We recommend and support users using MobaXTerm.</p>
+</div>
+<h3 id="installing-mobaxterm">Installing MobaXTerm</h3>
+<ul>
+<li>Step 1: Go to the <a href="https://mobaxterm.mobatek.net/download.html" target="_blank">MobXTerm website</a> and select '<strong>Download now</strong>' under the <strong>Free download</strong> section.</li>
+<li>Step 2: Select the <strong>Portable edition</strong>. This will prompt a .zip file download. Once downloaded, extract the files in the .zip and select the <code>.exe</code> file. This will open up MobaXTerm.</li>
+</ul>
+<h3 id="connecting-to-the-vm-via-mobaxterm">Connecting to the VM via MobaXTerm</h3>
+<ul>
+<li>Step 1: Open MobaXTerm and in the top navigation panels, select <code>Session</code>.</li>
+<li>Step 2: Within the Session window, in the top navigation, select <code>SSH</code>.</li>
+<li>Step 3: Under the <code>Basic SSH settings</code> area, enter the 'Remote host' as '<strong>20.108.153.48</strong>'. Select the checkbox next to 'Specify username' and then enter your <strong>University username</strong> in the associated field.</li>
+<li>Step 4: Go to the <code>Network settings</code> tab underneath the <code>Basic SSH settings</code> area.</li>
+<li>Step 5: Select the 'SSH gateway (jump)' button.</li>
+<li>Step 6: Under 'Gateway host' enter <code>remote-access.leeds.ac.uk</code>. Under 'Username' enter your <strong>University username</strong>. Then select 'OK'.</li>
+<li>Step 7: This will take you back to the <code>Network settings</code> tab. Once here, select the 'OK' button at the bottom. This will then prompt a pop-up that asks for your <strong>University password</strong>. Enter you password and select 'OK'.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that the password pop-up may take up to a few minutes to appear.</p>
+</div>
+<ul>
+<li>Step 8: After you have correctly entered your password, you will be asked to enter a Duo passcode. Generate a Duo passcode on your Duo-registered device and enter it into the pop-up and select 'OK'.</li>
+<li>Step 9: You will then be asked if you would like to save your password for remote access. Select 'Yes'. If you do not select 'Yes' you will need to repeat this process each time you access the VM.</li>
+<li>Step 10: You will then be prompted to create a master password. This is a master password for MobaXTerm and is not related to your VM password. Create something you will be able to remember.</li>
+<li>Step 11: With the 'User session' sidebar in MobaXTerm, you should now see an item for <code>20.108.153.48 (myusername)</code>. Select this item (you will need to double click).</li>
+<li>Step 12: This will open up a terminal window for the session and will require you to enter your VM password straight away. This is <strong>NOT your University password</strong>. Instead this is a <strong>specific password generated for you</strong> to use this VM. This specific password will have been <strong>emailed to you</strong> with a subject of '<em>Knowledge Representation and Reasoning - Virtual Machine Access</em>'.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that you will not be able to copy your password via Ctrl+C/Cmd+C, instead, you will need to right click and select 'Paste'.</p>
+</div>
+<ul>
+<li>Step 13: You will then be asked if you wish to save your password for the VM accesss. Select 'yes'.</li>
+<li>Step 14: The terminal should then open a session into the VM and you will see the prompt as <code>myusername@uol-ocom5201m-vm:~$</code>.</li>
+<li>Step 15: It's recommended that you change your VM password once logged in for the first time. In order to do this type <code>passwd</code> and press enter. You will then be asked to enter your current password (supplied to you via email) and then enter your new chosen password.</li>
+<li>Step 16: Once done with the VM, type <code>logout</code> into the prompt and press enter. You’ll then be informed that the connection is closed.</li>
+<li>Step 17: When revisiting MobaXTerm, select the item underneath 'User session' in the sidebar (you will need to double click). This will reopen the session into the VM. If you receive an error message when trying to reopen the session, please repeat the process from step 1 to reconnect successfully.</li>
+</ul>
+
+
+
+
+
+
+
+            </article>
+          </div>
+        </div>
+      </main>
+
+
+<footer class="md-footer">
+
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+
+          <a href="content/Unit1/01_00_Lesson0/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About Unit 1
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+
+      </nav>
+    </div>
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+
+          <div class="md-footer-copyright__highlight">
+            Copyright © Digital Education Service | University of Leeds
+          </div>
+
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+      <script src="assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+
+      <script>
+        app = initialize({
+          base: ".",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+
+        <script src="javascript/tablecontentsoverride.js"></script>
+
+        <script src="javascript/config.js"></script>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  </body>
+</html>

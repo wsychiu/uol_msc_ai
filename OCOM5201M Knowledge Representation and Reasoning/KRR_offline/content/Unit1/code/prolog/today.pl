@@ -1,0 +1,2 @@
+todayIsTuesday.
+tomorrowIsWednesday :- todayIsTuesday.
